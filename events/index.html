@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Event, Try Out & Pelatihan — LKP Kelas Bisa</title>
+  
+  <!-- CSS Global & CSS Standalone Events -->
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. WADAH HEADER AUTOMATIC INJECT VIA COMPONENTS.JS -->
+  <div id="app-header"></div>
+
+  <main>
+
+    <!-- HERO HEADER EVENTS -->
+    <section class="events-hero">
+      <div class="events-container text-center">
+        <span class="events-badge">🔥 Dynamic Event & Registration Hub</span>
+        <h1 class="events-title">Pusat Agenda & Pendaftaran</h1>
+        <p class="events-desc">
+          Temukan jadwal Try Out berkala, Zoominar Freemium, Mini Course, hingga Bootcamp Premium yang sedang <strong>Open Registration</strong> di seluruh lini program Kelas Bisa[cite: 3, 4].
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION FILTER & SEARCH BAR -->
+    <section class="events-filter-section">
+      <div class="events-container">
+        <div class="filter-card">
+          
+          <!-- SEARCH INPUT -->
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchEventInput" placeholder="Cari nama event, topik, atau kata kunci (contoh: OSN, CPNS, TOEFL)...">
+          </div>
+
+          <!-- DROPDOWN FILTERS -->
+          <div class="filter-group">
+            
+            <!-- FILTER SUB-BRAND -->
+            <div class="filter-item">
+              <label for="filterSubbrand">Sub-Brand:</label>
+              <select id="filterSubbrand">
+                <option value="all">Semua Sub-Brand</option>
+                <option value="pilar">PILAR (Lomba & Riset)</option>
+                <option value="gatra">GATRA (CPNS & Sekdin)</option>
+                <option value="nestu">NESTU (UTBK & Beasiswa)</option>
+                <option value="lingua">LINGUA (Bahasa Asing)</option>
+                <option value="geodatis">GEODATIS (Data & GIS)</option>
+                <option value="arpa">ARPA (Jurnal & Skripsi)</option>
+                <option value="workit">WORKIT (Skill Kerja)</option>
+              </select>
+            </div>
+
+            <!-- FILTER TIPE KEGIATAN -->
+            <div class="filter-item">
+              <label for="filterType">Jenis Kegiatan:</label>
+              <select id="filterType">
+                <option value="all">Semua Jenis</option>
+                <option value="Try Out">Try Out & Simulasi</option>
+                <option value="Zoominar Freemium">Zoominar Freemium (1-3 Jam)</option>
+                <option value="Mini Course">Mini Course (4-10 Jam)</option>
+                <option value="Short Course">Short Course (10-20 Jam)</option>
+                <option value="Medium Course">Medium Course (20-35 Jam)</option>
+                <option value="Bootcamp Mini">Bootcamp Mini (35-50 Jam)</option>
+                <option value="Bootcamp Premium">Bootcamp Premium (50-100 Jam)</option>
+              </select>
+            </div>
+
+            <!-- FILTER FORMAT BELAJAR -->
+            <div class="filter-item">
+              <label for="filterFormat">Format Belajar:</label>
+              <select id="filterFormat">
+                <option value="all">Semua Format</option>
+                <option value="KETAL">KETAL (LMS Digital)</option>
+                <option value="PLATO">PLATO (Live Zoom)</option>
+                <option value="PLATIPUS">PLATIPUS (Tatap Muka/Camp)</option>
+                <option value="PLASMA">PLASMA (Modul Mandiri)</option>
+                <option value="EXTRA">EXTRA (Privat)</option>
+              </select>
+            </div>
+
+            <!-- FILTER STATUS -->
+            <div class="filter-item">
+              <label for="filterStatus">Status:</label>
+              <select id="filterStatus">
+                <option value="all">Semua Status</option>
+                <option value="open" selected>Open Registration</option>
+                <option value="soon">Segera Dibuka</option>
+                <option value="closed">Selesai / Ditutup</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- RESET FILTER BUTTON -->
+          <div class="filter-actions">
+            <button id="btnResetFilter" class="btn-reset">Reset Filter</button>
+            <span id="eventCountBadge" class="event-count-badge">Memuat kegiatan...</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION GRID DRAFT EVENT CARDS (RENDERED DARI DINAMIS DATA) -->
+    <section class="events-grid-section">
+      <div class="events-container">
+        
+        <!-- WADAH GRID EVENT (RENDERED BY SCRIPT.JS) -->
+        <div id="eventsGrid" class="events-grid">
+          <div class="events-loading">Memuat daftar agenda & event terbaru...</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 2. WADAH FOOTER AUTOMATIC INJECT VIA COMPONENTS.JS -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT COMPONENTS -->
+  <script src="../assets/js/components.js"></script>
+
+  <!-- SCRIPT ISOLASI EVENTS -->
+  <script src="script.js"></script>
+</body>
+</html>
