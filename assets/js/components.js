@@ -24,7 +24,17 @@ function loadComponent(elementId, filePath, callback) {
       return response.text();
     })
     .then((data) => {
-      container.innerHTML = data;
+      // PERBAIKAN: Otomatis menambahkan rootPath ke semua atribut href dan src lokal
+      const rootPath = getRootPath();
+      const fixedData = data.replace(/(href|src)="([^"]*)"/g, function(match, attr, url) {
+        // Abaikan link eksternal (http) atau anchor link (#)
+        if (url.startsWith("http") || url.startsWith("#") || url.startsWith("mailto:")) {
+          return match;
+        }
+        return `${attr}="${rootPath}${url}"`;
+      });
+      
+      container.innerHTML = fixedData;
       if (callback) callback();
     })
     .catch((err) => console.error("Error loading component:", err));
