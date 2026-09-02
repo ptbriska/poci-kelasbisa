@@ -1,1 +1,501 @@
-s
+/* ==========================================================================
+   1. CSS RESET & VARIABEL GLOBAL (TONE: BIRU CYAN)
+   ========================================================================== */
+:root {
+  /* Warna Utama Brand Kelas Bisa (Cyan Tone) */
+  --primary-cyan: #00B4D8;       /* Cyan Cerah Utama */
+  --primary-cyan-dark: #0077B6;  /* Cyan Tua untuk Hover/State */
+  --brand-deep-blue: #03045E;    /* Biru Gelap untuk Kontras Header/Text */
+  
+  /* Aksesibilitas & Aksen */
+  --accent-orange: #FF6B00;       /* Warna Tombol Highlight / Hot Badge */
+  --accent-gold: #FFC72C;         /* Aksen Prestasi/Bintang */
+  
+  /* Warna Netral & Background */
+  --bg-light: #F4F9FC;           /* Soft Cyan Tint */
+  --bg-white: #FFFFFF;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --border-color: #E2E8F0;
+  
+  /* Layout & Shadow */
+  --max-width: 1200px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 4px rgba(0, 180, 216, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 180, 216, 0.08);
+  --shadow-lg: 0 10px 25px rgba(3, 4, 94, 0.12);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION STYLING
+   ========================================================================== */
+.main-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-white);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.brand-logo .logo-img {
+  height: 42px;
+  width: auto;
+}
+
+/* Nav Menu */
+.main-nav .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--brand-deep-blue);
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-link:hover {
+  color: var(--primary-cyan);
+}
+
+.arrow-icon {
+  font-size: 0.7rem;
+  transition: var(--transition);
+}
+
+.badge-new {
+  background-color: var(--accent-orange);
+  color: #FFF;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.highlight-link {
+  color: var(--primary-cyan-dark);
+  background-color: #E0F2FE;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+.highlight-link:hover {
+  background-color: var(--primary-cyan);
+  color: #FFF;
+}
+
+/* ==========================================================================
+   3. DROPDOWN & MEGA MENU STYLING
+   ========================================================================== */
+.has-dropdown {
+  position: relative;
+}
+
+/* Mega Menu Sub-brand */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 720px;
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  padding: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.has-dropdown:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.has-dropdown:hover .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.mega-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.mega-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-light);
+  border: 1px solid transparent;
+}
+
+.mega-card:hover {
+  background-color: #FFF;
+  border-color: var(--primary-cyan);
+  box-shadow: var(--shadow-sm);
+}
+
+.mega-card-icon {
+  font-size: 1.5rem;
+  background: #FFF;
+  padding: 0.4rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.mega-card-info h4 {
+  font-size: 0.9rem;
+  color: var(--brand-deep-blue);
+  margin-bottom: 0.2rem;
+}
+
+.mega-card-info p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* Simple Dropdown Program Khusus */
+.simple-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 180px;
+  background: var(--bg-white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.has-dropdown:hover .simple-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.simple-dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.simple-dropdown a:hover {
+  background-color: var(--bg-light);
+  color: var(--primary-cyan-dark);
+}
+
+/* ==========================================================================
+   4. PORTAL AKSES CEPAT & HAMBURGER MENU
+   ========================================================================== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.portal-dropdown {
+  position: relative;
+}
+
+.btn-portal {
+  background: var(--primary-cyan);
+  color: #FFF;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition);
+}
+
+.btn-portal:hover {
+  background: var(--primary-cyan-dark);
+}
+
+.portal-menu {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  width: 200px;
+  background: var(--bg-white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0;
+  display: none;
+  z-index: 1001;
+}
+
+.portal-dropdown.active .portal-menu {
+  display: block;
+}
+
+.portal-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.portal-menu a:hover {
+  background-color: #E0F2FE;
+  color: var(--primary-cyan-dark);
+}
+
+/* Hamburger Toggle Mobile */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background-color: var(--brand-deep-blue);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ==========================================================================
+   5. FOOTER STYLING
+   ========================================================================== */
+.main-footer {
+  background-color: var(--brand-deep-blue);
+  color: #E2E8F0;
+  padding: 3.5rem 0 1.5rem 0;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr 1.5fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1);
+}
+
+.footer-desc {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.social-icon {
+  background: rgba(255, 255, 255, 0.1);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+
+.social-icon:hover {
+  background: var(--primary-cyan);
+}
+
+.footer-title {
+  color: #FFF;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: #94A3B8;
+}
+
+.footer-links a:hover {
+  color: var(--primary-cyan);
+  padding-left: 4px;
+}
+
+.footer-portal-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-portal-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+}
+
+.contact-info {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #94A3B8;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #64748B;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .mega-menu {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: var(--bg-white);
+    padding: 1.5rem;
+    transition: var(--transition);
+    overflow-y: auto;
+  }
+
+  .main-nav.active {
+    left: 0;
+  }
+
+  .main-nav .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .mega-menu, .simple-dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    display: none;
+    padding: 0.5rem 0;
+    transform: none;
+  }
+
+  .has-dropdown.open-dropdown .mega-menu,
+  .has-dropdown.open-dropdown .simple-dropdown {
+    display: block;
+  }
+
+  .mega-menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
