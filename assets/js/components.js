@@ -1,67 +1,57 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. HITUNG KEDALAMAN PATH AGAR HEADER & FOOTER RELATIF TERHADAP FOLDER
+  // 1. HITUNG KEDALAMAN PATH SECARA PRESISI
   const rootPath = getRootPath();
 
   // 2. FETCH & INJECT HEADER
-  fetch(rootPath + "assets/components/header.html")
-    .then((response) => {
-      if (!response.ok) throw new Error("Gagal memuat header");
-      return response.text();
-    })
-    .then((data) => {
-      const headerContainer = document.getElementById("app-header");
-      if (headerContainer) {
-        headerContainer.innerHTML = data;
-        initHeaderEvents(); // Jalankan event listener untuk menu setelah header terpasang
-      }
-    })
-    .catch((err) => console.error("Error loading header:", err));
+  loadComponent("app-header", rootPath + "assets/components/header.html", initHeaderEvents);
 
   // 3. FETCH & INJECT FOOTER
-  fetch(rootPath + "assets/components/footer.html")
-    .then((response) => {
-      if (!response.ok) throw new Error("Gagal memuat footer");
-      return response.text();
-    })
-    .then((data) => {
-      const footerContainer = document.getElementById("app-footer");
-      if (footerContainer) {
-        footerContainer.innerHTML = data;
-      }
-    })
-    .catch((err) => console.error("Error loading footer:", err));
+  loadComponent("app-footer", rootPath + "assets/components/footer.html");
 });
 
 /**
- * Fungsi untuk menentukan path relatif ke root directory
- * Contoh: 
- * - kelasbisa.com/index.html -> "./"
- * - kelasbisa.com/pilar/index.html -> "../"
+ * Fungsi helper untuk fetch dan inject HTML ke wadah container
  */
-function getRootPath() {
-  const path = window.location.pathname;
-  // Hitung berapa jumlah slashes (/) dalam URL setelah origin
-  const segments = path.split("/").filter((segment) => segment.length > 0);
+function loadComponent(elementId, filePath, callback) {
+  const container = document.getElementById(elementId);
+  if (!container) return;
 
-  // Jika di root (misal: / atau /index.html), butuh "./"
-  // Jika di sub-folder (misal: /pilar/ atau /events/), butuh "../"
-  if (segments.length <= 1 && !path.endsWith("/")) {
-    return "./";
-  }
-  
-  // Buat string "../" sebanyak kedalaman folder
-  let depth = segments.length;
-  // Jika URL berakhir dengan nama file (misal /pilar/index.html), kurangi 1 kedalaman
-  if (path.includes(".html")) {
-    depth -= 1;
-  }
-  
-  return depth > 0 ? "../".repeat(depth) : "./";
+  fetch(filePath)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: Gagal memuat ${filePath}`);
+      }
+      return response.text();
+    })
+    .then((data) => {
+      container.innerHTML = data;
+      if (callback) callback();
+    })
+    .catch((err) => console.error("Error loading component:", err));
 }
 
 /**
- * Fungsi untuk Mengaktifkan Interaktivitas Navigasi Header
- * (Hamburger Menu, Dropdown Mobile & Desktop)
+ * Fungsi Deteksi Path Relatif Bebas Bug GitHub Pages
+ * Memeriksa apakah halaman dibuka di dalam sub-folder brand/events atau di root
+ */
+function getRootPath() {
+  const path = window.location.pathname.toLowerCase();
+  
+  // Daftar folder level 1 yang membutuhkan path mundur satu tingkat ("../")
+  const subFolders = [
+    "/pilar/", "/gatra/", "/nestu/", "/lingua/", 
+    "/geodatis/", "/arpa/", "/workit/", "/elementa/", 
+    "/poci/", "/events/", "/admin/"
+  ];
+
+  // Cek apakah URL memuat salah satu dari folder di atas
+  const isSubFolder = subFolders.some((folder) => path.includes(folder));
+
+  return isSubFolder ? "../" : "./";
+}
+
+/**
+ * Fungsi Interaktivitas Navigasi Header
  */
 function initHeaderEvents() {
   const mobileToggle = document.getElementById("mobileToggle");
@@ -70,7 +60,7 @@ function initHeaderEvents() {
   const portalBtn = document.querySelector(".btn-portal");
   const portalDropdown = document.querySelector(".portal-dropdown");
 
-  // Toggle Menu Mobile
+  // Toggle Menu Mobile (Hamburger)
   if (mobileToggle && mainNav) {
     mobileToggle.addEventListener("click", function () {
       mainNav.classList.toggle("active");
@@ -96,7 +86,7 @@ function initHeaderEvents() {
       portalDropdown.classList.toggle("active");
     });
 
-    // Tutup dropdown portal jika mengklik di luar area portal
+    // Tutup dropdown portal jika klik di luar area
     document.addEventListener("click", function (e) {
       if (!portalDropdown.contains(e.target)) {
         portalDropdown.classList.remove("active");
