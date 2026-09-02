@@ -1,1 +1,104 @@
-x
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PILAR — Pelatihan Ilmiah Lomba Akademik & Riset | Kelas Bisa Juara</title>
+  
+  <!-- CSS Global Shared & CSS Standalone Khusus PILAR -->
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Parser Markdown Gratis (Marked.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="theme-pilar">
+
+  <!-- 1. WADAH HEADER AUTOMATIC INJECT (RELATIF VIA COMPONENTS.JS) -->
+  <div id="app-header"></div>
+
+  <!-- KONTEN UTAMA SUB-BRAND PILAR -->
+  <main>
+
+    <!-- HERO PROFILE PILAR -->
+    <section class="pilar-hero">
+      <div class="pilar-container">
+        <div class="pilar-hero-content">
+          <span class="pilar-badge">🏆 AFILIASI: KELAS BISA JUARA</span>
+          <h1 class="pilar-title">PILAR</h1>
+          <h2 class="pilar-subtitle">Pelatihan Ilmiah Lomba Akademik & Riset</h2>
+          <p class="pilar-desc">
+            Wadah pembinaan intensif persiapan Olimpiade Sains Nasional (OSN), OPSI, FIKSI, KSM, dan Bimbingan Karya Tulis Ilmiah terstruktur untuk Siswa, Mahasiswa, serta Guru Pembimbing[cite: 5].
+          </p>
+          <div class="pilar-cta-group">
+            <a href="/events/" class="btn-pilar-primary">Lihat Jadwal Terdekat & TO</a>
+            <a href="#silabus" class="btn-pilar-secondary">Jelajahi Silabus Lomba</a>
+          </div>
+        </div>
+        <div class="pilar-hero-media">
+          <img src="images/banner-pilar.png" alt="PILAR Kelas Bisa Juara" class="pilar-hero-img" onerror="this.src='../assets/images/hero-banner.png'">
+        </div>
+      </div>
+    </section>
+
+    <!-- METODE PELATIHAN TERSEDIA DI PILAR -->
+    <section class="pilar-methods-bar">
+      <div class="pilar-container">
+        <p class="methods-label">Metode Belajar Tersedia di PILAR:</p>
+        <div class="methods-tags">
+          <span class="tag-method">KETAL (LMS)</span>
+          <span class="tag-method">PLATO (Live Zoom)</span>
+          <span class="tag-method">PLATIPUS (Tatap Muka Camp)</span>
+          <span class="tag-method">PLASMA (Modul)</span>
+          <span class="tag-method">EXTRA (Privat)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- KATALOG SILABUS PROGRAM (LOADED DARI CONTENT/SILABUS.JSON) -->
+    <section id="silabus" class="pilar-section">
+      <div class="pilar-container">
+        <div class="pilar-section-header">
+          <h2>Seri Produk & Topik Pelatihan PILAR</h2>
+          <p>Pilih kategori perlombaan atau pembinaan akademik yang sesuai dengan target prestasimu[cite: 5].</p>
+        </div>
+
+        <!-- WADAH GRID PROGRAM DINAMIS (RENDERED BY SCRIPT.JS) -->
+        <div id="pilar-program-grid" class="pilar-grid">
+          <!-- Loading state sederhana -->
+          <div class="pilar-loading">Memuat katalog silabus PILAR...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFORMASI PROFIL, PRESTASI & KEMITRAAN (LOADED DARI CONTENT/INFO.MD) -->
+    <section class="pilar-section pilar-bg-alt">
+      <div class="pilar-container">
+        <!-- WADAH RENDER MARKDOWN INFO.MD -->
+        <div id="pilar-info-content" class="pilar-markdown-body">
+          <div class="pilar-loading">Memuat informasi profil & prestasi...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FOOTER SUB-BRAND -->
+    <section class="pilar-bottom-cta">
+      <div class="pilar-container text-center">
+        <h2>Siap Menjadi Juara Olimpiade & Riset Berikutnya?</h2>
+        <p>Bergabunglah dengan program pelatihan rutin dan uji kemampuanmu melalui Try Out berkala Kelas Bisa[cite: 3, 5].</p>
+        <a href="/events/" class="btn-pilar-primary btn-large">Daftar Event / Try Out Terdekat</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 2. WADAH FOOTER AUTOMATIC INJECT -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT COMPONENTS (PANGGUL MUNDUR 1 KETINGKATAN /ASSETS/) -->
+  <script src="../assets/js/components.js"></script>
+  
+  <!-- SCRIPT ISOLASI KHUSUS SUB-BRAND PILAR -->
+  <script src="script.js"></script>
+</body>
+</html>
