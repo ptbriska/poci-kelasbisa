@@ -1,0 +1,56 @@
+[
+  {
+    "kode": "OSN-SISWA",
+    "kategori": "OSN",
+    "nama": "Pelatihan Siswa - Persiapan OSN SMA",
+    "deskripsi": "Pembinaan intensif persiapan Olimpiade Sains Nasional bidang Geografi, Ekonomi, Astronomi, dan Kebumian untuk jenjang SMA.",
+    "periode": "Oktober – Agustus",
+    "format_tersedia": ["KETAL", "PLATO", "PLATIPUS", "PLASMA", "EXTRA"],
+    "target": "Siswa SMA/MA"
+  },
+  {
+    "kode": "OSN-GURU",
+    "kategori": "OSN",
+    "nama": "Pelatihan Guru - Persiapan OSN SMA",
+    "deskripsi": "Pelatihan khusus guru pembimbing untuk penguasaan materi bedah soal HOTS dan manajemen kepelatihan Olimpiade Sains Nasional.",
+    "periode": "Agustus – Oktober",
+    "format_tersedia": ["PLATO", "EXTRA"],
+    "target": "Guru Pembimbing OSN"
+  },
+  {
+    "kode": "OPSI-ALL",
+    "kategori": "OPSI",
+    "nama": "Pelatihan OPSI (Olimpiade Penelitian Siswa Indonesia)",
+    "deskripsi": "Pendampingan penyusunan proposal riset, metodologi penelitian, hingga pengerjaan proyek penelitian bidang Saintek dan Soshum.",
+    "periode": "Januari – Desember",
+    "format_tersedia": ["PLATO", "PLASMA", "EXTRA"],
+    "target": "Siswa SMP/SMA/MA"
+  },
+  {
+    "kode": "FIKSI-BP",
+    "kategori": "FIKSI",
+    "nama": "Pelatihan FIKSI & Business Plan Kemdikbud",
+    "deskripsi": "Pembimbingan penyusunan rencana bisnis (business plan), inovasi produk terapan, dan strategi pameran untuk Festival Inovasi Siswa.",
+    "periode": "Januari – Desember",
+    "format_tersedia": ["PLATO", "EXTRA"],
+    "target": "Siswa SMA/SMK/MA"
+  },
+  {
+    "kode": "KSM-MA",
+    "kategori": "KSM",
+    "nama": "Pelatihan KSM (Kompetisi Sains Madrasah)",
+    "deskripsi": "Pembinaan terpadu soal-soal sains terintegrasi nilai-nilai keislaman untuk persiapan KSM tingkat Kabupaten, Provinsi, hingga Nasional.",
+    "periode": "Oktober – Agustus",
+    "format_tersedia": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+    "target": "Siswa MI/MTs/MA"
+  },
+  {
+    "kode": "LKTI-WRITING",
+    "kategori": "LKTI",
+    "nama": "Pelatihan Lomba Karya Tulis Ilmiah & Esai",
+    "deskripsi": "Workshop dan pendampingan penulisan karya tulis ilmiah (LKTI), penyusunan sistematika berpikir logis, dan persiapan presentasi final.",
+    "periode": "Januari – Desember",
+    "format_tersedia": ["PLATO", "PLASMA", "EXTRA"],
+    "target": "Siswa & Mahasiswa"
+  }
+]
