@@ -1,0 +1,147 @@
+{
+  "pilar_b2b": {
+    "title": "PROGRAM PILAR (Layanan B2B/B2G)",
+    "subtitle": "Program Pembinaan Kompetisi Kemitraan Lembaga Sekolah / Dinas Pendidikan",
+    "programs": [
+      {
+        "type": "MITRA SEKOLAH",
+        "name": "School Competition Development",
+        "description": "Program pembinaan peserta didik siswa/i dalam kompetisi akademik dan riset yang diselenggarakan langsung oleh Sekolah.",
+        "services": [
+          "Pembinaan Siswa OSN & KSM",
+          "Pembinaan Siswa OPSI",
+          "Pembinaan Siswa FIKSI",
+          "Pembinaan Siswa LKTI",
+          "Pembinaan Lomba Akademik Lainnya"
+        ]
+      },
+      {
+        "type": "MITRA DINAS",
+        "name": "Regional Talent Development",
+        "description": "Program pembinaan peserta didik siswa/i dalam kompetisi akademik dan riset yang diselenggarakan oleh Dinas Pendidikan.",
+        "services": [
+          "Pembinaan Delegasi OSN",
+          "Pembinaan Delegasi KSM",
+          "Pembinaan Delegasi OPSI",
+          "Pembinaan Delegasi FIKSI",
+          "Pembinaan Delegasi Lomba Lainnya"
+        ]
+      },
+      {
+        "type": "TEACHER DEVELOPMENT",
+        "name": "Teacher Development Program",
+        "description": "Program peningkatan kapasitas guru pembina kompetisi dan pengembangan mutu akademik sekolah.",
+        "services": [
+          "Pelatihan dan Sertifikasi Guru OSN & KSM",
+          "Pelatihan dan Sertifikasi Guru Berorientasi Peneliti",
+          "Pelatihan dan Sertifikasi Guru Berorientasi Bisnis",
+          "Pelatihan Penyusunan Soal HOTS dan PISA",
+          "Workshop Pengembangan Sekolah Berbasis Prestasi",
+          "Workshop Sistem Seleksi Tim Prestasi Sekolah (PTM)"
+        ]
+      }
+    ]
+  },
+  "geodatis_b2b": {
+    "title": "PROGRAM GEODATIS (Layanan B2B/B2G)",
+    "slogan": "CLARITY FROM COMPLEXITY",
+    "programs": [
+      {
+        "name": "Consul+ (Flexible Duration | EXTRA)",
+        "description": "Program yang diadakan khusus jika ada permintaan (request) ke Geodatis untuk tutorial analisa dan pengolahan data dari lembaga atau instansi.",
+        "format": "Exclusive Training / Privat dalam bentuk PLATO (Pelatihan Online) atau PLATIPUS (Pelatihan Terpusat)."
+      },
+      {
+        "name": "Corporate Training",
+        "description": "Membantu perusahaan membangun kompetensi teknis dan analitik berbasis geospasial untuk mendukung workflow, efisiensi, dan pengambilan keputusan berbasis data."
+      },
+      {
+        "name": "Government Training",
+        "description": "Mendukung penguatan kapasitas SDM institusi dan pemerintah melalui pembelajaran geospasial terapan untuk transformasi kompetensi dan pengembangan sistem berbasis data spasial."
+      }
+    ]
+  },
+  "ketal_b2b": {
+    "title": "Program KETAL & KETAL+ (Kerjasama B2B)",
+    "description": "Pelatihan digital berbasis Guided Self Learning menggunakan video pembelajaran, PDF, dan latihan soal terintegrasi LMS Kelas Bisa dengan sistem langganan 6 bulan.",
+    "ketal_biasa_b2b": "Khusus pada KETAL biasa B2B, terdapat fasilitas sosialisasi webinar kegiatan OSN sebagai wujud motivasi dan menarik daya minat sains pada siswa di sekolah yang belum atau sudah melaksanakan seleksi sekolah. Sosialisasi ini juga diberikan kembali saat periode KBM baru untuk siswa baru kelas 10 (dilaksanakan secara online dan/atau offline khusus jika sekolah berada di wilayah Sulawesi Selatan).",
+    "ketal_plus_facilities": [
+      "Proses Rekrutmen Tim OSN Sekolah dilaksanakan 2 kali (untuk pembentukan tim OSN tahun ini dan proses seleksi siswa baru kelas 10 persiapan OSN tahun depan).",
+      "Pelatihan Guru Pembimbing langsung oleh Direktur PT BRISKA (Trainer OSN berpengalaman 5 tahun) berdurasi 5 jam yang membahas teknis kepelatihan dan pengajaran khusus dunia olimpiade.",
+      "Bantuan Penyusunan LPJ Dana BOSKIN dengan format yang telah diberikan oleh sekolah, lembaga siap membantu menyusun LPJ hingga sempurna.",
+      "Meeting Laporan Progress Belajar di LMS Kelas Bisa sebagai wujud komitmen pengawasan mutu pelaksanaan kegiatan pelatihan berbasis video digital.",
+      "Pemberian diskon 10% ke setiap produk di Kelas Bisa."
+    ]
+  },
+  "plato_b2b": {
+    "title": "Program PLATO EXTRA & PLATO GABUNGAN",
+    "plato_extra": "Fasilitas di PLATO EXTRA umumnya hampir serupa dengan PLATO+ yang membedakan pada pelaksanaannya tidak menggunakan integrasi LMS secara penuh karena menggunakan platform Zoom sebagai media KBM. Pelaksanaan pelatihan sangat mengutamakan kebutuhan sekolah karena didesain 1-by-1 antara sekolah dan tutor di bidang masing-masing.",
+    "plato_gabungan": "Konsep produk pelatihan online yang memungkinkan dalam 1 kali KBM diikuti oleh lebih dari 5 sekolah (minimal keikutsertaan 5 sekolah/PLATO) dengan batas siswa per bidang keilmuan 3-5 orang sehingga kondisi pelatihan tetap terjaga dalam jumlah 15-25 siswa per bidang ilmu OSNK."
+  },
+  "platipus_b2b": {
+    "title": "Program PLATIPUS EXTRA & PLATIPUS GABUNGAN",
+    "description": "Pelatihan OSNK tatap muka langsung di lokasi yang disepakati sekolah. Mengedepankan kebutuhan dan fleksibilitas pelanggan/sekolah dengan 3 jenis rekomendasi pembiayaan akomodasi di luar biaya tutor.",
+    "accommodations": [
+      {
+        "component": "Transportasi Tutor (Asumsi 2.000.000/org x 9 orang)",
+        "c1": "18 Jt",
+        "c2": "18 Jt",
+        "c3": "18 Jt"
+      },
+      {
+        "component": "Transportasi Antar Jemput Tutor dari/ke Bandara via Ojek Online",
+        "c1": "-",
+        "c2": "-",
+        "c3": "1,8 Jt"
+      },
+      {
+        "component": "Transportasi Antar Jemput Tutor dari/ke Bandara via Mobil Sekolah",
+        "c1": "Mobil Sekolah",
+        "c2": "Mobil Sekolah",
+        "c3": "-"
+      },
+      {
+        "component": "Biaya Konsumsi (Asumsi 4 Hari Pertemuan 25x10)",
+        "c1": "250k",
+        "c2": "250k",
+        "c3": "250k"
+      },
+      {
+        "component": "Sisa Biaya Penginapan (Jika di Sekolah/Hotel, Asumsi 250k x 3 malam x 4 kamar)",
+        "c1": "-",
+        "c2": "3 Jt",
+        "c3": "3 Jt"
+      },
+      {
+        "component": "Tutor Tinggal di Asrama Sekolah (Jika Pelaksanaan di Sekolah)",
+        "c1": "Tutor Tinggal di Asrama",
+        "c2": "-",
+        "c3": "-"
+      },
+      {
+        "component": "Transportasi Tutor ke Sekolah dari Hotel (Asumsi 25k x 3 mobil x 2 PP x 4 Hari)",
+        "c1": "-",
+        "c2": "600k",
+        "c3": "-"
+      },
+      {
+        "component": "Biaya Coffee Break Khusus Tutor (Asumsi 20k x 9 kali x 9 tutor)",
+        "c1": "1,62 Jt",
+        "c2": "1,62 Jt",
+        "c3": "1,62 Jt"
+      },
+      {
+        "component": "Sewa Ruang Meeting di Hotel (Asumsi 750k x 9 tutor x 4 Hari)",
+        "c1": "-",
+        "c2": "-",
+        "c3": "27 Jt"
+      }
+    ],
+    "estimates": {
+      "extra_akomodasi": { "c1": "19,87 Jt", "c2": "23,47 Jt", "c3": "51,67 Jt" },
+      "gabungan_akomodasi_per_sekolah": { "c1": "3,974 Jt/Sekolah", "c2": "4,694 Jt/Sekolah", "c3": "10,334 Jt/Sekolah" },
+      "total_gabungan_extra": { "c1": "108,07 Jt", "c2": "111,67 Jt", "c3": "139,87 Jt" },
+      "total_gabungan_gabungan": { "c1": "41,774 Jt", "c2": "42,494 Jt", "c3": "48,134 Jt" }
+    }
+  }
+}
