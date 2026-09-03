@@ -123,7 +123,7 @@
 }
 
 /* ==========================================================================
-   3. PORTAL FAST-LINK
+   3. PORTAL FAST-LINK (4 KOLOM FAST-ACCESS)
    ========================================================================== */
 .portal-fastlink-section {
   margin-top: -2.5rem;
@@ -133,18 +133,18 @@
 
 .portal-fastlink-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
 }
 
 .fastlink-card {
   background: var(--bg-white);
-  padding: 1.2rem 1.5rem;
+  padding: 1.2rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
   border: 1px solid var(--border-color);
 }
 
@@ -155,21 +155,23 @@
 }
 
 .fastlink-icon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   background: #E0F2FE;
-  padding: 0.6rem;
+  padding: 0.5rem;
   border-radius: var(--radius-sm);
+  flex-shrink: 0;
 }
 
 .fastlink-info h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--brand-deep-blue);
   margin-bottom: 0.2rem;
 }
 
 .fastlink-info p {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
+  line-height: 1.3;
 }
 
 /* ==========================================================================
@@ -318,6 +320,7 @@
   background: var(--bg-light);
   padding: 0.6rem;
   border-radius: var(--radius-sm);
+  flex-shrink: 0;
 }
 
 .subbrand-details h4 {
@@ -341,10 +344,69 @@
 }
 
 /* ==========================================================================
-   7. BANNER B2B KEMITRAAN
+   7. PROGRAM KHUSUS (ELEMENTA & POCI)
+   ========================================================================== */
+.special-program-section {
+  padding: 4rem 0;
+  background-color: var(--bg-white);
+}
+
+.special-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.special-card {
+  background: var(--bg-light);
+  padding: 2.2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  position: relative;
+  transition: var(--transition);
+}
+
+.special-card:hover {
+  border-color: var(--primary-cyan);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.special-badge {
+  display: inline-block;
+  background: var(--accent-orange);
+  color: #FFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.special-card h3 {
+  font-size: 1.6rem;
+  color: var(--brand-deep-blue);
+  margin-bottom: 0.6rem;
+}
+
+.special-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.special-link-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-cyan-dark);
+}
+
+/* ==========================================================================
+   8. BANNER B2B KEMITRAAN
    ========================================================================== */
 .b2b-banner-section {
-  padding-bottom: 4rem;
+  padding: 4rem 0;
 }
 
 .b2b-box {
@@ -388,6 +450,7 @@
   border-radius: var(--radius-md);
   font-weight: 800;
   font-size: 0.95rem;
+  display: inline-block;
 }
 
 .btn-b2b:hover {
@@ -395,7 +458,7 @@
 }
 
 /* ==========================================================================
-   8. RESPONSIVE DESIGN (MOBILE & TABLET)
+   9. RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================================================== */
 @media (max-width: 992px) {
   .hero-container {
@@ -407,9 +470,13 @@
     justify-content: center;
   }
 
-  .portal-fastlink-grid,
+  .portal-fastlink-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .affiliate-grid,
-  .subbrand-grid {
+  .subbrand-grid,
+  .special-grid {
     grid-template-columns: 1fr;
   }
 
@@ -421,6 +488,10 @@
 @media (max-width: 576px) {
   .hero-title {
     font-size: 2rem;
+  }
+
+  .portal-fastlink-grid {
+    grid-template-columns: 1fr;
   }
 
   .method-grid {
