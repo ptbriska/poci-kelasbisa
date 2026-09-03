@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kemitraan Sekolah & B2B/B2G — LKP Kelas Bisa</title>
+  
+  <!-- Favicon & Open Graph Meta Tag -->
+  <link rel="icon" href="../assets/images/logo-kelasbisa.png" type="image/png">
+  <meta property="og:title" content="Kemitraan Sekolah & B2B/B2G — LKP Kelas Bisa">
+  <meta property="og:description" content="Skema kerja sama bimbingan kompetisi, pelatihan guru, corporate training, dan pendampingan instansi bersama LKP Kelas Bisa.">
+  <meta property="og:image" content="../assets/images/hero-banner.png">
+
+  <!-- CSS Global & CSS Khusus Halaman Utama -->
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/main-pages.css">
+</head>
+<body>
+
+  <!-- 1. WADAH HEADER (AUTOMATIC INJECT VIA COMPONENTS.JS) -->
+  <div id="app-header"></div>
+
+  <!-- KONTEN UTAMA HALAMAN KEMITRAAN -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="badge-tag">🤝 Program Kemitraan B2B / B2G</span>
+          <h1 class="hero-title">Kolaborasi Strategis untuk <span class="cyan-gradient">Sekolah & Instansi</span></h1>
+          <p class="hero-desc">
+            LKP Kelas Bisa menyediakan layanan pembinaan prestasi siswa, pelatihan guru, pendampingan LPJ BOSKIN, hingga corporate & government training terstruktur berbasis data geospasial.
+          </p>
+          <div class="hero-cta">
+            <a href="https://wa.me/6285711000363" target="_blank" rel="noopener" class="btn-primary">Konsultasi Kemitraan Via WA</a>
+            <a href="#skema-b2b" class="btn-secondary">Pelajari Skema Paket</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="../assets/images/hero-banner.png" alt="Kemitraan B2B Kelas Bisa" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- NAVIGATION TABS SUB-PAGES TENTANG -->
+    <section class="container" style="margin-top: 2rem; margin-bottom: 1rem;">
+      <div style="display: flex; gap: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.8rem; flex-wrap: wrap;">
+        <a href="index.html" style="font-weight: 600; color: var(--text-muted); padding-bottom: 0.5rem;">1. Profil Platform & LMS</a>
+        <a href="metode.html" style="font-weight: 600; color: var(--text-muted); padding-bottom: 0.5rem;">2. Metode & Durasi Belajar</a>
+        <a href="kemitraan.html" style="font-weight: 800; color: var(--primary-cyan-dark); border-bottom: 3px solid var(--primary-cyan); padding-bottom: 0.5rem;">3. Kemitraan Sekolah (B2B)</a>
+      </div>
+    </section>
+
+    <!-- CONTAINER WADAH RENDER DATA JSON -->
+    <div id="kemitraan-content-container" class="container" style="padding: 2rem 1.5rem;">
+      <p class="text-center" style="color: var(--text-muted);">Memuat data kemitraan...</p>
+    </div>
+
+    <!-- BANNER B2B CONSULTATION CTA -->
+    <section class="b2b-banner-section">
+      <div class="container">
+        <div class="b2b-box">
+          <div class="b2b-content">
+            <span class="b2b-tag">Hubungi Tim B2B Kami</span>
+            <h2>Siap Meningkatkan Prestasi Sekolah & Instansi Anda?</h2>
+            <p>
+              Dapatkan proposal penawaran resmi dan jadwalkan sesi diskusi bersama tim konsultan B2B LKP Kelas Bisa.
+            </p>
+            <a href="https://wa.me/6285711000363?text=Halo%20Tim%20Kelas%20Bisa,%20saya%20ingin%20konsultasi%20mengenai%20Program%20Kemitraan%20Sekolah/B2B" target="_blank" rel="noopener" class="btn-b2b">Hubungi 0857 11000 363 (WhatsApp)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 2. WADAH FOOTER (AUTOMATIC INJECT VIA COMPONENTS.JS) -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT COMPONENTS & RENDERER KEMITRAAN JSON -->
+  <script src="../assets/js/components.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("content/kemitraan.json")
+        .then(response => {
+          if (!response.ok) throw new Error("Gagal memuat data kemitraan.json");
+          return response.json();
+        })
+        .then(data => {
+          renderKemitraanData(data);
+        })
+        .catch(error => {
+          console.error("Error loading JSON:", error);
+          document.getElementById("kemitraan-content-container").innerHTML = 
+            `<p class="text-center" style="color: red;">Gagal memuat informasi kemitraan. Silakan coba muat ulang halaman.</p>`;
+        });
+    });
+
+    function renderKemitraanData(data) {
+      const container = document.getElementById("kemitraan-content-container");
+      let html = "";
+
+      // 1. PROGRAM PILAR B2B
+      if (data.pilar_b2b) {
+        html += `
+          <section id="skema-b2b" style="margin-bottom: 4rem;">
+            <div class="section-header text-center">
+              <h2>${data.pilar_b2b.title}</h2>
+              <p>${data.pilar_b2b.subtitle}</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        `;
+        data.pilar_b2b.programs.forEach(prog => {
+          html += `
+            <div class="special-card" style="border-top: 4px solid var(--primary-cyan); background: var(--bg-white);">
+              <span class="special-badge">${prog.type}</span>
+              <h3 style="font-size: 1.2rem; color: var(--brand-deep-blue); margin-bottom: 0.5rem;">${prog.name}</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">${prog.description}</p>
+              <h4 style="font-size: 0.85rem; color: var(--brand-deep-blue); margin-bottom: 0.4rem;">Cakupan Layanan:</h4>
+              <ul style="font-size: 0.82rem; color: var(--text-main); line-height: 1.8;">
+                ${prog.services.map(s => `<li>• ${s}</li>`).join('')}
+              </ul>
+            </div>
+          `;
+        });
+        html += `</div></section>`;
+      }
+
+      // 2. KETAL & KETAL+ B2B
+      if (data.ketal_b2b) {
+        html += `
+          <section style="margin-bottom: 4rem;">
+            <div class="special-card" style="background: #E0F2FE; border: 1px solid var(--primary-cyan); padding: 2rem;">
+              <h2 style="color: var(--brand-deep-blue); font-size: 1.5rem; margin-bottom: 0.8rem;">${data.ketal_b2b.title}</h2>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">${data.ketal_b2b.description}</p>
+              
+              <div style="background: var(--bg-white); padding: 1.2rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                <h4 style="color: var(--primary-cyan-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">Sosialisasi KETAL Biasa (B2B Sekolah):</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">${data.ketal_b2b.ketal_biasa_b2b}</p>
+              </div>
+
+              <h4 style="color: var(--brand-deep-blue); font-size: 1rem; margin-bottom: 0.6rem;">Fasilitas Khusus Tambahan KETAL+:</h4>
+              <ul style="font-size: 0.88rem; color: var(--text-main); line-height: 1.8; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.8rem;">
+                ${data.ketal_b2b.ketal_plus_facilities.map(f => `<li style="background: var(--bg-white); padding: 0.8rem; border-radius: var(--radius-sm); border-left: 3px solid var(--accent-orange);">✔ ${f}</li>`).join('')}
+              </ul>
+            </div>
+          </section>
+        `;
+      }
+
+      // 3. PLATO EXTRA & GABUNGAN
+      if (data.plato_b2b) {
+        html += `
+          <section style="margin-bottom: 4rem;">
+            <div class="section-header text-center">
+              <h2>${data.plato_b2b.title}</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+              <div class="special-card" style="background: var(--bg-white);">
+                <span class="special-badge" style="background: #3B82F6;">PLATO EXTRA</span>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-top: 0.5rem;">${data.plato_b2b.plato_extra}</p>
+              </div>
+              <div class="special-card" style="background: var(--bg-white);">
+                <span class="special-badge" style="background: #10B981;">PLATO GABUNGAN</span>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-top: 0.5rem;">${data.plato_b2b.plato_gabungan}</p>
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      // 4. PLATIPUS EXTRA & GABUNGAN (TABEL AKOMODASI)
+      if (data.platipus_b2b) {
+        html += `
+          <section style="margin-bottom: 4rem;">
+            <div class="section-header text-center">
+              <h2>${data.platipus_b2b.title}</h2>
+              <p>${data.platipus_b2b.description}</p>
+            </div>
+
+            <div style="overflow-x: auto; margin-bottom: 2rem;">
+              <table style="width: 100%; border-collapse: collapse; background: var(--bg-white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
+                <thead>
+                  <tr style="background: var(--brand-deep-blue); color: #FFF; font-size: 0.85rem; text-align: left;">
+                    <th style="padding: 0.8rem;">Komponen Akomodasi (Di Luar Biaya Tutor)</th>
+                    <th style="padding: 0.8rem;">Opsi C1</th>
+                    <th style="padding: 0.8rem;">Opsi C2</th>
+                    <th style="padding: 0.8rem;">Opsi C3</th>
+                  </tr>
+                </thead>
+                <tbody style="font-size: 0.82rem; color: var(--text-main);">
+                  ${data.platipus_b2b.accommodations.map(row => `
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                      <td style="padding: 0.8rem; font-weight: 600;">${row.component}</td>
+                      <td style="padding: 0.8rem;">${row.c1}</td>
+                      <td style="padding: 0.8rem;">${row.c2}</td>
+                      <td style="padding: 0.8rem;">${row.c3}</td>
+                    </tr>
+                  `).join('')}
+                  <tr style="background: #FEF3C7; font-weight: 700; color: #B45309;">
+                    <td style="padding: 0.8rem;">Total Estimasi PLATIPUS EXTRA</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.extra_akomodasi.c1}</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.extra_akomodasi.c2}</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.extra_akomodasi.c3}</td>
+                  </tr>
+                  <tr style="background: #E0F2FE; font-weight: 700; color: var(--primary-cyan-dark);">
+                    <td style="padding: 0.8rem;">Total Estimasi PLATIPUS GABUNGAN (Per Sekolah jika 5 Sekolah)</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.gabungan_akomodasi_per_sekolah.c1}</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.gabungan_akomodasi_per_sekolah.c2}</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.gabungan_akomodasi_per_sekolah.c3}</td>
+                  </tr>
+                  <tr style="background: var(--brand-deep-blue); color: #FFF; font-weight: 800;">
+                    <td style="padding: 0.8rem;">Total Gabungan Seluruh Biaya PLATIPUS EXTRA</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.total_gabungan_extra.c1}</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.total_gabungan_extra.c2}</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.total_gabungan_extra.c3}</td>
+                  </tr>
+                  <tr style="background: #10B981; color: #FFF; font-weight: 800;">
+                    <td style="padding: 0.8rem;">Total Gabungan Seluruh Biaya PLATIPUS GABUNGAN</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.total_gabungan_gabungan.c1}</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.total_gabungan_gabungan.c2}</td>
+                    <td style="padding: 0.8rem;">${data.platipus_b2b.estimates.total_gabungan_gabungan.c3}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        `;
+      }
+
+      // 5. PROGRAM GEODATIS B2B
+      if (data.geodatis_b2b) {
+        html += `
+          <section style="margin-bottom: 2rem;">
+            <div class="section-header text-center">
+              <h2>${data.geodatis_b2b.title}</h2>
+              <span style="font-weight: 800; color: var(--primary-cyan-dark); letter-spacing: 2px;">"${data.geodatis_b2b.slogan}"</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        `;
+        data.geodatis_b2b.programs.forEach(g => {
+          html += `
+            <div class="special-card" style="background: var(--bg-white); border-top: 4px solid #8B5CF6;">
+              <h3 style="font-size: 1.1rem; color: var(--brand-deep-blue); margin-bottom: 0.5rem;">${g.name}</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">${g.description}</p>
+              ${g.format ? `<p style="font-size: 0.8rem; font-weight: 700; color: #6D28D9; margin-top: 0.6rem;">Format: ${g.format}</p>` : ''}
+            </div>
+          `;
+        });
+        html += `</div></section>`;
+      }
+
+      container.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
