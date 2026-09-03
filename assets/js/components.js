@@ -24,16 +24,22 @@ function loadComponent(elementId, filePath, callback) {
       return response.text();
     })
     .then((data) => {
-      // PERBAIKAN: Otomatis menambahkan rootPath ke semua atribut href dan src lokal
+      // PERBAIKAN REVISI 1.2: Otomatis menambahkan rootPath ke semua atribut href dan src lokal
       const rootPath = getRootPath();
-      const fixedData = data.replace(/(href|src)="([^"]*)"/g, function(match, attr, url) {
-        // Abaikan link eksternal (http) atau anchor link (#)
-        if (url.startsWith("http") || url.startsWith("#") || url.startsWith("mailto:")) {
+      const fixedData = data.replace(/(href|src)="([^"]*)"/g, function (match, attr, url) {
+        // Abaikan link eksternal, anchor link, telp, mailto, atau path yang sudah absolut
+        if (
+          url.startsWith("http://") ||
+          url.startsWith("https://") ||
+          url.startsWith("#") ||
+          url.startsWith("mailto:") ||
+          url.startsWith("tel:")
+        ) {
           return match;
         }
         return `${attr}="${rootPath}${url}"`;
       });
-      
+
       container.innerHTML = fixedData;
       if (callback) callback();
     })
@@ -41,17 +47,28 @@ function loadComponent(elementId, filePath, callback) {
 }
 
 /**
- * Fungsi Deteksi Path Relatif Bebas Bug GitHub Pages
- * Memeriksa apakah halaman dibuka di dalam sub-folder brand/events atau di root
+ * Fungsi Deteksi Path Relatif Bebas Bug GitHub Pages (REVISI 1.2)
+ * Memeriksa apakah halaman dibuka di dalam sub-folder brand/events/showroom atau di root
  */
 function getRootPath() {
   const path = window.location.pathname.toLowerCase();
-  
+
   // Daftar folder level 1 yang membutuhkan path mundur satu tingkat ("../")
   const subFolders = [
-    "/pilar/", "/gatra/", "/nestu/", "/lingua/", 
-    "/geodatis/", "/arpa/", "/workit/", "/elementa/", 
-    "/poci/", "/events/", "/admin/"
+    "/pilar/",
+    "/gatra/",
+    "/nestu/",
+    "/lingua/",
+    "/geodatis/",
+    "/arpa/",
+    "/workit/",
+    "/elementa/",
+    "/poci/",
+    "/tentang/",
+    "/events/",
+    "/ketal/",
+    "/dokumentasi/",
+    "/admin/"
   ];
 
   // Cek apakah URL memuat salah satu dari folder di atas
@@ -61,7 +78,7 @@ function getRootPath() {
 }
 
 /**
- * Fungsi Interaktivitas Navigasi Header
+ * Fungsi Interaktivitas Navigasi Header (Mobile & Dropdown)
  */
 function initHeaderEvents() {
   const mobileToggle = document.getElementById("mobileToggle");
