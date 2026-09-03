@@ -1,11 +1,11 @@
 <header class="main-header">
   <div class="header-container">
-    <!-- 1. LOGO UTAMA (Hapus slash di awal) -->
+    <!-- 1. LOGO UTAMA -->
     <a href="index.html" class="brand-logo">
       <img src="assets/images/logo-kelasbisa.png" alt="LKP Kelas Bisa Logo" class="logo-img">
     </a>
 
-    <!-- 2. NAVIGASI UTAMA -->
+    <!-- 2. NAVIGASI UTAMA (BARIS 1) -->
     <nav class="main-nav" id="mainNav">
       <ul class="nav-list">
         <!-- BERANDA -->
@@ -13,9 +13,16 @@
           <a href="index.html" class="nav-link">Beranda</a>
         </li>
 
-        <!-- PROGRAM & LAYANAN -->
-        <li class="nav-item">
-          <a href="program.html" class="nav-link">Program & Layanan</a>
+        <!-- DROPDOWN: TENTANG -->
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link dropdown-toggle">
+            Tentang <span class="arrow-icon">▼</span>
+          </a>
+          <ul class="simple-dropdown">
+            <li><a href="tentang/">Profil & LMS</a></li>
+            <li><a href="tentang/metode.html">Metode & Durasi Belajar</a></li>
+            <li><a href="tentang/kemitraan.html">Kemitraan Sekolah (B2B)</a></li>
+          </ul>
         </li>
 
         <!-- MEGA MENU: SUB-BRAND -->
@@ -108,6 +115,16 @@
         <li class="nav-item">
           <a href="events/" class="nav-link highlight-link">Jadwal Event & TO</a>
         </li>
+
+        <!-- KATALOG KETAL (VIDEO LMS) -->
+        <li class="nav-item">
+          <a href="ketal/" class="nav-link">Katalog KETAL</a>
+        </li>
+
+        <!-- DOKUMENTASI -->
+        <li class="nav-item">
+          <a href="dokumentasi/" class="nav-link">Dokumentasi</a>
+        </li>
       </ul>
     </nav>
 
@@ -119,10 +136,13 @@
         </button>
         <div class="portal-menu">
           <a href="https://lms.kelasbisa.com" target="_blank" rel="noopener">
-            <span class="portal-icon">📖</span> LMS Learning
+            <span class="portal-icon">📖</span> LMS Learning Center
           </a>
-          <a href="https://cbt.kelasbisa.com" target="_blank" rel="noopener">
+          <a href="https://cbt.briska.co.id" target="_blank" rel="noopener">
             <span class="portal-icon">📝</span> CBT Test Center
+          </a>
+          <a href="https://regis.briska.co.id" target="_blank" rel="noopener">
+            <span class="portal-icon">📋</span> Form Registrasi Online
           </a>
           <a href="https://presensi.kelasbisa.com" target="_blank" rel="noopener">
             <span class="portal-icon">📌</span> Presensi Kelas
