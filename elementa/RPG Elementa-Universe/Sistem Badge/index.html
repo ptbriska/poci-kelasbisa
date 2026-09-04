@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Badge — ELEMENTA RPG</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- DARK RPG BADGE HUD STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-cyan: #00B4D8;
+      --rpg-neon-blue: #38BDF8;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(125, 211, 252, 0.25);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-cyan);
+      box-shadow: 0 4px 20px rgba(0, 180, 216, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.4) 0%, rgba(2, 132, 199, 0.4) 100%);
+      border: 1px solid var(--rpg-cyan);
+      box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
+    }
+
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(0, 180, 216, 0.2) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 3.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--rpg-gold);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--rpg-gold);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--rpg-neon-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* BADGE GRID */
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin: 2rem 0 3.5rem 0;
+    }
+
+    .badge-card {
+      background: var(--rpg-card-bg);
+      border: 1.5px solid;
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .badge-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .badge-name {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 0.3rem;
+    }
+
+    .badge-fokus {
+      font-size: 0.82rem;
+      color: #94A3B8;
+      line-height: 1.4;
+    }
+
+    /* TABLE STYLING */
+    .table-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid var(--rpg-cyan);
+      border-radius: 24px;
+      padding: 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    .matrix-table th {
+      background: rgba(0, 180, 216, 0.15);
+      color: var(--rpg-neon-blue);
+      padding: 1rem;
+      font-weight: 900;
+      border-bottom: 2px solid var(--rpg-cyan);
+      text-transform: uppercase;
+    }
+
+    .matrix-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+      color: #CBD5E1;
+    }
+
+    /* RULES HUD BOX */
+    .rules-hud-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid var(--rpg-gold);
+      padding: 1.8rem;
+      border-radius: 0 16px 16px 0;
+      border-top: 1px solid rgba(245, 158, 11, 0.2);
+      border-right: 1px solid rgba(245, 158, 11, 0.2);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+      margin-bottom: 3.5rem;
+    }
+
+    .rules-hud-box h3 {
+      font-size: 1.1rem;
+      color: #FCD34D;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .rules-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .rules-list li {
+      font-size: 0.9rem;
+      color: #E2E8F0;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.6;
+    }
+
+    .rules-list li::before {
+      content: '🛡️';
+      color: var(--rpg-gold);
+    }
+
+    @media (max-width: 992px) {
+      .badge-grid { grid-template-columns: repeat(2, 1fr); }
+      .elementa-menu { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .badge-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../../">Beranda</a></li>
+        <li><a href="../../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../" class="active">Cara Bermain</a></li>
+        <li><a href="../../Elementa World/">Dunia Elementa</a></li>
+        <li><a href="../../Sistem Akademik/">Sistem Akademik</a></li>
+        <li><a href="../../program/">Katalog & Harga</a></li>
+        <li><a href="../../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN SISTEM BADGE -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <a href="../" style="color: var(--rpg-neon-blue); font-weight: 800; font-size: 0.82rem; text-decoration: none;">← Kembali ke Katalog Cara Bermain</a>
+        <div style="margin-top: 0.8rem;">
+          <span class="hud-chip">// SYSTEM MECHANICS 09: EXPEDITION CERTIFICATION</span>
+          <h1 class="rpg-title" id="page-title">Sistem Badge Spesialisasi</h1>
+          <p style="color: #94A3B8; font-size: 1rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+            Memuat penjelasan sertifikasi spesialisasi Badge...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- FILOSOFI BADGE BOX -->
+        <div style="background: rgba(10, 25, 47, 0.9); border: 1.5px solid var(--rpg-cyan); border-radius: 20px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+          <h2 style="font-size: 1.3rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.6rem;" id="filosofi-title">Sertifikasi Prestise Spesialisasi</h2>
+          <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.8; margin-bottom: 1.5rem;" id="filosofi-desc">
+            Memuat penjelasan Badge...
+          </p>
+        </div>
+
+        <!-- KARAKTERISTIK BADGE TABLE -->
+        <div class="table-card">
+          <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">📊 Karakteristik Expedition Quest & Badge</h2>
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 40%;">ASPEK PENILAIAN</th>
+                <th style="width: 60%;">KETENTUAN EXPEDITION QUEST</th>
+              </tr>
+            </thead>
+            <tbody id="karakter-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- DEEPENING BADGE GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">VERTICAL SPECIALIZATION</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Deepening Bending Badges</h2>
+        </div>
+        <div class="badge-grid" id="deepening-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- MIX BADGE GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">INTERDISCIPLINARY INTEGRATION</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Mix Bending Badges</h2>
+        </div>
+        <div class="badge-grid" id="mix-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- ARCANE BADGE GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">ABSTRACT KNOWLEDGE</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Republic of Arcane Badges</h2>
+        </div>
+        <div class="badge-grid" id="arcane-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- PRINSIP DASAR HUD BOX -->
+        <div class="rules-hud-box">
+          <h3>📜 Aturan Kepemilikan Badge:</h3>
+          <ul class="rules-list" id="prinsip-target">
+            <!-- Rendered via JS -->
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          if (data.filosofi_badge) {
+            document.getElementById("filosofi-title").innerText = data.filosofi_badge.title;
+            document.getElementById("filosofi-desc").innerText = data.filosofi_badge.desc;
+            renderKarakterTable(data.filosofi_badge.karakteristik || []);
+          }
+
+          renderDeepeningGrid(data.deepening_badge || []);
+          renderMixGrid(data.mix_badge || []);
+          renderArcaneGrid(data.arcane_badge || []);
+          renderPrinsipList(data.prinsip_dasar || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderKarakterTable(list) {
+      const target = document.getElementById("karakter-table-body");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(row => {
+        html += `
+          <tr>
+            <td><strong style="color: var(--rpg-neon-blue);">${row.aspek}</strong></td>
+            <td>${row.ket}</td>
+          </tr>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderDeepeningGrid(list) {
+      const target = document.getElementById("deepening-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `
+          <div class="badge-card" style="border-color: ${item.color};">
+            <div>
+              <div class="badge-name" style="color: ${item.color};">${item.badge}</div>
+              <div class="badge-fokus">${item.fokus}</div>
+            </div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; margin-top: 0.8rem;">Elemen: ${item.elemen}</div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderMixGrid(list) {
+      const target = document.getElementById("mix-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `
+          <div class="badge-card" style="border-color: ${item.color};">
+            <div>
+              <div class="badge-name" style="color: ${item.color};">${item.badge}</div>
+              <div class="badge-fokus">Integrasi Dwi-Elemen</div>
+            </div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; margin-top: 0.8rem;">Kombinasi: ${item.combo}</div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderArcaneGrid(list) {
+      const target = document.getElementById("arcane-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `
+          <div class="badge-card" style="border-color: ${item.color};">
+            <div>
+              <div class="badge-name" style="color: ${item.color};">${item.badge}</div>
+              <div class="badge-fokus">${item.fokus}</div>
+            </div>
+            <div style="font-size: 0.75rem; font-weight: 800; color: #64748B; margin-top: 0.8rem;">Province: ${item.province}</div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderPrinsipList(list) {
+      const target = document.getElementById("prinsip-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(p => {
+        html += `<li>${p}</li>`;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
