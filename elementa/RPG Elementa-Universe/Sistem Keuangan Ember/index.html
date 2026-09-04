@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Keuangan Ember — ELEMENTA RPG</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- DARK RPG EMBER HUD STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-cyan: #00B4D8;
+      --rpg-ember: #F97316;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(249, 115, 22, 0.3);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-ember);
+      box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(249, 115, 22, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.4) 0%, rgba(245, 158, 11, 0.4) 100%);
+      border: 1px solid var(--rpg-ember);
+      box-shadow: 0 0 12px rgba(249, 115, 22, 0.4);
+    }
+
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(249, 115, 22, 0.25) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 3.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--rpg-ember);
+      background: rgba(249, 115, 22, 0.12);
+      border: 1px solid var(--rpg-ember);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 12px rgba(249, 115, 22, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDBA74 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* PRINSIP GRID */
+    .prinsip-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .prinsip-card {
+      background: var(--rpg-card-bg);
+      border: 1.5px solid rgba(249, 115, 22, 0.25);
+      border-radius: 16px;
+      padding: 1.2rem 0.8rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    /* KURS TABLE STYLING */
+    .table-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid var(--rpg-ember);
+      border-radius: 24px;
+      padding: 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    .matrix-table th {
+      background: rgba(249, 115, 22, 0.15);
+      color: #FDBA74;
+      padding: 1rem;
+      font-weight: 900;
+      border-bottom: 2px solid var(--rpg-ember);
+      text-transform: uppercase;
+    }
+
+    .matrix-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(249, 115, 22, 0.1);
+      color: #CBD5E1;
+    }
+
+    /* CASE STUDY BOX */
+    .case-card {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.15) 0%, rgba(10, 25, 47, 0.95) 100%);
+      border: 2px solid var(--rpg-ember);
+      border-radius: 20px;
+      padding: 2.2rem;
+      margin: 3rem 0;
+      box-shadow: 0 12px 35px rgba(249, 115, 22, 0.2);
+    }
+
+    /* RULES HUD BOX */
+    .rules-hud-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid var(--rpg-gold);
+      padding: 1.8rem;
+      border-radius: 0 16px 16px 0;
+      border-top: 1px solid rgba(245, 158, 11, 0.2);
+      border-right: 1px solid rgba(245, 158, 11, 0.2);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+      margin-bottom: 3.5rem;
+    }
+
+    .rules-hud-box h3 {
+      font-size: 1.1rem;
+      color: #FCD34D;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .rules-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .rules-list li {
+      font-size: 0.9rem;
+      color: #E2E8F0;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.6;
+    }
+
+    .rules-list li::before {
+      content: '🔥';
+      color: var(--rpg-ember);
+    }
+
+    @media (max-width: 992px) {
+      .prinsip-grid { grid-template-columns: repeat(2, 1fr); }
+      .elementa-menu { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .prinsip-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../../">Beranda</a></li>
+        <li><a href="../../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../" class="active">Cara Bermain</a></li>
+        <li><a href="../../Elementa World/">Dunia Elementa</a></li>
+        <li><a href="../../Sistem Akademik/">Sistem Akademik</a></li>
+        <li><a href="../../program/">Katalog & Harga</a></li>
+        <li><a href="../../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN SISTEM KEUANGAN EMBER -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <a href="../" style="color: var(--rpg-ember); font-weight: 800; font-size: 0.82rem; text-decoration: none;">← Kembali ke Katalog Cara Bermain</a>
+        <div style="margin-top: 0.8rem;">
+          <span class="hud-chip">// SYSTEM MECHANICS 08: LEARN-TO-EARN</span>
+          <h1 class="rpg-title" id="page-title">Sistem Keuangan Ember</h1>
+          <p style="color: #94A3B8; font-size: 1rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+            Memuat mata uang resmi Ember & mekanisme voucher...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- FILOSOFI EMBER BOX -->
+        <div style="background: rgba(10, 25, 47, 0.9); border: 1.5px solid var(--rpg-ember); border-radius: 20px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+          <h2 style="font-size: 1.3rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.6rem;" id="filosofi-title">Prinsip Utama Learn-to-Earn</h2>
+          <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.8; margin-bottom: 1.5rem;" id="filosofi-desc">
+            Memuat penjelasan Ember...
+          </p>
+          
+          <div class="prinsip-grid" id="prinsip-grid-target">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- KURS TABLE -->
+        <div class="table-card">
+          <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">🔥 Kurs Konversi Ember ke Voucher Digital</h2>
+          <p style="color: #94A3B8; font-size: 0.88rem; margin-bottom: 1.5rem;">Nilai tukar tetap: 1 Ember = Rp 10 dari akumulasi soal benar.</p>
+          
+          <div style="overflow-x: auto;">
+            <table class="matrix-table">
+              <thead>
+                <tr>
+                  <th style="width: 50%;">JUMLAH EMBER</th>
+                  <th style="width: 50%;">NILAI VOUCHER POTONGAN</th>
+                </tr>
+              </thead>
+              <tbody id="kurs-table-body">
+                <!-- Rendered via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- CASE STUDY BOX -->
+        <div class="case-card">
+          <h3 style="font-size: 1.3rem; color: #FDBA74; font-weight: 900; margin-bottom: 0.6rem;" id="case-title">Studi Kasus Perhitungan</h3>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; font-size: 0.9rem; color: #CBD5E1;">
+            <div><strong>Aktivitas:</strong> <span id="case-soal">-</span></div>
+            <div><strong>Jawaban Benar:</strong> <span id="case-benar">-</span></div>
+            <div><strong>Perolehan Ember:</strong> <span id="case-ember" style="color: var(--rpg-ember); font-weight: 900;">-</span></div>
+            <div><strong>Voucher Diperoleh:</strong> <span id="case-voucher" style="color: #10B981; font-weight: 900;">-</span></div>
+          </div>
+        </div>
+
+        <!-- PEMANFAATAN TABLE -->
+        <div class="table-card">
+          <h2 style="font-size: 1.3rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">🛒 Ketentuan Pemanfaatan Voucher Ember</h2>
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 60%;">KATEGORI PRODUK / LAYANAN</th>
+                <th style="width: 40%;">STATUS PENUKARAN</th>
+              </tr>
+            </thead>
+            <tbody id="pemanfaatan-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- PRINSIP DASAR HUD BOX -->
+        <div class="rules-hud-box">
+          <h3>📜 Prinsip Dasar Sistem Keuangan Ember:</h3>
+          <ul class="rules-list" id="prinsip-target">
+            <!-- Rendered via JS -->
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          if (data.filosofi_ember) {
+            document.getElementById("filosofi-title").innerText = data.filosofi_ember.title;
+            document.getElementById("filosofi-desc").innerText = data.filosofi_ember.desc;
+            renderPrinsipGrid(data.filosofi_ember.prinsip_list || []);
+          }
+
+          if (data.contoh_studi) {
+            document.getElementById("case-title").innerText = data.contoh_studi.nama;
+            document.getElementById("case-soal").innerText = data.contoh_studi.total_soal;
+            document.getElementById("case-benar").innerText = data.contoh_studi.benar;
+            document.getElementById("case-ember").innerText = data.contoh_studi.hasil_ember;
+            document.getElementById("case-voucher").innerText = data.contoh_studi.hasil_voucher;
+          }
+
+          renderKursTable(data.kurs_ember || []);
+          renderPemanfaatanTable(data.pemanfaatan_ember || []);
+          renderPrinsipList(data.prinsip_dasar || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderPrinsipGrid(list) {
+      const target = document.getElementById("prinsip-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `
+          <div class="prinsip-card">
+            <div style="font-weight: 900; color: var(--rpg-ember); font-size: 0.95rem; margin-bottom: 0.3rem;">${item.nama}</div>
+            <div style="font-size: 0.78rem; color: #94A3B8; line-height: 1.4;">${item.desc}</div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderKursTable(list) {
+      const target = document.getElementById("kurs-table-body");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(row => {
+        html += `
+          <tr>
+            <td><strong style="color: var(--rpg-ember);">${row.ember}</strong></td>
+            <td style="color: #10B981; font-weight: 800;">${row.nilai}</td>
+          </tr>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderPemanfaatanTable(list) {
+      const target = document.getElementById("pemanfaatan-table-body");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(row => {
+        const isTrue = row.status.includes("Dapat Ditukar");
+        html += `
+          <tr>
+            <td><strong>${row.produk}</strong></td>
+            <td style="color: ${isTrue ? '#10B981' : '#EF4444'}; font-weight: 800;">${row.status}</td>
+          </tr>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderPrinsipList(list) {
+      const target = document.getElementById("prinsip-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(p => {
+        html += `<li>${p}</li>`;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
