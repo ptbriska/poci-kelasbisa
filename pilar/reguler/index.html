@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Program Reguler — PILAR Juara by Kelas Bisa</title>
+  
+  <!-- Favicon & CSS Master -->
+  <link rel="icon" href="../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- STYLESHEET LOKAL KATALOG REGULER (ISOLASI TOTAL) -->
+  <style>
+    .reguler-hero {
+      background: linear-gradient(180deg, #E0F2FE 0%, var(--pilar-bg-light, #F0F9FF) 100%);
+      padding: 3.5rem 0 2.5rem 0;
+      border-bottom: 1px solid var(--pilar-border, #E2E8F0);
+    }
+
+    .back-btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--pilar-primary, #00B4D8);
+      margin-bottom: 1rem;
+      text-decoration: none;
+      transition: var(--pilar-transition, all 0.3s ease);
+    }
+
+    .back-btn-link:hover {
+      color: var(--pilar-blue-hover, #0077B6);
+      transform: translateX(-3px);
+    }
+
+    .reguler-header-title {
+      font-size: 2.2rem;
+      color: var(--pilar-deep-blue, #0A192F);
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+
+    .reguler-header-desc {
+      font-size: 1rem;
+      color: var(--pilar-text-muted, #475569);
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    /* Grid Catalog Cards 3 Kolom */
+    .reguler-catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin: 3rem 0;
+    }
+
+    .reguler-card {
+      background: #FFFFFF;
+      border-radius: var(--pilar-radius-md, 12px);
+      border: 1px solid var(--pilar-border, #E2E8F0);
+      padding: 2rem;
+      box-shadow: var(--pilar-shadow-sm, 0 2px 8px rgba(0, 180, 216, 0.08));
+      transition: var(--pilar-transition, all 0.3s ease);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .reguler-card:hover {
+      border-color: var(--pilar-primary, #00B4D8);
+      box-shadow: var(--pilar-shadow-md, 0 6px 16px rgba(0, 180, 216, 0.12));
+      transform: translateY(-4px);
+    }
+
+    .reguler-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: var(--pilar-bg-light, #F0F9FF);
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--pilar-radius-sm, 6px);
+      border: 1px solid rgba(0, 180, 216, 0.2);
+    }
+
+    .reguler-card-title {
+      font-size: 1.3rem;
+      color: var(--pilar-deep-blue, #0A192F);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .reguler-card-desc {
+      font-size: 0.9rem;
+      color: var(--pilar-text-muted, #475569);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-detail-program {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: var(--pilar-primary, #00B4D8);
+      color: #FFFFFF;
+      padding: 0.7rem 1.2rem;
+      border-radius: var(--pilar-radius-sm, 6px);
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: var(--pilar-transition, all 0.3s ease);
+    }
+
+    .btn-detail-program:hover {
+      background: var(--pilar-blue-hover, #0077B6);
+    }
+
+    @media (max-width: 992px) {
+      .reguler-catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .reguler-catalog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER GLOBAL BARIS 1 (INJECTED VIA COMPONENTS.JS) -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL PILAR BARIS 2 -->
+  <nav class="pilar-subnav">
+    <div class="pilar-subnav-container">
+      <a href="../" class="pilar-brand">
+        <img src="../images/logo-pilar.png" alt="Logo PILAR Juara" class="pilar-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="pilar-icon" style="display:none;">🏆</span>
+        <span class="pilar-name">PILAR Juara</span>
+      </a>
+      <ul class="pilar-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../freemium/">Program Freemium</a></li>
+        <li><a href="./" style="color: var(--pilar-cyan); background: rgba(255, 255, 255, 0.12);">Program Reguler</a></li>
+        <li><a href="../prestasi/">Prestasi Alumni</a></li>
+        <li><a href="../testimoni/">Testimoni</a></li>
+        <li><a href="../tutor/">Tutor / Mentor</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN UTAMA KATALOG REGULER -->
+  <main>
+    <section class="reguler-hero">
+      <div class="pilar-container">
+        <a href="../" class="back-btn-link">← Kembali ke Hub PILAR</a>
+        <div class="reguler-title-box">
+          <h1 class="reguler-header-title">KATALOG PROGRAM REGULER</h1>
+          <p class="reguler-header-desc">
+            Pilih kategori bimbingan spesifik di bawah ini untuk melihat struktur kurikulum, silabus pembelajaran, serta informasi lengkap pendaftaran kelas intensif.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETALASE 6 CARD PROGRAM REGULER -->
+    <section class="pilar-section">
+      <div class="pilar-container">
+        <div class="reguler-catalog-grid">
+          
+          <!-- CARD 1: OSN/KSM Siswa -->
+          <div class="reguler-card">
+            <div>
+              <div class="reguler-card-icon">🥇</div>
+              <h3 class="reguler-card-title">PILAR OSN / KSM Siswa</h3>
+              <p class="reguler-card-desc">
+                Bimbingan intensif 9 bidang sains OSN & KSM jenjang SD, SMP, dan SMA/MA dengan kurikulum bertingkat dari level Kabupaten hingga Nasional.
+              </p>
+            </div>
+            <a href="osn-ksm-siswa/" class="btn-detail-program">Pelajari Detail Program →</a>
+          </div>
+
+          <!-- CARD 2: OSN/KSM Guru -->
+          <div class="reguler-card">
+            <div>
+              <div class="reguler-card-icon">👨‍🏫</div>
+              <h3 class="reguler-card-title">PILAR OSN / KSM Guru</h3>
+              <p class="reguler-card-desc">
+                Pelatihan dan sertifikasi pembina olimpiade, bedah penyusunan soal HOTS, serta teknik kepelatihan tim seleksi sains sekolah.
+              </p>
+            </div>
+            <a href="osn-ksm-guru/" class="btn-detail-program">Pelajari Detail Program →</a>
+          </div>
+
+          <!-- CARD 3: FIKSI -->
+          <div class="reguler-card">
+            <div>
+              <div class="reguler-card-icon">🎨</div>
+              <h3 class="reguler-card-title">PILAR FIKSI</h3>
+              <p class="reguler-card-desc">
+                Pendampingan Lomba Inovasi Kewirausahaan Siswa Indonesia bidang Industri Kreatif, Rekayasa Teknologi, dan Tata Boga.
+              </p>
+            </div>
+            <a href="fiksi/" class="btn-detail-program">Pelajari Detail Program →</a>
+          </div>
+
+          <!-- CARD 4: Business Plan -->
+          <div class="reguler-card">
+            <div>
+              <div class="reguler-card-icon">💼</div>
+              <h3 class="reguler-card-title">PILAR Business Plan</h3>
+              <p class="reguler-card-desc">
+                Bimbingan penyusunan proposal rencana bisnis, Business Model Canvas (BMC), riset pasar, serta strategi presentasi pitching investor.
+              </p>
+            </div>
+            <a href="business-plan/" class="btn-detail-program">Pelajari Detail Program →</a>
+          </div>
+
+          <!-- CARD 5: OPSI -->
+          <div class="reguler-card">
+            <div>
+              <div class="reguler-card-icon">🔬</div>
+              <h3 class="reguler-card-title">PILAR OPSI</h3>
+              <p class="reguler-card-desc">
+                Pembinaan Olimpiade Penelitian Siswa Indonesia mencakup bidang IPA, IPS, Kebumian, Riset Terapan, dan Penulisan Naskah Ilmiah.
+              </p>
+            </div>
+            <a href="opsi/" class="btn-detail-program">Pelajari Detail Program →</a>
+          </div>
+
+          <!-- CARD 6: KTI -->
+          <div class="reguler-card">
+            <div>
+              <div class="reguler-card-icon">📄</div>
+              <h3 class="reguler-card-title">PILAR Karya Tulis Ilmiah</h3>
+              <p class="reguler-card-desc">
+                Pendampingan penulisan makalah, esai ilmiah, sistematika karya ilmiah, dan persiapan menghadapi lomba LKTI tingkat Nasional.
+              </p>
+            </div>
+            <a href="kti/" class="btn-detail-program">Pelajari Detail Program →</a>
+          </div>
+
+        </div>
+
+        <!-- WIDGET CTA TO SHOWROOM EVENTS -->
+        <div class="pilar-cta-banner" style="border-radius: var(--pilar-radius-lg, 16px); margin-top: 3rem;">
+          <div class="text-center">
+            <h2>Siap Bergabung dengan Kelas Bimbingan Reguler?</h2>
+            <p>Lihat jadwal pendaftaran batch aktif dan opsi paket bimbingan di Showroom Events.</p>
+            <a href="../../events/?subbrand=pilar&type=reguler" class="pilar-btn-gold" style="text-decoration: none; display: inline-block;">Cek Jadwal Batch Aktif →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. FOOTER GLOBAL (INJECTED VIA COMPONENTS.JS) -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT GLOBAL COMPONENTS -->
+  <script src="../../assets/js/components.js"></script>
+</body>
+</html>
