@@ -9,9 +9,6 @@
   <link rel="icon" href="../../assets/images/logo-kelasbisa.png" type="image/png">
   <link rel="stylesheet" href="../../assets/css/global.css">
   <link rel="stylesheet" href="../style.css">
-  
-  <!-- Marked.js CDN untuk Parser Markdown -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <!-- CSS LOKAL FREEMIUM (ISOLASI TOTAL - CUSTOM STYLING & CARD OVERRIDES) -->
   <style>
@@ -30,6 +27,7 @@
       color: var(--pilar-primary, #00B4D8);
       margin-bottom: 1rem;
       transition: var(--pilar-transition, all 0.3s ease);
+      text-decoration: none;
     }
 
     .back-btn-link:hover {
@@ -174,20 +172,12 @@
       font-weight: 700;
       font-size: 0.88rem;
       transition: var(--pilar-transition, all 0.3s ease);
+      text-decoration: none;
     }
 
     .btn-event-link:hover {
       background: var(--pilar-primary, #00B4D8);
       color: #FFFFFF;
-    }
-
-    /* Container Fallback Markdown */
-    .raw-md-container {
-      background: #FFFFFF;
-      padding: 2.5rem;
-      border-radius: var(--pilar-radius-md, 12px);
-      border: 1px solid var(--pilar-border, #E2E8F0);
-      margin-top: 2rem;
     }
 
     @media (max-width: 992px) {
@@ -228,10 +218,10 @@
       <div class="pilar-container">
         <a href="../" class="back-btn-link">← Kembali ke Hub PILAR</a>
         <div class="freemium-title-box">
-          <h1 class="freemium-header-title">PROGRAM FREEMIUM PILAR</h1>
-          <p class="freemium-header-desc">
-            Penyelenggara: <strong>Kelas Bisa melalui PILAR</strong> (<em>From Learning to Winning</em>)<br>
-            Ruang belajar gratis, sharing session bersama medalis, mini class tematik, serta simulasi try out untuk menguji kesiapan kompetisi akademik, riset, dan inovasimu.
+          <h1 class="freemium-header-title">PROGRAM FREEMIUM</h1>
+          <p class="freemium-header-desc" id="freemium-general-desc">
+            Penyelenggara: <strong id="freemium-penyelenggara">Kelas Bisa melalui PILAR (From Learning to Winning)</strong><br>
+            <span id="freemium-subdesc">Menyediakan berbagai program gratis sebagai ruang belajar, berbagi pengalaman, latihan, dan pengembangan diri bagi calon peserta kompetisi akademik, riset, dan inovasi.</span>
           </p>
         </div>
       </div>
@@ -241,21 +231,17 @@
     <section class="pilar-section">
       <div class="pilar-container">
         
-        <!-- DYNAMIC GRID CARDS FREEMIUM (PARSED DARI CONTENT.MD VIA JS) -->
+        <!-- DYNAMIC GRID CARDS FREEMIUM (PARSED DARI CONTENT.JSON VIA JS) -->
         <div id="freemium-grid-target" class="freemium-cards-grid">
-          <!-- Diisi otomatis oleh script pemroses Markdown -->
           <p style="color: var(--pilar-text-muted);">Memuat modul Program Freemium...</p>
         </div>
-
-        <!-- FALLBACK UNTUK RAW MARKDOWN JIKA PERLU -->
-        <div id="raw-markdown-fallback" class="raw-md-container" style="display: none;"></div>
 
         <!-- WIDGET CTA SHOWROOM EVENT ACTIVE -->
         <div class="pilar-cta-banner" style="border-radius: var(--pilar-radius-lg, 16px); margin-top: 3rem;">
           <div class="text-center">
             <h2>Tertarik Mengikuti Event Freemium Terdekat?</h2>
-            <p>Jadwal Zoominar, Mini Class, dan Try Out gratis selalu diperbarui di Showroom Events kami[cite: 3].</p>
-            <a href="../../events/?subbrand=pilar&type=freemium" class="pilar-btn-gold">Cek Jadwal Open Registration Active →</a>
+            <p>Jadwal Zoominar, Mini Class, dan Try Out gratis selalu diperbarui di Showroom Events kami.</p>
+            <a href="../../events/?subbrand=pilar&type=freemium" class="pilar-btn-gold" style="text-decoration: none; display: inline-block;">Cek Jadwal Open Registration Active →</a>
           </div>
         </div>
 
@@ -269,19 +255,19 @@
   <!-- SCRIPT GLOBAL COMPONENTS -->
   <script src="../../assets/js/components.js"></script>
 
-  <!-- SCRIPT LOKAL FREEMIUM (PARSER MARKDOWN TO GRID CARDS) -->
+  <!-- SCRIPT LOKAL FREEMIUM (FETCH CONTENT.JSON TO GRID CARDS) -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      fetch("content.md")
+      fetch("content.json")
         .then((response) => {
-          if (!response.ok) throw new Error("Gagal membaca file content.md");
-          return response.text();
+          if (!response.ok) throw new Error("Gagal membaca file content.json");
+          return response.json();
         })
-        .then((markdownText) => {
-          renderFreemiumCards(markdownText);
+        .then((data) => {
+          renderFreemiumFromJSON(data);
         })
         .catch((err) => {
-          console.error("Error loading Freemium Markdown:", err);
+          console.error("Error loading Freemium JSON:", err);
           document.getElementById("freemium-grid-target").innerHTML = 
             `<div style="grid-column: 1/-1; text-align: center; color: red; padding: 2rem;">
               Gagal memuat rincian materi Program Freemium. Silakan muat ulang halaman.
@@ -290,70 +276,20 @@
     });
 
     /**
-     * Memproses teks content.md menjadi elemen Card HTML secara presisi
+     * Memproses data JSON menjadi elemen Card HTML secara presisi
      */
-    function renderFreemiumCards(mdText) {
-      const gridTarget = document.getElementById("freemium-grid-target");
-      
-      // Data terstruktur default dari dokumen resmi Freemium
-      const freemiumData = [
-        {
-          badge: "FREEMIUM 01",
-          title: "PILAR INSIGHT",
-          slogan: "Learn The Strategy from Champions",
-          desc: "Program berbagi pengalaman bersama alumni, finalis, dan medalis berbagai kompetisi nasional.",
-          topics: [
-            "Perjalanan meraih prestasi",
-            "Strategi belajar & manajemen waktu",
-            "Pengalaman kompetisi & kesalahan yang harus dihindari",
-            "Tips menghadapi seleksi dan babak final"
-          ],
-          linkType: "insight"
-        },
-        {
-          badge: "FREEMIUM 02",
-          title: "PILAR SPOTLIGHT",
-          slogan: "Learn The Knowledge from Champions",
-          desc: "Mini class tematik yang membahas materi, konsep, teknik, dan keterampilan spesifik sesuai bidang kompetisi.",
-          topics: [
-            "Bedah soal OSN dan KSM",
-            "Pembahasan materi sulit & konsep dasar",
-            "Teknik menulis karya ilmiah & penyusunan proposal riset",
-            "Teknik business plan, presentasi, dan pitching"
-          ],
-          linkType: "spotlight"
-        },
-        {
-          badge: "FREEMIUM 03",
-          title: "PILAR SHOWCASE",
-          slogan: "Present Your Ideas, Get Expert Feedback",
-          desc: "Wadah presentasi dan bedah gagasan inovasi, riset, atau rencana bisnis untuk mendapatkan ulasan langsung dari mentor ahli.",
-          topics: [
-            "Review draf proposal karya tulis ilmiah & OPSI",
-            "Simulasi presentasi karya inovasi & FIKSI",
-            "Feedback langsung pitching Business Plan",
-            "Diskusi perbaikan & penyempurnaan karya"
-          ],
-          linkType: "showcase"
-        },
-        {
-          badge: "FREEMIUM 04",
-          title: "PILAR CHALLENGE",
-          slogan: "Test Your Competitive Readiness",
-          desc: "Program try out dan simulasi kompetisi untuk mengukur kesiapan peserta sebelum menghadapi lomba sebenarnya.",
-          topics: [
-            "Simulasi Ujian OSN (Olimpiade Sains Nasional)",
-            "Simulasi Ujian KSM (Kompetisi Sains Madrasah)",
-            "Simulasi Ujian ON MIPA Mahasiswa",
-            "Latihan soal berbasis CBT Test Environment"
-          ],
-          linkType: "challenge"
-        }
-      ];
+    function renderFreemiumFromJSON(data) {
+      if (data.penyelenggara) {
+        document.getElementById("freemium-penyelenggara").innerText = data.penyelenggara;
+      }
+      if (data.deskripsi_umum) {
+        document.getElementById("freemium-subdesc").innerText = data.deskripsi_umum;
+      }
 
+      const gridTarget = document.getElementById("freemium-grid-target");
       let htmlCards = "";
 
-      freemiumData.forEach(item => {
+      data.programs.forEach((item) => {
         htmlCards += `
           <div class="freemium-module-card">
             <div>
@@ -363,15 +299,17 @@
                 <span class="module-card-slogan">(${item.slogan})</span>
               </div>
               <div class="module-card-body">
-                <p>${item.desc}</p>
-                <div class="module-topics-title">Cakupan Pembahasan:</div>
+                <p>${item.deskripsi}</p>
+                <div class="module-topics-title">${item.topik_label}</div>
                 <ul class="module-topics-list">
-                  ${item.topics.map(t => `<li>${t}</li>`).join('')}
+                  ${item.topik.map((t) => `<li>${t}</li>`).join('')}
                 </ul>
               </div>
             </div>
             <div class="module-card-action">
-              <a href="../../events/?subbrand=pilar&program=${item.linkType}" class="btn-event-link">Lihat Jadwal ${item.title} →</a>
+              <a href="../../events/?subbrand=pilar&program=${item.id}" class="btn-event-link">
+                Lihat Jadwal ${item.title} →
+              </a>
             </div>
           </div>
         `;
