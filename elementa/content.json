@@ -1,0 +1,125 @@
+{
+  "hero_section": {
+    "title": "ELEMENTA",
+    "subtitle": "Temukan Elemen-ta & Jadilah Avatar",
+    "description": "Ekosistem pembinaan Olimpiade Sains berbasis Elemental Progression System yang mengintegrasikan pembelajaran akademik, gamifikasi RPG, komunitas, dan pengembangan karakter ke dalam satu perjalanan belajar yang utuh.",
+    "cta_text": "Lihat Katalog & Pendaftaran Program →",
+    "cta_link": "program/"
+  },
+  "pendahuluan": {
+    "latar_belakang": "Olimpiade Sains Nasional (OSN) merupakan ajang akademik paling kompetitif di Indonesia. Sebagian besar pembinaan konvensional berfokus pada penyampaian materi satu arah yang rentan memicu burnout. ELEMENTA hadir menggabungkan kualitas akademik dengan pengalaman belajar interaktif, bertahap, dan berorientasi pada perkembangan jangka panjang.",
+    "filosofi": "Nama ELEMENTA berasal dari kata 'Element' (Earth, Water, Air, Fire) dan dialek Bugis-Makassar 'ta' (milikmu). ELEMENTA bermakna 'Elemenmu'—setiap peserta memiliki potensi unik untuk bertumbuh menjadi versi terbaik dirinya dan mencapai penguasaan ilmu tertinggi sebagai Avatar.",
+    "definisi": "ELEMENTA adalah ekosistem pembinaan Olimpiade Sains terpadu untuk bidang Kebumian, Astronomi, dan Geografi melalui pendekatan bertahap berbasis tantangan (quest), komunitas, serta sistem perkembangan peserta yang terukur."
+  },
+  "visi_misi": {
+    "visi": "Menjadi ekosistem pembinaan olimpiade sains berbasis gamifikasi terdepan di Indonesia yang mampu melahirkan generasi pembelajar unggul, berkarakter, kompetitif, dan memiliki penguasaan ilmu pengetahuan secara terintegrasi.",
+    "misi": [
+      "Menyediakan sistem pembinaan olimpiade yang terstruktur berbasis roadmap perkembangan peserta.",
+      "Mengintegrasikan pembelajaran akademik, latihan soal, kompetisi, komunitas, dan karakter.",
+      "Meningkatkan motivasi dan keterlibatan peserta melalui pendekatan gamifikasi RPG.",
+      "Membantu peserta menemukan potensi akademiknya melalui identifikasi elemen dan jalur terarah.",
+      "Membangun budaya belajar yang aktif, kolaboratif, dan kompetitif secara sehat.",
+      "Meminimalkan burnout melalui sistem progression learning bertahap dan terukur.",
+      "Mempersiapkan peserta meraih prestasi pada ajang OSN dan kompetisi akademik lainnya."
+    ]
+  },
+  "usp_list": [
+    {
+      "no": "USP 01",
+      "title": "Elemental Progression System",
+      "desc": "Sistem perkembangan menyerupai RPG. Peserta menyelesaikan misi (quest), mengumpulkan pencapaian, menaikkan level, dan membuka tahapan perkembangan."
+    },
+    {
+      "no": "USP 02",
+      "title": "Four Elements Learning Framework",
+      "desc": "Materi berbasis empat elemen utama: Earth (Geologi), Water (Oseanografi), Air (Meteorologi), dan Fire (Astronomi)."
+    },
+    {
+      "no": "USP 03",
+      "title": "Avatar Learning Path",
+      "desc": "Jalur khusus yang mendorong peserta menguasai seluruh elemen utama secara seimbang untuk meraih gelar tertinggi: Avatar of Elementa."
+    },
+    {
+      "no": "USP 04",
+      "title": "Arcane Elements System",
+      "desc": "Jalur pengembangan kemampuan khusus: Spatial Bending, Spirit Bending, Energy Bending, dan Logic Bending."
+    },
+    {
+      "no": "USP 05",
+      "title": "Cross Element Learning",
+      "desc": "Pembelajaran lintas elemen untuk membangun kemampuan berpikir multidisiplin dan memahami keterkaitan antarbidang ilmu."
+    },
+    {
+      "no": "USP 06",
+      "title": "Nation-Based Community System",
+      "desc": "Peserta tergabung dalam Nation sesuai elemen dominannya (Terralith, Aquamora, Aerion, Solaris) dengan akademi dan budaya komunitas yang aktif."
+    },
+    {
+      "no": "USP 07",
+      "title": "Quest-Based Learning",
+      "desc": "Aktivitas pembelajaran dikemas dalam misi mingguan, bulanan, dan tantangan ekspedisi interaktif."
+    },
+    {
+      "no": "USP 08",
+      "title": "Elemental Competition Ecosystem",
+      "desc": "Kompetisi internal bertahap seperti Elemental Clash of Champions, Expedition Challenge, dan The Convergence."
+    },
+    {
+      "no": "USP 09",
+      "title": "Character Development Integration",
+      "desc": "Pengembangan karakter peserta meliputi nilai disiplin, konsistensi, kolaborasi, kepemimpinan, sportivitas, dan daya juang."
+    },
+    {
+      "no": "USP 10",
+      "title": "Integrated Olympiad Ecosystem",
+      "desc": "Pengintegrasian tiga bidang olimpiade yang saling berkaitan: OSN Kebumian, OSN Astronomi, dan OSN Geografi."
+    }
+  ],
+  "nilai_utama": [
+    {
+      "nama": "Discovery",
+      "motto": "Menemukan Elemen-ta",
+      "desc": "Mendorong peserta mengenali kekuatan dirinya, menemukan elemen dominan, serta membangun jalur perkembangan yang sesuai."
+    },
+    {
+      "nama": "Mastery",
+      "motto": "Penguasaan Mendalam",
+      "desc": "Menanamkan budaya penguasaan ilmu secara mendalam melalui latihan, eksplorasi, dan evaluasi berkelanjutan."
+    },
+    {
+      "nama": "Collaboration",
+      "motto": "Tumbuh Bersama",
+      "desc": "Membangun budaya saling membantu, bertukar pengalaman, dan belajar bersama antarwarga dari berbagai elemen."
+    },
+    {
+      "nama": "Competition",
+      "motto": "Sportivitas & Mental Juara",
+      "desc": "Memandang kompetisi sebagai sarana mengukur kemampuan, melatih mental juara, dan mendorong perkembangan diri."
+    },
+    {
+      "nama": "Progression",
+      "motto": "Perkembangan Terukur",
+      "desc": "Sistem perkembangan bertahap yang memungkinkan peserta melihat kemajuan akademiknya dari waktu ke waktu."
+    }
+  ],
+  "target_peserta": [
+    {
+      "bidang": "OSN Kebumian",
+      "elemen_terkait": "Earth, Water, Air, Fire (Avatar Path)",
+      "materi": "Geologi, Oseanografi, Meteorologi, dan Astronomi Kebumian.",
+      "desc": "Sangat erat dengan konsep Avatar karena secara alami mempelajari keempat elemen utama sistem ELEMENTA."
+    },
+    {
+      "bidang": "OSN Astronomi",
+      "elemen_terkait": "Fire & Arcane (Energy, Logic Bending)",
+      "materi": "Astronomi, Astrofisika Dasar, Mekanika Langit, Fisika Dasar, dan Matematika.",
+      "desc": "Memiliki kedekatan dengan Elemen Fire serta pengembangan Arcane Energy Bending & Logic Bending."
+    },
+    {
+      "bidang": "OSN Geografi",
+      "elemen_terkait": "Earth, Water, Air & Arcane (Spatial, Spirit Bending)",
+      "materi": "Geografi Fisik, Geografi Manusia, SIG/Penginderaan Jauh, Pembangunan Wilayah, dan Geopolitik.",
+      "desc": "Memiliki kedekatan dengan Elemen Earth, Water, Air serta Arcane Spatial Bending & Spirit Bending."
+    }
+  ]
+}
