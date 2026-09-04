@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "SOLARIS NATION",
+    "subtitle": "THE SEEKERS OF THE STARS // NATION OF FIRE",
+    "description": "Solaris Nation merupakan pusat observasi langit, menara astronomi, dan penelitian ilmiah yang berdiri di atas filosofi rasa ingin tahu, ambisi, serta eksplorasi alam semesta."
+  },
+  "overview": {
+    "filosofi": "Batas pengetahuan hanyalah awal dari penemuan berikutnya. Sebagaimana cahaya bintang menempuh perjalanan jauh, ilmu pengetahuan membutuhkan keberanian melampaui batas yang dikenal. Tujuan belajar bukan sekadar mengetahui jawaban, melainkan memahami mengapa jawaban tersebut ada.",
+    "motto": "Seek Beyond the Horizon.",
+    "julukan": "The Seekers of the Stars"
+  },
+  "budaya": {
+    "inspirasi": "WESTERN (Peradaban Barat Klasik, Renaissance, dan Scientific Revolution)",
+    "deskripsi": "Tradisi ilmiah yang berkembang melalui observasi, inovasi, dan eksperimen tanpa henti. Menghargai diskusi intelektual, rasionalitas, dan keberanian untuk mempertanyakan asumsi dasar.",
+    "nilai_utama": [
+      "Rasa Ingin Tahu",
+      "Inovasi",
+      "Ambisi",
+      "Rasionalitas",
+      "Keberanian",
+      "Eksplorasi"
+    ]
+  },
+  "akademi": {
+    "nama": "Starfire Academy",
+    "fokus": "Pusat pengembangan Elemen Fire dan ilmu pengetahuan astronomi.",
+    "motto": "Seek Beyond the Horizon.",
+    "kurikulum": [
+      "Astronomi Dasar",
+      "Astrofisika Dasar",
+      "Mekanika Langit",
+      "Evolusi Bintang",
+      "Tata Surya",
+      "Galaksi dan Kosmologi Dasar",
+      "Astronomi Observasional",
+      "Analisis Data Astronomi"
+    ]
+  },
+  "identitas_visual": {
+    "simbol": "Bintang Delapan Sinar dengan Orbit Planet",
+    "makna_simbol": "Bintang melambangkan pencarian kebenaran, delapan sinar melambangkan arah eksplorasi, orbit planet melambangkan keteraturan hukum alam, dan pusat lingkaran melambangkan rasa ingin tahu.",
+    "warna_utama": [
+      { "nama": "Merah Crimson (Crimson Red)", "hex": "#DC2626", "makna": "Semangat, keberanian, energi, dan ambisi" },
+      { "nama": "Merah Solar (Solar Red)", "hex": "#EF4444", "makna": "Cahaya bintang dan dinamika pencerahan ilmiah" }
+    ]
+  },
+  "kewarganegaraan": {
+    "gelar": "Solaris",
+    "hirarki_gelar": [
+      "Solaris Initiate",
+      "Solaris Apprentice",
+      "Solaris Scholar",
+      "Solaris Elementalist",
+      "Solaris Guardian",
+      "Solaris Master",
+      "Solaris Ascendant",
+      "Solaris Avatar"
+    ],
+    "karakteristik": [
+      { "aspek": "Elemen Utama", "ket": "Fire" },
+      { "aspek": "Gaya Belajar", "ket": "Analitis dan Eksploratif" },
+      { "aspek": "Fokus Keilmuan", "ket": "Astronomi & Alam Semesta" },
+      { "aspek": "Karakter Utama", "ket": "Inovatif, Ambisius, dan Rasional" }
+    ]
+  }
+}
