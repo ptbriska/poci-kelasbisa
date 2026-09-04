@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cara Bermain & Sistem RPG — ELEMENTA</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- DARK RPG FANTASY GAMEPLAY HUD STYLESHEET -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-cyan: #00B4D8;
+      --rpg-neon-blue: #38BDF8;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(125, 211, 252, 0.25);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    /* Subnav Topbar Dark RPG */
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-cyan);
+      box-shadow: 0 4px 20px rgba(0, 180, 216, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.4) 0%, rgba(2, 132, 199, 0.4) 100%);
+      border: 1px solid var(--rpg-cyan);
+      box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
+    }
+
+    /* Hero Banner RPG */
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 30%, rgba(0, 180, 216, 0.2) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 4rem 0 2.5rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--rpg-gold);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--rpg-gold);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--rpg-neon-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* GRID ASYMMETRICAL CATALOG (12 SISTEM RPG) */
+    .rpg-systems-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .system-hud-card {
+      background: var(--rpg-card-bg);
+      border: 1.5px solid var(--rpg-border);
+      border-radius: 20px;
+      padding: 1.8rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .system-hud-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--rpg-cyan) 50%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .system-hud-card:hover {
+      border-color: var(--rpg-cyan);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0, 180, 216, 0.25);
+    }
+
+    .system-hud-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .system-icon {
+      font-size: 2rem;
+      background: rgba(0, 180, 216, 0.1);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 180, 216, 0.3);
+    }
+
+    .system-tag {
+      font-family: monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--rpg-gold);
+      background: rgba(245, 158, 11, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .system-title {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 0.6rem;
+    }
+
+    .system-desc {
+      font-size: 0.88rem;
+      color: #94A3B8;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-explore-system {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 180, 216, 0.12);
+      color: var(--rpg-neon-blue);
+      border: 1px solid var(--rpg-cyan);
+      padding: 0.75rem;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-explore-system:hover {
+      background: var(--rpg-cyan);
+      color: #060E1A;
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.6);
+    }
+
+    @media (max-width: 992px) {
+      .rpg-systems-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .rpg-systems-grid { grid-template-columns: 1fr; }
+      .elementa-menu { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="./" class="active">Cara Bermain</a></li>
+        <li><a href="../Elementa World/">Dunia Elementa</a></li>
+        <li><a href="../Sistem Akademik/">Sistem Akademik</a></li>
+        <li><a href="../program/">Katalog & Harga</a></li>
+        <li><a href="../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN CATALOG RPG SYSTEM -->
+  <main>
+    <section class="rpg-hero">
+      <div class="pilar-container">
+        <span class="hud-chip">// GAMEPLAY MECHANICS CATALOGUE</span>
+        <h1 class="rpg-title" id="rpg-title">CARA BERMAIN & SISTEM RPG</h1>
+        <p style="color: #94A3B8; font-size: 1.05rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="rpg-desc">
+          Memuat sistem mekanik game...
+        </p>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="pilar-container">
+        
+        <!-- 12 SISTEM RPG CARDS GRID -->
+        <div class="rpg-systems-grid" id="systems-grid-target">
+          <p style="color: #94A3B8; grid-column: 1/-1; text-align: center;">Memuat katalog sistem RPG...</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT GLOBAL COMPONENTS & SCRIPT ENGINE LOKAL -->
+  <script src="../../assets/js/components.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.rpg_overview) {
+            document.getElementById("rpg-title").innerText = data.rpg_overview.title;
+            document.getElementById("rpg-desc").innerText = data.rpg_overview.description;
+          }
+
+          renderSystemCards(data.menu_sistem || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderSystemCards(systems) {
+      const target = document.getElementById("systems-grid-target");
+      if (!systems || systems.length === 0) {
+        target.innerHTML = `<p style="color:red; grid-column: 1/-1;">Gagal memuat katalog sistem.</p>`;
+        return;
+      }
+
+      let html = "";
+      systems.forEach(item => {
+        // Link menuju sub-folder masing-masing
+        const subFolderUrl = `${item.folder}index.html`;
+
+        html += `
+          <div class="system-hud-card">
+            <div>
+              <div class="card-top-bar">
+                <div class="system-icon">${item.icon}</div>
+                <span class="system-tag">${item.tag}</span>
+              </div>
+              <h3 class="system-title">${item.title}</h3>
+              <p class="system-desc">${item.desc}</p>
+            </div>
+            <a href="${subFolderUrl}" class="btn-explore-system">Pelajari Mekanik →</a>
+          </div>
+        `;
+      });
+
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
