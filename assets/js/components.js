@@ -24,10 +24,10 @@ function loadComponent(elementId, filePath, callback) {
       return response.text();
     })
     .then((data) => {
-      // PERBAIKAN REVISI 1.2: Otomatis menambahkan rootPath ke semua atribut href dan src lokal
+      // Auto-rewrite atribut href dan src lokal berbasis rootPath yang presisi
       const rootPath = getRootPath();
       const fixedData = data.replace(/(href|src)="([^"]*)"/g, function (match, attr, url) {
-        // Abaikan link eksternal, anchor link, telp, mailto, atau path yang sudah absolut
+        // Abaikan link eksternal, anchor link, telp, mailto, atau path absolut
         if (
           url.startsWith("http://") ||
           url.startsWith("https://") ||
@@ -47,14 +47,25 @@ function loadComponent(elementId, filePath, callback) {
 }
 
 /**
- * Fungsi Deteksi Path Relatif Bebas Bug GitHub Pages (REVISI 1.2)
- * Memeriksa apakah halaman dibuka di dalam sub-folder brand/events/showroom atau di root
+ * Fungsi Deteksi Path Relatif Bebas Bug GitHub Pages (Multi-Level Support)
+ * Menentukan berapa tingkat folder harus mundur ("./", "../", "../../", dst.)
  */
 function getRootPath() {
   const path = window.location.pathname.toLowerCase();
 
-  // Daftar folder level 1 yang membutuhkan path mundur satu tingkat ("../")
-  const subFolders = [
+  // 1. DAFTAR SUB-FOLDER LEVEL 2 & LEVEL 3 (Membutuhkan mundur dua tingkat "../../")
+  const level2Keywords = [
+    "/freemium/",
+    "/reguler/",
+    "/prestasi/",
+    "/testimoni/",
+    "/tutor/",
+    "/metode.html",
+    "/kemitraan.html"
+  ];
+
+  // 2. DAFTAR SUB-FOLDER LEVEL 1 (Membutuhkan mundur satu tingkat "../")
+  const level1Keywords = [
     "/pilar/",
     "/gatra/",
     "/nestu/",
@@ -71,10 +82,28 @@ function getRootPath() {
     "/admin/"
   ];
 
-  // Cek apakah URL memuat salah satu dari folder di atas
-  const isSubFolder = subFolders.some((folder) => path.includes(folder));
+  // Cek apakah URL memuat salah satu keyword Level 2
+  const isLevel2 = level2Keywords.some((keyword) => path.includes(keyword));
+  if (isLevel2) {
+    // Pengecualian jika file berada di pilar/reguler/sub-folder/ (Level 3)
+    const segments = path.split("/").filter(Boolean);
+    if (segments.length >= 3) {
+      // Menghitung kedalaman presisi berdasarkan jumlah folder
+      const depth = segments.length - (path.endsWith(".html") ? 1 : 0);
+      if (depth === 2) return "../../";
+      if (depth >= 3) return "../../../";
+    }
+    return "../../";
+  }
 
-  return isSubFolder ? "../" : "./";
+  // Cek apakah URL memuat salah satu keyword Level 1
+  const isLevel1 = level1Keywords.some((keyword) => path.includes(keyword));
+  if (isLevel1) {
+    return "../";
+  }
+
+  // Default jika berada di root domain (index.html)
+  return "./";
 }
 
 /**
