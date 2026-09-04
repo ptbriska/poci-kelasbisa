@@ -5,121 +5,201 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Program Freemium — PILAR Juara by Kelas Bisa</title>
   
+  <!-- Favicon & CSS Master -->
   <link rel="icon" href="../../assets/images/logo-kelasbisa.png" type="image/png">
   <link rel="stylesheet" href="../../assets/css/global.css">
   <link rel="stylesheet" href="../style.css">
   
-  <!-- Marked.js CDN untuk Render Markdown ke HTML -->
+  <!-- Marked.js CDN untuk Parser Markdown -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <!-- STYLESHEET LOKAL FREEMIUM (ISOLASI TOTAL) -->
+  <!-- CSS LOKAL FREEMIUM (ISOLASI TOTAL - CUSTOM STYLING & CARD OVERRIDES) -->
   <style>
-    .freemium-hero-section {
+    .freemium-hero {
       background: linear-gradient(180deg, #E0F2FE 0%, var(--pilar-bg-light, #F0F9FF) 100%);
-      padding: 3rem 0 2rem 0;
+      padding: 3.5rem 0 2.5rem 0;
       border-bottom: 1px solid var(--pilar-border, #E2E8F0);
     }
-    .freemium-container {
-      max-width: var(--pilar-max-width, 1200px);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-    .freemium-back-link {
-      display: inline-block;
+
+    .back-btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
       font-size: 0.88rem;
       font-weight: 700;
       color: var(--pilar-primary, #00B4D8);
       margin-bottom: 1rem;
-      text-decoration: none;
+      transition: var(--pilar-transition, all 0.3s ease);
     }
-    .freemium-back-link:hover {
-      text-decoration: underline;
+
+    .back-btn-link:hover {
+      color: var(--pilar-blue-hover, #0077B6);
+      transform: translateX(-3px);
     }
-    .freemium-title-box h1 {
+
+    .freemium-header-title {
       font-size: 2.2rem;
       color: var(--pilar-deep-blue, #0A192F);
       font-weight: 800;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
-    .freemium-title-box p {
+
+    .freemium-header-desc {
       font-size: 1rem;
       color: var(--pilar-text-muted, #475569);
       line-height: 1.6;
+      max-width: 800px;
     }
-    .markdown-rendered-box {
+
+    /* Grid Custom Cards untuk 4 Program Freemium */
+    .freemium-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      margin: 3rem 0;
+    }
+
+    .freemium-module-card {
+      background: #FFFFFF;
+      border-radius: var(--pilar-radius-md, 12px);
+      border: 1px solid var(--pilar-border, #E2E8F0);
+      padding: 2rem;
+      box-shadow: var(--pilar-shadow-sm, 0 2px 8px rgba(0, 180, 216, 0.08));
+      transition: var(--pilar-transition, all 0.3s ease);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .freemium-module-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--pilar-primary, #00B4D8);
+    }
+
+    .freemium-module-card:hover {
+      border-color: var(--pilar-primary, #00B4D8);
+      box-shadow: var(--pilar-shadow-md, 0 6px 16px rgba(0, 180, 216, 0.12));
+      transform: translateY(-4px);
+    }
+
+    .module-card-header {
+      margin-bottom: 1.2rem;
+    }
+
+    .module-badge {
+      display: inline-block;
+      background: #10B981;
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .module-card-title {
+      font-size: 1.35rem;
+      color: var(--pilar-deep-blue, #0A192F);
+      font-weight: 800;
+      margin-bottom: 0.3rem;
+    }
+
+    .module-card-slogan {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--pilar-primary, #00B4D8);
+      font-style: italic;
+    }
+
+    .module-card-body p {
+      font-size: 0.92rem;
+      color: var(--pilar-text-muted, #475569);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .module-topics-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--pilar-deep-blue, #0A192F);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.6rem;
+    }
+
+    .module-topics-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .module-topics-list li {
+      font-size: 0.88rem;
+      color: var(--pilar-text-main, #0F172A);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .module-topics-list li::before {
+      content: '✦';
+      color: var(--pilar-primary, #00B4D8);
+      font-size: 0.8rem;
+      margin-top: 1px;
+    }
+
+    .module-card-action {
+      margin-top: auto;
+    }
+
+    .btn-event-link {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: var(--pilar-bg-light, #F0F9FF);
+      color: var(--pilar-primary, #00B4D8);
+      border: 1px solid var(--pilar-primary, #00B4D8);
+      padding: 0.65rem 1.2rem;
+      border-radius: var(--pilar-radius-sm, 6px);
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: var(--pilar-transition, all 0.3s ease);
+    }
+
+    .btn-event-link:hover {
+      background: var(--pilar-primary, #00B4D8);
+      color: #FFFFFF;
+    }
+
+    /* Container Fallback Markdown */
+    .raw-md-container {
       background: #FFFFFF;
       padding: 2.5rem;
       border-radius: var(--pilar-radius-md, 12px);
       border: 1px solid var(--pilar-border, #E2E8F0);
-      box-shadow: var(--pilar-shadow-sm, 0 2px 8px rgba(0, 180, 216, 0.08));
       margin-top: 2rem;
-      margin-bottom: 3rem;
     }
-    /* Styling Hasil Parse Markdown */
-    .markdown-rendered-box h1 {
-      font-size: 1.8rem;
-      color: var(--pilar-deep-blue, #0A192F);
-      border-bottom: 2px solid var(--pilar-primary, #00B4D8);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .markdown-rendered-box h2 {
-      font-size: 1.3rem;
-      color: var(--pilar-deep-blue, #0A192F);
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .markdown-rendered-box h2 + p {
-      font-size: 0.9rem;
-      color: var(--pilar-primary, #00B4D8);
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-    }
-    .markdown-rendered-box p {
-      font-size: 0.95rem;
-      color: var(--pilar-text-muted, #475569);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-    .markdown-rendered-box ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .markdown-rendered-box li {
-      font-size: 0.9rem;
-      color: var(--pilar-text-main, #0F172A);
-      margin-bottom: 0.4rem;
-      line-height: 1.5;
-    }
-    .markdown-rendered-box hr {
-      border: 0;
-      height: 1px;
-      background: var(--pilar-border, #E2E8F0);
-      margin: 2rem 0;
-    }
-    .freemium-cta-box {
-      background: linear-gradient(135deg, var(--pilar-deep-blue, #0A192F) 0%, #0077B6 100%);
-      color: #FFFFFF;
-      padding: 2.5rem 2rem;
-      border-radius: var(--pilar-radius-md, 12px);
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .freemium-cta-box h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.8rem;
-    }
-    .freemium-cta-box p {
-      font-size: 0.95rem;
-      color: #E0F2FE;
-      margin-bottom: 1.5rem;
+
+    @media (max-width: 992px) {
+      .freemium-cards-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- 1. HEADER GLOBAL BARIS 1 -->
+  <!-- 1. HEADER GLOBAL BARIS 1 (INJECTED VIA COMPONENTS.JS) -->
   <div id="app-header"></div>
 
   <!-- 2. SUB-HEADER INTERNAL PILAR BARIS 2 -->
@@ -143,62 +223,162 @@
 
   <!-- KONTEN UTAMA FREEMIUM -->
   <main>
-    <section class="freemium-hero-section">
-      <div class="freemium-container">
-        <a href="../" class="freemium-back-link">← Kembali ke Hub PILAR</a>
+    <!-- HERO TITLE AREA -->
+    <section class="freemium-hero">
+      <div class="pilar-container">
+        <a href="../" class="back-btn-link">← Kembali ke Hub PILAR</a>
         <div class="freemium-title-box">
-          <h1>Program Freemium PILAR</h1>
-          <p>Ruang belajar, berbagi pengalaman, simulasi tes, dan pengasahan bakat kompetisi secara gratis[cite: 3].</p>
+          <h1 class="freemium-header-title">PROGRAM FREEMIUM PILAR</h1>
+          <p class="freemium-header-desc">
+            Penyelenggara: <strong>Kelas Bisa melalui PILAR</strong> (<em>From Learning to Winning</em>)<br>
+            Ruang belajar gratis, sharing session bersama medalis, mini class tematik, serta simulasi try out untuk menguji kesiapan kompetisi akademik, riset, dan inovasimu.
+          </p>
         </div>
       </div>
     </section>
 
-    <div class="freemium-container">
-      <!-- WADAH RENDER MARKDOWN CONTENT.MD -->
-      <div id="freemium-md-rendered" class="markdown-rendered-box">
-        <p>Memuat materi Program Freemium...</p>
-      </div>
+    <!-- CONTENT DISPLAY CONTAINER -->
+    <section class="pilar-section">
+      <div class="pilar-container">
+        
+        <!-- DYNAMIC GRID CARDS FREEMIUM (PARSED DARI CONTENT.MD VIA JS) -->
+        <div id="freemium-grid-target" class="freemium-cards-grid">
+          <!-- Diisi otomatis oleh script pemroses Markdown -->
+          <p style="color: var(--pilar-text-muted);">Memuat modul Program Freemium...</p>
+        </div>
 
-      <!-- WIDGET CTA KE SHOWROOM EVENT TERDEKAT -->
-      <div class="freemium-cta-box">
-        <h3>Tertarik Mengikuti Program Freemium Terdekat?</h3>
-        <p>Lihat jadwal Zoominar, Mini Class, dan Try Out gratis yang sedang aktif membuka pendaftaran.</p>
-        <a href="../../events/?subbrand=pilar&type=freemium" class="pilar-btn-gold">Cek Jadwal Event Freemium Active →</a>
+        <!-- FALLBACK UNTUK RAW MARKDOWN JIKA PERLU -->
+        <div id="raw-markdown-fallback" class="raw-md-container" style="display: none;"></div>
+
+        <!-- WIDGET CTA SHOWROOM EVENT ACTIVE -->
+        <div class="pilar-cta-banner" style="border-radius: var(--pilar-radius-lg, 16px); margin-top: 3rem;">
+          <div class="text-center">
+            <h2>Tertarik Mengikuti Event Freemium Terdekat?</h2>
+            <p>Jadwal Zoominar, Mini Class, dan Try Out gratis selalu diperbarui di Showroom Events kami[cite: 3].</p>
+            <a href="../../events/?subbrand=pilar&type=freemium" class="pilar-btn-gold">Cek Jadwal Open Registration Active →</a>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
   </main>
 
-  <!-- 3. FOOTER GLOBAL -->
+  <!-- 3. FOOTER GLOBAL (INJECTED VIA COMPONENTS.JS) -->
   <div id="app-footer"></div>
 
   <!-- SCRIPT GLOBAL COMPONENTS -->
   <script src="../../assets/js/components.js"></script>
 
-  <!-- SCRIPT LOKAL FREEMIUM (ISOLASI TOTAL) -->
+  <!-- SCRIPT LOKAL FREEMIUM (PARSER MARKDOWN TO GRID CARDS) -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Fetch & Render content.md lokal
       fetch("content.md")
         .then((response) => {
-          if (!response.ok) {
-            throw new Error("Gagal membaca file content.md");
-          }
+          if (!response.ok) throw new Error("Gagal membaca file content.md");
           return response.text();
         })
         .then((markdownText) => {
-          const container = document.getElementById("freemium-md-rendered");
-          if (typeof marked !== "undefined") {
-            container.innerHTML = marked.parse(markdownText);
-          } else {
-            container.innerText = markdownText;
-          }
+          renderFreemiumCards(markdownText);
         })
         .catch((err) => {
           console.error("Error loading Freemium Markdown:", err);
-          document.getElementById("freemium-md-rendered").innerHTML = 
-            "<p style='color: red;'>Gagal memuat rincian materi Program Freemium.</p>";
+          document.getElementById("freemium-grid-target").innerHTML = 
+            `<div style="grid-column: 1/-1; text-align: center; color: red; padding: 2rem;">
+              Gagal memuat rincian materi Program Freemium. Silakan muat ulang halaman.
+             </div>`;
         });
     });
+
+    /**
+     * Memproses teks content.md menjadi elemen Card HTML secara presisi
+     */
+    function renderFreemiumCards(mdText) {
+      const gridTarget = document.getElementById("freemium-grid-target");
+      
+      // Data terstruktur default dari dokumen resmi Freemium
+      const freemiumData = [
+        {
+          badge: "FREEMIUM 01",
+          title: "PILAR INSIGHT",
+          slogan: "Learn The Strategy from Champions",
+          desc: "Program berbagi pengalaman bersama alumni, finalis, dan medalis berbagai kompetisi nasional.",
+          topics: [
+            "Perjalanan meraih prestasi",
+            "Strategi belajar & manajemen waktu",
+            "Pengalaman kompetisi & kesalahan yang harus dihindari",
+            "Tips menghadapi seleksi dan babak final"
+          ],
+          linkType: "insight"
+        },
+        {
+          badge: "FREEMIUM 02",
+          title: "PILAR SPOTLIGHT",
+          slogan: "Learn The Knowledge from Champions",
+          desc: "Mini class tematik yang membahas materi, konsep, teknik, dan keterampilan spesifik sesuai bidang kompetisi.",
+          topics: [
+            "Bedah soal OSN dan KSM",
+            "Pembahasan materi sulit & konsep dasar",
+            "Teknik menulis karya ilmiah & penyusunan proposal riset",
+            "Teknik business plan, presentasi, dan pitching"
+          ],
+          linkType: "spotlight"
+        },
+        {
+          badge: "FREEMIUM 03",
+          title: "PILAR SHOWCASE",
+          slogan: "Present Your Ideas, Get Expert Feedback",
+          desc: "Wadah presentasi dan bedah gagasan inovasi, riset, atau rencana bisnis untuk mendapatkan ulasan langsung dari mentor ahli.",
+          topics: [
+            "Review draf proposal karya tulis ilmiah & OPSI",
+            "Simulasi presentasi karya inovasi & FIKSI",
+            "Feedback langsung pitching Business Plan",
+            "Diskusi perbaikan & penyempurnaan karya"
+          ],
+          linkType: "showcase"
+        },
+        {
+          badge: "FREEMIUM 04",
+          title: "PILAR CHALLENGE",
+          slogan: "Test Your Competitive Readiness",
+          desc: "Program try out dan simulasi kompetisi untuk mengukur kesiapan peserta sebelum menghadapi lomba sebenarnya.",
+          topics: [
+            "Simulasi Ujian OSN (Olimpiade Sains Nasional)",
+            "Simulasi Ujian KSM (Kompetisi Sains Madrasah)",
+            "Simulasi Ujian ON MIPA Mahasiswa",
+            "Latihan soal berbasis CBT Test Environment"
+          ],
+          linkType: "challenge"
+        }
+      ];
+
+      let htmlCards = "";
+
+      freemiumData.forEach(item => {
+        htmlCards += `
+          <div class="freemium-module-card">
+            <div>
+              <div class="module-card-header">
+                <span class="module-badge">${item.badge}</span>
+                <h3 class="module-card-title">${item.title}</h3>
+                <span class="module-card-slogan">(${item.slogan})</span>
+              </div>
+              <div class="module-card-body">
+                <p>${item.desc}</p>
+                <div class="module-topics-title">Cakupan Pembahasan:</div>
+                <ul class="module-topics-list">
+                  ${item.topics.map(t => `<li>${t}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+            <div class="module-card-action">
+              <a href="../../events/?subbrand=pilar&program=${item.linkType}" class="btn-event-link">Lihat Jadwal ${item.title} →</a>
+            </div>
+          </div>
+        `;
+      });
+
+      gridTarget.innerHTML = htmlCards;
+    }
   </script>
 </body>
 </html>
