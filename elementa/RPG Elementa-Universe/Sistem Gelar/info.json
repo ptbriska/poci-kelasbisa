@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "SISTEM GELAR KEHORMATAN (HONOUR TITLE)",
+    "subtitle": "HONOUR TITLES // HALL OF FAME RECOGNITION SYSTEM",
+    "description": "Sistem Gelar Kehormatan diberikan sebagai bentuk apresiasi tertinggi atas pencapaian akademik, kepemimpinan, spesialisasi, dan dominasi di Elementa Universe."
+  },
+  "filosofi_gelar": {
+    "title": "Simbol Dedikasi & Prestasi Akademik",
+    "desc": "Gelar Kehormatan (Honour Title) dipisahkan dari Level Akademik dasar. Jika Level menunjukkan tingkatan progression individu, maka Gelar Kehormatan merupakan prestise tertinggi yang diabadikan dalam Hall of Fame setiap akhir Season."
+  },
+  "kategori_gelar": [
+    {
+      "gelar": "Avatar of Elementa",
+      "kategori": "Puncak Mastery",
+      "syarat": "Lulus 8 Lapis Dungeon The Convergence dengan EP ≥ 9,0 pada seluruh elemen utama (Earth, Water, Air, Fire).",
+      "sifat": "Mastery Standard (Tanpa Kuota)",
+      "color": "#10B981"
+    },
+    {
+      "gelar": "Best of Element (Earth/Water/Air/Fire)",
+      "kategori": "Spesialis Elemen Utama",
+      "syarat": "Meraih nilai EP tertinggi dan performa terbaik pada elemen terkait di akhir Season.",
+      "sifat": "Peringkat 1 Setiap Elemen",
+      "color": "#00B4D8"
+    },
+    {
+      "gelar": "Grand Badge Master",
+      "kategori": "Kolektor Spesialisasi",
+      "syarat": "Berhasil mengumpulkan kombinasi Badge terbanyak dari Expedition Quest (Deepening & Mix Bending).",
+      "sifat": "Prestise Spesialisasi",
+      "color": "#F59E0B"
+    },
+    {
+      "gelar": "Arcane Sovereign",
+      "kategori": "Penguasa Arcane",
+      "syarat": "Menguasai keempat Arcane Badges (Spatial, Spirit, Energy, Logic) dengan sempurna.",
+      "sifat": "Prestise Lintas Elemen",
+      "color": "#7C3AED"
+    },
+    {
+      "gelar": "Nation Champion (Clash of Champions)",
+      "kategori": "Puncak Komunitas",
+      "syarat": "Memenangkan Elementa Clash of Champions bersama tim perwakilan Nation.",
+      "sifat": "Trofi Berpindah (Challenge Trophy)",
+      "color": "#EF4444"
+    }
+  ],
+  "prinsip_dasar": [
+    "Gelar Kehormatan tidak dapat dibeli atau diperoleh melalui aktivitas non-akademik.",
+    "Gelar Avatar tetap berbasis standar kualitas murni (Mastery-based), bukan kuota persaingan.",
+    "Gelar kehormatan diabadikan secara permanen dalam Hall of Fame Elementa.",
+    "Pemegang Gelar Kehormatan berhak mendapatkan alokasi bonus Ember khusus dan Badge Profil Eksklusif."
+  ]
+}
