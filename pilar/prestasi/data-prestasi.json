@@ -7,7 +7,7 @@
     "sekolah_mitra": "24",
     "tingkat_kelulusan": "90%"
   },
-  "daftar_medalis": [
+  "top_medalis": [
     {
       "id": 1,
       "nama": "Ismail",
@@ -51,6 +51,44 @@
       "tahun": "2024",
       "foto": "alumni-4.png",
       "kesan": "Visualisasi data Python yang diajarin mentor PILAR bikin laporan riset kami dipuji juri!"
+    }
+  ],
+  "riwayat_prestasi_lengkap": [
+    {
+      "no": 1,
+      "nama": "Ahmad Rizky",
+      "sekolah": "MAN IC Pekalongan",
+      "bidang": "OSN Fisika",
+      "pencapaian": "Medali Perak",
+      "tingkat": "Nasional",
+      "tahun": "2024"
+    },
+    {
+      "no": 2,
+      "nama": "Nabila Putri",
+      "sekolah": "SMAN 1 Cianjur",
+      "bidang": "OSN Biologi",
+      "pencapaian": "Medali Perunggu",
+      "tingkat": "Nasional",
+      "tahun": "2024"
+    },
+    {
+      "no": 3,
+      "nama": "Rian Ardiansyah",
+      "sekolah": "SMA Del Sumatera Utara",
+      "bidang": "KSM Ekonomi",
+      "pencapaian": "Juara 2 (Perak)",
+      "tingkat": "Provinsi",
+      "tahun": "2024"
+    },
+    {
+      "no": 4,
+      "nama": "Dewi Sartika & Tim",
+      "sekolah": "MAN 3 Jombang",
+      "bidang": "LKTI Riset Sosial",
+      "pencapaian": "Juara 1 & Best Paper",
+      "tingkat": "Nasional",
+      "tahun": "2023"
     }
   ],
   "sekolah_mitra": [
