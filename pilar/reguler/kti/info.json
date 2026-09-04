@@ -1,0 +1,51 @@
+{
+  "program_meta": {
+    "title": "PILAR Karya Tulis Ilmiah (LKTI / Paper)",
+    "tagline": "Scientific Writing & Research Defense Program",
+    "description": "Program bimbingan penulisan karya tulis ilmiah komprehensif dari pencarian novelty, penggunaan Mendeley/Zotero, visualisasi Python, uji Turnitin/AI Similarity, hingga teknik defense argument di depan juri.",
+    "pricing_types": ["Per Orang", "Per Tim"]
+  },
+  "b2c_comparison": {
+    "title": "Komparasi Paket PILAR LKTI / Paper (B2C)",
+    "description": "Pilihan bimbingan intensif penulisan paper ilmiah untuk kompetisi LKTI tingkat Nasional.",
+    "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+    "categories": [
+      {
+        "category_name": "A. Penulisan Ilmiah & Teknik Riset",
+        "features": [
+          { "name": "Materi Dasar Metodologi Penelitian & Struktur IMRAD", "values": ["V", "V", "V", "V"] },
+          { "name": "Critical Thinking, Problem Analysis, & Systematic Literature Review (SLR)", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+          { "name": "Analisa Paper Rujukan, Penentuan Topik, & AI-Assisted Guideline", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+          { "name": "Teknik Latar Belakang, Rumusan Masalah, & Sitasi Mendeley/Zotero", "values": ["V", "V", "V", "V"] },
+          { "name": "Pemrograman Python Untuk Visualisasi Data & Abstrak", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+          { "name": "Penulisan Full Paper / KTI Lengkap", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+          { "name": "Review, Feedback Paper, Cek Turnitin & AI Similarity Test", "values": ["-", "-", "-", "V"] },
+          { "name": "Pendampingan dari Ide hingga Paper Siap Submit", "values": ["-", "-", "-", "V"] }
+        ]
+      },
+      {
+        "category_name": "B. Presentasi Ilmiah & Defense Argument",
+        "features": [
+          { "name": "Struktur PPT & Poster Ilmiah Standar Nasional", "values": ["V", "V", "V", "V"] },
+          { "name": "Teknik Penyederhanaan Paper ke Slide & Poster", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+          { "name": "Teknik Presentasi Ilmiah 12 Menit (Problem–Method–Result–Impact)", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+          { "name": "Teknik Presentasi Poster & Defense Argument Pertanyaan Juri", "values": ["V", "V", "V", "V"] },
+          { "name": "Simulasi Presentasi Time-Based, QnA Juri, & Review Slide", "values": ["-", "-", "-", "V"] }
+        ]
+      },
+      {
+        "category_name": "C. Operasional & Biaya Program",
+        "features": [
+          { "name": "Akses LMS (Materi + Rekaman)", "values": ["V", "V", "V", "V"] },
+          { "name": "Akses Mobile App (Android & iOS)", "values": ["V", "-", "-", "V"] },
+          { "name": "Metode Pembelajaran Live / Offline", "values": ["Video Modul", "Live Zoom", "Offline Direct", "Live Zoom / Offline"] },
+          { "name": "Mentor Finalis / Medalis LKTI & OPSI", "values": ["V", "V", "V", "V"] },
+          { "name": "Grup Diskusi (WA/Telegram)", "values": ["V", "V", "V", "V"] },
+          { "name": "Total Jam Belajar & Hari Pelaksanaan", "values": ["±30 Jam (Self-Paced)", "±30 Jam (Terjadwal)", "±30 Jam (Senin-Kamis)", "Request (Kesepakatan)"] },
+          { "name": "Harga Per Orang", "values": ["Rp 149.000", "Rp 189.000", "Rp 350.000", "PLATO Rp 699k / PLATIPUS Rp 999k"] },
+          { "name": "Harga Per Tim (Termasuk Guru Pembimbing)", "values": ["Rp 350.000", "Rp 450.000", "Rp 700.000", "PLATO Rp 999k / PLATIPUS Rp 1.200k"] }
+        ]
+      }
+    ]
+  }
+}
