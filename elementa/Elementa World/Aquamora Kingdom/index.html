@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquamora Kingdom — ELEMENTA WORLD</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- DARK RPG AQUAMORA STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-ocean-blue: #0284C7;
+      --rpg-turquoise: #00B4D8;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(2, 132, 199, 0.3);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-ocean-blue);
+      box-shadow: 0 4px 20px rgba(2, 132, 199, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(2, 132, 199, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.4) 0%, rgba(0, 180, 216, 0.4) 100%);
+      border: 1px solid var(--rpg-turquoise);
+      box-shadow: 0 0 12px rgba(2, 132, 199, 0.4);
+    }
+
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(2, 132, 199, 0.25) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 3.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: #38BDF8;
+      background: rgba(2, 132, 199, 0.15);
+      border: 1px solid var(--rpg-ocean-blue);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 12px rgba(2, 132, 199, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, #38BDF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* 2 COL GRID (Overview & Culture) */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    .hud-card {
+      background: var(--rpg-card-bg);
+      border: 1.5px solid var(--rpg-border);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* AKADEMI & KURIKULUM BOX */
+    .academy-card {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.15) 0%, rgba(10, 25, 47, 0.95) 100%);
+      border: 2px solid var(--rpg-ocean-blue);
+      border-radius: 24px;
+      padding: 2.2rem;
+      margin: 3rem 0;
+      box-shadow: 0 12px 35px rgba(2, 132, 199, 0.2);
+    }
+
+    .kurikulum-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .kurikulum-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(2, 132, 199, 0.3);
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #E2E8F0;
+      text-align: center;
+    }
+
+    /* VALUES BADGE CHIPS */
+    .values-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .value-chip {
+      background: rgba(0, 180, 216, 0.15);
+      border: 1px solid var(--rpg-turquoise);
+      color: #7DD3FC;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    /* TABLE STYLING */
+    .table-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid var(--rpg-ocean-blue);
+      border-radius: 24px;
+      padding: 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    .matrix-table th {
+      background: rgba(2, 132, 199, 0.2);
+      color: #38BDF8;
+      padding: 1rem;
+      font-weight: 900;
+      border-bottom: 2px solid var(--rpg-ocean-blue);
+      text-transform: uppercase;
+    }
+
+    .matrix-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(2, 132, 199, 0.1);
+      color: #CBD5E1;
+    }
+
+    @media (max-width: 992px) {
+      .overview-grid { grid-template-columns: 1fr; }
+      .kurikulum-grid { grid-template-columns: repeat(2, 1fr); }
+      .elementa-menu { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .kurikulum-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../RPG Elementa-Universe/">Cara Bermain</a></li>
+        <li><a href="../" class="active">Dunia Elementa</a></li>
+        <li><a href="../Sistem Akademik/">Sistem Akademik</a></li>
+        <li><a href="../program/">Katalog & Harga</a></li>
+        <li><a href="../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN AQUAMORA KINGDOM -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <a href="../" style="color: #38BDF8; font-weight: 800; font-size: 0.82rem; text-decoration: none;">← Kembali ke Katalog Dunia Elementa</a>
+        <div style="margin-top: 0.8rem;">
+          <span class="hud-chip">// WATER NATION // AQUAMORA KINGDOM</span>
+          <h1 class="rpg-title" id="page-title">Aquamora Kingdom</h1>
+          <p style="color: #94A3B8; font-size: 1rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+            Memuat filosofi & profil Aquamora Kingdom...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- OVERVIEW & BUDAYA GRID -->
+        <div class="overview-grid">
+          <div class="hud-card">
+            <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.5rem;">🌊 Filosofi Kerajaan Samudra</h2>
+            <div style="font-size: 0.9rem; color: #38BDF8; font-weight: 900; font-style: italic; margin-bottom: 1rem;" id="overview-motto">
+              "Flow Beyond Boundaries."
+            </div>
+            <p style="font-size: 0.92rem; color: #CBD5E1; line-height: 1.8; margin: 0;" id="overview-filosofi">
+              Memuat filosofi...
+            </p>
+          </div>
+
+          <div class="hud-card">
+            <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.3rem;">📜 Budaya & Inspirasi</h2>
+            <div style="font-size: 0.82rem; color: #38BDF8; font-weight: 800; margin-bottom: 0.8rem;" id="budaya-inspirasi">
+              PACIFIC (Polinesia & Maritim Pasifik)
+            </div>
+            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6;" id="budaya-desc">
+              Memuat deskripsi budaya...
+            </p>
+            <div style="font-size: 0.8rem; font-weight: 800; color: #94A3B8; margin-top: 1rem;">Nilai Utama Budaya:</div>
+            <div class="values-wrapper" id="budaya-nilai-target">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- AKADEMI UTAMA (TIDECREST ACADEMY) -->
+        <div class="academy-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+              <span class="hud-chip" style="margin-bottom: 0.4rem;">MAIN ACADEMY</span>
+              <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin: 0;" id="academy-nama">Tidecrest Academy</h2>
+            </div>
+            <div style="font-size: 0.9rem; color: var(--rpg-gold); font-weight: 800; font-style: italic;" id="academy-motto">
+              "Flow Beyond Boundaries."
+            </div>
+          </div>
+          <p style="font-size: 0.92rem; color: #CBD5E1; line-height: 1.7; margin-bottom: 1.5rem;" id="academy-fokus">
+            Memuat fokus pembelajaran...
+          </p>
+
+          <div style="font-size: 0.85rem; font-weight: 900; color: #38BDF8; text-transform: uppercase;">Materi & Fokus Keilmuan Oseanografi:</div>
+          <div class="kurikulum-grid" id="kurikulum-target">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- CHARACTERISTICS TABLE -->
+        <div class="table-card">
+          <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">🌊 Profil Kewarganegaraan Aquarian</h2>
+          <p style="color: #94A3B8; font-size: 0.88rem; margin-bottom: 1.5rem;">Karakteristik & atribut warga yang terafiliasi dengan Aquamora Kingdom.</p>
+          
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 35%;">ASPEK KARAKTERISTIK</th>
+                <th style="width: 65%;">KETENTUAN AQUARIAN</th>
+              </tr>
+            </thead>
+            <tbody id="karakter-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          if (data.overview) {
+            document.getElementById("overview-motto").innerText = `"${data.overview.motto}"`;
+            document.getElementById("overview-filosofi").innerText = data.overview.filosofi;
+          }
+
+          if (data.budaya) {
+            document.getElementById("budaya-inspirasi").innerText = `Inspirasi: ${data.budaya.inspirasi}`;
+            document.getElementById("budaya-desc").innerText = data.budaya.deskripsi;
+            renderNilaiChips(data.budaya.nilai_utama || []);
+          }
+
+          if (data.akademi) {
+            document.getElementById("academy-nama").innerText = data.akademi.nama;
+            document.getElementById("academy-motto").innerText = `"${data.akademi.motto}"`;
+            document.getElementById("academy-fokus").innerText = data.akademi.fokus;
+            renderKurikulumGrid(data.akademi.kurikulum || []);
+          }
+
+          renderKarakterTable(data.kewarganegaraan?.karakteristik || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderNilaiChips(list) {
+      const target = document.getElementById("budaya-nilai-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(val => {
+        html += `<span class="value-chip">${val}</span>`;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderKurikulumGrid(list) {
+      const target = document.getElementById("kurikulum-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(k => {
+        html += `<div class="kurikulum-item">${k}</div>`;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderKarakterTable(list) {
+      const target = document.getElementById("karakter-table-body");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(row => {
+        html += `
+          <tr>
+            <td><strong style="color: #38BDF8;">${row.aspek}</strong></td>
+            <td>${row.ket}</td>
+          </tr>
+        `;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
