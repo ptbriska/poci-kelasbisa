@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Republic of Arcane — ELEMENTA WORLD</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- DARK RPG ARCANE STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-arcane-purple: #7C3AED;
+      --rpg-neon-purple: #A855F7;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(124, 58, 237, 0.35);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-arcane-purple);
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.4) 0%, rgba(245, 158, 11, 0.4) 100%);
+      border: 1px solid var(--rpg-arcane-purple);
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+    }
+
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(124, 58, 237, 0.25) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 3.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: #C084FC;
+      background: rgba(124, 58, 237, 0.15);
+      border: 1px solid var(--rpg-arcane-purple);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, #C084FC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* 4 PROVINCES GRID */
+    .province-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    .province-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid;
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .province-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(168, 85, 247, 0.25);
+    }
+
+    .province-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .province-name {
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+
+    .province-element {
+      font-family: monospace;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--rpg-gold);
+      margin-top: 0.2rem;
+    }
+
+    .province-detail {
+      font-size: 0.88rem;
+      color: #CBD5E1;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    /* DUAL CITIZENSHIP BANNER */
+    .dual-card {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(10, 25, 47, 0.95) 100%);
+      border: 2px solid var(--rpg-arcane-purple);
+      border-radius: 24px;
+      padding: 2.2rem;
+      margin: 3rem 0;
+      box-shadow: 0 12px 35px rgba(124, 58, 237, 0.2);
+    }
+
+    /* TABLE STYLING */
+    .table-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid var(--rpg-arcane-purple);
+      border-radius: 24px;
+      padding: 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    .matrix-table th {
+      background: rgba(124, 58, 237, 0.2);
+      color: #C084FC;
+      padding: 1rem;
+      font-weight: 900;
+      border-bottom: 2px solid var(--rpg-arcane-purple);
+      text-transform: uppercase;
+    }
+
+    .matrix-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+      color: #CBD5E1;
+    }
+
+    @media (max-width: 992px) {
+      .province-grid { grid-template-columns: 1fr; }
+      .elementa-menu { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../RPG Elementa-Universe/">Cara Bermain</a></li>
+        <li><a href="../" class="active">Dunia Elementa</a></li>
+        <li><a href="../Sistem Akademik/">Sistem Akademik</a></li>
+        <li><a href="../program/">Katalog & Harga</a></li>
+        <li><a href="../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN REPUBLIC OF ARCANE -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <a href="../" style="color: #C084FC; font-weight: 800; font-size: 0.82rem; text-decoration: none;">← Kembali ke Katalog Dunia Elementa</a>
+        <div style="margin-top: 0.8rem;">
+          <span class="hud-chip">// SPECIAL ACADEMIC REGION // REPUBLIC OF ARCANE</span>
+          <h1 class="rpg-title" id="page-title">Republic of Arcane</h1>
+          <p style="color: #94A3B8; font-size: 1rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+            Memuat penjelasan wilayah khusus Arcane...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- FILOSOFI REPUBLIK BOX -->
+        <div style="background: rgba(10, 25, 47, 0.9); border: 1.5px solid var(--rpg-arcane-purple); border-radius: 20px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+          <h2 style="font-size: 1.3rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.5rem;" id="filosofi-title">Pusat Keahlian Spesialisasi Lanjut</h2>
+          <div style="font-size: 0.9rem; color: #C084FC; font-weight: 900; font-style: italic; margin-bottom: 1rem;" id="filosofi-motto">
+            "Beyond Elements, Beyond Limits."
+          </div>
+          <p style="font-size: 0.92rem; color: #CBD5E1; line-height: 1.8; margin: 0;" id="filosofi-desc">
+            Memuat filosofi...
+          </p>
+        </div>
+
+        <!-- 4 PROVINCES GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">4 ACADEMIC PROVINCES</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Struktur Provinsi Arcane</h2>
+        </div>
+        <div class="province-grid" id="province-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- DUAL CITIZENSHIP BANNER & TABLE -->
+        <div class="table-card">
+          <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;" id="dual-title">🔮 Sistem Kewarganegaraan Ganda Arcane</h2>
+          <p style="color: #94A3B8; font-size: 0.88rem; margin-bottom: 1.5rem;" id="dual-desc">
+            Situs Arcane tidak menggantikan Nation asal, melainkan memberikan spesialisasi ganda.
+          </p>
+          
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 30%;">NATION UTAMA</th>
+                <th style="width: 35%;">PROVINCE ARCANE</th>
+                <th style="width: 35%;">IDENTITAS GELAR GANDA</th>
+              </tr>
+            </thead>
+            <tbody id="dual-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          if (data.overview) {
+            document.getElementById("filosofi-motto").innerText = `"${data.overview.motto}"`;
+            document.getElementById("filosofi-desc").innerText = data.overview.filosofi;
+          }
+
+          if (data.dual_citizenship) {
+            document.getElementById("dual-title").innerText = `🔮 ${data.dual_citizenship.title}`;
+            document.getElementById("dual-desc").innerText = data.dual_citizenship.desc;
+            renderDualTable(data.dual_citizenship.contoh_list || []);
+          }
+
+          renderProvincesGrid(data.provinces || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderProvincesGrid(list) {
+      const target = document.getElementById("province-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(p => {
+        html += `
+          <div class="province-card" style="border-color: ${p.color_hex};">
+            <div>
+              <div class="province-header">
+                <div class="province-name" style="color: ${p.color_hex};">${p.nama}</div>
+                <div class="province-element">Arcane Element: ${p.element}</div>
+              </div>
+              <div class="province-detail">
+                <strong>Fokus Akademik:</strong> ${p.fokus}<br><br>
+                <strong>Filosofi:</strong> ${p.filosofi}
+              </div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 10px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.08);">
+              <div style="color: var(--rpg-gold); font-weight: 800; margin-bottom: 0.3rem;">Gelar Warga: ${p.gelar} (${p.julukan})</div>
+              <div style="color: #94A3B8; font-style: italic;">"${p.motto}"</div>
+            </div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderDualTable(list) {
+      const target = document.getElementById("dual-table-body");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(row => {
+        html += `
+          <tr>
+            <td><strong>${row.nation}</strong></td>
+            <td>${row.arcane}</td>
+            <td><strong style="color: #C084FC;">${row.hasil_gelar}</strong></td>
+          </tr>
+        `;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
