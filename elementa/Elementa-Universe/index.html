@@ -10,31 +10,47 @@
   <link rel="stylesheet" href="../../assets/css/global.css">
   <link rel="stylesheet" href="../style.css">
 
-  <!-- GAMING RPG HUD STYLESHEET LOKAL -->
+  <!-- DARK RPG KINGDOM FANTASY STYLESHEET LOKAL -->
   <style>
     :root {
-      --hud-glow: rgba(0, 180, 216, 0.4);
-      --hud-dark: #0A192F;
-      --hud-border: #7DD3FC;
-      --gold-glow: #F59E0B;
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-cyan: #00B4D8;
+      --rpg-neon-blue: #38BDF8;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(125, 211, 252, 0.25);
     }
 
     body {
-      background-color: #F0F9FF;
-      color: #0F172A;
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Subnav Topbar */
+    /* Container Pembatas Layar (Mencegah Penuh Sesak di PC) */
+    .pilar-container,
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Subnav Topbar Dark RPG Kingdom */
     .elementa-subnav {
-      background: linear-gradient(90deg, #0A192F 0%, #1E293B 50%, #0A192F 100%);
-      border-bottom: 3px solid #00B4D8;
-      box-shadow: 0 4px 20px rgba(0, 180, 216, 0.25);
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-cyan);
+      box-shadow: 0 4px 20px rgba(0, 180, 216, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
     }
 
     .elementa-subnav-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -50,6 +66,7 @@
       font-size: 1.2rem;
       text-decoration: none;
       letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
     }
 
     .elementa-menu {
@@ -61,46 +78,53 @@
     }
 
     .elementa-menu a {
-      color: #CBD5E1;
+      color: #94A3B8;
       text-decoration: none;
       font-size: 0.82rem;
       font-weight: 800;
       padding: 0.45rem 0.85rem;
       border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
     }
 
     .elementa-menu a:hover, .elementa-menu a.active {
       color: #FFFFFF;
       background: linear-gradient(135deg, rgba(0, 180, 216, 0.4) 0%, rgba(2, 132, 199, 0.4) 100%);
-      border: 1px solid #00B4D8;
+      border: 1px solid var(--rpg-cyan);
+      box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
     }
 
     /* RPG Lore Header */
     .lore-hero {
-      background: radial-gradient(circle at 50% 20%, rgba(0, 180, 216, 0.25) 0%, #F0F9FF 80%);
-      padding: 3.5rem 0 2rem 0;
+      background: radial-gradient(circle at 50% 20%, rgba(0, 180, 216, 0.2) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 4rem 0 2.5rem 0;
       text-align: center;
       position: relative;
+      border-bottom: 1px solid var(--rpg-border);
     }
 
     .hud-tag {
       font-family: monospace;
       font-size: 0.8rem;
-      color: #0284C7;
-      background: #E0F2FE;
-      padding: 0.3rem 0.9rem;
+      color: var(--rpg-gold);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--rpg-gold);
+      padding: 0.35rem 1.2rem;
       border-radius: 20px;
-      border: 1px solid #7DD3FC;
       font-weight: 800;
       letter-spacing: 1px;
       display: inline-block;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
     }
 
     .lore-title {
       font-size: 2.8rem;
       font-weight: 900;
-      color: #0A192F;
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--rpg-neon-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 0.5rem;
@@ -112,15 +136,16 @@
       grid-template-columns: 1.1fr 1fr;
       gap: 2.5rem;
       align-items: center;
-      margin: 2.5rem 0;
+      margin: 3rem 0;
     }
 
     .lore-hud-card {
-      background: #FFFFFF;
-      border: 2px solid #BAE6FD;
+      background: var(--rpg-card-bg);
+      border: 1.5px solid var(--rpg-border);
       border-radius: 24px;
       padding: 2.5rem;
-      box-shadow: 0 12px 35px rgba(0, 180, 216, 0.12);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
       position: relative;
     }
 
@@ -130,15 +155,16 @@
       top: -12px;
       left: 24px;
       background: #0A192F;
-      color: #38BDF8;
+      color: var(--rpg-neon-blue);
       font-family: monospace;
       font-size: 0.72rem;
       font-weight: 800;
       padding: 0.2rem 0.8rem;
       border-radius: 6px;
+      border: 1px solid var(--rpg-border);
     }
 
-    /* ELEMENTAL ORBITAL NEXUS (VISUAL MELINGKAR CIAMIK) */
+    /* ELEMENTAL ORBITAL NEXUS (VISUAL MELINGKAR DARK RPG) */
     .nexus-orbital-container {
       position: relative;
       width: 100%;
@@ -153,8 +179,8 @@
       height: 110px;
       border-radius: 50%;
       background: linear-gradient(135deg, #0A192F 0%, #0077B6 100%);
-      border: 3px solid #00B4D8;
-      box-shadow: 0 0 30px rgba(0, 180, 216, 0.5);
+      border: 3px solid var(--rpg-cyan);
+      box-shadow: 0 0 35px rgba(0, 180, 216, 0.6);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -167,20 +193,21 @@
 
     @keyframes pulseOrb {
       0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(0, 180, 216, 0.4); }
-      50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 180, 216, 0.7); }
+      50% { transform: scale(1.05); box-shadow: 0 0 45px rgba(0, 180, 216, 0.8); }
     }
 
     .nexus-node {
       position: absolute;
-      width: 130px;
-      background: #FFFFFF;
+      width: 135px;
+      background: rgba(10, 25, 47, 0.9);
       border-radius: 16px;
-      padding: 0.8rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding: 0.85rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
       border: 2px solid;
       text-align: center;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
+      backdrop-filter: blur(8px);
     }
 
     .nexus-node:hover {
@@ -189,20 +216,20 @@
     }
 
     /* Orbit Positions */
-    .node-earth { top: 10px; left: 20px; border-color: #059669; }
-    .node-water { top: 10px; right: 20px; border-color: #0284C7; }
-    .node-air { bottom: 10px; left: 20px; border-color: #D97706; }
-    .node-fire { bottom: 10px; right: 20px; border-color: #DC2626; }
+    .node-earth { top: 10px; left: 10px; border-color: #059669; }
+    .node-water { top: 10px; right: 10px; border-color: #0284C7; }
+    .node-air { bottom: 10px; left: 10px; border-color: #D97706; }
+    .node-fire { bottom: 10px; right: 10px; border-color: #DC2626; }
 
     /* AVATAR MASTERY STAGGERED HEX PANEL */
     .avatar-mastery-section {
-      background: linear-gradient(135deg, #0A192F 0%, #1E293B 100%);
+      background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
       border-radius: 28px;
       padding: 3rem 2.5rem;
       color: #FFFFFF;
-      box-shadow: 0 15px 40px rgba(10, 25, 47, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
       margin-bottom: 3.5rem;
-      border: 2px solid #00B4D8;
+      border: 2px solid var(--rpg-cyan);
     }
 
     .avatar-mastery-header {
@@ -221,15 +248,15 @@
     .pillars-staggered-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 1rem;
+      gap: 1.2rem;
       margin-bottom: 2.5rem;
     }
 
     .pillar-hex-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(125, 211, 252, 0.3);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(125, 211, 252, 0.25);
       border-radius: 16px;
-      padding: 1.2rem 0.8rem;
+      padding: 1.4rem 0.9rem;
       text-align: center;
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
@@ -240,15 +267,15 @@
     }
 
     .pillar-hex-card:hover {
-      background: rgba(0, 180, 216, 0.2);
-      border-color: #00B4D8;
+      background: rgba(0, 180, 216, 0.18);
+      border-color: var(--rpg-cyan);
       box-shadow: 0 0 20px rgba(0, 180, 216, 0.4);
     }
 
     .pillar-num {
       font-family: monospace;
       font-size: 0.75rem;
-      color: #F59E0B;
+      color: var(--rpg-gold);
       font-weight: 800;
     }
 
@@ -262,13 +289,13 @@
     .pillar-desc {
       font-size: 0.78rem;
       color: #94A3B8;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
     /* Mastery Rules Box */
     .rules-hud-box {
       background: rgba(245, 158, 11, 0.08);
-      border-left: 4px solid #F59E0B;
+      border-left: 4px solid var(--rpg-gold);
       padding: 1.5rem;
       border-radius: 0 16px 16px 0;
       border-top: 1px solid rgba(245, 158, 11, 0.2);
@@ -300,7 +327,7 @@
 
     .rules-list li::before {
       content: '⚡';
-      color: #F59E0B;
+      color: var(--rpg-gold);
     }
 
     @media (max-width: 992px) {
@@ -339,28 +366,28 @@
   <!-- KONTEN PENGANTAR UNIVERSE & AVATAR -->
   <main>
     <section class="lore-hero">
-      <div class="pilar-container">
+      <div class="elementa-container">
         <span class="hud-tag">// SYSTEM LORE ARCHIVE: CHAPTER 01</span>
         <h1 class="lore-title">Pengantar Elementa Universe</h1>
-        <p style="color: #475569; font-size: 1.05rem; max-width: 750px; margin: 0 auto;" id="txt-tagline">
+        <p style="color: #94A3B8; font-size: 1.05rem; max-width: 750px; margin: 0 auto; line-height: 1.7;" id="txt-tagline">
           Memuat transmisi data lore...
         </p>
       </div>
     </section>
 
     <section class="pilar-section">
-      <div class="pilar-container">
+      <div class="elementa-container">
 
         <!-- ASYMMETRICAL LAYOUT: LORE TEXT + ORBITAL NEXUS -->
         <div class="universe-asym-wrapper">
           
           <!-- LEFT: LORE HUD CARD -->
           <div class="lore-hud-card">
-            <h2 style="font-size: 1.6rem; color: #0A192F; font-weight: 900; margin-bottom: 1rem;">Filosofi Dunia Konseptual</h2>
-            <p style="font-size: 0.95rem; color: #334155; line-height: 1.8; margin-bottom: 1.2rem;" id="txt-narrative">
+            <h2 style="font-size: 1.6rem; color: #FFFFFF; font-weight: 900; margin-bottom: 1rem;">Filosofi Dunia Konseptual</h2>
+            <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.8; margin-bottom: 1.2rem;" id="txt-narrative">
               Memuat deskripsi naratif...
             </p>
-            <div style="background: #F0F9FF; border-left: 4px solid #00B4D8; padding: 1rem; border-radius: 0 8px 8px 0; font-size: 0.88rem; color: #0369A1;" id="txt-arcane">
+            <div style="background: rgba(0, 180, 216, 0.1); border-left: 4px solid var(--rpg-cyan); padding: 1rem; border-radius: 0 8px 8px 0; font-size: 0.88rem; color: #7DD3FC; border-top: 1px solid rgba(0, 180, 216, 0.2); border-right: 1px solid rgba(0, 180, 216, 0.2); border-bottom: 1px solid rgba(0, 180, 216, 0.2);" id="txt-arcane">
               Memuat Arcane Elements...
             </div>
           </div>
@@ -449,7 +476,7 @@
           <div class="nexus-node ${positions[idx]}">
             <span style="font-size: 1.5rem;">${elem.symbol}</span>
             <div style="font-weight: 900; font-size: 0.9rem; color: ${elem.color};">${elem.name}</div>
-            <div style="font-size: 0.72rem; color: #64748B; font-weight: 700;">${elem.domain}</div>
+            <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 700;">${elem.domain}</div>
           </div>
         `;
       });
