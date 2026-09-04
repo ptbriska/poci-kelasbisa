@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimoni & Kesan Peserta — PILAR Juara by Kelas Bisa</title>
+  
+  <!-- Favicon & CSS Master -->
+  <link rel="icon" href="../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- LIGHT THEME: BIRU LANGIT & CYAN -->
+  <style>
+    .testi-hero {
+      background: linear-gradient(180deg, #E0F7FA 0%, #F0F9FF 100%);
+      padding: 3.5rem 0 2.5rem 0;
+      border-bottom: 1px solid #BEE3F8;
+      text-align: center;
+    }
+
+    .testi-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #E0F2FE;
+      border: 1px solid #00B4D8;
+      color: #0077B6;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .testi-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #0F172A;
+      margin-bottom: 0.5rem;
+    }
+
+    .testi-subtitle {
+      color: #475569;
+      font-size: 1rem;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Counter Bar */
+    .testi-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin: 2.5rem 0 1rem 0;
+    }
+
+    .stat-card {
+      background: #FFFFFF;
+      border: 1px solid #BEE3F8;
+      border-radius: 16px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 180, 216, 0.06);
+    }
+
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #0077B6;
+      display: block;
+    }
+
+    .stat-lbl {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #64748B;
+      text-transform: uppercase;
+    }
+
+    /* Category Filter Tabs */
+    .filter-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: #FFFFFF;
+      border: 1px solid #BEE3F8;
+      color: #334155;
+      padding: 0.6rem 1.4rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: #00B4D8;
+      color: #0077B6;
+      background: #F0F9FF;
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
+      color: #FFFFFF;
+      border-color: #00B4D8;
+      box-shadow: 0 4px 12px rgba(0, 180, 216, 0.25);
+    }
+
+    /* Testimonial Cards Grid */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .testi-card {
+      background: #FFFFFF;
+      border: 1px solid #BEE3F8;
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 6px 18px rgba(0, 119, 182, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .testi-card:hover {
+      border-color: #00B4D8;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 180, 216, 0.12);
+    }
+
+    .testi-source-tag {
+      display: inline-block;
+      background: #F1F5F9;
+      color: #475569;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+      border: 1px solid #E2E8F0;
+    }
+
+    .testi-quote {
+      font-size: 0.92rem;
+      color: #1E293B;
+      line-height: 1.6;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .testi-author {
+      border-top: 1px solid #F1F5F9;
+      padding-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #E0F2FE;
+      color: #0077B6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border: 1px solid #7DD3FC;
+    }
+
+    .author-name {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #0F172A;
+    }
+
+    .author-school {
+      font-size: 0.78rem;
+      color: #0077B6;
+      font-weight: 600;
+    }
+
+    /* Secreto CTA Banner */
+    .secreto-banner {
+      background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+      border: 1px solid #7DD3FC;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 180, 216, 0.1);
+    }
+
+    .secreto-banner h3 {
+      font-size: 1.5rem;
+      color: #0369A1;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .secreto-banner p {
+      font-size: 0.9rem;
+      color: #334155;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-secreto {
+      display: inline-block;
+      background: #0077B6;
+      color: #FFFFFF;
+      font-weight: 800;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 119, 182, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .btn-secreto:hover {
+      background: #0284C7;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 992px) {
+      .testi-grid { grid-template-columns: repeat(2, 1fr); }
+      .testi-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .testi-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL PILAR -->
+  <nav class="pilar-subnav">
+    <div class="pilar-subnav-container">
+      <a href="../" class="pilar-brand">
+        <img src="../images/logo-pilar.png" alt="Logo PILAR" class="pilar-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="pilar-icon" style="display:none;">🏆</span>
+        <span class="pilar-name">PILAR Juara</span>
+      </a>
+      <ul class="pilar-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../freemium/">Program Freemium</a></li>
+        <li><a href="../reguler/">Program Reguler</a></li>
+        <li><a href="../prestasi/">Prestasi Alumni</a></li>
+        <li><a href="./" style="color: var(--pilar-cyan); background: rgba(0, 180, 216, 0.1);">Testimoni</a></li>
+        <li><a href="../tutor/">Tutor / Mentor</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN KONTEN TESTIMONI -->
+  <main>
+    <section class="testi-hero">
+      <div class="pilar-container">
+        <span class="testi-badge">💬 KATA MERIEREKA TENTANG PILAR</span>
+        <h1 class="testi-title">Testimoni & Kesan Peserta</h1>
+        <p class="testi-subtitle">
+          Ulasan jujur dan cerita pengalaman langsung dari para siswa, guru, serta kontingen sekolah yang telah mengikuti bimbingan kompetisi bersama PILAR Juara.
+        </p>
+
+        <!-- STATS BAR -->
+        <div class="testi-stats-grid">
+          <div class="stat-card">
+            <span class="stat-num" id="st-total">100+</span>
+            <span class="stat-lbl">Ulasan Terkumpul</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" id="st-score">4.9 / 5.0</span>
+            <span class="stat-lbl">Tingkat Kepuasan</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" id="st-sekolah">24+</span>
+            <span class="stat-lbl">Sekolah Terdampak</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">🔒 100%</span>
+            <span class="stat-lbl">Ulasan Asli / Authentic</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="pilar-container">
+        
+        <!-- CATEGORY FILTER BUTTONS -->
+        <div class="filter-wrapper">
+          <button class="filter-btn active" onclick="filterProgram('all')">🌟 Semua Ulasan</button>
+          <button class="filter-btn" onclick="filterProgram('pilar-osn')">🥇 OSN / KSM</button>
+          <button class="filter-btn" onclick="filterProgram('fiksi-bp')">💼 FIKSI & Business Plan</button>
+          <button class="filter-btn" onclick="filterProgram('opsi-kti')">🔬 OPSI & LKTI</button>
+        </div>
+
+        <!-- GRID TESTIMONI CARDS -->
+        <div class="testi-grid" id="testi-grid-target">
+          <p style="color: #64748B;">Memuat ulasan peserta...</p>
+        </div>
+
+        <!-- WIDGET CTA SECRETO SUBMISSION -->
+        <div class="secreto-banner">
+          <h3>Pernah Ikut Bimbingan atau Web-Class PILAR?</h3>
+          <p>
+            Bantu kami terus berkembang dengan memberikan ulasan, saran, dan kesan jujurmu melalui Secreto Anonymous resmi PILAR.
+          </p>
+          <a href="https://secreto.site/admxb3" target="_blank" rel="noopener noreferrer" class="btn-secreto">
+            ✍️ Tulis Kesanmu di Secreto PILAR →
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <script src="../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL TESTIMONI -->
+  <script>
+    let globalTestiData = [];
+
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("data-testimoni.json")
+        .then(res => {
+          if(!res.ok) throw new Error("Gagal membaca data-testimoni.json");
+          return res.json();
+        })
+        .then(data => {
+          if(data.stat_testimoni) {
+            document.getElementById("st-total").innerText = data.stat_testimoni.total_ulasan || "100+";
+            document.getElementById("st-score").innerText = data.stat_testimoni.kepuasan_peserta || "4.9";
+            document.getElementById("st-sekolah").innerText = data.stat_testimoni.sekolah_terdampak || "24+";
+          }
+
+          globalTestiData = data.daftar_testimoni || [];
+          renderTestimonials(globalTestiData);
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("testi-grid-target").innerHTML = `<p style="color:red; grid-column:1/-1;">Gagal memuat ulasan testimoni.</p>`;
+        });
+    });
+
+    function renderTestimonials(list) {
+      const target = document.getElementById("testi-grid-target");
+      if(list.length === 0) {
+        target.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 2rem; background: #FFFFFF; border-radius: 12px; border: 1px dashed #00B4D8;">
+            <p style="color: #0369A1; font-weight: 700;">Belum ada ulasan publik untuk kategori program ini.</p>
+            <p style="font-size: 0.85rem; color: #64748B;">Program baru membuka batch pendaftaran! Jadilah peserta pertama yang mengukir prestasi bersama PILAR.</p>
+          </div>
+        `;
+        return;
+      }
+
+      let html = "";
+      list.forEach(item => {
+        const initial = item.nama ? item.nama.charAt(0) : "S";
+        html += `
+          <div class="testi-card">
+            <div>
+              <span class="testi-source-tag">🔒 Verified ${item.sumber || 'Secreto'}</span>
+              <p class="testi-quote">"${item.pesan}"</p>
+            </div>
+            <div class="testi-author">
+              <div class="author-avatar">${initial}</div>
+              <div>
+                <div class="author-name">${item.nama}</div>
+                <div class="author-school">${item.sekolah} (${item.bidang})</div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function filterProgram(programKey) {
+      const btns = document.querySelectorAll('.filter-btn');
+      btns.forEach(btn => btn.classList.remove('active'));
+
+      // Highlight active button
+      if(programKey === 'all') btns[0].classList.add('active');
+      else if(programKey === 'pilar-osn') btns[1].classList.add('active');
+      else if(programKey === 'fiksi-bp') btns[2].classList.add('active');
+      else if(programKey === 'opsi-kti') btns[3].classList.add('active');
+
+      if(programKey === 'all') {
+        renderTestimonials(globalTestiData);
+      } else {
+        const filtered = globalTestiData.filter(item => item.program === programKey);
+        renderTestimonials(filtered);
+      }
+    }
+  </script>
+</body>
+</html>
