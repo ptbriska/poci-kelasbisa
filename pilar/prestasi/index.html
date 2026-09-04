@@ -98,7 +98,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Secondary Stats Sub-bar */
     .secondary-stats-bar {
       display: flex;
       justify-content: center;
@@ -109,30 +108,23 @@
       font-weight: 700;
     }
 
-    /* Filter & Search Bar */
-    .filter-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-      gap: 1rem;
+    /* SECTION TITLE SHOWCASE TOP 4 */
+    .section-title-box {
+      margin-bottom: 1.5rem;
     }
 
-    .search-input {
-      padding: 0.6rem 1.2rem;
-      border: 1px solid #BEE3F8;
-      border-radius: 20px;
+    .section-title-box h2 {
+      font-size: 1.5rem;
+      color: #0F172A;
+      font-weight: 800;
+    }
+
+    .section-title-box p {
       font-size: 0.88rem;
-      width: 280px;
-      outline: none;
+      color: #64748B;
     }
 
-    .search-input:focus {
-      border-color: #00B4D8;
-    }
-
-    /* Grid Medalis Card */
+    /* GRID TOP 4 MEDALIS */
     .medalis-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -203,6 +195,63 @@
       color: #475569;
       font-style: italic;
       line-height: 1.5;
+    }
+
+    /* TABEL REKAM JEJAK PRESTASI LENGKAP */
+    .history-table-card {
+      background: #FFFFFF;
+      border: 1px solid #BEE3F8;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 6px 18px rgba(0, 119, 182, 0.05);
+      margin-bottom: 3.5rem;
+    }
+
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .search-input {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #BEE3F8;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      width: 280px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: #00B4D8;
+    }
+
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .history-table th {
+      background: #E0F2FE;
+      color: #0369A1;
+      padding: 0.9rem 1rem;
+      font-weight: 800;
+      text-align: left;
+      border-bottom: 2px solid #00B4D8;
+    }
+
+    .history-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+
+    .history-table tr:hover td {
+      background: #F8FAFC;
     }
 
     /* GRID LOGO MITRA SEKOLAH */
@@ -308,33 +357,33 @@
         <div class="medal-dashboard-grid">
           <div class="medal-box gold">
             <span class="medal-icon">🥇</span>
-            <span class="medal-count" id="cnt-gold">4</span>
+            <span class="medal-count" id="cnt-gold">0</span>
             <span class="medal-label">Medali Emas</span>
           </div>
 
           <div class="medal-box silver">
             <span class="medal-icon">🥈</span>
-            <span class="medal-count" id="cnt-silver">11</span>
+            <span class="medal-count" id="cnt-silver">0</span>
             <span class="medal-label">Medali Perak</span>
           </div>
 
           <div class="medal-box bronze">
             <span class="medal-icon">🥉</span>
-            <span class="medal-count" id="cnt-bronze">12</span>
+            <span class="medal-count" id="cnt-bronze">0</span>
             <span class="medal-label">Medali Perunggu</span>
           </div>
 
           <div class="medal-box total">
             <span class="medal-icon">🏆</span>
-            <span class="medal-count" id="cnt-total">27</span>
+            <span class="medal-count" id="cnt-total">0</span>
             <span class="medal-label">Total Medali</span>
           </div>
         </div>
 
         <!-- SECONDARY STATS BAR -->
         <div class="secondary-stats-bar">
-          <span>🏫 <strong id="cnt-mitra">24</strong> Sekolah & Instansi Mitra</span>
-          <span>🎯 <strong id="cnt-pass">90%</strong> Tingkat Kelulusan Seleksi</span>
+          <span>🏫 <strong id="cnt-mitra">0</strong> Sekolah & Instansi Mitra</span>
+          <span>🎯 <strong id="cnt-pass">0%</strong> Tingkat Kelulusan Seleksi</span>
         </div>
       </div>
     </section>
@@ -342,18 +391,47 @@
     <section class="pilar-section">
       <div class="pilar-container">
         
-        <!-- FILTER SEARCH -->
-        <div class="filter-bar">
-          <h2 style="font-size: 1.4rem; color: #0F172A; font-weight: 800;">Daftar Siswa Medalis</h2>
-          <input type="text" id="search-input" class="search-input" placeholder="Cari nama, sekolah, atau bidang..." onkeyup="filterMedalis()">
+        <!-- SECTION 1: TOP 4 MEDALIS SHOWCASE -->
+        <div class="section-title-box">
+          <h2>🌟 Top Medalis Highlight</h2>
+          <p>Profil alumni medalis terbaik penerima penghargaan tertinggi nasional.</p>
         </div>
 
-        <!-- GRID CARDS MEDALIS -->
-        <div class="medalis-grid" id="medalis-grid-target">
-          <p style="color: #64748B;">Memuat data prestasi alumni...</p>
+        <div class="medalis-grid" id="top-medalis-target">
+          <p style="color: #64748B;">Memuat data top medalis...</p>
         </div>
 
-        <!-- MITRA SEKOLAH & LOGO -->
+        <!-- SECTION 2: TABEL RIWAYAT PRESTASI LENGKAP -->
+        <div class="history-table-card">
+          <div class="filter-bar">
+            <div>
+              <h2 style="font-size: 1.3rem; color: #0F172A; font-weight: 800;">📋 Rekam Jejak Prestasi Lainnya</h2>
+              <p style="font-size: 0.85rem; color: #64748B;">Daftar lengkap perolehan medali dan penghargaan alumni PILAR.</p>
+            </div>
+            <input type="text" id="search-input" class="search-input" placeholder="Cari nama, sekolah, atau bidang..." onkeyup="filterHistoryTable()">
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>NO</th>
+                  <th>NAMA SISWA</th>
+                  <th>ASAL SEKOLAH</th>
+                  <th>BIDANG KOMPETISI</th>
+                  <th>CAPAIAN PRESTASI</th>
+                  <th>TINGKAT</th>
+                  <th>TAHUN</th>
+                </tr>
+              </thead>
+              <tbody id="history-table-body">
+                <!-- Rendered via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION 3: MITRA SEKOLAH & LOGO -->
         <div class="partner-section">
           <h3>Mitra Sekolah & Instansi Pembinaan</h3>
           <p>Telah dipercaya oleh berbagai sekolah unggulan dan madrasah dalam program pendampingan kompetisi akademik.</p>
@@ -373,7 +451,7 @@
 
   <!-- SCRIPT LOKAL ENGINE PRESTASI -->
   <script>
-    let globalMedalisData = [];
+    let globalHistoryData = [];
 
     document.addEventListener("DOMContentLoaded", function () {
       fetch("data-prestasi.json")
@@ -382,7 +460,7 @@
           return res.json();
         })
         .then(data => {
-          // Render Medals Stats
+          // 1. Render Medals Stats
           if(data.statistik_medali) {
             document.getElementById("cnt-gold").innerText = data.statistik_medali.medali_emas || "0";
             document.getElementById("cnt-silver").innerText = data.statistik_medali.medali_perak || "0";
@@ -392,20 +470,26 @@
             document.getElementById("cnt-pass").innerText = data.statistik_medali.tingkat_kelulusan || "0%";
           }
 
-          globalMedalisData = data.daftar_medalis || [];
-          renderMedalisGrid(globalMedalisData);
+          // 2. Render Top 4 Medalis
+          renderTopMedalis(data.top_medalis || []);
+
+          // 3. Render Tabel Riwayat Prestasi Lengkap
+          globalHistoryData = data.riwayat_prestasi_lengkap || [];
+          renderHistoryTable(globalHistoryData);
+
+          // 4. Render Logo Mitra Sekolah
           renderPartners(data.sekolah_mitra || []);
         })
         .catch(err => {
           console.error(err);
-          document.getElementById("medalis-grid-target").innerHTML = `<p style="color:red;">Gagal memuat data prestasi.</p>`;
+          document.getElementById("top-medalis-target").innerHTML = `<p style="color:red;">Gagal memuat data prestasi.</p>`;
         });
     });
 
-    function renderMedalisGrid(list) {
-      const target = document.getElementById("medalis-grid-target");
+    function renderTopMedalis(list) {
+      const target = document.getElementById("top-medalis-target");
       if(list.length === 0) {
-        target.innerHTML = `<p style="color:#64748B; grid-column: 1/-1; text-align:center;">Data medalis tidak ditemukan.</p>`;
+        target.innerHTML = `<p style="color:#64748B; grid-column: 1/-1;">Data medalis tidak ditemukan.</p>`;
         return;
       }
 
@@ -431,6 +515,30 @@
       target.innerHTML = html;
     }
 
+    function renderHistoryTable(list) {
+      const target = document.getElementById("history-table-body");
+      if(list.length === 0) {
+        target.innerHTML = `<tr><td colspan="7" style="text-align:center; color:#64748B;">Tidak ada riwayat prestasi ditemukan.</td></tr>`;
+        return;
+      }
+
+      let html = "";
+      list.forEach((item, index) => {
+        html += `
+          <tr>
+            <td><strong>${index + 1}</strong></td>
+            <td><strong>${item.nama}</strong></td>
+            <td>${item.sekolah}</td>
+            <td>${item.bidang}</td>
+            <td><span style="color:#D97706; font-weight:700;">🎖️ ${item.pencapaian}</span></td>
+            <td>${item.tingkat}</td>
+            <td>${item.tahun}</td>
+          </tr>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
     function renderPartners(partners) {
       const target = document.getElementById("partner-logo-target");
       let html = "";
@@ -450,15 +558,16 @@
       target.innerHTML = html;
     }
 
-    function filterMedalis() {
+    function filterHistoryTable() {
       const keyword = document.getElementById("search-input").value.toLowerCase();
-      const filtered = globalMedalisData.filter(item => 
+      const filtered = globalHistoryData.filter(item => 
         item.nama.toLowerCase().includes(keyword) ||
         item.sekolah.toLowerCase().includes(keyword) ||
         item.bidang.toLowerCase().includes(keyword) ||
-        item.pencapaian.toLowerCase().includes(keyword)
+        item.pencapaian.toLowerCase().includes(keyword) ||
+        item.tingkat.toLowerCase().includes(keyword)
       );
-      renderMedalisGrid(filtered);
+      renderHistoryTable(filtered);
     }
   </script>
 </body>
