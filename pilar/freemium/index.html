@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Freemium — PILAR Juara by Kelas Bisa</title>
+  
+  <link rel="icon" href="../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="../style.css">
+  
+  <!-- Marked.js CDN untuk Render Markdown ke HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- STYLESHEET LOKAL FREEMIUM (ISOLASI TOTAL) -->
+  <style>
+    .freemium-hero-section {
+      background: linear-gradient(180deg, #E0F2FE 0%, var(--pilar-bg-light, #F0F9FF) 100%);
+      padding: 3rem 0 2rem 0;
+      border-bottom: 1px solid var(--pilar-border, #E2E8F0);
+    }
+    .freemium-container {
+      max-width: var(--pilar-max-width, 1200px);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .freemium-back-link {
+      display: inline-block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--pilar-primary, #00B4D8);
+      margin-bottom: 1rem;
+      text-decoration: none;
+    }
+    .freemium-back-link:hover {
+      text-decoration: underline;
+    }
+    .freemium-title-box h1 {
+      font-size: 2.2rem;
+      color: var(--pilar-deep-blue, #0A192F);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .freemium-title-box p {
+      font-size: 1rem;
+      color: var(--pilar-text-muted, #475569);
+      line-height: 1.6;
+    }
+    .markdown-rendered-box {
+      background: #FFFFFF;
+      padding: 2.5rem;
+      border-radius: var(--pilar-radius-md, 12px);
+      border: 1px solid var(--pilar-border, #E2E8F0);
+      box-shadow: var(--pilar-shadow-sm, 0 2px 8px rgba(0, 180, 216, 0.08));
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+    /* Styling Hasil Parse Markdown */
+    .markdown-rendered-box h1 {
+      font-size: 1.8rem;
+      color: var(--pilar-deep-blue, #0A192F);
+      border-bottom: 2px solid var(--pilar-primary, #00B4D8);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .markdown-rendered-box h2 {
+      font-size: 1.3rem;
+      color: var(--pilar-deep-blue, #0A192F);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .markdown-rendered-box h2 + p {
+      font-size: 0.9rem;
+      color: var(--pilar-primary, #00B4D8);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .markdown-rendered-box p {
+      font-size: 0.95rem;
+      color: var(--pilar-text-muted, #475569);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .markdown-rendered-box ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .markdown-rendered-box li {
+      font-size: 0.9rem;
+      color: var(--pilar-text-main, #0F172A);
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+    .markdown-rendered-box hr {
+      border: 0;
+      height: 1px;
+      background: var(--pilar-border, #E2E8F0);
+      margin: 2rem 0;
+    }
+    .freemium-cta-box {
+      background: linear-gradient(135deg, var(--pilar-deep-blue, #0A192F) 0%, #0077B6 100%);
+      color: #FFFFFF;
+      padding: 2.5rem 2rem;
+      border-radius: var(--pilar-radius-md, 12px);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .freemium-cta-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .freemium-cta-box p {
+      font-size: 0.95rem;
+      color: #E0F2FE;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER GLOBAL BARIS 1 -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL PILAR BARIS 2 -->
+  <nav class="pilar-subnav">
+    <div class="pilar-subnav-container">
+      <a href="../" class="pilar-brand">
+        <img src="../images/logo-pilar.png" alt="Logo PILAR Juara" class="pilar-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="pilar-icon" style="display:none;">🏆</span>
+        <span class="pilar-name">PILAR Juara</span>
+      </a>
+      <ul class="pilar-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="./" style="color: var(--pilar-cyan); background: rgba(255, 255, 255, 0.12);">Program Freemium</a></li>
+        <li><a href="../reguler/">Program Reguler</a></li>
+        <li><a href="../prestasi/">Prestasi Alumni</a></li>
+        <li><a href="../testimoni/">Testimoni</a></li>
+        <li><a href="../tutor/">Tutor / Mentor</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN UTAMA FREEMIUM -->
+  <main>
+    <section class="freemium-hero-section">
+      <div class="freemium-container">
+        <a href="../" class="freemium-back-link">← Kembali ke Hub PILAR</a>
+        <div class="freemium-title-box">
+          <h1>Program Freemium PILAR</h1>
+          <p>Ruang belajar, berbagi pengalaman, simulasi tes, dan pengasahan bakat kompetisi secara gratis[cite: 3].</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="freemium-container">
+      <!-- WADAH RENDER MARKDOWN CONTENT.MD -->
+      <div id="freemium-md-rendered" class="markdown-rendered-box">
+        <p>Memuat materi Program Freemium...</p>
+      </div>
+
+      <!-- WIDGET CTA KE SHOWROOM EVENT TERDEKAT -->
+      <div class="freemium-cta-box">
+        <h3>Tertarik Mengikuti Program Freemium Terdekat?</h3>
+        <p>Lihat jadwal Zoominar, Mini Class, dan Try Out gratis yang sedang aktif membuka pendaftaran.</p>
+        <a href="../../events/?subbrand=pilar&type=freemium" class="pilar-btn-gold">Cek Jadwal Event Freemium Active →</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- 3. FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT GLOBAL COMPONENTS -->
+  <script src="../../assets/js/components.js"></script>
+
+  <!-- SCRIPT LOKAL FREEMIUM (ISOLASI TOTAL) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Fetch & Render content.md lokal
+      fetch("content.md")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Gagal membaca file content.md");
+          }
+          return response.text();
+        })
+        .then((markdownText) => {
+          const container = document.getElementById("freemium-md-rendered");
+          if (typeof marked !== "undefined") {
+            container.innerHTML = marked.parse(markdownText);
+          } else {
+            container.innerText = markdownText;
+          }
+        })
+        .catch((err) => {
+          console.error("Error loading Freemium Markdown:", err);
+          document.getElementById("freemium-md-rendered").innerHTML = 
+            "<p style='color: red;'>Gagal memuat rincian materi Program Freemium.</p>";
+        });
+    });
+  </script>
+</body>
+</html>
