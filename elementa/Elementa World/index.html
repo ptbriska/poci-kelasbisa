@@ -141,6 +141,9 @@
       backdrop-filter: blur(12px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .nation-hud-box:hover {
@@ -151,7 +154,21 @@
     .nation-title {
       font-size: 1.4rem;
       font-weight: 900;
-      margin-bottom: 0.4rem;
+    }
+
+    /* TOMBOL NAVIGASI KATALOG */
+    .btn-explore-nation {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.2rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     /* WILAYAH KHUSUS GRID */
@@ -169,6 +186,9 @@
       padding: 1.8rem;
       backdrop-filter: blur(10px);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     /* DIPLOMACY TABLE STYLING */
@@ -349,18 +369,27 @@
 
       let html = "";
       list.forEach(n => {
+        // Link sub-folder lokal untuk masing-masing Nation
+        const folderLink = `./${n.nama}/index.html`;
+
         html += `
           <div class="nation-hud-box" style="border-color: ${n.color};">
-            <div class="nation-title" style="color: ${n.color};">${n.nama}</div>
-            <div style="font-size: 0.85rem; color: var(--rpg-gold); font-weight: 800; margin-bottom: 0.8rem;">
-              ${n.elemen} • ${n.akademi}
+            <div>
+              <div class="nation-title" style="color: ${n.color};">${n.nama}</div>
+              <div style="font-size: 0.85rem; color: var(--rpg-gold); font-weight: 800; margin-bottom: 0.8rem;">
+                ${n.elemen} • ${n.akademi}
+              </div>
+              <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 0.8rem;">
+                <strong>Peran Filosofis:</strong> ${n.fungsi}
+              </p>
+              <div style="font-size: 0.8rem; color: #94A3B8;">
+                <strong>Letak Geografis:</strong> ${n.posisi}
+              </div>
             </div>
-            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 0.8rem;">
-              <strong>Peran Filosofis:</strong> ${n.fungsi}
-            </p>
-            <div style="font-size: 0.8rem; color: #94A3B8;">
-              <strong>Letak Geografis:</strong> ${n.posisi}
-            </div>
+
+            <a href="${folderLink}" class="btn-explore-nation" style="background: rgba(255,255,255,0.05); color: ${n.color}; border: 1px solid ${n.color};">
+              Jelajahi ${n.nama} →
+            </a>
           </div>
         `;
       });
@@ -373,11 +402,19 @@
 
       let html = "";
       list.forEach(s => {
+        const folderLink = `./${s.nama}/index.html`;
+
         html += `
           <div class="special-card" style="border-color: ${s.color};">
-            <div style="font-size: 1.2rem; font-weight: 900; color: ${s.color}; margin-bottom: 0.5rem;">${s.nama}</div>
-            <p style="font-size: 0.85rem; color: #CBD5E1; line-height: 1.5; margin-bottom: 0.8rem;">${s.fungsi}</p>
-            <div style="font-size: 0.78rem; color: var(--rpg-gold); font-weight: 800;">Akses: ${s.akses}</div>
+            <div>
+              <div style="font-size: 1.2rem; font-weight: 900; color: ${s.color}; margin-bottom: 0.5rem;">${s.nama}</div>
+              <p style="font-size: 0.85rem; color: #CBD5E1; line-height: 1.5; margin-bottom: 0.8rem;">${s.fungsi}</p>
+              <div style="font-size: 0.78rem; color: var(--rpg-gold); font-weight: 800; margin-bottom: 1rem;">Akses: ${s.akses}</div>
+            </div>
+
+            <a href="${folderLink}" class="btn-explore-nation" style="background: rgba(255,255,255,0.05); color: ${s.color}; border: 1px solid ${s.color}; font-size: 0.78rem;">
+              Masuk Wilayah →
+            </a>
           </div>
         `;
       });
