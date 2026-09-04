@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "SISTEM THE CONVERGENCE",
+    "subtitle": "THE SACRED EVENT // THE GATEWAY TO AVATAR",
+    "description": "The Convergence merupakan peristiwa terbesar dan paling sakral dalam setiap Season Elementa. Titik pertemuan seluruh elemen, Nation, dan jalur pembelajaran untuk menguji penyatuan pengetahuan."
+  },
+  "filosofi_dasar": {
+    "title": "Simbol Penyatuan Pengetahuan",
+    "desc": "Setiap warga Elementa memulai perjalanan dari elemen yang berbeda. Sebagian dari Earth, Water, Air, atau Fire. The Convergence lahir dari keyakinan bahwa pemahaman yang utuh hanya dapat dicapai ketika seseorang mampu melihat hubungan antar elemen, bukan hanya menguasai satu elemen secara terpisah."
+  },
+  "makna_akademik": [
+    { "no": "01", "point": "Kedalaman Pemahaman", "desc": "Mengukur pemahaman konseptual peserta pada setiap elemen dasar." },
+    { "no": "02", "point": "Konektivitas Lintas Elemen", "desc": "Menguji kemampuan menghubungkan konsep antarbidang keilmuan." },
+    { "no": "03", "point": "Berpikir Multidisplin", "desc": "Pendekatan komprehensif dalam melihat fenomena alam semesta." },
+    { "no": "04", "point": "Studi Kasus Kompleks", "desc": "Penyelesaian soal integratif yang membutuhkan solusi utuh." },
+    { "no": "05", "point": "Kesiapan Kompetisi", "desc": "Simulasi tingkat puncak sebelum menghadapi Olimpiade Sains Nasional." }
+  ],
+  "gerbang_avatar": {
+    "title": "The Convergence Sebagai Gerbang Avatar",
+    "desc": "Dalam Elementa Universe, The Convergence merupakan satu-satunya gerbang resmi menuju gelar Avatar. Tidak ada gelar Avatar yang diberikan berdasarkan popularitas, senioritas, jumlah quest, ataupun posisi ranking. Seseorang hanya berhak menyandang gelar Avatar apabila berhasil membuktikan penguasaan yang seimbang terhadap seluruh elemen utama melalui proses evaluasi ini.",
+    "prinsip_standar": "Jumlah Avatar dalam setiap Season tidak ditentukan oleh kuota. Apabila tidak ada peserta yang memenuhi standar, maka tidak ada Avatar. Sebaliknya, jika banyak yang memenuhi standar, seluruhnya berhak dilantik menjadi Avatar."
+  },
+  "keseimbangan_elemen": [
+    { "elemen": "🌍 Earth", "peran": "Fondasi", "desc": "Membangun keteguhan dan kestabilan pemahaman struktur." },
+    { "elemen": "🌊 Water", "peran": "Konektivitas", "desc": "Fleksibilitas dan kemampuan menghubungkan antar sistem." },
+    { "elemen": "🌪️ Air", "peran": "Kesadaran", "desc": "Observasi cermat dan kemampuan membaca arah perubahan." },
+    { "elemen": "🔥 Fire", "peran": "Visi", "desc": "Rasa ingin tahu dan keberanian mengeksplorasi batas ilmu." }
+  ],
+  "penutupan_season": {
+    "title": "Siklus Pertumbuhan Berulang",
+    "desc": "The Convergence menandai berakhirnya satu season pembelajaran sekaligus menjadi titik refleksi. Perjalanan yang dimulai dari berbagai arah dan Nation pada akhirnya bermuara pada satu samudra pemahaman yang sama."
+  }
+}
