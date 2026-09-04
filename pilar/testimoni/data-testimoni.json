@@ -1,0 +1,64 @@
+{
+  "stat_testimoni": {
+    "total_ulasan": "100+",
+    "kepuasan_peserta": "4.9 / 5.0",
+    "sumber_umpan_balik": "Secreto Official & Form Pelatihan",
+    "sekolah_terdampak": "24+"
+  },
+  "daftar_testimoni": [
+    {
+      "id": 1,
+      "nama": "Peserta Bimbingan OSN",
+      "sekolah": "Peserta Pelatihan Kebumian & Sains",
+      "bidang": "OSN Kebumian",
+      "program": "pilar-osn",
+      "sumber": "Secreto",
+      "pesan": "Sangat bagus, saya dan teman-teman lain mendapatkan banyak ilmu tentang pemanasan global, jenis-jenis cuaca, jenis-jenis awan dan banyak lagi. Cara menjelaskan topiknya juga sangat detail dan mudah untuk dipahami! 👍🏻👏🏻🤩"
+    },
+    {
+      "id": 2,
+      "nama": "Siswa Pembinaan Offline",
+      "sekolah": "Peserta Pelatihan Intensif Offline",
+      "bidang": "OSN Kebumian / Astronomi",
+      "program": "pilar-osn",
+      "sumber": "Secreto",
+      "pesan": "Setelah bimbingan offline aku baru sadar kalau buuuanyak banget materi yang belum aku tahu. Tapi overall keren banget, bisa bikin suasana kelas jadi enggak tegang dan asyik! Jadinya nambah banyak teman, makasih banyak!"
+    },
+    {
+      "id": 3,
+      "nama": "Siswa Persiapan OSN-P",
+      "sekolah": "Peserta Web-Class & TO",
+      "bidang": "OSN Kebumian",
+      "program": "pilar-osn",
+      "sumber": "Secreto",
+      "pesan": "Suka banget sama cara ngajarnya... ngikutin dari OSK lihat Poki Edu di Youtube, kaget banget pas open pelatihan buat OSP langsung auto daftar! Latihan soalnya bikin tertekan tapi candu banget, ratenya 100.000/10!"
+    },
+    {
+      "id": 4,
+      "nama": "Peserta Bimbingan Intensif",
+      "sekolah": "Siswa Latihan OSN",
+      "bidang": "OSN / KSM Fisika & Sains",
+      "program": "pilar-osn",
+      "sumber": "Secreto",
+      "pesan": "Cara komunikasinya membantu banget, bikin enggak terlalu tegang tapi tetap serius dalam mengajarkan materi. Dan yang paling penting tutornya sabar banget. Terima kasih banyak!"
+    },
+    {
+      "id": 5,
+      "nama": "Peserta Pelatihan Guru/Siswa",
+      "sekolah": "Guru Pembina / Peserta Intensif",
+      "bidang": "OSN Kebumian",
+      "program": "pilar-osn",
+      "sumber": "Secreto",
+      "pesan": "Pengetahuan sangat luas dan wawasannya mengenai bidang pendidikan keren. Semoga sukses untuk PT barunya! Jangan bosan-bosan membawa perubahan di dunia pendidikan terutama olimpiade."
+    },
+    {
+      "id": 6,
+      "nama": "Peserta Pembinaan Offline",
+      "sekolah": "SMAN Cileungsi / Smancigo",
+      "bidang": "OSN Astronomi & Kebumian",
+      "program": "pilar-osn",
+      "sumber": "Secreto",
+      "pesan": "3 hari ini aku belajar banyak banget, woah rumusnya aja sampai enggak tahu udah yang ke berapa. Tapi seru banget pas kita bisa mecahin soalnya. Pembimbing ter-the best!"
+    }
+  ]
+}
