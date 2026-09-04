@@ -1,0 +1,67 @@
+{
+  "universe_intro": {
+    "title": "Konsep Elementa Universe",
+    "tagline": "THE LIVING WORLD OF GAMIFIED LEARNING",
+    "narrative": "Elementa Universe merupakan dunia konseptual yang menjadi fondasi seluruh sistem pembinaan. Di sini, belajar bukan sekadar menghafal soal, melainkan perjalanan naratif & eksploratif untuk menguasai empat elemen alam serta Arcane Elements.",
+    "core_elements": [
+      {
+        "id": "earth",
+        "name": "Earth",
+        "nation": "Terralith Empire",
+        "symbol": "🌍",
+        "domain": "Geologi & Litosfer",
+        "motto": "Stand Firm and Learn Deep",
+        "color": "#059669",
+        "desc": "Memahami fondasi struktur bumi, batuan, dan proses litosfer yang membentuk daratan."
+      },
+      {
+        "id": "water",
+        "name": "Water",
+        "nation": "Aquamora Kingdom",
+        "symbol": "🌊",
+        "domain": "Oseanografi & Hidrosfer",
+        "motto": "Flow Beyond Boundaries",
+        "color": "#0284C7",
+        "desc": "Memahami dinamika samudra, arus, dan sistem perairan yang menghubungkan dunia."
+      },
+      {
+        "id": "air",
+        "name": "Air",
+        "nation": "Aerion Nomad",
+        "symbol": "🌪️",
+        "domain": "Meteorologi & Atmosfer",
+        "motto": "Observe Before You Move",
+        "color": "#D97706",
+        "desc": "Menganalisis pergerakan atmosfer, pola cuaca, dan iklim yang menggerakkan bumi."
+      },
+      {
+        "id": "fire",
+        "name": "Fire",
+        "nation": "Solaris Nation",
+        "symbol": "🔥",
+        "domain": "Astronomi & Alam Semesta",
+        "motto": "Seek Beyond Horizons",
+        "color": "#DC2626",
+        "desc": "Mengeksplorasi rahasia bintang, astrofisika, dan hukum fisika alam semesta."
+      }
+    ],
+    "arcane_overview": "Arcane Elements (Spatial, Spirit, Energy, Logic Bending) merupakan kemampuan khusus hasil integrasi ilmu lanjutan di luar empat elemen dasar."
+  },
+  "avatar_concept": {
+    "title": "Avatar \"Elemen-ta\" Universe",
+    "subtitle": "MASTERY-BASED TITLE // GELAR PENGUASAAN TERTINGGI",
+    "description": "Avatar merupakan gelar tertinggi yang melambangkan penguasaan ilmu yang menyeluruh, seimbang, dan terintegrasi terhadap seluruh elemen utama. Avatar bukan tentang mengalahkan peserta lain, melainkan keberhasilan menaklukkan diri sendiri.",
+    "pillars": [
+      { "name": "Discovery", "desc": "Mengenali potensi diri dan elemen dominan." },
+      { "name": "Mastery", "desc": "Penguasaan konsep mendalam & teruji." },
+      { "name": "Collaboration", "desc": "Saling berbagi ilmu antarwarga Elementa." },
+      { "name": "Competition", "desc": "Melatih mental juara secara sehat." },
+      { "name": "Progression", "desc": "Pertumbuhan akademik yang terukur bertahap." }
+    ],
+    "mastery_rules": [
+      "Penguasaan seimbang pada Earth, Water, Air, dan Fire (Minimal nilai EP 9,0 di setiap elemen).",
+      "Tanpa batasan kuota; jumlah Avatar per Season murni ditentukan oleh pemenuhan standar kualitas.",
+      "Menembus 8 Lapis Dungeon The Convergence dan menaklukkan tantangan Dark Avatar."
+    ]
+  }
+}
