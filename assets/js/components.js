@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. HITUNG KEDALAMAN PATH SECARA PRESISI
+  // 1. HITUNG KEDALAMAN PATH SECARA PRESISI & DINAMIS
   const rootPath = getRootPath();
 
   // 2. FETCH & INJECT HEADER
@@ -27,17 +27,21 @@ function loadComponent(elementId, filePath, callback) {
       // Auto-rewrite atribut href dan src lokal berbasis rootPath yang presisi
       const rootPath = getRootPath();
       const fixedData = data.replace(/(href|src)="([^"]*)"/g, function (match, attr, url) {
-        // Abaikan link eksternal, anchor link, telp, mailto, atau path absolut
+        // Abaikan link eksternal, anchor, tel, mailto, data-URI
         if (
           url.startsWith("http://") ||
           url.startsWith("https://") ||
           url.startsWith("#") ||
           url.startsWith("mailto:") ||
-          url.startsWith("tel:")
+          url.startsWith("tel:") ||
+          url.startsWith("data:")
         ) {
           return match;
         }
-        return `${attr}="${rootPath}${url}"`;
+
+        // Hapus slash di awal url jika ada, agar tidak terjadi dobel slash ("../../" + "/assets" -> "../../assets")
+        const cleanUrl = url.startsWith("/") ? url.substring(1) : url;
+        return `${attr}="${rootPath}${cleanUrl}"`;
       });
 
       container.innerHTML = fixedData;
@@ -47,63 +51,50 @@ function loadComponent(elementId, filePath, callback) {
 }
 
 /**
- * Fungsi Deteksi Path Relatif Bebas Bug GitHub Pages (Multi-Level Support)
- * Menentukan berapa tingkat folder harus mundur ("./", "../", "../../", dst.)
+ * Fungsi Deteksi Path Relatif Otomatis (Bebas Bug Multi-Level Kedalaman)
+ * Menghitung langsung jumlah folder kedalaman dari root domain/repository
  */
 function getRootPath() {
-  const path = window.location.pathname.toLowerCase();
+  // Decode URL (mengubah %20 menjadi spasi asli)
+  const pathname = decodeElementSibling(window.location.pathname);
+  
+  // Split path berdasarkan slash dan bersihkan segmen kosong
+  const segments = pathname.split("/").filter(Boolean);
 
-  // 1. DAFTAR SUB-FOLDER LEVEL 2 & LEVEL 3 (Membutuhkan mundur dua tingkat "../../")
-  const level2Keywords = [
-    "/freemium/",
-    "/reguler/",
-    "/prestasi/",
-    "/testimoni/",
-    "/tutor/",
-    "/metode.html",
-    "/kemitraan.html"
-  ];
+  // Jika di lokal / root utama domain (misal: localhost/ atau index.html)
+  if (segments.length === 0) return "./";
 
-  // 2. DAFTAR SUB-FOLDER LEVEL 1 (Membutuhkan mundur satu tingkat "../")
-  const level1Keywords = [
-    "/pilar/",
-    "/gatra/",
-    "/nestu/",
-    "/lingua/",
-    "/geodatis/",
-    "/arpa/",
-    "/workit/",
-    "/elementa/",
-    "/poci/",
-    "/tentang/",
-    "/events/",
-    "/ketal/",
-    "/dokumentasi/",
-    "/admin/"
-  ];
+  // Cek apakah file paling akhir adalah file (punya ekstensi .html, .htm, .php)
+  const lastSegment = segments[segments.length - 1];
+  const isFile = lastSegment.includes(".");
 
-  // Cek apakah URL memuat salah satu keyword Level 2
-  const isLevel2 = level2Keywords.some((keyword) => path.includes(keyword));
-  if (isLevel2) {
-    // Pengecualian jika file berada di pilar/reguler/sub-folder/ (Level 3)
-    const segments = path.split("/").filter(Boolean);
-    if (segments.length >= 3) {
-      // Menghitung kedalaman presisi berdasarkan jumlah folder
-      const depth = segments.length - (path.endsWith(".html") ? 1 : 0);
-      if (depth === 2) return "../../";
-      if (depth >= 3) return "../../../";
-    }
-    return "../../";
+  // Jumlah folder yang harus dinaiki/dimunduri
+  let folderDepth = isFile ? segments.length - 1 : segments.length;
+
+  // PENANGANAN KHUSUS GITHUB PAGES:
+  // Jika di-host di GitHub Pages (misal: username.github.io/nama-repo/)
+  // Segmen pertama adalah nama repository, jadi depth dikurangi 1
+  const isGitHubPages = window.location.hostname.includes("github.io");
+  if (isGitHubPages && folderDepth > 0) {
+    folderDepth -= 1;
   }
 
-  // Cek apakah URL memuat salah satu keyword Level 1
-  const isLevel1 = level1Keywords.some((keyword) => path.includes(keyword));
-  if (isLevel1) {
-    return "../";
-  }
+  // Jika berada di root utama
+  if (folderDepth <= 0) return "./";
 
-  // Default jika berada di root domain (index.html)
-  return "./";
+  // Return string "../" sebanyak jumlah kedalaman folder
+  return "../".repeat(folderDepth);
+}
+
+/**
+ * Helper untuk decode URI secara aman
+ */
+function decodeElementSibling(uri) {
+  try {
+    return decodeURIComponent(uri);
+  } catch (e) {
+    return uri;
+  }
 }
 
 /**
