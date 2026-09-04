@@ -1,0 +1,68 @@
+{
+  "penyelenggara": "Kelas Bisa melalui PILAR (From Learning to Winning)",
+  "deskripsi_umum": "Menyediakan berbagai program gratis sebagai ruang belajar, berbagi pengalaman, latihan, dan pengembangan diri bagi calon peserta kompetisi akademik, riset, dan inovasi.",
+  "programs": [
+    {
+      "id": "insight",
+      "badge": "FREEMIUM 01",
+      "title": "PILAR INSIGHT",
+      "slogan": "Learn The Strategy from Champions",
+      "deskripsi": "Program berbagi pengalaman bersama alumni, finalis, dan medalis berbagai kompetisi nasional.",
+      "topik_label": "Topik Pembahasan:",
+      "topik": [
+        "Perjalanan meraih prestasi",
+        "Strategi belajar",
+        "Manajemen waktu",
+        "Pengalaman kompetisi",
+        "Kesalahan yang harus dihindari",
+        "Tips menghadapi seleksi dan final"
+      ]
+    },
+    {
+      "id": "spotlight",
+      "badge": "FREEMIUM 02",
+      "title": "PILAR SPOTLIGHT",
+      "slogan": "Learn The Knowledge from Champions",
+      "deskripsi": "Mini class tematik yang membahas materi, konsep, teknik, dan keterampilan spesifik sesuai bidang kompetisi.",
+      "topik_label": "Topik Pembahasan:",
+      "topik": [
+        "Bedah soal OSN dan KSM",
+        "Pembahasan materi sulit",
+        "Teknik menulis karya ilmiah",
+        "Penyusunan proposal riset",
+        "Teknik business plan",
+        "Presentasi dan pitching"
+      ]
+    },
+    {
+      "id": "showcase",
+      "badge": "FREEMIUM 03",
+      "title": "PILAR SHOWCASE",
+      "slogan": "Present Your Ideas, Get Expert Feedback",
+      "deskripsi": "Mini class tematik yang membahas materi, konsep, teknik, dan keterampilan spesifik sesuai bidang kompetisi.",
+      "topik_label": "Topik Pembahasan:",
+      "topik": [
+        "Bedah soal OSN dan KSM",
+        "Pembahasan materi sulit",
+        "Teknik menulis karya ilmiah",
+        "Penyusunan proposal riset",
+        "Teknik business plan",
+        "Presentasi dan pitching"
+      ]
+    },
+    {
+      "id": "challenge",
+      "badge": "FREEMIUM 04",
+      "title": "PILAR CHALLENGE",
+      "slogan": "Test Your Competitive Readiness",
+      "deskripsi": "Program try out dan simulasi kompetisi untuk mengukur kesiapan peserta sebelum menghadapi lomba sebenarnya.",
+      "topik_label": "Cocok Untuk:",
+      "topik": [
+        "OSN",
+        "KSM",
+        "ON MIPA",
+        "Kompetisi berbasis tes lainnya"
+      ]
+    }
+  ]
+}
