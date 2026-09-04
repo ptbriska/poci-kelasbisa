@@ -1,7 +1,9 @@
 {
-  "statistik_utama": {
-    "total_medali": "27",
+  "statistik_medali": {
     "medali_emas": "4",
+    "medali_perak": "11",
+    "medali_perunggu": "12",
+    "total_medali": "27",
     "sekolah_mitra": "24",
     "tingkat_kelulusan": "90%"
   },
@@ -15,7 +17,7 @@
       "tingkat": "Nasional",
       "tahun": "2024",
       "foto": "alumni-1.png",
-      "kesan": "Bimbingan di Poki Edu bikin materi sulit jadi terasa logis dan gampang dipahami!"
+      "kesan": "Bimbingan di PILAR bikin materi sulit jadi terasa logis dan gampang dipahami!"
     },
     {
       "id": 2,
@@ -52,12 +54,12 @@
     }
   ],
   "sekolah_mitra": [
-    "MAN IC Pasuruan",
-    "MAN 3 Jombang",
-    "SMAN 3 Semarang",
-    "SMA Negeri 8 Jakarta",
-    "MAN IC Pekalongan",
-    "SMAN 1 Cianjur",
-    "SMA Del Sumatera Utara"
+    { "nama": "MAN IC Pasuruan", "logo": "man-ic-pasuruan.png" },
+    { "nama": "MAN 3 Jombang", "logo": "man-3-jombang.png" },
+    { "nama": "SMAN 3 Semarang", "logo": "sman-3-semarang.png" },
+    { "nama": "SMA Negeri 8 Jakarta", "logo": "sman-8-jakarta.png" },
+    { "nama": "MAN IC Pekalongan", "logo": "man-ic-pekalongan.png" },
+    { "nama": "SMAN 1 Cianjur", "logo": "sman-1-cianjur.png" },
+    { "nama": "SMA Del Sumatera Utara", "logo": "sma-del.png" }
   ]
 }
