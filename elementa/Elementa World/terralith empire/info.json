@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "TERRALITH EMPIRE",
+    "subtitle": "THE KEEPERS OF FOUNDATION // NATION OF EARTH",
+    "description": "Terralith Empire merupakan tanah pegunungan, lembah batuan, dan kristal yang berdiri di atas filosofi keteguhan, stabilitas, dan fondasi akademik yang kokoh."
+  },
+  "overview": {
+    "filosofi": "Kekuatan sejati tidak diukur dari kecepatan, melainkan dari kemampuan bertahan, berkembang secara konsisten, dan tetap kokoh menghadapi perubahan. Seperti gunung yang membutuhkan waktu ribuan tahun untuk terbentuk, ilmu pengetahuan dibangun secara bertahap di atas fondasi yang kuat.",
+    "motto": "Stand Firm. Learn Deep.",
+    "julukan": "The Keepers of Foundation"
+  },
+  "budaya": {
+    "inspirasi": "EASTERN (Dinasti Tiongkok Klasik)",
+    "deskripsi": "Peradaban kekaisaran yang menjunjung tinggi kebijaksanaan, disiplin, tradisi, serta penghormatan terhadap ilmu pengetahuan. Menghargai senioritas akademik dan tradisi dokumentasi ilmu yang terstruktur.",
+    "nilai_utama": [
+      "Disiplin",
+      "Kesabaran",
+      "Ketekunan",
+      "Kebijaksanaan",
+      "Stabilitas",
+      "Kehormatan"
+    ]
+  },
+  "akademi": {
+    "nama": "Lithos Academy",
+    "fokus": "Pusat pengembangan Elemen Earth dan ilmu litosfer.",
+    "motto": "Strength Begins with Foundation.",
+    "kurikulum": [
+      "Geologi Dasar",
+      "Mineralogi",
+      "Petrologi",
+      "Geologi Struktur",
+      "Vulkanologi",
+      "Geomorfologi",
+      "Geologi Regional",
+      "Geologi Planet"
+    ]
+  },
+  "identitas_visual": {
+    "simbol": "Gunung Kristal Bertingkat",
+    "makna_simbol": "Gunung melambangkan keteguhan, kristal melambangkan ilmu yang terbentuk melalui proses panjang, dan lapisan batuan melambangkan perjalanan belajar bertahap.",
+    "warna_utama": [
+      { "nama": "Hijau Zamrud (Emerald Green)", "hex": "#059669", "makna": "Kehidupan, pertumbuhan, dan keberlanjutan" },
+      { "nama": "Coklat Tanah (Earth Brown)", "hex": "#B45309", "makna": "Tanah, kestabilan, kekuatan, dan fondasi" }
+    ]
+  },
+  "kewarganegaraan": {
+    "gelar": "Terran",
+    "hirarki_gelar": [
+      "Terran Warrior (Status Awal)",
+      "Terran Probender (Tingkat Dasar)",
+      "Terran Master (Tingkat Lanjut)",
+      "Terran Avatar (Penguasaan Harmoni)"
+    ],
+    "karakteristik": [
+      { "aspek": "Elemen Utama", "ket": "Earth" },
+      { "aspek": "Gaya Belajar", "ket": "Sistematis, Terstruktur, dan Mendalam" },
+      { "aspek": "Fokus Keilmuan", "ket": "Geologi & Cabang Ilmu Litosfer" },
+      { "aspek": "Karakter Utama", "ket": "Disiplin, Tangguh, dan Stabil" }
+    ]
+  }
+}
