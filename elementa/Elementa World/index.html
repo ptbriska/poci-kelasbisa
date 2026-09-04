@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dunia & Peta Geografi — ELEMENTA</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- DARK RPG WORLD MAP HUD STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-cyan: #00B4D8;
+      --rpg-neon-blue: #38BDF8;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(125, 211, 252, 0.25);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-cyan);
+      box-shadow: 0 4px 20px rgba(0, 180, 216, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.4) 0%, rgba(2, 132, 199, 0.4) 100%);
+      border: 1px solid var(--rpg-cyan);
+      box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
+    }
+
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(0, 180, 216, 0.2) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 3.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--rpg-gold);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--rpg-gold);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--rpg-neon-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* MAP NATION GRID */
+    .nations-map-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    .nation-hud-box {
+      background: var(--rpg-card-bg);
+      border: 2px solid;
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .nation-hud-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 180, 216, 0.2);
+    }
+
+    .nation-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 0.4rem;
+    }
+
+    /* WILAYAH KHUSUS GRID */
+    .special-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0 3.5rem 0;
+    }
+
+    .special-card {
+      background: rgba(10, 25, 47, 0.9);
+      border: 1.5px solid;
+      border-radius: 18px;
+      padding: 1.8rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    /* DIPLOMACY TABLE STYLING */
+    .table-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid var(--rpg-cyan);
+      border-radius: 24px;
+      padding: 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    .matrix-table th {
+      background: rgba(0, 180, 216, 0.15);
+      color: var(--rpg-neon-blue);
+      padding: 1rem;
+      font-weight: 900;
+      border-bottom: 2px solid var(--rpg-cyan);
+      text-transform: uppercase;
+    }
+
+    .matrix-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+      color: #CBD5E1;
+    }
+
+    /* INTERACTION GRID */
+    .interaction-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .interaction-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(125, 211, 252, 0.2);
+      border-radius: 14px;
+      padding: 1.2rem;
+    }
+
+    @media (max-width: 992px) {
+      .nations-map-grid { grid-template-columns: 1fr; }
+      .special-grid { grid-template-columns: 1fr; }
+      .interaction-grid { grid-template-columns: 1fr; }
+      .elementa-menu { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../RPG Elementa-Universe/">Cara Bermain</a></li>
+        <li><a href="./" class="active">Dunia Elementa</a></li>
+        <li><a href="../Sistem Akademik/">Sistem Akademik</a></li>
+        <li><a href="../program/">Katalog & Harga</a></li>
+        <li><a href="../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN KATALOG DUNIA ELEMENTA -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <span class="hud-chip">// WORLD ATLAS & GEOGRAPHY</span>
+        <h1 class="rpg-title" id="page-title">Dunia Elementa</h1>
+        <p style="color: #94A3B8; font-size: 1rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+          Memuat peta geografi dan struktur Benua Elementa...
+        </p>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- PETA 4 NATION MAIN HOUSES GRID -->
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <span class="hud-chip">4 MAIN NATIONS</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Kawasan Empat Nation Utama</h2>
+        </div>
+        <div class="nations-map-grid" id="nations-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- WILAYAH KHUSUS NETRAL & INDEPENDEN GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">SPECIAL REGIONS</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Pusat Netral & Wilayah Khusus</h2>
+        </div>
+        <div class="special-grid" id="special-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- DIPLOMASI & PRINSIP HUBUNGAN TABLE -->
+        <div class="table-card">
+          <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">🤝 Prinsip Hubungan Antar-Nation</h2>
+          <p style="color: #94A3B8; font-size: 0.88rem; margin-bottom: 1.5rem;">Ekosistem diplomasi pembelajaran yang saling melengkapi tanpa dominasi politik.</p>
+          
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 30%;">PRINSIP UTAMA</th>
+                <th style="width: 70%;">PENJELASAN INTEGRITAS</th>
+              </tr>
+            </thead>
+            <tbody id="prinsip-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- BENTUK INTERACTION GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">INTER-NATION ACTIVITIES</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Bentuk Interaksi Lintas Nation</h2>
+        </div>
+        <div class="interaction-grid" id="interaction-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          renderNationsGrid(data.struktur_wilayah || []);
+          renderSpecialGrid(data.wilayah_khusus || []);
+          renderPrinsipTable(data.prinsip_hubungan || []);
+          renderInteractionGrid(data.bentuk_interaksi || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderNationsGrid(list) {
+      const target = document.getElementById("nations-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(n => {
+        html += `
+          <div class="nation-hud-box" style="border-color: ${n.color};">
+            <div class="nation-title" style="color: ${n.color};">${n.nama}</div>
+            <div style="font-size: 0.85rem; color: var(--rpg-gold); font-weight: 800; margin-bottom: 0.8rem;">
+              ${n.elemen} • ${n.akademi}
+            </div>
+            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 0.8rem;">
+              <strong>Peran Filosofis:</strong> ${n.fungsi}
+            </p>
+            <div style="font-size: 0.8rem; color: #94A3B8;">
+              <strong>Letak Geografis:</strong> ${n.posisi}
+            </div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderSpecialGrid(list) {
+      const target = document.getElementById("special-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(s => {
+        html += `
+          <div class="special-card" style="border-color: ${s.color};">
+            <div style="font-size: 1.2rem; font-weight: 900; color: ${s.color}; margin-bottom: 0.5rem;">${s.nama}</div>
+            <p style="font-size: 0.85rem; color: #CBD5E1; line-height: 1.5; margin-bottom: 0.8rem;">${s.fungsi}</p>
+            <div style="font-size: 0.78rem; color: var(--rpg-gold); font-weight: 800;">Akses: ${s.akses}</div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderPrinsipTable(list) {
+      const target = document.getElementById("prinsip-table-body");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(row => {
+        html += `
+          <tr>
+            <td><strong style="color: var(--rpg-neon-blue);">${row.prinsip}</strong></td>
+            <td>${row.penjelasan}</td>
+          </tr>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderInteractionGrid(list) {
+      const target = document.getElementById("interaction-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `
+          <div class="interaction-card">
+            <div style="font-weight: 900; color: #FFFFFF; font-size: 1rem; margin-bottom: 0.3rem;">${item.nama}</div>
+            <div style="font-size: 0.85rem; color: #94A3B8; line-height: 1.5;">${item.desc}</div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
