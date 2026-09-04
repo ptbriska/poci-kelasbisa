@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "SISTEM MISI / QUEST",
+    "subtitle": "PERSONAL & TEAM QUEST LOG // ACADEMIC CHALLENGE SYSTEM",
+    "description": "Quest merupakan inti dari perjalanan akademik di Elementa Universe. Tempat warga mengembangkan kemampuan, memperoleh EP, mengumpulkan Ember, serta meraih gelar dan kehormatan."
+  },
+  "filosofi_quest": {
+    "title": "Perjalanan Ketekunan & Penguasaan Ilmu",
+    "desc": "Quest bukan sekadar ujian, melainkan perjalanan yang mengukur keberanian, ketekunan, konsistensi, dan penguasaan ilmu pengetahuan."
+  },
+  "quest_list": [
+    {
+      "id": "weekly",
+      "nama": "Weekly Quest",
+      "tipe": "Individu",
+      "status": "Quest Dasar",
+      "tujuan": "Memperebutkan Gelar Probender",
+      "kesulitan": "Setara OSK (C1–C2)",
+      "musuh": "Monster dari Dunia Bawah",
+      "standar": "EP Minimal 7,0 / 10",
+      "reward": "EP, Ember, Progress Probender",
+      "color": "#F59E0B"
+    },
+    {
+      "id": "nation",
+      "nama": "Nation Quest",
+      "tipe": "Individu",
+      "status": "Quest Menengah",
+      "tujuan": "Memperebutkan Gelar Master Bender",
+      "kesulitan": "Setara OSP (C3–C4)",
+      "musuh": "Demon dari Black Matter Void",
+      "standar": "EP Minimal 8,5 / 10",
+      "reward": "EP, Ember, Progress Master Bender",
+      "color": "#38BDF8"
+    },
+    {
+      "id": "expedition",
+      "nama": "Expedition Quest",
+      "tipe": "Individu",
+      "status": "Quest Spesialisasi",
+      "tujuan": "Memperebutkan Badge Spesialisasi",
+      "kesulitan": "Setara S1–S2 (Studi Kasus Kompleks)",
+      "musuh": "High Level Trial (Tanpa Remedial)",
+      "standar": "EP Minimal 9,0 / 10",
+      "reward": "Badge Spesialisasi, Ember, Poin Prestise",
+      "color": "#10B981"
+    },
+    {
+      "id": "arcane",
+      "nama": "Arcane Quest",
+      "tipe": "Individu",
+      "status": "Quest Khusus",
+      "tujuan": "Mengembangkan Arcane Elements",
+      "kesulitan": "Soal Analisis Lintas Elemen",
+      "musuh": "Abstract Domain Challenge",
+      "standar": "Lulus Assessment Arcane",
+      "reward": "Arcane Badge, Ember, Achievement",
+      "color": "#7C3AED"
+    },
+    {
+      "id": "convergence",
+      "nama": "The Convergence",
+      "tipe": "Individu",
+      "status": "Quest Tertinggi",
+      "tujuan": "Menentukan Avatar of Elementa",
+      "kesulitan": "Setara OSN & Internasional (C5–C6)",
+      "musuh": "Dark Avatar (8 Lapis Dungeon)",
+      "standar": "EP ≥ 9,0 pada seluruh 4 elemen utama",
+      "reward": "Gelar Avatar, Hall of Fame Entry",
+      "color": "#EF4444"
+    },
+    {
+      "id": "clash",
+      "nama": "Elementa Clash of Champions",
+      "tipe": "Tim (5 Orang)",
+      "status": "Quest Tim Terbesar",
+      "tujuan": "Memperebutkan Elementa Trophy",
+      "kesulitan": "Kompetisi Strategi Lintas Nation",
+      "musuh": "Tim Perwakilan Nation Lain",
+      "standar": "Seleksi Internal & Champions Battle",
+      "reward": "Elementa Trophy, Champion Title, Ember Bonus",
+      "color": "#00B4D8"
+    }
+  ],
+  "clash_detail": {
+    "title": "Elementa Clash of Champions (Kompetisi Tim)",
+    "komposisi": "5 Orang per Tim (Berasal dari Nation yang sama)",
+    "kuota": "Minimal 4 Tim, Maksimal 20 Tim perwakilan per Nation",
+    "trofi": "Elementa Trophy (Challenge Trophy yang berpindah setiap Season)"
+  },
+  "prinsip_dasar": [
+    "Setiap Quest memiliki tingkat kesulitan, tipe, dan tujuan yang berbeda.",
+    "Progression level peserta ditentukan murni melalui kelulusan Quest.",
+    "Quest menjadi sumber utama perolehan EP dan Ember.",
+    "Badge hanya dapat diperoleh melalui Expedition Quest dan Arcane Quest.",
+    "Gelar Avatar hanya dapat diperoleh melalui The Convergence.",
+    "Elementa Trophy hanya dapat diperoleh melalui Elementa Clash of Champions."
+  ]
+}
