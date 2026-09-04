@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "title": "SISTEM AVATAR CORONATION",
+    "subtitle": "THE ULTIMATE CEREMONY // HALL OF FAME INDUCTION",
+    "description": "Avatar Coronation merupakan upacara penghormatan tertinggi di dunia Elementa yang menjadi penutup resmi seluruh rangkaian Season dan pengukuhan peraih gelar Avatar."
+  },
+  "filosofi_coronation": {
+    "title": "Simbol Keberhasilan Perjalanan Panjang",
+    "desc": "Acara ini bukan sekadar seremoni penghargaan, melainkan simbol keberhasilan dalam menguasai ilmu pengetahuan, mengembangkan karakter, dan membangun konsistensi. Gelar Avatar tidak diberikan karena mengalahkan peserta lain, melainkan karena berhasil memenuhi standar tertinggi dunia Elementa.",
+    "motto": "Many Begin the Journey. Few Master the Elements. Only the Worthy Become Avatar."
+  },
+  "waktu_pelaksanaan": [
+    { "aspek": "Nama Acara", "ket": "Avatar Coronation" },
+    { "aspek": "Waktu", "ket": "Akhir Season" },
+    { "aspek": "Tanggal", "ket": "22 April" },
+    { "aspek": "Momentum", "ket": "Earth Day" },
+    { "aspek": "Status", "ket": "Acara Puncak Tahunan Elementa" },
+    { "aspek": "Lokasi Lore", "ket": "Convergence Citadel" }
+  ],
+  "tujuan_acara": [
+    "Mengumumkan hasil akhir The Convergence.",
+    "Menobatkan Avatar of Elementa.",
+    "Mengumumkan seluruh Honour Title.",
+    "Mengumumkan peraih Badge terbaik.",
+    "Mengumumkan Nation terbaik.",
+    "Mengumumkan pemenang Elementa Trophy.",
+    "Menutup Season Elementa secara resmi."
+  ],
+  "tahapan_acara": [
+    {
+      "step": "Tahap 1",
+      "nama": "The Final Gathering",
+      "desc": "Seluruh warga berkumpul di Convergence Citadel untuk melakukan refleksi perjalanan seluruh Nation selama satu season."
+    },
+    {
+      "step": "Tahap 2",
+      "nama": "Hall of Achievement",
+      "desc": "Pengumuman pencapaian akademik (Probender, Master Bender, Badge Holders, Arcane Achievers, Hall of Fame Nominees)."
+    },
+    {
+      "step": "Tahap 3",
+      "nama": "Honour Title Ceremony",
+      "desc": "Penobatan penerima Honour Title (Best Element, Best Nation, Best Badge, Grand Badge Master)."
+    },
+    {
+      "step": "Tahap 4",
+      "nama": "Elementa Trophy Ceremony",
+      "desc": "Pengumuman pemenang Elementa Clash of Champions. Nation pemenang berhak menyimpan Trophy hingga season berikutnya."
+    },
+    {
+      "step": "Tahap 5",
+      "nama": "Avatar Ascension",
+      "desc": "Tahapan paling sakral. Mengumumkan peserta yang memenuhi standar EP 9,0 di keempat elemen dan lulus 8 Lapis Dungeon The Convergence."
+    }
+  ],
+  "prinsip_penobatan": {
+    "valid": ["Berdasarkan Standar Mutlak", "Berdasarkan Pencapaian Akademik"],
+    "invalid": ["Berdasarkan Ranking", "Berdasarkan Kuota Tertentu", "Berdasarkan Popularitas"]
+  },
+  "hall_of_fame": [
+    { "data": "Nama Avatar", "ket": "Nama Lengkap Peserta" },
+    { "data": "Season", "ket": "Tahun Perolehan (Contoh: Avatar of Elementa 2026)" },
+    { "data": "Nation Asal", "ket": "Nation Utama Peserta" },
+    { "data": "Badge", "ket": "Badge Spesialisasi yang Dimiliki" },
+    { "data": "Honour Title", "ket": "Gelar Kehormatan Lainnya" },
+    { "data": "EP Akhir", "ket": "Rekap Nilai Akhir The Convergence" }
+  ]
+}
