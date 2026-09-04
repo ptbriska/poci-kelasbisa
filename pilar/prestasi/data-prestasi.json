@@ -1,0 +1,63 @@
+{
+  "statistik_utama": {
+    "total_medali": "27",
+    "medali_emas": "4",
+    "sekolah_mitra": "24",
+    "tingkat_kelulusan": "90%"
+  },
+  "daftar_medalis": [
+    {
+      "id": 1,
+      "nama": "Ismail",
+      "sekolah": "MAN IC Pasuruan",
+      "bidang": "OSN Kebumian",
+      "pencapaian": "Medali Emas (Gold Medalist)",
+      "tingkat": "Nasional",
+      "tahun": "2024",
+      "foto": "alumni-1.png",
+      "kesan": "Bimbingan di Poki Edu bikin materi sulit jadi terasa logis dan gampang dipahami!"
+    },
+    {
+      "id": 2,
+      "nama": "Siti Rahmawati",
+      "sekolah": "MAN 2 Kota Malang",
+      "bidang": "KSM Matematika Terintegrasi",
+      "pencapaian": "Juara 1 & Medali Emas",
+      "tingkat": "Nasional",
+      "tahun": "2025",
+      "foto": "alumni-2.png",
+      "kesan": "Tutornya alumni medalis langsung, jadi tahu betul trik dan strategi jawab soal-soal jebakan."
+    },
+    {
+      "id": 3,
+      "nama": "Bagus Pratama & Tim",
+      "sekolah": "SMAN 3 Semarang",
+      "bidang": "FIKSI — Industri Kreatif",
+      "pencapaian": "Medali Perak (Silver Medalist)",
+      "tingkat": "Nasional",
+      "tahun": "2024",
+      "foto": "alumni-3.png",
+      "kesan": "Pendampingan pitch deck dan BMC dari PILAR bener-bener mantap sampai kita siap tanding."
+    },
+    {
+      "id": 4,
+      "nama": "Farhan Diputra",
+      "sekolah": "SMA Negeri 8 Jakarta",
+      "bidang": "OPSI — Riset Terapan",
+      "pencapaian": "Medali Perunggu & Best Innovation",
+      "tingkat": "Nasional",
+      "tahun": "2024",
+      "foto": "alumni-4.png",
+      "kesan": "Visualisasi data Python yang diajarin mentor PILAR bikin laporan riset kami dipuji juri!"
+    }
+  ],
+  "sekolah_mitra": [
+    "MAN IC Pasuruan",
+    "MAN 3 Jombang",
+    "SMAN 3 Semarang",
+    "SMA Negeri 8 Jakarta",
+    "MAN IC Pekalongan",
+    "SMAN 1 Cianjur",
+    "SMA Del Sumatera Utara"
+  ]
+}
