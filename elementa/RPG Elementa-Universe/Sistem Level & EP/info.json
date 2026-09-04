@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "SISTEM LEVEL & ELEMENTAL POINT (EP)",
+    "subtitle": "MASTERY PROGRESSION // ACADEMIC EVALUATION SYSTEM",
+    "description": "Level dalam Elementa menggunakan pendekatan Mastery Progression—perkembangan yang didasarkan pada kemampuan nyata menaklukkan tantangan akademik, bukan akumulasi keaktifan."
+  },
+  "filosofi_ep": {
+    "title": "Elemental Point (EP) skala 0 – 10",
+    "desc": "EP merupakan indikator utama penguasaan elemen yang diperoleh dari Weekly Quest, Nation Quest, Expedition Quest, Arcane Quest, dan The Convergence.",
+    "interpretasi": [
+      { "rentang": "< 5,0", "status": "Dasar", "color": "#EF4444" },
+      { "rentang": "5,0 – 6,9", "status": "Berkembang", "color": "#F97316" },
+      { "rentang": "7,0 – 8,4", "status": "Kompeten", "color": "#F59E0B" },
+      { "rentang": "8,5 – 8,9", "status": "Mahir", "color": "#38BDF8" },
+      { "rentang": "≥ 9,0", "status": "Elite", "color": "#10B981" }
+    ]
+  },
+  "hierarki_level": [
+    {
+      "aspek": "Status",
+      "warrior": "Level Awal",
+      "probender": "Level Menengah",
+      "master": "Level Tinggi",
+      "avatar": "Level Tertinggi"
+    },
+    {
+      "aspek": "Gelar Resmi",
+      "warrior": "Warrior",
+      "probender": "Probender",
+      "master": "Master Bender",
+      "avatar": "Avatar of Elementa"
+    },
+    {
+      "aspek": "Jalur Perolehan",
+      "warrior": "Placement",
+      "probender": "Weekly Quest",
+      "master": "Nation Quest",
+      "avatar": "The Convergence"
+    },
+    {
+      "aspek": "Musuh Utama (Lore)",
+      "warrior": "Minion",
+      "probender": "Monster Dunia Bawah",
+      "master": "Demon Black Matter Void",
+      "avatar": "Dark Avatar"
+    },
+    {
+      "aspek": "Tingkat Kesulitan Soal",
+      "warrior": "Sangat Mudah",
+      "probender": "Setara OSK",
+      "master": "Setara OSP",
+      "avatar": "Setara OSN Nasional & Internasional"
+    },
+    {
+      "aspek": "Level Kognitif",
+      "warrior": "C1",
+      "probender": "C1–C2",
+      "master": "C3–C4",
+      "avatar": "C5–C6"
+    },
+    {
+      "aspek": "Standar EP Minimum",
+      "warrior": "Tanpa Syarat",
+      "probender": "≥ 7,0 (Elemen diuji)",
+      "master": "≥ 8,5 (Elemen diuji)",
+      "avatar": "≥ 9,0 (Seluruh Elemen Wajib)"
+    },
+    {
+      "aspek": "Konsistensi Nilai",
+      "warrior": "Tidak disyaratkan",
+      "probender": "Tidak disyaratkan",
+      "master": "Tidak disyaratkan",
+      "avatar": "Wajib stabil pada 8 Lapis Dungeon"
+    },
+    {
+      "aspek": "Kapasitas Kuota",
+      "warrior": "Tidak terbatas",
+      "probender": "Tidak terbatas",
+      "master": "Tidak terbatas",
+      "avatar": "Murni berbasis standar (Bisa 0 / Banyak)"
+    }
+  ],
+  "dark_avatar_lore": {
+    "title": "Siapakah Dark Avatar?",
+    "desc": "Dark Avatar bukan individu tertentu, melainkan simbol tantangan akademik tertinggi (soal tersulit, studi kasus paling kompleks, dan batas kemampuan peserta). Dalam lore Elementa, menghadapi The Convergence berarti menghadapi versi terbaik dari diri sendiri."
+  },
+  "prinsip_dasar": [
+    "Level ditentukan murni oleh kemampuan akademik, bukan durasi keaktifan.",
+    "EP (Elemental Point) skala 0 – 10 merupakan indikator utama penguasaan elemen.",
+    "Setiap kenaikan level wajib diperoleh melalui pembuktian kemampuan nyata.",
+    "Tidak ada sistem pembelian, hadiah, atau bypass level.",
+    "Jumlah pemegang gelar Avatar tidak dibatasi oleh kuota.",
+    "Hanya peserta yang memenuhi standar EP ≥ 9,0 di seluruh elemen yang berhak menyandang gelar Avatar."
+  ]
+}
