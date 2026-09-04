@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "SISTEM KEUANGAN EMBER",
+    "subtitle": "LEARN-TO-EARN ACADEMIC ECONOMY // VOUCHER REWARD SYSTEM",
+    "description": "Ember merupakan mata uang resmi Elementa Universe yang dihargai dari setiap soal yang dijawab dengan benar, bukan sekadar kehadiran atau aktivitas non-akademik."
+  },
+  "filosofi_ember": {
+    "title": "Prinsip Utama Learn-to-Earn",
+    "desc": "Ember menghargai penguasaan soal secara nyata. Setiap 1 soal yang dijawab benar bernilai 1 Ember = Rp10 yang dapat ditukarkan menjadi voucher produk akademik.",
+    "prinsip_list": [
+      { "nama": "Learn to Earn", "desc": "Belajar menghasilkan manfaat nyata." },
+      { "nama": "Reward Progress", "desc": "Setiap jawaban benar langsung dihargai." },
+      { "nama": "Academic Economy", "desc": "Ekonomi game dibangun murni dari prestasi akademik." },
+      { "nama": "Fair System", "desc": "Semua peserta memiliki peluang yang sama tanpa bias." },
+      { "nama": "Anti Grinding", "desc": "Hanya jawaban benar yang dihitung, bukan spam keaktifan." }
+    ]
+  },
+  "kurs_ember": [
+    { "ember": "100 Ember", "nilai": "Rp 1.000" },
+    { "ember": "500 Ember", "nilai": "Rp 5.000" },
+    { "ember": "1.000 Ember", "nilai": "Rp 10.000" },
+    { "ember": "2.000 Ember", "nilai": "Rp 20.000" },
+    { "ember": "4.000 Ember", "nilai": "Rp 40.000" },
+    { "ember": "8.000 Ember", "nilai": "Rp 80.000" },
+    { "ember": "10.000 Ember", "nilai": "Rp 100.000" }
+  ],
+  "sumber_perolehan": {
+    "valid": [
+      "Weekly Quest",
+      "Nation Quest",
+      "Expedition Quest",
+      "Arcane Quest",
+      "Try Out Bulanan CBT",
+      "The Convergence Dungeon"
+    ],
+    "invalid": [
+      "Placement Test / Assessment",
+      "Survey atau Event Non-Akademik"
+    ]
+  },
+  "pemanfaatan_ember": [
+    { "produk": "Pelatihan PILAR Juara - Kelas Bisa", "status": "Dapat Ditukar (Voucher)" },
+    { "produk": "Buku & Modul Cetak Pena Bisa", "status": "Dapat Ditukar (Voucher)" },
+    { "produk": "E-Book & Modul Digital", "status": "Dapat Ditukar (Voucher)" },
+    { "produk": "Webinar & Workshop Spesialisasi", "status": "Dapat Ditukar (Voucher)" },
+    { "produk": "Bootcamp Pembinaan OSN", "status": "Dapat Ditukar (Voucher)" },
+    { "produk": "Merchandise Resmi BRISKA", "status": "Dapat Ditukar (Voucher)" },
+    { "produk": "Uang Tunai / Cash Out", "status": "Tidak Dapat Ditukar" }
+  ],
+  "contoh_studi": {
+    "nama": "Studi Kasus Ahmad",
+    "total_soal": "6.000 Soal dalam 1 Season",
+    "benar": "4.000 Soal Benar (Akurasi 66,7%)",
+    "hasil_ember": "4.000 Ember",
+    "hasil_voucher": "Voucher Pembelian senilai Rp 40.000"
+  },
+  "prinsip_dasar": [
+    "Ember hanya diperoleh dari jawaban yang dijawab dengan benar.",
+    "Ember tidak diberikan berdasarkan keaktifan, kehadiran, atau event non-akademik.",
+    "Nilai tukar tetap: 1 Ember = Rp 10.",
+    "Ember berbentuk voucher digital dan tidak dapat diuangkan (cash out).",
+    "Ember tidak dapat diperjualbelikan, dipindahtangankan, atau diwariskan ke akun lain.",
+    "Ember dapat digunakan bertahap atau digabung sesuai ketentuan promo yang berlaku."
+  ]
+}
