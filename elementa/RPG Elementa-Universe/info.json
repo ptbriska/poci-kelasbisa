@@ -1,0 +1,105 @@
+{
+  "rpg_overview": {
+    "title": "CARA BERMAIN & SISTEM MEKANIK RPG",
+    "tagline": "GAMEPLAY MECHANICS // ELEMENTAL PROGRESSION SYSTEM",
+    "description": "Di Elementa, kamu tidak hanya membaca modul, tetapi menjalani peran sebagai petualang akademik. Selesaikan quest, tingkatkan level dari Warrior hingga Avatar, kumpulkan Ember, dan raih Badge spesialisasi."
+  },
+  "menu_sistem": [
+    {
+      "id": "main-elemen",
+      "folder": "Sistem Main Elemen/",
+      "title": "01. Sistem Main Elemen",
+      "icon": "🌍",
+      "desc": "Panduan empat elemen utama (Earth, Water, Air, Fire) sebagai fondasi dasar pembinaan.",
+      "tag": "FOUNDATION"
+    },
+    {
+      "id": "sub-element",
+      "folder": "Sistem Sub Element/",
+      "title": "02. Sistem Sub Element",
+      "icon": "⚔️",
+      "desc": "Jalur spesialisasi mendalam (Deepening Bending) & integrasi dua elemen (Mix Bending).",
+      "tag": "SPECIALIZATION"
+    },
+    {
+      "id": "arcane-element",
+      "folder": "Sistem Arcane Element/",
+      "title": "03. Sistem Arcane Element",
+      "icon": "✨",
+      "desc": "Kemampuan lintas elemen: Spatial, Spirit, Energy, dan Logic Bending.",
+      "tag": "ARCANE SKILL"
+    },
+    {
+      "id": "convergence",
+      "folder": "Sistem Convergence/",
+      "title": "04. Sistem Convergence",
+      "icon": "🔮",
+      "desc": "Evaluasi puncak The Convergence War & End Game Dungeon menuju gelar Avatar.",
+      "tag": "END GAME"
+    },
+    {
+      "id": "placement",
+      "folder": "Sistem Placement/",
+      "title": "05. Sistem Placement",
+      "icon": "🏰",
+      "desc": "Tes penetapan kecenderungan elemen & penentuan Nation awal peserta.",
+      "tag": "PLACEMENT"
+    },
+    {
+      "id": "transfer-negara",
+      "folder": "Sistem Transfer Negara/",
+      "title": "06. Sistem Transfer Negara",
+      "icon": "📜",
+      "desc": "Mekanisme & syarat perpindahan kewarganegaraan Nation di awal season baru.",
+      "tag": "MIGRATION"
+    },
+    {
+      "id": "level-ep",
+      "folder": "Sistem Level & EP/",
+      "title": "07. Sistem Level & EP",
+      "icon": "⚡",
+      "desc": "Hierarki level (Warrior -> Probender -> Master Bender -> Avatar) & Elemental Points.",
+      "tag": "PROGRESSION"
+    },
+    {
+      "id": "keuangan-ember",
+      "folder": "Sistem Keuangan Ember/",
+      "title": "08. Sistem Keuangan Ember",
+      "icon": "🔥",
+      "desc": "Mata uang Learn-to-Earn resmi. Setiap soal benar bernilai 1 Ember = Rp10.",
+      "tag": "ECONOMY"
+    },
+    {
+      "id": "badge",
+      "folder": "Sistem Badge/",
+      "title": "09. Sistem Badge",
+      "icon": "🛡️",
+      "desc": "Sertifikasi spesialisasi khusus dari Expedition Quest & Arcane Quest.",
+      "tag": "CERTIFICATION"
+    },
+    {
+      "id": "gelar",
+      "folder": "Sistem Gelar/",
+      "title": "10. Sistem Gelar (Honour Title)",
+      "icon": "👑",
+      "desc": "Penghargaan kehormatan tertinggi: Best Element, Best Nation, & Grand Badge Master.",
+      "tag": "HONOUR"
+    },
+    {
+      "id": "misi-quest",
+      "folder": "Sistem Misi/Quest/",
+      "title": "11. Sistem Misi / Quest",
+      "icon": "📜",
+      "desc": "Misi pribadi & tim: Weekly Quest, Nation Quest, hingga Clash of Champions.",
+      "tag": "QUEST LOG"
+    },
+    {
+      "id": "avatar-coronation",
+      "folder": "Sistem Avatar Coronation/",
+      "title": "12. Avatar Coronation",
+      "icon": "🏆",
+      "desc": "Upacara sakral penobatan Avatar of Elementa setiap tanggal 22 April (Earth Day).",
+      "tag": "CEREMONY"
+    }
+  ]
+}
