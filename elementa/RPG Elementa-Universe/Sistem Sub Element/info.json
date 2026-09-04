@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "SISTEM SUB ELEMENT",
+    "subtitle": "PRESTIGE SKILLS // DEEPENING & MIX BENDING SYSTEM",
+    "description": "Sub Element merupakan jalur spesialisasi tingkat lanjut (Deepening Bending) & integrasi interdisipliner (Mix Bending) yang bersifat opsional untuk menguji penguasaan ilmu setara studi kasus Sarjana/Magister."
+  },
+  "komparasi_filosofi": [
+    { "aspek": "Definisi", "deepening": "Jalur spesialisasi lanjutan pada satu elemen utama", "mix": "Jalur integrasi lanjutan dari dua elemen utama" },
+    { "aspek": "Filosofi", "deepening": "Penguasaan mendalam terhadap satu cabang ilmu tertentu", "mix": "Kemampuan menghubungkan dua disiplin ilmu berbeda menjadi satu kesatuan pemahaman" },
+    { "aspek": "Tujuan", "deepening": "Membentuk spesialis", "mix": "Membentuk integrator" },
+    { "aspek": "Sifat", "deepening": "Vertikal (pendalaman)", "mix": "Horizontal (interdisipliner)" },
+    { "aspek": "Tingkat Kesulitan", "deepening": "Sangat Tinggi (Setara S1/S2)", "mix": "Sangat Tinggi (Setara S1/S2)" },
+    { "aspek": "Syarat Mengikuti", "deepening": "Nilai Elemen Dasar minimal 8/10", "mix": "Nilai kedua Elemen Dasar minimal 8/10" },
+    { "aspek": "Kesempatan Ujian", "deepening": "1 kali seumur hidup dalam satu season", "mix": "1 kali seumur hidup dalam satu season" },
+    { "aspek": "Nilai Kelulusan", "deepening": "Minimal 9/10", "mix": "Minimal 9/10" },
+    { "aspek": "Kewajiban Avatar", "deepening": "Tidak wajib", "mix": "Tidak wajib" },
+    { "aspek": "Fungsi Utama", "deepening": "Prestige Skill & Specialization", "mix": "Prestige Skill & Integration" }
+  ],
+  "deepening_bending": [
+    { "elemen": "🔥 Fire", "skill": "Lightning Bending", "color": "#DC2626" },
+    { "elemen": "🔥 Fire", "skill": "Flame Bending", "color": "#DC2626" },
+    { "elemen": "🔥 Fire", "skill": "Combustion Bending", "color": "#DC2626" },
+    { "elemen": "🌊 Water", "skill": "Blood Bending", "color": "#0284C7" },
+    { "elemen": "🌊 Water", "skill": "Healing Bending", "color": "#0284C7" },
+    { "elemen": "🌊 Water", "skill": "Plant Bending", "color": "#0284C7" },
+    { "elemen": "🌪️ Air", "skill": "Sound Bending", "color": "#D97706" },
+    { "elemen": "🌪️ Air", "skill": "Levitation Bending", "color": "#D97706" },
+    { "elemen": "🌪️ Air", "skill": "Spirit Bending", "color": "#D97706" },
+    { "elemen": "🌍 Earth", "skill": "Metal Bending", "color": "#059669" },
+    { "elemen": "🌍 Earth", "skill": "Crystal Bending", "color": "#059669" },
+    { "elemen": "🌍 Earth", "skill": "Seismic Bending", "color": "#059669" }
+  ],
+  "mix_bending": [
+    { "kombinasi": "🌪️ Air + 🌊 Water", "skill": "Ice Bending", "color": "#38BDF8" },
+    { "kombinasi": "🌪️ Air + 🌊 Water", "skill": "Storm Bending", "color": "#38BDF8" },
+    { "kombinasi": "🌪️ Air + 🌊 Water", "skill": "Mist Bending", "color": "#38BDF8" },
+    { "kombinasi": "🌪️ Air + 🌍 Earth", "skill": "Sand Bending", "color": "#F59E0B" },
+    { "kombinasi": "🌪️ Air + 🌍 Earth", "skill": "Magnet Bending", "color": "#F59E0B" },
+    { "kombinasi": "🌪️ Air + 🔥 Fire", "skill": "Scorch Bending", "color": "#EF4444" },
+    { "kombinasi": "🌊 Water + 🌍 Earth", "skill": "Wood Bending", "color": "#10B981" },
+    { "kombinasi": "🌊 Water + 🌍 Earth", "skill": "Mud Bending", "color": "#10B981" },
+    { "kombinasi": "🌊 Water + 🔥 Fire", "skill": "Boil Bending", "color": "#F97316" },
+    { "kombinasi": "🌍 Earth + 🔥 Fire", "skill": "Lava Bending", "color": "#DC2626" }
+  ],
+  "prinsip_dasar": [
+    "Avatar merupakan gelar tertinggi penguasaan elemen dasar dan tidak memerlukan Deepening maupun Mix Bending.",
+    "Deepening Bending dan Mix Bending merupakan jalur prestise (prestige specialization) yang bersifat opsional.",
+    "Tidak semua Avatar harus memiliki Special Bending.",
+    "Special Bending diberikan kepada peserta yang ingin menempuh tantangan akademik tingkat lanjut.",
+    "Kelulusan Special Bending menunjukkan kemampuan menyelesaikan persoalan kompleks yang melampaui standar kompetensi olimpiade umum.",
+    "Semakin langka suatu Special Bending, semakin tinggi prestise akademik yang menyertainya."
+  ]
+}
