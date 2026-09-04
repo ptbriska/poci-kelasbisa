@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELEMENTA — Temukan Elemen-ta & Jadilah Avatar</title>
+  
+  <!-- Favicon & CSS Master -->
+  <link rel="icon" href="../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- LIGHT THEME: CYAN & ELEMENTAL ACCENTS STYLESHEET -->
+  <style>
+    :root {
+      --elm-bg-light: #F0F9FF;
+      --elm-cyan: #00B4D8;
+      --elm-deep-blue: #0A192F;
+      --elm-border: #BEE3F8;
+      
+      /* Element Colors */
+      --color-earth: #059669;
+      --color-water: #0284C7;
+      --color-air: #D97706;
+      --color-fire: #DC2626;
+      --color-arcane: #7C3AED;
+    }
+
+    body {
+      background-color: var(--elm-bg-light);
+      color: #0F172A;
+    }
+
+    /* Subnav Navigation Baris 2 */
+    .elementa-subnav {
+      background: #0A192F;
+      border-bottom: 3px solid var(--elm-cyan);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.1rem;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #CBD5E1;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: var(--elm-cyan);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero Section */
+    .elementa-hero {
+      background: linear-gradient(180deg, #E0F7FA 0%, #F0F9FF 100%);
+      padding: 4rem 0 3rem 0;
+      border-bottom: 1px solid var(--elm-border);
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #E0F2FE;
+      border: 1px solid var(--elm-cyan);
+      color: #0077B6;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--elm-deep-blue);
+      margin-bottom: 0.3rem;
+      letter-spacing: 2px;
+    }
+
+    .hero-slogan {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--elm-cyan);
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      color: #475569;
+      font-size: 1.05rem;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.7;
+    }
+
+    .btn-elementa-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
+      color: #FFFFFF;
+      font-weight: 800;
+      padding: 0.9rem 2.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-elementa-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+    }
+
+    /* Element Icons Bar */
+    .elements-preview-bar {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .elem-chip {
+      background: #FFFFFF;
+      border: 1px solid var(--elm-border);
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .elem-chip.earth { color: var(--color-earth); border-color: var(--color-earth); }
+    .elem-chip.water { color: var(--color-water); border-color: var(--color-water); }
+    .elem-chip.air { color: var(--color-air); border-color: var(--color-air); }
+    .elem-chip.fire { color: var(--color-fire); border-color: var(--color-fire); }
+    .elem-chip.arcane { color: var(--color-arcane); border-color: var(--color-arcane); }
+
+    /* Section Cards Grid */
+    .section-box {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--elm-deep-blue);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #64748B;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    /* USP Grid 2 Kolom */
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .usp-card {
+      background: #FFFFFF;
+      border: 1px solid var(--elm-border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 4px 15px rgba(0, 180, 216, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .usp-card:hover {
+      border-color: var(--elm-cyan);
+      transform: translateY(-3px);
+    }
+
+    .usp-tag {
+      display: inline-block;
+      background: #E0F2FE;
+      color: #0369A1;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+    }
+
+    .usp-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--elm-deep-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .usp-card p {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* Nilai Utama Grid 5 Kolom */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+
+    .value-card {
+      background: #FFFFFF;
+      border: 1px solid var(--elm-border);
+      border-radius: 12px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .value-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0077B6;
+      margin-bottom: 0.3rem;
+    }
+
+    .value-motto {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #D97706;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .value-card p {
+      font-size: 0.8rem;
+      color: #64748B;
+      line-height: 1.4;
+    }
+
+    /* Target Peserta Grid 3 Kolom */
+    .target-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .target-card {
+      background: #FFFFFF;
+      border: 1px solid var(--elm-border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      border-top: 4px solid var(--elm-cyan);
+    }
+
+    .target-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--elm-deep-blue);
+      margin-bottom: 0.4rem;
+    }
+
+    .target-elemen {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #0369A1;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .target-card p {
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .target-materi {
+      font-size: 0.82rem;
+      background: #F0F9FF;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      color: #334155;
+      border: 1px solid #BEE3F8;
+    }
+
+    @media (max-width: 992px) {
+      .usp-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .target-grid { grid-template-columns: 1fr; }
+      .elementa-menu { display: none; } /* Mobile toggle support */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER GLOBAL (INJECTED VIA COMPONENTS.JS) -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="./" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="./" class="active">Beranda</a></li>
+        <li><a href="Elementa-Universe/">Pengantar</a></li>
+        <li><a href="RPG Elementa-Universe/">Cara Bermain</a></li>
+        <li><a href="Elementa World/">Dunia Elementa</a></li>
+        <li><a href="Sistem Akademik/">Sistem Akademik</a></li>
+        <li><a href="program/">Katalog & Harga</a></li>
+        <li><a href="Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN BERANDA ELEMENTA -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="elementa-hero">
+      <div class="pilar-container">
+        <span class="hero-badge">⚡ GAMIFIED OLYMPIAD ECOSYSTEM</span>
+        <h1 class="hero-title" id="hero-title">ELEMENTA</h1>
+        <div class="hero-slogan" id="hero-subtitle">Temukan Elemen-ta & Jadilah Avatar</div>
+        <p class="hero-desc" id="hero-desc">
+          Memuat informasi pendahuluan...
+        </p>
+
+        <a href="program/" class="btn-elementa-cta" id="hero-cta">Cek Katalog Program & Pendaftaran Active →</a>
+
+        <!-- PREVIEW 4 ELEMEN & ARCANE -->
+        <div class="elements-preview-bar">
+          <span class="elem-chip earth">🌍 Earth (Terralith)</span>
+          <span class="elem-chip water">🌊 Water (Aquamora)</span>
+          <span class="elem-chip air">🌪️ Air (Aerion)</span>
+          <span class="elem-chip fire">🔥 Fire (Solaris)</span>
+          <span class="elem-chip arcane">✨ Arcane Elements</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN BODY SECTION -->
+    <section class="pilar-section">
+      <div class="pilar-container">
+        
+        <!-- PENDAHULUAN & FILOSOFI -->
+        <div class="section-box" style="background: #FFFFFF; padding: 2.5rem; border-radius: 16px; border: 1px solid var(--elm-border);">
+          <h2 class="section-title">Filosofi & Definisi ELEMENTA</h2>
+          <p style="font-size: 0.95rem; color: #334155; line-height: 1.7; margin-bottom: 1rem;" id="txt-filosofi">
+            Memuat filosofi...
+          </p>
+          <div style="background: #E0F2FE; border-left: 4px solid var(--elm-cyan); padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; font-size: 0.9rem; color: #0369A1;" id="txt-definisi">
+            Memuat definisi...
+          </div>
+        </div>
+
+        <!-- 10 USP PROGRAM -->
+        <div class="section-box">
+          <h2 class="section-title">10 keunggulan Utama (USP)</h2>
+          <p class="section-subtitle">Mengapa ELEMENTA menjadi pilihan tepat untuk persiapan Olimpiade Sains Nasional</p>
+          <div class="usp-grid" id="usp-grid-target">
+            <!-- Rendered via JSON -->
+          </div>
+        </div>
+
+        <!-- 5 NILAI UTAMA -->
+        <div class="section-box">
+          <h2 class="section-title">5 Nilai Utama Program</h2>
+          <p class="section-subtitle">Fondasi seluruh aktivitas pembelajaran, komunitas, dan gamifikasi di ELEMENTA</p>
+          <div class="values-grid" id="values-grid-target">
+            <!-- Rendered via JSON -->
+          </div>
+        </div>
+
+        <!-- TARGET PESERTA -->
+        <div class="section-box">
+          <h2 class="section-title">Target Bidang Olimpiade</h2>
+          <p class="section-subtitle">Pengintegrasian tiga bidang olimpiade sains yang saling berkaitan dalam satu dunia</p>
+          <div class="target-grid" id="target-grid-target">
+            <!-- Rendered via JSON -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. FOOTER GLOBAL (INJECTED VIA COMPONENTS.JS) -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT GLOBAL COMPONENTS -->
+  <script src="../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE BERANDA ELEMENTA -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("content.json")
+        .then(res => {
+          if(!res.ok) throw new Error("Gagal membaca content.json");
+          return res.json();
+        })
+        .then(data => {
+          renderHero(data.hero_section);
+          renderPendahuluan(data.pendahuluan);
+          renderUSP(data.usp_list);
+          renderValues(data.nilai_utama);
+          renderTarget(data.target_peserta);
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    });
+
+    function renderHero(hero) {
+      if(!hero) return;
+      document.getElementById("hero-title").innerText = hero.title;
+      document.getElementById("hero-subtitle").innerText = hero.subtitle;
+      document.getElementById("hero-desc").innerText = hero.description;
+    }
+
+    function renderPendahuluan(pen) {
+      if(!pen) return;
+      document.getElementById("txt-filosofi").innerText = pen.filosofi;
+      document.getElementById("txt-definisi").innerHTML = `<strong>Definisi Resmi:</strong> ${pen.definisi}`;
+    }
+
+    function renderUSP(uspList) {
+      const target = document.getElementById("usp-grid-target");
+      if(!uspList) return;
+
+      let html = "";
+      uspList.forEach(item => {
+        html += `
+          <div class="usp-card">
+            <span class="usp-tag">${item.no}</span>
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderValues(valList) {
+      const target = document.getElementById("values-grid-target");
+      if(!valList) return;
+
+      let html = "";
+      valList.forEach(item => {
+        html += `
+          <div class="value-card">
+            <h4>${item.nama}</h4>
+            <span class="value-motto">"${item.motto}"</span>
+            <p>${item.desc}</p>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderTarget(targetList) {
+      const target = document.getElementById("target-grid-target");
+      if(!targetList) return;
+
+      let html = "";
+      targetList.forEach(item => {
+        html += `
+          <div class="target-card">
+            <h3>${item.bidang}</h3>
+            <span class="target-elemen">Jalur: ${item.elemen_terkait}</span>
+            <p>${item.desc}</p>
+            <div class="target-materi">
+              <strong>Materi:</strong> ${item.materi}
+            </div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
