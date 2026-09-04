@@ -1,0 +1,78 @@
+{
+  "program_meta": {
+    "title": "PILAR OSN / KSM Guru",
+    "tagline": "Teacher Development & Certification Program",
+    "description": "Program peningkatan kapasitas guru pembina olimpiade, bedah soal HOTS, teknik ToT (Training of Trainers) SKKNI BNSP, hingga pendampingan Sistem Pembinaan Internal Sekolah (PIS).",
+    "certification_levels": [
+      {
+        "level": "PILAR 1",
+        "description": "Penguasaan Akademik Setara Kabupaten & Layak Standar Minimal Diperbolehkan Melatih Tim Internal Sekolah Persiapan Lomba Kabupaten."
+      },
+      {
+        "level": "PILAR 2",
+        "description": "Penguasaan Akademik Setara Provinsi-Nasional & Layak Menjadi Pelatih OSN Persiapan Provinsi."
+      },
+      {
+        "level": "PILAR 3",
+        "description": "Penguasaan Akademik Setara Nasional-Internasional & Layak Menjadi Pelatih OSN Persiapan Nasional."
+      }
+    ]
+  },
+  "b2c_comparison": {
+    "title": "Komparasi Produk Pelatihan Guru OSN PILAR (B2C / Guru Mandiri)",
+    "description": "Opsi program pengembangan kapasitas & sertifikasi mandiri untuk guru pembina sains.",
+    "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+    "features": [
+      { "name": "Materi Silabus OSN Nasional SMA & Perkuliahan", "values": ["V", "V", "V", "V"] },
+      { "name": "Bekal File Materi Belajar Olimpiade", "values": ["V", "V", "V", "V"] },
+      { "name": "Bekal Bank Soal Terstruktur", "values": ["V", "V", "V", "V"] },
+      { "name": "Latihan / Simulasi Soal", "values": ["V", "V", "V", "(Request)"] },
+      { "name": "Simulasi Praktik (Khusus Paket Sertifikasi Level 3)", "values": ["Video", "Video", "Langsung", "Langsung"] },
+      { "name": "Simulasi Framework Analisa Soal HOTS", "values": ["-", "V", "V", "V"] },
+      { "name": "Simulasi Framework Concept & Cross Discipline Breakdown", "values": ["-", "V", "V", "V"] },
+      { "name": "Teknik Mengajar ToT Level 4 & 6 SKKNI BNSP", "values": ["V", "V", "V", "V"] },
+      { "name": "Simulasi Microteaching", "values": ["-", "-", "V", "V"] },
+      { "name": "Simulasi Coaching Psychology Siswa Berbakat", "values": ["-", "V", "V", "V"] },
+      { "name": "Latihan Public Speaking & Clarity Communication", "values": ["-", "V", "V", "V"] },
+      { "name": "Implementasi & Adaptasi Sistem PIS PILAR (Roadmap, SOP, Silabus, RPP)", "values": ["V", "V", "V", "V"] },
+      { "name": "Tutor Medalis OSN Berpengalaman", "values": ["V", "V", "V", "V"] },
+      { "name": "Akses Web LMS & Aplikasi Mobile (Android & iOS)", "values": ["Web & App", "Web LMS", "Web LMS", "Web & App"] },
+      { "name": "Grup WA Diskusi Belajar & Klinik Konsultasi Pasca Pelatihan", "values": ["WA Group", "WA Group", "WA & Klinik", "WA & Klinik"] },
+      { "name": "Rapor & Sertifikasi PILAR Pelatihan Guru (Level 1-3)", "values": ["V", "V", "V", "V"] },
+      { "name": "Metode Pembelajaran Live / Offline", "values": ["Video Modul", "Live Zoom", "Offline Direct", "Live Zoom"] },
+      { "name": "Rekaman Live Video Conference", "values": ["-", "V", "-", "V"] },
+      { "name": "Durasi Total Pelatihan", "values": ["~30 Jam", "~30 Jam", "~30 Jam", "~30 Jam"] },
+      { "name": "Durasi Setiap Pertemuan & Pelaksanaan", "values": ["Fleksibel", "Jadwal Zoom", "6 Jam/Hari (Sen-Kam)", "Request / Kesepakatan"] },
+      { "name": "Jadwal Kegiatan (Tahunan)", "values": ["Bebas", "Juli - September", "Est. Juli - September", "Request"] },
+      { "name": "Biaya Tingkat Kab - Prov", "values": ["Rp 500.000", "Rp 750.000", "Rp 2.500.000 (Target)", "Rp 350.000 / Jam"] },
+      { "name": "Biaya Tingkat Nasional", "values": ["Rp 750.000", "Rp 1.000.000", "Rp 3.000.000", "Rp 450.000 / Jam"] }
+    ]
+  },
+  "b2b_b2g_comparison": {
+    "title": "Komparasi Produk Pelatihan Guru OSN (B2B Sekolah & B2G Dinas Pendidikan)",
+    "description": "Program peningkatan kapasitas guru pembimbing secara masif untuk kolektif sekolah atau dinas pendidikan daerah.",
+    "packages": ["PLATO EXTRA", "PLATO GABUNG", "PLATIPUS EXTRA", "PLATIPUS GABUNG"],
+    "features": [
+      { "name": "Materi Silabus OSN Nasional SMA & Perkuliahan", "values": ["V", "V", "V", "V"] },
+      { "name": "Bekal File Materi & Bank Soal Terstruktur", "values": ["V", "V", "V", "V"] },
+      { "name": "Latihan / Simulasi Soal & Praktik Sertifikasi Level 3", "values": ["Video Praktik", "Video Praktik", "Langsung Direct", "Langsung Direct"] },
+      { "name": "Simulasi Framework HOTS & Concept Breakdown", "values": ["V", "V", "V", "V"] },
+      { "name": "Teknik Mengajar ToT Level 4 & 6 SKKNI BNSP", "values": ["V", "V", "V", "V"] },
+      { "name": "Simulasi Microteaching", "values": ["V", "V", "V", "V"] },
+      { "name": "Simulasi Coaching Psychology Siswa Berbakat", "values": ["V", "-", "V", "-"] },
+      { "name": "Latihan Public Speaking & Clarity Communication", "values": ["V", "-", "V", "-"] },
+      { "name": "Implementasi & Adaptasi Sistem PIS PILAR (Roadmap, SOP, Silabus, RPP)", "values": ["V", "V", "V", "V"] },
+      { "name": "Tutor Medalis OSN Berpengalaman", "values": ["V", "V", "V", "V"] },
+      { "name": "Akses Web LMS & Aplikasi Mobile (Android & iOS)", "values": ["V", "V", "V", "V"] },
+      { "name": "Grup WA Diskusi & Klinik Konsultasi Pasca Pelatihan", "values": ["WA & Klinik", "WA Group", "WA & Klinik", "WA Group"] },
+      { "name": "Rapor & Sertifikasi PILAR Pelatihan Guru (Level 1-3)", "values": ["V", "V", "V", "V"] },
+      { "name": "Metode Pembelajaran", "values": ["Zoom", "Zoom", "Offline Direct", "Offline Direct"] },
+      { "name": "Rekaman Live Video Conference", "values": ["V", "V", "-", "-"] },
+      { "name": "Durasi Total Pelatihan", "values": ["~30 Jam", "~30 Jam", "~30 Jam", "~30 Jam"] },
+      { "name": "Durasi Pertemuan & Pelaksanaan", "values": ["Jadwal Zoom", "Jadwal Zoom", "6 Jam/Hari (Sen-Kam)", "6 Jam/Hari (Sen-Kam)"] },
+      { "name": "Jadwal Kegiatan (Tahunan)", "values": ["Juli - September", "Juli - September", "Juli - September", "Juli - September"] },
+      { "name": "Biaya Tingkat Kab - Prov", "values": ["Rp 1.250.000 / Orang", "Rp 1.000.000 / Orang", "Rp 3.750.000 / Orang", "Rp 3.000.000 / Orang"] },
+      { "name": "Biaya Tingkat Nasional", "values": ["Rp 1.500.000 / Orang", "Rp 1.200.000 / Orang", "Rp 4.500.000 / Orang", "Rp 4.000.000 / Orang"] }
+    ]
+  }
+}
