@@ -1,0 +1,95 @@
+{
+  "program_meta": {
+    "title": "PILAR OSN / KSM Siswa",
+    "tagline": "Systematic Champion Development Program",
+    "description": "Program pembinaan komprehensif 9 bidang olimpiade sains (Matematika, Fisika, Kimia, Biologi, Astronomi, Kebumian, Ekonomi, Geografi, Informatika) & KSM jenjang SD, SMP, dan SMA/MA.",
+    "level_coverage": ["Kabupaten / Kota (OSNK)", "Provinsi (OSNP)", "Nasional (OSN)"]
+  },
+  "b2c_comparison": {
+    "title": "Komparasi Paket B2C (Siswa Individu)",
+    "description": "Pilihan paket bimbingan belajar langsung untuk siswa/i mandiri.",
+    "packages": ["KETAL", "PLATO", "PLATIPUS", "PLASMA", "EXTRA"],
+    "features": [
+      { "name": "Materi Silabus OSN SMA & Perkuliahan", "values": ["V", "V", "V", "V", "V"] },
+      { "name": "Tutor Medalis OSN Berpengalaman", "values": ["V", "V", "V", "V", "V"] },
+      { "name": "Akses Belajar Berbasis Web LMS", "values": ["V", "V", "V", "V", "V"] },
+      { "name": "Akses di Aplikasi Mobile (Android & App Store)", "values": ["V", "-", "-", "-", "V"] },
+      { "name": "Grup WA Diskusi Belajar", "values": ["V", "V", "V", "V", "V"] },
+      { "name": "Rapor Akademik", "values": ["V", "V", "V", "V", "V"] },
+      { "name": "Rapor Non Akademik (Tes Gaya Belajar & MBTI)", "values": ["V", "-", "-", "-", "V"] },
+      { "name": "Live Teaching Video Conference", "values": ["(Video)", "V", "Offline", "-", "V"] },
+      { "name": "Rekaman Live Video Conference", "values": ["-", "V", "-", "-", "V"] },
+      { "name": "File Materi Belajar Olimpiade", "values": ["V", "V", "V", "V", "V"] },
+      { "name": "Latihan Soal Terintegrasi", "values": ["V", "V", "V", "V", "(Request)"] },
+      { "name": "Latihan Praktik (Khusus OSN Nasional)", "values": ["Video", "Video", "Langsung", "Langsung", "Langsung"] },
+      { "name": "Durasi Total Pelatihan", "values": ["~30 Jam", "~30 Jam", "~30 Jam", "~30 Jam", "~30 Jam"] },
+      { "name": "Durasi Setiap Pertemuan", "values": ["Fleksibel", "Fleksibel Zoom", "6 Jam/Hari Offline", "Fleksibel", "Request"] },
+      { "name": "Pelaksanaan Kegiatan", "values": ["Bebas", "Bebas", "Senin-Kamis", "Bebas", "Kesepakatan"] },
+      { "name": "Jadwal Persiapan Kabupaten (Tahunan)", "values": ["Bebas", "Jan-Apr", "Est. Mar-Apr", "Okto-Des", "Request"] },
+      { "name": "Jadwal Persiapan Provinsi/Nasional", "values": ["Bebas", "Jadwal Kementerian", "Jadwal Kementerian", "-", "Request / Kementerian"] },
+      { "name": "Biaya Tingkat Kabupaten", "values": ["Rp 250.000", "Rp 350.000", "Rp 1.500.000 (Target)", "Rp 150.000", "Rp 150.000 / Jam"] },
+      { "name": "Biaya Tingkat Provinsi", "values": ["Rp 350.000", "Rp 500.000", "Rp 2.000.000 (Target)", "-", "Rp 250.000 / Jam"] },
+      { "name": "Biaya Tingkat Nasional", "values": ["Rp 500.000", "Rp 750.000", "Rp 2.500.000 (Target)", "-", "Rp 350.000 / Jam"] }
+    ]
+  },
+  "b2b_comparison": {
+    "title": "Komparasi Paket B2B (Kemitraan Sekolah)",
+    "description": "Paket kerjasama instansi sekolah untuk pembinaan kontingen OSN secara masif.",
+    "packages": ["KETAL", "KETAL+", "PLATO EXTRA", "PLATIPUS EXTRA", "PLATO GABUNG", "PLATIPUS GABUNG"],
+    "features": [
+      { "name": "Materi Silabus OSN SMA & Perkuliahan", "values": ["V", "V", "V", "V", "V", "V"] },
+      { "name": "Tutor Medalis OSN Berpengalaman", "values": ["V", "V", "V", "V", "V", "V"] },
+      { "name": "Akses Belajar Berbasis Web LMS", "values": ["V", "V", "V", "V", "V", "V"] },
+      { "name": "Akses Aplikasi Mobile (Android & App Store)", "values": ["V", "V", "-", "-", "-", "-"] },
+      { "name": "Grup WA Diskusi Belajar", "values": ["V", "V", "V", "V", "V", "V"] },
+      { "name": "Rapor Akademik & Non-Akademik (MBTI)", "values": ["V", "V", "V", "V", "Akademik Only", "Akademik Only"] },
+      { "name": "Live Teaching / Tatap Muka", "values": ["Video", "Video", "Zoom", "Tatap Muka", "Zoom", "Tatap Muka"] },
+      { "name": "Rekaman Live Video Conference", "values": ["-", "-", "V", "-", "V", "-"] },
+      { "name": "File Materi & Bank Latihan Soal", "values": ["V", "V", "V", "V", "V", "V"] },
+      { "name": "Latihan Praktik (Khusus OSN Nasional)", "values": ["Video", "Video", "Video", "Langsung", "Video", "Langsung"] },
+      { "name": "Sosialisasi / Webinar OSN Sekolah", "values": ["V", "V", "V", "V", "V", "V"] },
+      { "name": "Proses Rekrutmen Tim OSN Sekolah", "values": ["-", "V", "V", "V", "-", "-"] },
+      { "name": "Pelatihan Guru Pembimbing", "values": ["-", "V", "V", "V", "-", "-"] },
+      { "name": "Bantuan Penyusunan LPJ Dana BOSKIN", "values": ["-", "V", "V", "V", "-", "-"] },
+      { "name": "Meeting Laporan Progress Belajar", "values": ["-", "V", "V", "V", "-", "-"] },
+      { "name": "Dokumentasi Laporan Sekolah", "values": ["V", "V", "V", "V", "V", "V"] },
+      { "name": "Diskon Produk Kelas Bisa Lainnya", "values": ["5%", "10%", "5%", "10%", "-", "-"] },
+      { "name": "Durasi Total Pelatihan", "values": ["~30 Jam", "~30 Jam", "~30 Jam & Req", "~30 Jam & Req", "~30 Jam", "~30 Jam"] },
+      { "name": "Durasi Pertemuan & Pelaksanaan", "values": ["Bebas", "Bebas", "6 Jam/Hari (2 Sistem)", "6 Jam/Hari (Sen-Jum)", "6 Jam/Hari (2 Sistem)", "6 Jam/Hari (Sen-Jum)"] },
+      { "name": "Biaya Tingkat Kabupaten", "values": ["Rp 200.000/siswa", "Rp 350.000/siswa", "Rp 250.000/Jam", "Rp 300.000/Jam*", "Rp 100.000/Jam**", "Rp 150.000/Jam***"] },
+      { "name": "Biaya Tingkat Provinsi", "values": ["Rp 250.000/siswa", "Rp 450.000/siswa", "Rp 300.000/Jam", "Rp 350.000/Jam*", "Rp 150.000/Jam**", "Rp 250.000/Jam***"] },
+      { "name": "Biaya Tingkat Nasional", "values": ["Rp 300.000/siswa", "Rp 700.000/siswa", "Rp 350.000/Jam", "Rp 400.000/Jam*", "Rp 200.000/Jam**", "Rp 350.000/Jam***"] }
+    ],
+    "notes": [
+      "*Belum termasuk Biaya Akomodasi Tutor.",
+      "**Minimal 5 Sekolah dan minimal Request 15 Jam KBM.",
+      "***Minimal 5 Sekolah, minimal Request 15 Jam KBM, serta Biaya Akomodasi Tutor."
+    ]
+  },
+  "b2g_comparison": {
+    "title": "Komparasi Paket B2G (Dinas Pendidikan)",
+    "description": "Program pembinaan kontingen delegasi daerah berskala besar.",
+    "packages": ["PLATO EXTRA", "PLATIPUS EXTRA"],
+    "features": [
+      { "name": "Materi Silabus OSN SMA & Perkuliahan", "values": ["V", "V"] },
+      { "name": "Tutor Medalis OSN Berpengalaman", "values": ["V", "V"] },
+      { "name": "Akses Web LMS & WA Group", "values": ["V", "V"] },
+      { "name": "Rapor Akademik & Non-Akademik (MBTI)", "values": ["V", "V"] },
+      { "name": "Metode Pengajaran", "values": ["Online Zoom", "Tatap Muka Direct"] },
+      { "name": "Rekaman Live Video Conference", "values": ["V", "-"] },
+      { "name": "File Materi & Bank Latihan Soal", "values": ["V", "V"] },
+      { "name": "Latihan Praktik (Khusus Nasional)", "values": ["Video", "Langsung"] },
+      { "name": "Sosialisasi / Webinar OSN Daerah", "values": ["V", "V"] },
+      { "name": "Bantuan Penyusunan LPJ Dana BOSKIN", "values": ["V", "V"] },
+      { "name": "Meeting Progress & Dokumentasi Kegiatan", "values": ["V", "V"] },
+      { "name": "Durasi Total Pelatihan", "values": ["30 Jam & Request", "30 Jam & Request"] },
+      { "name": "Jadwal Persiapan Kabupaten / Provinsi", "values": ["Est. Jan-Apr / Menyesuaikan", "Est. Jan-Apr / Menyesuaikan"] },
+      { "name": "Biaya Tingkat Kabupaten", "values": ["Rp 400.000 / Jam", "Rp 500.000 / Jam*"] },
+      { "name": "Biaya Tingkat Provinsi", "values": ["Rp 400.000 / Jam", "Rp 500.000 / Jam*"] },
+      { "name": "Biaya Tingkat Nasional", "values": ["Rp 400.000 / Jam", "Rp 500.000 / Jam*"] }
+    ],
+    "notes": [
+      "*Biaya PLATIPUS EXTRA B2G belum termasuk biaya akomodasi tutor."
+    ]
+  }
+}
