@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "SISTEM KEWARGANEGARAAN & PLACEMENT",
+    "subtitle": "NATIONALITY & ELEMENTAL PLACEMENT SYSTEM",
+    "description": "Kewarganegaraan di Elementa tidak ditentukan oleh daerah atau sekolah, melainkan oleh elemen dominan peserta saat memulai perjalanan sebagai rumah akademik utamanya."
+  },
+  "filosofi_placement": {
+    "title": "Pemetaan Potensi & Preferensi",
+    "desc": "Sistem Placement dirancang bukan sebagai ajang seleksi, melainkan pemetaan potensi. Seluruh Nation memiliki kedudukan yang setara dalam dunia Elementa. Setelah placement, peserta mendapat status awal sebagai Warrior.",
+    "waktu_pelaksanaan": "Awal Season selama Arcane Month"
+  },
+  "tujuan_placement": [
+    "Membantu peserta mengenali kecenderungan elemen dominannya.",
+    "Menentukan Nation awal & komunitas belajar utama peserta.",
+    "Menentukan jalur pembinaan yang paling sesuai.",
+    "Membangun identitas awal sebagai warga Elementa."
+  ],
+  "tahapan_placement": [
+    {
+      "step": "TAHAP 01",
+      "nama": "Elemental Affinity Assessment",
+      "desc": "Asesmen pemetaan minat akademik, bidang yang disukai, karakter belajar, dan gaya berpikir untuk menghasilkan rekomendasi awal elemen dominan."
+    },
+    {
+      "step": "TAHAP 02",
+      "nama": "Nation Selection",
+      "desc": "Pemilihan Nation rumah akademik secara sukarela[cite: 11]. Peserta bebas mengikuti rekomendasi sistem atau memilih Nation lain sesuai preferensi."
+    },
+    {
+      "step": "TAHAP 03",
+      "nama": "Nation Registration",
+      "desc": "Pendaftaran resmi kewarganegaraan Elementa yang berlaku selama satu season penuh dengan status awal Warrior."
+    }
+  ],
+  "nation_list": [
+    {
+      "nama": "Terralith Empire",
+      "elemen": "🌍 Earth",
+      "gelar": "Terran",
+      "outfit": "Eastern (China)",
+      "akademi": "Lithos Academy",
+      "color": "#059669"
+    },
+    {
+      "nama": "Aquamora Kingdom",
+      "elemen": "🌊 Water",
+      "gelar": "Aquarian",
+      "outfit": "Pacificnesia",
+      "akademi": "Tidecrest Academy",
+      "color": "#0284C7"
+    },
+    {
+      "nama": "Aerion Nomad",
+      "elemen": "🌪️ Air",
+      "gelar": "Aerian",
+      "outfit": "Arabic",
+      "akademi": "Aero Academy",
+      "color": "#D97706"
+    },
+    {
+      "nama": "Solaris Nation",
+      "elemen": "🔥 Fire",
+      "gelar": "Solaris",
+      "outfit": "Western (Europe)",
+      "akademi": "Starfire Academy",
+      "color": "#DC2626"
+    }
+  ],
+  "rekomendasi_osn": [
+    { "bidang": "OSN Kebumian", "nation": "Terralith, Aquamora, Aerion, Solaris (Semua Nation)" },
+    { "bidang": "OSN Astronomi", "nation": "Solaris Nation & Republic of Arcane" },
+    { "bidang": "OSN Geografi", "nation": "Terralith, Aquamora, Aerion, & Republic of Arcane" }
+  ],
+  "prinsip_dasar": [
+    "Setiap peserta wajib memiliki satu Nation utama.",
+    "Setiap peserta memulai perjalanan dengan status Warrior.",
+    "Nation dipilih pada awal season dan berlaku selama satu season penuh.",
+    "Afiliasi Arcane (misal: Terran Cartographer) tidak mengubah Nation utama.",
+    "Nation tidak menentukan tingkat kemampuan; seluruh Nation berkedudukan setara."
+  ]
+}
