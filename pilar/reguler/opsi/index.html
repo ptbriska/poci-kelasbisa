@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PILAR OPSI — Scientific Research Showcase</title>
+  
+  <!-- Favicon & CSS Master -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- LIGHT THEME: BIRU LANGIT & CYAN -->
+  <style>
+    :root {
+      --edtech-glow: rgba(0, 180, 216, 0.2);
+      --edtech-card-bg: #FFFFFF;
+      --edtech-border: #BEE3F8;
+      --pilar-sky-bg: #F0F9FF;
+      --pilar-sky-card: #E0F2FE;
+      --pilar-text-main: #0F172A;
+      --pilar-text-muted: #475569;
+    }
+
+    body {
+      background-color: var(--pilar-sky-bg);
+      color: var(--pilar-text-main);
+    }
+
+    .edtech-hero {
+      position: relative;
+      padding: 4rem 0 3rem 0;
+      background: linear-gradient(180deg, #E0F7FA 0%, #F0F9FF 100%);
+      border-bottom: 1px solid var(--edtech-border);
+      overflow: hidden;
+    }
+
+    .edtech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #E0F2FE;
+      border: 1px solid #00B4D8;
+      color: #0077B6;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 10px rgba(0, 180, 216, 0.15);
+    }
+
+    .edtech-title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #0284C7 0%, #0077B6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .edtech-subtitle {
+      color: var(--pilar-text-muted);
+      font-size: 1.05rem;
+      max-width: 750px;
+      line-height: 1.7;
+      margin: 0 auto;
+    }
+
+    /* Filter Section */
+    .filter-section-wrapper {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .tab-switcher-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--edtech-border);
+      color: #334155;
+      padding: 0.7rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    .tab-btn:hover {
+      border-color: #00B4D8;
+      color: #0077B6;
+      background: #F0F9FF;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
+      color: #FFFFFF;
+      border-color: #00B4D8;
+      box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+    }
+
+    .sub-stage-wrapper {
+      display: flex;
+      gap: 0.5rem;
+      background: #E0F2FE;
+      padding: 0.4rem;
+      border-radius: 30px;
+      border: 1px solid #BEE3F8;
+    }
+
+    .sub-stage-btn {
+      background: transparent;
+      border: none;
+      color: #0369A1;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .sub-stage-btn.active {
+      background: #FFFFFF;
+      color: #0077B6;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Matrix Card & Table */
+    .matrix-card {
+      background: var(--edtech-card-bg);
+      border: 1px solid var(--edtech-border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0, 119, 182, 0.06);
+      margin-bottom: 3rem;
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    .matrix-table th {
+      background: #E0F2FE;
+      color: #0369A1;
+      padding: 1rem;
+      font-weight: 800;
+      border-bottom: 2px solid #00B4D8;
+      white-space: nowrap;
+    }
+
+    .matrix-table th:first-child {
+      text-align: left;
+      border-top-left-radius: 8px;
+    }
+
+    .matrix-table th:last-child {
+      border-top-right-radius: 8px;
+    }
+
+    .matrix-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+
+    .matrix-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: #0F172A;
+    }
+
+    .matrix-table tr:hover td {
+      background: #F8FAFC;
+    }
+
+    .check-yes {
+      color: #059669;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .check-no {
+      color: #94A3B8;
+    }
+
+    .price-highlight {
+      color: #D97706;
+      font-weight: 800;
+    }
+
+    .future-cta {
+      background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+      border: 1px solid #7DD3FC;
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 180, 216, 0.1);
+    }
+
+    .future-cta h2 {
+      font-size: 2rem;
+      color: #0369A1;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+
+    .future-cta p {
+      color: #334155;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-neon-cta {
+      display: inline-block;
+      background: #0077B6;
+      color: #FFFFFF;
+      font-weight: 800;
+      padding: 0.9rem 2.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 119, 182, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .btn-neon-cta:hover {
+      transform: translateY(-2px);
+      background: #0284C7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER GLOBAL BARIS 1 -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL PILAR BARIS 2 -->
+  <nav class="pilar-subnav">
+    <div class="pilar-subnav-container">
+      <a href="../../" class="pilar-brand">
+        <img src="../../images/logo-pilar.png" alt="Logo PILAR" class="pilar-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="pilar-icon" style="display:none;">🏆</span>
+        <span class="pilar-name">PILAR Juara</span>
+      </a>
+      <ul class="pilar-menu">
+        <li><a href="../../">Beranda</a></li>
+        <li><a href="../../freemium/">Program Freemium</a></li>
+        <li><a href="../" style="color: var(--pilar-cyan); background: rgba(0, 180, 216, 0.1);">Program Reguler</a></li>
+        <li><a href="../../prestasi/">Prestasi Alumni</a></li>
+        <li><a href="../../testimoni/">Testimoni</a></li>
+        <li><a href="../../tutor/">Tutor / Mentor</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN KONTEN OPSI -->
+  <main>
+    <section class="edtech-hero">
+      <div class="pilar-container text-center">
+        <a href="../" style="color: #0077B6; font-weight: 700; font-size: 0.88rem; text-decoration: none;">← Kembali ke Katalog Reguler</a>
+        <div style="margin-top: 1rem;">
+          <span class="edtech-badge">🔬 SCIENTIFIC RESEARCH PROGRAM</span>
+          <h1 class="edtech-title">PILAR OPSI</h1>
+          <p class="edtech-subtitle">
+            Pembinaan komprehensif Olimpiade Penelitian Siswa Indonesia dari perancangan proposal metodologi IMRAD hingga analisis data Python & persiapan babak final[cite: 6].
+          </p>
+        </div>
+
+        <!-- DOUBLE TAB FILTERS -->
+        <div class="filter-section-wrapper">
+          <!-- Filter 1: Type -->
+          <div class="tab-switcher-wrapper">
+            <button class="tab-btn active" onclick="switchType('b2c')">🧑‍🎓 B2C Siswa / Tim</button>
+            <button class="tab-btn" onclick="switchType('b2b')">🏫 B2B Sekolah Mitra</button>
+            <button class="tab-btn" onclick="switchType('b2g')">🏛️ B2G Dinas Pendidikan</button>
+          </div>
+
+          <!-- Filter 2: Stage Sub-Filter -->
+          <div class="sub-stage-wrapper" id="stage-bar">
+            <button class="sub-stage-btn active" onclick="switchStage('prop')">Tahap 1: Proposal Riset</button>
+            <button class="sub-stage-btn" onclick="switchStage('lap')">Tahap 2: Laporan & Pra-Nasional</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section" style="padding: 2rem 0 4rem 0;">
+      <div class="pilar-container">
+        
+        <!-- WADAH MATRIKS TABEL DINAMIS -->
+        <div class="matrix-card">
+          <div id="matrix-header" style="margin-bottom: 1.5rem;">
+            <h2 style="font-size: 1.5rem; color: #0F172A; font-weight: 800;" id="matrix-title">Tabel Komparasi Fitur OPSI</h2>
+            <p style="font-size: 0.88rem; color: #64748B;" id="matrix-subdesc">Memuat data komparasi...</p>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="matrix-table" id="matrix-table-target">
+              <!-- Content rendered via JSON -->
+            </table>
+          </div>
+        </div>
+
+        <!-- CTA REGISTRATION BANNER -->
+        <div class="future-cta">
+          <h2>Bawakan Riset Terbaikmu Menjadi Medalis OPSI!</h2>
+          <p>Dapatkan pendampingan intensif dari mentor finalis OPSI & medalis riset nasional[cite: 6].</p>
+          <a href="../../../events/?subbrand=pilar&program=opsi" class="btn-neon-cta">Daftar Bimbingan OPSI Active →</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL OPSI -->
+  <script>
+    let globalJsonData = null;
+    let currentType = 'b2c';
+    let currentStage = 'prop';
+
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if(!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          globalJsonData = data;
+          updateView();
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("matrix-table-target").innerHTML = `<tr><td style="color:red;">Gagal memuat data info.json</td></tr>`;
+        });
+    });
+
+    function switchType(typeKey) {
+      currentType = typeKey;
+      
+      const typeBtns = document.querySelectorAll('.tab-switcher-wrapper .tab-btn');
+      typeBtns.forEach(btn => btn.classList.remove('active'));
+
+      const stageBar = document.getElementById('stage-bar');
+
+      if(typeKey === 'b2c') {
+        typeBtns[0].classList.add('active');
+        stageBar.style.display = 'flex';
+      } else if(typeKey === 'b2b') {
+        typeBtns[1].classList.add('active');
+        stageBar.style.display = 'flex';
+      } else {
+        typeBtns[2].classList.add('active');
+        stageBar.style.display = 'none'; // B2G khusus Tahap Laporan saja
+      }
+
+      updateView();
+    }
+
+    function switchStage(stageKey) {
+      currentStage = stageKey;
+      const stageBtns = document.querySelectorAll('.sub-stage-btn');
+      stageBtns.forEach(btn => btn.classList.remove('active'));
+
+      if(stageKey === 'prop') stageBtns[0].classList.add('active');
+      else stageBtns[1].classList.add('active');
+
+      updateView();
+    }
+
+    function updateView() {
+      if(!globalJsonData) return;
+
+      let selectedData = null;
+
+      if(currentType === 'b2c') {
+        selectedData = (currentStage === 'prop') ? globalJsonData.b2c_siswa.tahap_proposal : globalJsonData.b2c_siswa.tahap_laporan;
+      } else if(currentType === 'b2b') {
+        selectedData = (currentStage === 'prop') ? globalJsonData.b2b_sekolah.tahap_proposal : globalJsonData.b2b_sekolah.tahap_laporan;
+      } else {
+        selectedData = globalJsonData.b2g_dinas;
+      }
+
+      renderMatrixTable(selectedData);
+    }
+
+    function renderMatrixTable(dataObj) {
+      if(!dataObj) return;
+
+      document.getElementById("matrix-title").innerText = dataObj.title;
+      document.getElementById("matrix-subdesc").innerText = dataObj.description;
+
+      let tableHtml = `
+        <thead>
+          <tr>
+            <th>ASPEK / FITUR LAYANAN</th>
+            ${dataObj.packages.map(pkg => `<th>${pkg}</th>`).join('')}
+          </tr>
+        </thead>
+        <tbody>
+      `;
+
+      dataObj.features.forEach(feat => {
+        tableHtml += `<tr><td>${feat.name}</td>`;
+        feat.values.forEach(val => {
+          let formattedVal = val;
+          if(val === "V") formattedVal = `<span class="check-yes">✓</span>`;
+          else if(val === "-") formattedVal = `<span class="check-no">—</span>`;
+          else if(val.includes("Rp")) formattedVal = `<span class="price-highlight">${val}</span>`;
+          
+          tableHtml += `<td>${formattedVal}</td>`;
+        });
+        tableHtml += `</tr>`;
+      });
+
+      tableHtml += `</tbody>`;
+      document.getElementById("matrix-table-target").innerHTML = tableHtml;
+    }
+  </script>
+</body>
+</html>
