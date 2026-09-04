@@ -1,0 +1,107 @@
+{
+  "program_meta": {
+    "title": "PILAR FIKSI (Festival Inovasi & Kewirausahaan Siswa Indonesia)",
+    "tagline": "Youth Entrepreneurship & Business Innovation Program",
+    "description": "Program pembinaan kewirausahaan terstruktur untuk kompetisi FIKSI mencakup kategori Perencanaan Usaha (Ide Baru) dan Pengembangan Usaha (Bisnis Berjalan) dari Tahap 1 Ide hingga Final Nasional.",
+    "categories": ["Perencanaan Usaha", "Pengembangan Usaha"]
+  },
+  "perencanaan_usaha": {
+    "tahap1_ide": {
+      "title": "Perencanaan Usaha — Tahap 1: Seleksi Ide",
+      "description": "Pembentukan mindset kewirausahaan, penyusunan Value Proposition, BMC, SWOT, HPP, hingga Executive Summary siap submit.",
+      "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+      "features": [
+        { "name": "Mindset Kewirausahaan & Problem-Solution Thinking", "values": ["V", "V", "V", "V"] },
+        { "name": "Teknik Identifikasi Masalah & Peluang Pasar", "values": ["V", "V", "V", "V"] },
+        { "name": "Brainstorming Ide dengan Template Matriks Fiksi Kelas Bisa", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Coaching"] },
+        { "name": "Business Model Canvas (BMC) & Analisis SWOT", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Coaching"] },
+        { "name": "Manajemen Finansial Dasar (HPP, BEP, Pricing)", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Teknik Penyusunan Ringkasan Eksekutif & Rubrik Tahap 1", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Template Siap Pakai (Eksekutif, BMC, SWOT, HPP)", "values": ["-", "-", "-", "V"] },
+        { "name": "Review, Feedback, & Klinik Mentoring 1on1 Submit Tahap 1", "values": ["-", "-", "-", "V"] },
+        { "name": "Akses LMS, Mobile App, & Mentor Praktisi Bisnis / Finalis FIKSI", "values": ["Web & App", "Web LMS", "Web LMS", "Web & App"] },
+        { "name": "Metode Pembelajaran & Periode Pelatihan", "values": ["Self-Paced (Jan-Des)", "Live Zoom (Okt-Jan)", "Offline (Okt-Jan)", "Live Zoom (Request)"] },
+        { "name": "Harga Per Tim", "values": ["Rp 149.000", "Rp 350.000", "Rp 700.000", "PLATO Rp 1.200k / PLATIPUS Rp 1.800k"] }
+      ]
+    },
+    "tahap2_validasi": {
+      "title": "Perencanaan Usaha — Tahap 2: Validasi (Pra-Nasional)",
+      "description": "Riset lapangan, pembuatan prototype, penyusunan proposal usaha, photo/video studio konten, dan uji kelayakan usaha.",
+      "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+      "features": [
+        { "name": "Teknik Validasi Pasar (Survey/Wawancara) & Proposal Usaha", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+        { "name": "Simulasi Pembuatan Purwarupa (Prototype)", "values": ["-", "V", "V", "V"] },
+        { "name": "Teknik Dokumentasi Product & Mini Content Studio", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Review Proposal Usaha & Pendampingan Validasi", "values": ["-", "-", "-", "V"] },
+        { "name": "Akses Responden Komunitas (Pool Survey/Testing)", "values": ["V", "V", "V", "V"] },
+        { "name": "Metode Pembelajaran & Periode Pelatihan", "values": ["Self-Paced (Jan-Des)", "Live Zoom (Juni)", "Offline (Juni)", "Live Zoom (Request)"] },
+        { "name": "Harga Per Tim", "values": ["Rp 149.000", "Rp 350.000", "Rp 700.000", "PLATO Rp 1.200k / PLATIPUS Rp 1.800k"] }
+      ]
+    },
+    "tahap3_final": {
+      "title": "Perencanaan Usaha — Tahap 3: Final Nasional",
+      "description": "Teknik Pitching, Brand Guideline, Storytelling, Pitch Deck PPT, simulasi QnA Juri, hingga KTI Bisnis & Digital Marketing.",
+      "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+      "features": [
+        { "name": "Teknik Pitching Bisnis & Storytelling Demo Produk", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+        { "name": "Penyusunan Brand Guideline & PPT Pitch Deck", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+        { "name": "Simulasi Tanya Jawab (QnA) Juri FIKSI", "values": ["-", "-", "-", "V"] },
+        { "name": "Impact Measurement & Scale-Up Strategy Kit", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Penulisan KTI Bisnis & Optimasi Digital Marketing Sales", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Harga Per Tim", "values": ["Rp 179.000", "Rp 499.000", "Rp 899.000", "PLATO Rp 1.499k / PLATIPUS Rp 1.999k"] }
+      ]
+    }
+  },
+  "pengembangan_usaha": {
+    "tahap1_validasi": {
+      "title": "Pengembangan Usaha — Tahap 1: Validasi Usaha Berjalan",
+      "description": "Audit model bisnis eksisting, AI-assisted drafting, evaluasi HPP & margin, optimasi marketplace, dan portofolio penjualan.",
+      "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+      "features": [
+        { "name": "Audit Model Bisnis Eksisting & Market Fit Analysis", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "AI-Assisted Drafting Pitch Investor & Executive Template", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Digital Marketing & Marketplace Optimisasi Transaksi", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Validasi Bukti Usaha (Produk, Transaksi, Legalitas)", "values": ["Teori", "V", "V", "V"] },
+        { "name": "Simulasi Sidang BMC & SWOT Feasible", "values": ["-", "-", "-", "V"] },
+        { "name": "Harga Per Tim", "values": ["Rp 149.000", "Rp 350.000", "Rp 650.000", "PLATO Rp 1.200k / PLATIPUS Rp 1.800k"] }
+      ]
+    },
+    "tahap2_implementasi": {
+      "title": "Pengembangan Usaha — Tahap 2: Implementasi Scale-Up",
+      "description": "AI-assisted SOP usaha, dashboard operasional harian, Meta Ads marketing, manajemen transaksi growth, dan evaluasi iterasi.",
+      "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+      "features": [
+        { "name": "Strategi Scale-Up Operasional & SOP Usaha (AI-Assisted)", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Strategi Branding & Optimasi Meta Ads", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Optimasi Laporan Keuangan & Conversion Analytics", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Dashboard Operasional Harian & Log Sheet Framework", "values": ["-", "-", "-", "V"] },
+        { "name": "Harga Per Tim", "values": ["Rp 199.000", "Rp 350.000", "Rp 650.000", "PLATO Rp 1.200k / PLATIPUS Rp 1.800k"] }
+      ]
+    },
+    "tahap3_pitching": {
+      "title": "Pengembangan Usaha — Tahap 3: Pitching Scale-Up Nasional",
+      "description": "Pitching Growth Stage, mini booth setup, traction display, expansion plan, legalitas usaha, dan artikel ilmiah bisnis.",
+      "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+      "features": [
+        { "name": "Pitching Growth Stage & Storytelling Berbasis Data", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Simulasi Demo Produk dengan Mini Booth Setup & QnA Juri", "values": ["-", "-", "-", "V"] },
+        { "name": "Penyusunan Expansion Plan & Legalitas (NIB/Brand/SOP)", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Koherensi Impact Bisnis pada Kearifan Lokal & Artikel Ilmiah", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+        { "name": "Harga Per Tim", "values": ["Rp 199.000", "Rp 399.000", "Rp 699.000", "PLATO Rp 1.499k / PLATIPUS Rp 1.999k"] }
+      ]
+    }
+  },
+  "b2b_b2g_institutional": {
+    "title": "Kemitraan Institusi FIKSI (B2B Sekolah & B2G Dinas)",
+    "description": "SOP pembentukan tim bisnis sekolah, sistem inkubasi usaha siswa, dan pendampingan ekosistem wirausaha muda daerah.",
+    "packages": ["PLATO EXTRA", "PLATIPUS EXTRA", "PLATO GABUNG", "PLATIPUS GABUNG"],
+    "features": [
+      { "name": "SOP Pembentukan Tim Bisnis & Ekosistem Kewirausahaan Sekolah", "values": ["V", "V", "V", "V"] },
+      { "name": "Dokumentasi & Laporan Pelaksanaan Kegiatan Resmi", "values": ["V", "V", "V", "V"] },
+      { "name": "Sistem Inkubasi Usaha Siswa & Monitoring Progress", "values": ["V", "V", "-", "-"] },
+      { "name": "Cakupan Modul Teknis", "values": ["Modul B2C Tahap 1 Lengkap", "Modul B2C Tahap 1 Lengkap", "Modul B2C Tahap 1 Lengkap", "Modul B2C Tahap 1 Lengkap"] },
+      { "name": "Harga B2B Sekolah (Termasuk Guru Pembimbing)", "values": ["Rp 1.200.000 / Tim", "Rp 1.800.000 / Tim", "Rp 400.000 / Tim", "Rp 900.000 / Tim"] },
+      { "name": "Harga B2G Dinas (Termasuk Modul Tahap 2 & 3)", "values": ["PLATO+ Rp 2.000.000 / Tim", "PLATIPUS+ Rp 3.000.000 / Tim", "-", "-"] }
+    ]
+  }
+}
