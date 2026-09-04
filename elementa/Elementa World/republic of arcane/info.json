@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "REPUBLIC OF ARCANE",
+    "subtitle": "BEYOND ELEMENTS, BEYOND LIMITS // INDEPENDENT ACADEMIC REGION",
+    "description": "Republic of Arcane merupakan wilayah independen di Elementa Universe yang menjadi pusat pengembangan ilmu pengetahuan tingkat lanjut, analisis multidisiplin, dan keahlian abstrak."
+  },
+  "overview": {
+    "filosofi": "Republic of Arcane tidak terikat pada empat elemen alam utama. Wilayah ini berdiri sebagai republik akademik yang terbuka bagi seluruh warga Elementa dari Nation mana pun yang ingin menguasai keahlian spesialisasi tingkat lanjut.",
+    "motto": "Beyond Elements, Beyond Limits.",
+    "julukan": "The Citadel of Abstract Knowledge"
+  },
+  "provinces": [
+    {
+      "nama": "Province of Cartographia",
+      "element": "Spatial Bending",
+      "fokus": "SIG, Penginderaan Jauh, Kartografi, Analisis Spasial, Geostatistik",
+      "filosofi": "Memahami lokasi, distribusi, dan hubungan antar ruang merupakan kunci utama memahami pola dunia.",
+      "simbol": "Kompas Emas Berlapis Lingkaran Koordinat",
+      "warna": "Biru Tua & Emas",
+      "color_hex": "#00B4D8",
+      "gelar": "Cartographer",
+      "julukan": "The Guardians of Space",
+      "motto": "Every Place Tells a Story."
+    },
+    {
+      "nama": "Province of Civitas",
+      "element": "Spirit Bending",
+      "fokus": "Geografi Manusia, Geopolitik, Kependudukan, Pariwisata, Pembangunan Wilayah",
+      "filosofi": "Kemajuan suatu wilayah tidak hanya ditentukan oleh kondisi fisik geografis, tetapi juga oleh masyarakat di dalamnya.",
+      "simbol": "Pohon Kehidupan dengan Akar & Cabang Terhubung",
+      "warna": "Hijau Zamrud & Emas",
+      "color_hex": "#10B981",
+      "gelar": "Civitan",
+      "julukan": "The Keepers of Civilization",
+      "motto": "To Understand the World, Understand Its People."
+    },
+    {
+      "nama": "Province of Aetherion",
+      "element": "Energy Bending",
+      "fokus": "Mekanika, Gelombang, Optika, Listrik & Magnet, Fisika Modern, Astrofisika",
+      "filosofi": "Seluruh fenomena alam merupakan manifestasi energi. Memahami energi berarti memahami bahasa dasar alam semesta.",
+      "simbol": "Orb Energi dengan Empat Gelombang Radial",
+      "warna": "Ungu & Putih",
+      "color_hex": "#A855F7",
+      "gelar": "Aetherian",
+      "julukan": "The Masters of Energy",
+      "motto": "Energy Shapes Reality."
+    },
+    {
+      "nama": "Province of Nexus",
+      "element": "Logic Bending",
+      "fokus": "Aljabar, Geometri, Trigonometri, Kalkulus, Kombinatorika, Logika Matematika",
+      "filosofi": "Di balik seluruh fenomena dunia terdapat pola keteraturan rasional yang dapat dijelaskan melalui matematika.",
+      "simbol": "Hexagon Matematis dengan Jaringan Garis Simetris",
+      "warna": "Hitam & Perak",
+      "color_hex": "#94A3B8",
+      "gelar": "Nexian",
+      "julukan": "The Seekers of Truth",
+      "motto": "Patterns Reveal Truth."
+    }
+  ],
+  "dual_citizenship": {
+    "title": "Sistem Kewarganegaraan Ganda Arcane",
+    "desc": "Keanggotaan Republic of Arcane tidak menghapus kewarganegaraan Nation utama (Terralith, Aquamora, Aerion, Solaris). Afiliasi Arcane merupakan spesialisasi akademik tambahan.",
+    "contoh_list": [
+      { "nation": "Terralith Empire", "arcane": "Cartographia", "hasil_gelar": "Terran Cartographer" },
+      { "nation": "Aquamora Kingdom", "arcane": "Civitas", "hasil_gelar": "Aquarian Civitan" },
+      { "nation": "Aerion Nomad", "arcane": "Aetherion", "hasil_gelar": "Aerian Aetherian" },
+      { "nation": "Solaris Nation", "arcane": "Nexus", "hasil_gelar": "Solaris Nexian" }
+    ]
+  }
+}
