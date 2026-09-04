@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Placement & Kewarganegaraan — ELEMENTA RPG</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- DARK RPG HUD STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-cyan: #00B4D8;
+      --rpg-neon-blue: #38BDF8;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(125, 211, 252, 0.25);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-cyan);
+      box-shadow: 0 4px 20px rgba(0, 180, 216, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.4) 0%, rgba(2, 132, 199, 0.4) 100%);
+      border: 1px solid var(--rpg-cyan);
+      box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
+    }
+
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(0, 180, 216, 0.2) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 3.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--rpg-gold);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--rpg-gold);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--rpg-neon-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* PLACEMENT STEPS GRID */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .step-card {
+      background: var(--rpg-card-bg);
+      border: 1.5px solid var(--rpg-border);
+      border-radius: 18px;
+      padding: 1.8rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .step-card:hover {
+      border-color: var(--rpg-cyan);
+      transform: translateY(-4px);
+    }
+
+    .step-badge {
+      font-family: monospace;
+      font-size: 0.75rem;
+      font-weight: 900;
+      color: var(--rpg-gold);
+      background: rgba(245, 158, 11, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+
+    .step-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+
+    /* NATION CARDS GRID */
+    .nation-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin: 2.5rem 0;
+    }
+
+    .nation-hud-card {
+      background: rgba(10, 25, 47, 0.9);
+      border: 2px solid;
+      border-radius: 18px;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .nation-hud-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .nation-name {
+      font-size: 1.15rem;
+      font-weight: 900;
+      margin-bottom: 0.3rem;
+    }
+
+    .nation-detail {
+      font-size: 0.8rem;
+      color: #94A3B8;
+      line-height: 1.5;
+    }
+
+    /* TABLE STYLING */
+    .table-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid var(--rpg-cyan);
+      border-radius: 24px;
+      padding: 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    .matrix-table th {
+      background: rgba(0, 180, 216, 0.15);
+      color: var(--rpg-neon-blue);
+      padding: 1rem;
+      font-weight: 900;
+      border-bottom: 2px solid var(--rpg-cyan);
+      text-transform: uppercase;
+    }
+
+    .matrix-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+      color: #CBD5E1;
+    }
+
+    /* RULES HUD BOX */
+    .rules-hud-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid var(--rpg-gold);
+      padding: 1.8rem;
+      border-radius: 0 16px 16px 0;
+      border-top: 1px solid rgba(245, 158, 11, 0.2);
+      border-right: 1px solid rgba(245, 158, 11, 0.2);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+      margin-bottom: 3.5rem;
+    }
+
+    .rules-hud-box h3 {
+      font-size: 1.1rem;
+      color: #FCD34D;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .rules-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .rules-list li {
+      font-size: 0.9rem;
+      color: #E2E8F0;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.6;
+    }
+
+    .rules-list li::before {
+      content: '🏰';
+      color: var(--rpg-gold);
+    }
+
+    @media (max-width: 992px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      .nation-grid { grid-template-columns: repeat(2, 1fr); }
+      .elementa-menu { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .nation-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../../">Beranda</a></li>
+        <li><a href="../../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../" class="active">Cara Bermain</a></li>
+        <li><a href="../../Elementa World/">Dunia Elementa</a></li>
+        <li><a href="../../Sistem Akademik/">Sistem Akademik</a></li>
+        <li><a href="../../program/">Katalog & Harga</a></li>
+        <li><a href="../../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN SISTEM PLACEMENT -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <a href="../" style="color: var(--rpg-neon-blue); font-weight: 800; font-size: 0.82rem; text-decoration: none;">← Kembali ke Katalog Cara Bermain</a>
+        <div style="margin-top: 0.8rem;">
+          <span class="hud-chip">// SYSTEM MECHANICS 05: ELEMENTAL AFFINITY</span>
+          <h1 class="rpg-title" id="page-title">Sistem Placement</h1>
+          <p style="color: #94A3B8; font-size: 1rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+            Memuat penjelasan placement kewarganegaraan...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- FILOSOFI PLACEMENT BOX -->
+        <div style="background: rgba(10, 25, 47, 0.9); border: 1.5px solid var(--rpg-cyan); border-radius: 20px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+          <h2 style="font-size: 1.3rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.6rem;" id="filosofi-title">Pemetaan Potensi & Preferensi</h2>
+          <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.8; margin-bottom: 1rem;" id="filosofi-desc">
+            Memuat filosofi placement...
+          </p>
+          <div style="font-size: 0.85rem; color: var(--rpg-gold); font-weight: 800;" id="waktu-desc">
+            Waktu Pelaksanaan: Awal Season selama Arcane Month[cite: 11]
+          </div>
+        </div>
+
+        <!-- 3 TAHAPAN PLACEMENT GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">PLACEMENT PROCESS</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Tahapan Placement Peserta</h2>
+        </div>
+        <div class="steps-grid" id="steps-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- 4 NATION MAIN HOUSES GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">MAIN HOUSES</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Rumah Akademik Nation</h2>
+        </div>
+        <div class="nation-grid" id="nation-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- REKOMENDASI OSN TABLE -->
+        <div class="table-card">
+          <h2 style="font-size: 1.3rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">🗺️ Hubungan Placement dan Bidang OSN</h2>
+          <p style="color: #94A3B8; font-size: 0.88rem; margin-bottom: 1.5rem;">Rekomendasi Nation berdasarkan bidang kompetisi olimpiade yang diikuti peserta[cite: 11].</p>
+          
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 40%;">BIDANG OSN</th>
+                <th style="width: 60%;">NATION YANG UMUM DIPILIH</th>
+              </tr>
+            </thead>
+            <tbody id="osn-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- PRINSIP DASAR HUD BOX -->
+        <div class="rules-hud-box">
+          <h3>📜 Prinsip Dasar Placement & Kewarganegaraan:</h3>
+          <ul class="rules-list" id="prinsip-target">
+            <!-- Rendered via JS -->
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          if (data.filosofi_placement) {
+            document.getElementById("filosofi-title").innerText = data.filosofi_placement.title;
+            document.getElementById("filosofi-desc").innerText = data.filosofi_placement.desc;
+            document.getElementById("waktu-desc").innerText = `Waktu Pelaksanaan: ${data.filosofi_placement.waktu_pelaksanaan}`;
+          }
+
+          renderStepsGrid(data.tahapan_placement || []);
+          renderNationGrid(data.nation_list || []);
+          renderOSNTable(data.rekomendasi_osn || []);
+          renderPrinsipList(data.prinsip_dasar || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderStepsGrid(list) {
+      const target = document.getElementById("steps-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `
+          <div class="step-card">
+            <span class="step-badge">${item.step}</span>
+            <div class="step-title">${item.nama}</div>
+            <p style="font-size: 0.88rem; color: #94A3B8; line-height: 1.6; margin: 0;">${item.desc}</p>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderNationGrid(list) {
+      const target = document.getElementById("nation-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(n => {
+        html += `
+          <div class="nation-hud-card" style="border-color: ${n.color};">
+            <div class="nation-name" style="color: ${n.color};">${n.nama}</div>
+            <div class="nation-detail">
+              <strong>Elemen:</strong> ${n.elemen}<br>
+              <strong>Gelar:</strong> ${n.gelar}<br>
+              <strong>Akademi:</strong> ${n.akademi}<br>
+              <strong>Outfit:</strong> ${n.outfit}
+            </div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderOSNTable(list) {
+      const target = document.getElementById("osn-table-body");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(row => {
+        html += `
+          <tr>
+            <td><strong style="color: var(--rpg-neon-blue);">${row.bidang}</strong></td>
+            <td>${row.nation}</td>
+          </tr>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderPrinsipList(list) {
+      const target = document.getElementById("prinsip-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(p => {
+        html += `<li>${p}</li>`;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
