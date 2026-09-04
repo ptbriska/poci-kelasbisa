@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "DUNIA & PETA GEOGRAFI ELEMENTA",
+    "subtitle": "WORLD MAP & INTER-NATION RELATIONSHIP SYSTEM",
+    "description": "Elementa merupakan dunia pembelajaran yang terdiri dari empat Nation utama dan wilayah independen. Seluruh wilayah berdiri setara mengelilingi pusat dunia dalam satu ekosistem kolaboratif."
+  },
+  "struktur_wilayah": [
+    {
+      "kode": "TERRALITH",
+      "nama": "Terralith Empire",
+      "elemen": "🌍 Earth",
+      "fungsi": "Pusat Elemen Earth & Fondasi Pengetahuan",
+      "posisi": "Timur (Pegunungan, lembah, mineral, dan gunung api)",
+      "akademi": "Lithos Academy",
+      "color": "#059669"
+    },
+    {
+      "kode": "AQUAMORA",
+      "nama": "Aquamora Kingdom",
+      "elemen": "🌊 Water",
+      "fungsi": "Pusat Elemen Water & Penghubung Sistem",
+      "posisi": "Timur (Samudra, kepulauan, dan arus laut)",
+      "akademi": "Tidecrest Academy",
+      "color": "#0284C7"
+    },
+    {
+      "kode": "AERION",
+      "nama": "Aerion Nomad",
+      "elemen": "🌪️ Air",
+      "fungsi": "Pusat Elemen Air & Pengamat Perubahan",
+      "posisi": "Barat (Wilayah langit, awan, dan angin)",
+      "akademi": "Aero Academy",
+      "color": "#D97706"
+    },
+    {
+      "kode": "SOLARIS",
+      "nama": "Solaris Nation",
+      "elemen": "🔥 Fire",
+      "fungsi": "Pusat Elemen Fire & Penjelajah Pengetahuan",
+      "posisi": "Barat (Cahaya, bintang, dan observatorium)",
+      "akademi": "Starfire Academy",
+      "color": "#DC2626"
+    }
+  ],
+  "wilayah_khusus": [
+    {
+      "nama": "Convergence Citadel",
+      "fungsi": "Kota netral di pusat dunia Elementa. Lokasi The Convergence, Hall of Fame, dan Avatar Ascension Ceremony.",
+      "akses": "Terbuka bagi seluruh warga Elementa di akhir Season",
+      "color": "#F59E0B"
+    },
+    {
+      "nama": "Arcane Nexus",
+      "fungsi": "Pusat independen penelitian Arcane Elements (Cartographia, Civitas, Aetherion, Nexus).",
+      "akses": "Khusus warga pemegang Arcane Qualification",
+      "color": "#7C3AED"
+    },
+    {
+      "nama": "Grand Arena",
+      "fungsi": "Arena terbesar di dunia Elementa untuk Elementa Clash of Champions dan Grand Expedition.",
+      "akses": "Pusat kompetisi dan kolaborasi antar-Nation",
+      "color": "#00B4D8"
+    }
+  ],
+  "prinsip_hubungan": [
+    { "prinsip": "Equality", "penjelasan": "Seluruh Nation memiliki kedudukan yang setara tanpa dominasi." },
+    { "prinsip": "Collaboration", "penjelasan": "Nation saling berbagi pengetahuan dan pengalaman secara terbuka." },
+    { "prinsip": "Competition", "penjelasan": "Kompetisi digunakan sebagai sarana pengembangan diri dan motivasi." },
+    { "prinsip": "Respect", "penjelasan": "Setiap Nation wajib menghormati budaya dan filosofi Nation lain." },
+    { "prinsip": "Balance", "penjelasan": "Tidak ada Nation yang dapat berdiri sendiri tanpa Nation lainnya." }
+  ],
+  "bentuk_interaksi": [
+    { "nama": "Academic Exchange", "desc": "Program pertukaran pembelajaran lintas Nation melalui Cross Study Program." },
+    { "nama": "Elemental Duel", "desc": "Pertandingan individu antar warga dari Nation yang berbeda." },
+    { "nama": "Nation Clash", "desc": "Kompetisi tim resmi antar Nation dalam Elementa Clash of Champions." },
+    { "nama": "Grand Expedition", "desc": "Misi kolaboratif yang mengharuskan peserta lintas Nation bekerja sama." },
+    { "nama": "The Convergence", "desc": "Peristiwa tahunan yang mempertemukan seluruh warga dalam evaluasi puncak." }
+  ]
+}
