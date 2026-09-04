@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "SISTEM ARCANE ELEMENT",
+    "subtitle": "INDEPENDENT SPECIALIZATION // ABSTRACT KNOWLEDGE SYSTEM",
+    "description": "Arcane Elements merupakan cabang kemampuan khusus independen yang berfokus pada kemampuan berpikir abstrak, analisis, interpretasi, dan pemecahan masalah di luar empat elemen dasar[cite: 9]."
+  },
+  "filosofi_umum": "Arcane Elements tidak berasal dari satu elemen tertentu, melainkan lahir dari pengembangan cara berpikir[cite: 9]. Seorang Terran, Aquarian, Aerian, maupun Solaris dapat mempelajari Arcane[cite: 9]. Arcane Elements tidak memengaruhi status Avatar dan bukan syarat untuk memperoleh gelar Avatar[cite: 9]. Jika empat elemen utama menggambarkan pemahaman dunia alam, Arcane menggambarkan pemahaman pola, ruang, energi, dan peradaban[cite: 9].",
+  "arcane_list": [
+    {
+      "id": "spatial",
+      "nama": "🌐 Spatial Bending",
+      "motto": "Every Place Tells a Story.",
+      "filosofi": "Kemampuan memahami, memvisualisasikan, menganalisis, dan memanipulasi representasi ruang serta pola keruangan[cite: 9].",
+      "akademik": "Sistem Informasi Geografis (SIG), Penginderaan Jauh, Kartografi, Analisis Spasial, Geostatistik Dasar[cite: 9]",
+      "karakter": "Presisi, Sistematis, Visioner, Berpikir berbasis pola[cite: 9]",
+      "color": "#00B4D8"
+    },
+    {
+      "id": "spirit",
+      "nama": "🏛️ Spirit Bending",
+      "motto": "To Understand the World, Understand Its People.",
+      "filosofi": "Kemampuan memahami hubungan antara manusia, masyarakat, budaya, ekonomi, politik, dan lingkungan[cite: 9].",
+      "akademik": "Geografi Manusia, Geopolitik, Kependudukan, Pariwisata, Pembangunan Wilayah, Ekonomi Regional[cite: 9]",
+      "karakter": "Empatik, Adaptif, Strategis, Berwawasan luas[cite: 9]",
+      "color": "#10B981"
+    },
+    {
+      "id": "energy",
+      "nama": "⚡ Energy Bending",
+      "motto": "Energy Shapes Reality.",
+      "filosofi": "Kemampuan memahami hukum-hukum energi, transfer, dan interaksi yang mengatur alam semesta[cite: 9].",
+      "akademik": "Mekanika, Gelombang, Optika, Listrik & Magnet, Fisika Modern Dasar, Astrofisika Dasar[cite: 9]",
+      "karakter": "Rasional, Analitis, Objektif, Tekun[cite: 9]",
+      "color": "#7C3AED"
+    },
+    {
+      "id": "logic",
+      "nama": "🧩 Logic Bending",
+      "motto": "Patterns Reveal Truth.",
+      "filosofi": "Kemampuan memahami pola, struktur, hubungan, dan keteraturan yang mendasari ilmu pengetahuan[cite: 9].",
+      "akademik": "Aljabar, Geometri, Trigonometri, Kalkulus Dasar, Kombinatorika, Logika Matematika[cite: 9]",
+      "karakter": "Teliti, Konsisten, Kritis, Terstruktur[cite: 9]",
+      "color": "#F59E0B"
+    }
+  ],
+  "posisi_arcane": [
+    { "aspek": "Status", "ket": "Kemampuan Khusus (Independent Skill)[cite: 9]" },
+    { "aspek": "Kewajiban", "ket": "Tidak Wajib[cite: 9]" },
+    { "aspek": "Syarat Avatar", "ket": "Tidak Termasuk dalam syarat Avatar[cite: 9]" },
+    { "aspek": "Nation Asal", "ket": "Dapat berasal dari Nation manapun (Terralith, Aquamora, Aerion, Solaris)[cite: 9]" },
+    { "aspek": "Fungsi Utama", "ket": "Pengayaan & Spesialisasi Khusus (Terutama Geografi & Astronomi)[cite: 9]" },
+    { "aspek": "Tingkat Kesulitan", "ket": "Tinggi[cite: 9]" },
+    { "aspek": "Fokus", "ket": "Kompetensi Lintas Elemen[cite: 9]" },
+    { "aspek": "Tujuan Akhir", "ket": "Membentuk keahlian tambahan di luar empat elemen utama[cite: 9]" }
+  ]
+}
