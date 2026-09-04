@@ -1,106 +1,90 @@
+/**
+ * PILAR MINI GLOBAL CONTROLLER (script.js)
+ * Hanya berlaku di dalam lingkungan Micro-Site PILAR.
+ * Isolasi Total: Tidak berpengaruh pada sub-brand lain.
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. JALANKAN FUNGSI RENDER
-  loadPilarSilabus();
+  // 1. Inisialisasi Fitur Subnav Baris 2 PILAR
+  initPilarSubnav();
+
+  // 2. Fetch Data Profil Singkat PILAR (info.md) jika wadahnya ada
   loadPilarInfo();
+
+  // 3. Handlers & Interaktivitas Khusus PILAR
+  initPilarEvents();
 });
 
 /**
- * Membaca data silabus.json dan merender kartu program di pilar/index.html
+ * Inisialisasi Interaktivitas Navigasi Baris 2 PILAR
  */
-function loadPilarSilabus() {
-  const gridContainer = document.getElementById("pilar-program-grid");
-  if (!gridContainer) return;
+function initPilarSubnav() {
+  const subnavLinks = document.querySelectorAll(".pilar-menu a");
 
-  fetch("content/silabus.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Gagal mengambil data silabus JSON");
-      }
-      return response.json();
-    })
-    .then((dataList) => {
-      // Bersihkan indikator loading
-      gridContainer.innerHTML = "";
-
-      if (dataList.length === 0) {
-        gridContainer.innerHTML = `<p class="pilar-loading">Belum ada program silabus yang ditampilkan.</p>`;
-        return;
-      }
-
-      // Loop & Render Setiap Item Silabus
-      dataList.forEach((item) => {
-        const cardHTML = createSilabusCardHTML(item);
-        gridContainer.insertAdjacentHTML("beforeend", cardHTML);
-      });
-    })
-    .catch((error) => {
-      console.error("Error loading PILAR Silabus:", error);
-      gridContainer.innerHTML = `<p class="pilar-loading" style="color:#EF4444;">Gagal memuat katalog silabus. Silakan segarkan halaman.</p>`;
-    });
+  // Highlight menu aktif berdasarkan URL
+  const currentPath = window.location.pathname.toLowerCase();
+  subnavLinks.forEach((link) => {
+    const href = link.getAttribute("href").toLowerCase();
+    if (href !== "./" && currentPath.includes(href.replace("./", ""))) {
+      link.style.color = "var(--pilar-cyan)";
+      link.style.background = "rgba(255, 255, 255, 0.12)";
+    }
+  });
 }
 
 /**
- * Template Helper untuk Membuat Kartu Silabus PILAR
- */
-function createSilabusCardHTML(item) {
-  // Render Badges Format Belajar yang Tersedia
-  const formatsHTML = item.format_tersedia
-    .map((fmt) => `<span class="tag-method" style="font-size:0.7rem; padding:0.2rem 0.5rem;">${fmt}</span>`)
-    .join(" ");
-
-  return `
-    <article class="pilar-card-item">
-      <div>
-        <div class="pilar-card-header">
-          <span class="pilar-card-code">${item.kode}</span>
-          <span style="font-size:0.75rem; font-weight:700; color:var(--pilar-sky-deep);">${item.target}</span>
-        </div>
-        <h3 class="pilar-card-title">${item.nama}</h3>
-        <p class="pilar-card-desc">${item.deskripsi}</p>
-        
-        <div style="margin-bottom: 1rem;">
-          <p style="font-size:0.75rem; font-weight:700; color:var(--pilar-text-dark); margin-bottom:0.3rem;">Format Pembelajaran:</p>
-          <div style="display:flex; gap:0.3rem; flex-wrap:wrap;">
-            ${formatsHTML}
-          </div>
-        </div>
-      </div>
-
-      <div class="pilar-card-footer">
-        <span class="pilar-card-period">📅 ${item.periode}</span>
-        <a href="/events/?subbrand=pilar&code=${encodeURIComponent(item.kode)}" class="btn-pilar-primary" style="padding:0.4rem 0.9rem; font-size:0.8rem;">
-          Cek Jadwal
-        </a>
-      </div>
-    </article>
-  `;
-}
-
-/**
- * Membaca data info.md dan merender isi Markdown ke HTML menggunakan Marked.js
+ * Load & Render Profil/Info Singkat PILAR dari pilar/content/info.md
  */
 function loadPilarInfo() {
-  const markdownContainer = document.getElementById("pilar-info-content");
-  if (!markdownContainer) return;
+  const infoContainer = document.getElementById("pilar-info-desc");
+  if (!infoContainer) return;
 
+  // Hitung relative path ke folder content/info.md
   fetch("content/info.md")
     .then((response) => {
-      if (!response.ok) {
-        throw new Error("Gagal mengambil data info Markdown");
-      }
+      if (!response.ok) throw new Error("Gagal membaca info.md");
       return response.text();
     })
     .then((markdownText) => {
-      // Pastikan library 'marked' sudah dimuat dari CDN di index.html
+      // Jika pustaka Marked.js tersedia, render Markdown; jika tidak, tampilkan teks
       if (typeof marked !== "undefined") {
-        markdownContainer.innerHTML = marked.parse(markdownText);
+        infoContainer.innerHTML = marked.parse(markdownText);
       } else {
-        // Fallback sederhana jika Marked CDN belum/gagal terpasang
-        markdownContainer.innerHTML = `<pre style="white-space:pre-wrap;">${markdownText}</pre>`;
+        infoContainer.innerText = markdownText;
       }
     })
-    .catch((error) => {
-      console.error("Error loading PILAR Info Markdown:", error);
-      markdownContainer.innerHTML = `<p class="pilar-loading" style="color:#EF4444;">Gagal memuat profil sub-brand.</p>`;
+    .catch((err) => {
+      console.warn("Info PILAR menggunakan teks default fallback:", err);
+      infoContainer.innerText =
+        "Membina siswa/i dan guru dalam persiapan OSN, KSM, OPSI, FIKSI, hingga Karya Tulis Ilmiah secara terstruktur dan teruji.";
     });
+}
+
+/**
+ * Handlers Interaktivitas Khusus PILAR
+ */
+function initPilarEvents() {
+  // Utility: Smooth Scroll untuk tautan internal berawalan #
+  const internalLinks = document.querySelectorAll('.pilar-menu a[href^="#"]');
+  internalLinks.forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const subnavHeight = document.querySelector(".pilar-subnav")?.offsetHeight || 0;
+        const globalHeaderHeight = 60; // Estimasi tinggi Header Baris 1
+        const totalOffset = subnavHeight + globalHeaderHeight;
+
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - totalOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
 }
