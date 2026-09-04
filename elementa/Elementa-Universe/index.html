@@ -236,7 +236,7 @@
     }
 
     .pillar-hex-card:nth-child(even) {
-      transform: translateY(15px); /* Offset Ciamik */
+      transform: translateY(15px);
     }
 
     .pillar-hex-card:hover {
@@ -314,7 +314,7 @@
 </head>
 <body>
 
-  <!-- 1. HEADER GLOBAL -->
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
   <div id="app-header"></div>
 
   <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
@@ -404,12 +404,13 @@
     </section>
   </main>
 
-  <!-- 3. FOOTER GLOBAL -->
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
   <div id="app-footer"></div>
 
-  <!-- SCRIPT GLOBAL & SCRIPT ENGINE LOKAL -->
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
   <script src="../../assets/js/components.js"></script>
 
+  <!-- SCRIPT LOKAL ENGINE -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       fetch("info.json")
