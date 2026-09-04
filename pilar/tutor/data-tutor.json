@@ -1,0 +1,49 @@
+{
+  "meta_tutor": {
+    "total_mentor": "15+",
+    "kualifikasi": "Medalis Nasional & Praktisi Ahli",
+    "asal_perguruan_tinggi": "ITB, UGM, UI, IPB, STMKG, Unhas, dll."
+  },
+  "lead_tutor": {
+    "id": 1,
+    "nama": "Bagus Primohadi (Kak Bimo / Kak Bagus)",
+    "peran": "Founder & Head Mentor PILAR Juara",
+    "spesialisasi": "Olimpiade Sains Nasional (Kebumian, Astronomi, Geografi, Ekonomi)",
+    "almamater": "STMKG / ETH Zurich Candidate in Master of Atmospheric Science 2027 Class",
+    "pencapaian": "Perak OSN Kebumian 2017 & Trainer Nasional 5+ Tahun Berpengalaman",
+    "foto": "bagus-bimo.png",
+    "bio": "Berpengalaman membina ratusan siswa dan kontingen sekolah/dinas di berbagai daerah di Indonesia untuk persiapan OSN, KSM, serta pengembangan riset sains."
+  },
+  "daftar_tutor": [
+    {
+      "id": 2,
+      "nama": "Tim Mentor OSN & KSM",
+      "kategori": "osn-ksm",
+      "spesialisasi": "Matematika, Fisika, Kimia, Biologi, Ekonomi, Geografi, Informatika",
+      "almamater": "ITB / UGM / UI",
+      "pencapaian": "Medalis Emas OSN & Alumni International Olympiad",
+      "foto": "tutor-osn.png",
+      "badge": "OSN / KSM Specialist"
+    },
+    {
+      "id": 3,
+      "nama": "Tim Mentor FIKSI & Business Plan",
+      "kategori": "fiksi-bp",
+      "spesialisasi": "Industri Kreatif, Rekayasa Teknologi, BMC, Pitching",
+      "almamater": "Praktisi Bisnis / Alumni FEB",
+      "pencapaian": "Finalis FIKSI & Founder Startup Muda",
+      "foto": "tutor-fiksi.png",
+      "badge": "Business & Innovation Mentor"
+    },
+    {
+      "id": 4,
+      "nama": "Tim Mentor OPSI & LKTI",
+      "kategori": "opsi-kti",
+      "spesialisasi": "Metodologi Riset IMRAD, Data Science Python, Karya Tulis",
+      "almamater": "Peneliti Muda & Alumni Medalis OPSI",
+      "pencapaian": "Penulis Paper Terpublikasi & Medalis Riset",
+      "foto": "tutor-riset.png",
+      "badge": "Research & Academic Mentor"
+    }
+  ]
+}
