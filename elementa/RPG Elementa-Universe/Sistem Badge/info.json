@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "SISTEM BADGE SPESIALISASI",
+    "subtitle": "SPECIALIZATION CERTIFICATION // EXPEDITION QUEST REWARD",
+    "description": "Badge merupakan simbol pengakuan akademik khusus yang diberikan kepada warga Elementa yang berhasil menguasai kemampuan spesialisasi melalui Expedition Quest."
+  },
+  "filosofi_badge": {
+    "title": "Sertifikasi Prestise Spesialisasi",
+    "desc": "Tidak semua warga Elementa dapat memperoleh Badge. Badge dipandang sebagai simbol bakat, dedikasi, dan spesialisasi tingkat tinggi. Peserta wajib berstatus minimal Master Bender dengan standar nilai EP minimal 9,0 untuk lulus.",
+    "karakteristik": [
+      { "aspek": "Fungsi Utama", "ket": "Sertifikasi spesialisasi elemen" },
+      { "aspek": "Jalur Perolehan", "ket": "Expedition Quest" },
+      { "aspek": "Syarat Minimal", "ket": "Status Minimal Master Bender" },
+      { "aspek": "Kesempatan Ujian", "ket": "1 Kali Seumur Season (Tanpa Remedial)" },
+      { "aspek": "Standar Kelulusan", "ket": "EP Minimal 9,0 (Setara S1–S2)" },
+      { "aspek": "Bentuk Ujian", "ket": "Studi Kasus & Problem Solving Kompleks" },
+      { "aspek": "Wajib untuk Avatar", "ket": "Tidak Wajib (Sifat Opsional)" }
+    ]
+  },
+  "deepening_badge": [
+    { "elemen": "🌍 Earth", "badge": "Metal Bender", "fokus": "Mineralogi dan Geokimia", "color": "#059669" },
+    { "elemen": "🌍 Earth", "badge": "Crystal Bender", "fokus": "Kristalografi dan Mineral Optik", "color": "#059669" },
+    { "elemen": "🌍 Earth", "badge": "Seismic Bender", "fokus": "Seismologi dan Tektonik", "color": "#059669" },
+    { "elemen": "🌊 Water", "badge": "Blood Bender", "fokus": "Dinamika Fluida dan Oseanografi Fisik", "color": "#0284C7" },
+    { "elemen": "🌊 Water", "badge": "Healing Bender", "fokus": "Ekosistem dan Siklus Hidrologi", "color": "#0284C7" },
+    { "elemen": "🌊 Water", "badge": "Plant Bender", "fokus": "Produktivitas Perairan dan Biosfer", "color": "#0284C7" },
+    { "elemen": "🌪️ Air", "badge": "Sound Bender", "fokus": "Gelombang dan Akustik Atmosfer", "color": "#D97706" },
+    { "elemen": "🌪️ Air", "badge": "Levitation Bender", "fokus": "Aerodinamika dan Dinamika Atmosfer", "color": "#D97706" },
+    { "elemen": "🌪️ Air", "badge": "Spirit Bender", "fokus": "Sistem Atmosfer Kompleks", "color": "#D97706" },
+    { "elemen": "🔥 Fire", "badge": "Lightning Bender", "fokus": "Elektromagnetisme dan Astrofisika", "color": "#DC2626" },
+    { "elemen": "🔥 Fire", "badge": "Flame Bender", "fokus": "Evolusi dan Struktur Bintang", "color": "#DC2626" },
+    { "elemen": "🔥 Fire", "badge": "Combustion Bender", "fokus": "Astrofisika Lanjut dan Kosmologi", "color": "#DC2626" }
+  ],
+  "mix_badge": [
+    { "combo": "🌪️ Air + 🌊 Water", "badge": "Ice Bender", "color": "#38BDF8" },
+    { "combo": "🌪️ Air + 🌊 Water", "badge": "Storm Bender", "color": "#38BDF8" },
+    { "combo": "🌪️ Air + 🌊 Water", "badge": "Mist Bender", "color": "#38BDF8" },
+    { "combo": "🌪️ Air + 🌍 Earth", "badge": "Sand Bender", "color": "#F59E0B" },
+    { "combo": "🌪️ Air + 🌍 Earth", "badge": "Magnet Bender", "color": "#F59E0B" },
+    { "combo": "🌪️ Air + 🔥 Fire", "badge": "Scorch Bender", "color": "#EF4444" },
+    { "combo": "🌊 Water + 🌍 Earth", "badge": "Wood Bender", "color": "#10B981" },
+    { "combo": "🌊 Water + 🌍 Earth", "badge": "Mud Bender", "color": "#10B981" },
+    { "combo": "🌊 Water + 🔥 Fire", "badge": "Boil Bender", "color": "#F97316" },
+    { "combo": "🌍 Earth + 🔥 Fire", "badge": "Lava Bender", "color": "#DC2626" }
+  ],
+  "arcane_badge": [
+    { "province": "Cartographia", "badge": "Spatial Bender", "fokus": "SIG dan Analisis Spasial", "color": "#00B4D8" },
+    { "province": "Civitas", "badge": "Spirit Bender", "fokus": "Geografi Manusia dan Geopolitik", "color": "#10B981" },
+    { "province": "Aetherion", "badge": "Energy Bender", "fokus": "Fisika dan Energi", "color": "#7C3AED" },
+    { "province": "Nexus", "badge": "Logic Bender", "fokus": "Matematika dan Logika", "color": "#F59E0B" }
+  ],
+  "prinsip_dasar": [
+    "Badge bersifat opsional dan tidak wajib dimiliki oleh seluruh peserta.",
+    "Peserta wajib berstatus minimal Master Bender sebelum mengikuti Expedition Quest.",
+    "Setiap Expedition Quest hanya dapat diikuti satu kali per season.",
+    "Peserta yang gagal tidak dapat mengulang Expedition Quest yang sama pada season berjalan.",
+    "Badge tidak menentukan kelulusan Avatar; seorang Avatar bisa memiliki Badge ataupun tidak.",
+    "Badge merupakan simbol spesialisasi, bukan simbol penguasaan seluruh elemen."
+  ]
+}
