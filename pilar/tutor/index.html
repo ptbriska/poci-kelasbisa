@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor & Mentor Expert — PILAR Juara by Kelas Bisa</title>
+  
+  <!-- Favicon & CSS Master -->
+  <link rel="icon" href="../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- LIGHT THEME: BIRU LANGIT & CYAN -->
+  <style>
+    .tutor-hero {
+      background: linear-gradient(180deg, #E0F7FA 0%, #F0F9FF 100%);
+      padding: 3.5rem 0 2.5rem 0;
+      border-bottom: 1px solid #BEE3F8;
+      text-align: center;
+    }
+
+    .tutor-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #E0F2FE;
+      border: 1px solid #00B4D8;
+      color: #0077B6;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .tutor-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #0F172A;
+      margin-bottom: 0.5rem;
+    }
+
+    .tutor-subtitle {
+      color: #475569;
+      font-size: 1rem;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* LEAD MENTOR FEATURED CARD */
+    .lead-mentor-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F0F9FF 100%);
+      border: 2px solid #00B4D8;
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin: 2.5rem 0 3.5rem 0;
+      box-shadow: 0 10px 25px rgba(0, 180, 216, 0.12);
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .lead-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #E0F2FE;
+      border: 4px solid #00B4D8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      flex-shrink: 0;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .lead-info h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #0F172A;
+      margin-bottom: 0.2rem;
+    }
+
+    .lead-role {
+      display: inline-block;
+      background: #0077B6;
+      color: #FFFFFF;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+
+    .lead-bio {
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .lead-achieve {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0369A1;
+    }
+
+    /* CATEGORY FILTER TABS */
+    .filter-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: #FFFFFF;
+      border: 1px solid #BEE3F8;
+      color: #334155;
+      padding: 0.6rem 1.4rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: #00B4D8;
+      color: #0077B6;
+      background: #F0F9FF;
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
+      color: #FFFFFF;
+      border-color: #00B4D8;
+      box-shadow: 0 4px 12px rgba(0, 180, 216, 0.25);
+    }
+
+    /* GRID TUTOR CARDS */
+    .tutor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .tutor-card {
+      background: #FFFFFF;
+      border: 1px solid #BEE3F8;
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 6px 18px rgba(0, 119, 182, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .tutor-card:hover {
+      border-color: #00B4D8;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 180, 216, 0.12);
+    }
+
+    .tutor-badge-tag {
+      display: inline-block;
+      background: #E0F2FE;
+      color: #0369A1;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+      border: 1px solid #BEE3F8;
+    }
+
+    .tutor-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .tutor-avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #E0F2FE;
+      border: 2px solid #00B4D8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .tutor-name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #0F172A;
+    }
+
+    .tutor-campus {
+      font-size: 0.8rem;
+      color: #0077B6;
+      font-weight: 700;
+    }
+
+    .tutor-spec {
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
+
+    .tutor-achieve {
+      font-size: 0.8rem;
+      background: #F8FAFC;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      color: #334155;
+      border-left: 3px solid #00B4D8;
+    }
+
+    @media (max-width: 992px) {
+      .lead-mentor-card { flex-direction: column; text-align: center; }
+      .tutor-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .tutor-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL PILAR -->
+  <nav class="pilar-subnav">
+    <div class="pilar-subnav-container">
+      <a href="../" class="pilar-brand">
+        <img src="../images/logo-pilar.png" alt="Logo PILAR" class="pilar-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="pilar-icon" style="display:none;">🏆</span>
+        <span class="pilar-name">PILAR Juara</span>
+      </a>
+      <ul class="pilar-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../freemium/">Program Freemium</a></li>
+        <li><a href="../reguler/">Program Reguler</a></li>
+        <li><a href="../prestasi/">Prestasi Alumni</a></li>
+        <li><a href="../testimoni/">Testimoni</a></li>
+        <li><a href="./" style="color: var(--pilar-cyan); background: rgba(0, 180, 216, 0.1);">Tutor / Mentor</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN KONTEN TUTOR -->
+  <main>
+    <section class="tutor-hero">
+      <div class="pilar-container">
+        <span class="tutor-badge">👨‍🏫 EXPERT & TRAINER TEAM</span>
+        <h1 class="tutor-title">Tutor & Mentor PILAR Juara</h1>
+        <p class="tutor-subtitle">
+          Dibina langsung oleh alumni medalis olimpiade nasional, praktisi bisnis, serta peneliti muda berpengalaman yang siap mendampingimu meraih prestasi puncak.
+        </p>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="pilar-container">
+        
+        <!-- LEAD MENTOR FEATURED BOX -->
+        <div class="lead-mentor-card" id="lead-mentor-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- CATEGORY FILTER BUTTONS -->
+        <div class="filter-wrapper">
+          <button class="filter-btn active" onclick="filterTutor('all')">🌟 Semua Mentor</button>
+          <button class="filter-btn" onclick="filterTutor('osn-ksm')">🥇 OSN / KSM</button>
+          <button class="filter-btn" onclick="filterTutor('fiksi-bp')">💼 FIKSI & Business Plan</button>
+          <button class="filter-btn" onclick="filterTutor('opsi-kti')">🔬 OPSI & LKTI</button>
+        </div>
+
+        <!-- GRID TUTOR CARDS -->
+        <div class="tutor-grid" id="tutor-grid-target">
+          <p style="color: #64748B;">Memuat profil mentor...</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <script src="../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL TUTOR -->
+  <script>
+    let globalTutorData = [];
+
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("data-tutor.json")
+        .then(res => {
+          if(!res.ok) throw new Error("Gagal membaca data-tutor.json");
+          return res.json();
+        })
+        .then(data => {
+          // Render Lead Mentor
+          if(data.lead_tutor) {
+            renderLeadMentor(data.lead_tutor);
+          }
+
+          // Render Tutor List
+          globalTutorData = data.daftar_tutor || [];
+          renderTutors(globalTutorData);
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("tutor-grid-target").innerHTML = `<p style="color:red; grid-column:1/-1;">Gagal memuat daftar mentor.</p>`;
+        });
+    });
+
+    function renderLeadMentor(lead) {
+      const target = document.getElementById("lead-mentor-target");
+      const photoPath = `../images/tutor/${lead.foto}`;
+
+      target.innerHTML = `
+        <div class="lead-avatar">
+          <img src="${photoPath}" alt="${lead.nama}" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span style="display:none; font-size:3rem;">👨‍🏫</span>
+        </div>
+        <div class="lead-info">
+          <span class="lead-role">${lead.peran}</span>
+          <h2>${lead.nama}</h2>
+          <div class="lead-achieve" style="margin-bottom: 0.6rem;">🎓 ${lead.almamater} — Spesialisasi: ${lead.spesialisasi}</div>
+          <p class="lead-bio">"${lead.bio}"</p>
+          <div style="font-size: 0.85rem; color: #0077B6; font-weight: 800;">🏆 ${lead.pencapaian}</div>
+        </div>
+      `;
+    }
+
+    function renderTutors(list) {
+      const target = document.getElementById("tutor-grid-target");
+      if(list.length === 0) {
+        target.innerHTML = `<p style="color:#64748B; grid-column:1/-1; text-align:center;">Mentor untuk kategori ini belum tersedia.</p>`;
+        return;
+      }
+
+      let html = "";
+      list.forEach(item => {
+        const photoPath = `../images/tutor/${item.foto}`;
+
+        html += `
+          <div class="tutor-card">
+            <div>
+              <span class="tutor-badge-tag">${item.badge || 'Expert Mentor'}</span>
+              <div class="tutor-header">
+                <div class="tutor-avatar">
+                  <img src="${photoPath}" alt="${item.nama}" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                  <span style="display:none; font-size:1.5rem;">👨‍🏫</span>
+                </div>
+                <div>
+                  <div class="tutor-name">${item.nama}</div>
+                  <div class="tutor-campus">🎓 ${item.almamater}</div>
+                </div>
+              </div>
+              <p class="tutor-spec"><strong>Bidang:</strong> ${item.spesialisasi}</p>
+            </div>
+            <div class="tutor-achieve">
+              <strong>Pencapaian:</strong> ${item.pencapaian}
+            </div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function filterTutor(catKey) {
+      const btns = document.querySelectorAll('.filter-btn');
+      btns.forEach(btn => btn.classList.remove('active'));
+
+      if(catKey === 'all') {
+        btns[0].classList.add('active');
+        renderTutors(globalTutorData);
+      } else {
+        if(catKey === 'osn-ksm') btns[1].classList.add('active');
+        else if(catKey === 'fiksi-bp') btns[2].classList.add('active');
+        else if(catKey === 'opsi-kti') btns[3].classList.add('active');
+
+        const filtered = globalTutorData.filter(item => item.kategori === catKey);
+        renderTutors(filtered);
+      }
+    }
+  </script>
+</body>
+</html>
