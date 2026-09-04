@@ -1,0 +1,62 @@
+{
+  "program_meta": {
+    "title": "PILAR Business Plan",
+    "tagline": "Academic & Investor-Grade Business Competition Program",
+    "description": "Program pembinaan kompetisi Business Plan standar Fakultas Ekonomika & Bisnis (FEB) serta Investor Style. Mencakup perancangan model bisnis, penyusunan proposal, financial projection, hingga teknik pitching dan defense strategy di depan juri.",
+    "pricing_types": ["Per Orang", "Per Tim"]
+  },
+  "b2c_comparison": {
+    "title": "Komparasi Paket PILAR Business Plan (B2C)",
+    "description": "Opsi bimbingan belajar komprehensif dari level pemula hingga pendampingan intensif 1-on-1 finalis.",
+    "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+    "categories": [
+      {
+        "category_name": "A. Core Bisnis & Fundamental",
+        "features": [
+          { "name": "Mindset Competition (Academic vs Real Business)", "values": ["V", "V", "V", "V"] },
+          { "name": "Teknik Identifikasi Ide & Problem-Solution Fit", "values": ["V", "V", "V", "V"] },
+          { "name": "Market Research & Industry Analysis", "values": ["V", "V", "V", "V"] },
+          { "name": "Teknik Diferensiasi, USP, & Value Proposition", "values": ["V", "V", "V", "V"] },
+          { "name": "Business Model Canvas (BMC) & SWOT Analysis", "values": ["V", "V", "V", "V"] },
+          { "name": "Proyeksi Keuangan & Competitive Advantage", "values": ["V", "V", "V", "V"] }
+        ]
+      },
+      {
+        "category_name": "B. Penyusunan Business Plan Proposal",
+        "features": [
+          { "name": "Struktur Proposal BP Standar FEB Competition", "values": ["V", "V", "V", "V"] },
+          { "name": "Teknik Penulisan Executive Summary & Go-To-Market Strategy", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+          { "name": "AI-Assisted Business Plan Drafting (Etis)", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Praktik + Coaching"] },
+          { "name": "Financial Projection (HPP, BEP, Revenue, ROI)", "values": ["Teori+Praktik", "Teori+Praktik", "Praktik", "Praktik + Coaching"] },
+          { "name": "Analisis Risiko, Sustainability, & Rubrik Juri FEB", "values": ["V", "V", "V", "V"] },
+          { "name": "Template Proposal BP Siap Edit & Analisa Pemenang", "values": ["Pemenang Only", "Pemenang Only", "Pemenang Only", "Template + Pemenang"] },
+          { "name": "Review & Pendampingan Revisi Proposal s.d Submit", "values": ["-", "-", "-", "V"] }
+        ]
+      },
+      {
+        "category_name": "C. Pitching Bisnis & Presentasi",
+        "features": [
+          { "name": "Struktur Pitch Deck (Investor Style vs Competition Style)", "values": ["V", "V", "V", "V"] },
+          { "name": "Teknik Storytelling, Presentasi, & Public Speaking", "values": ["Teori", "Teori+Praktik", "Praktik", "Praktik + Coaching"] },
+          { "name": "Visualisasi Data & Financial dalam Slide", "values": ["V", "V", "V", "V"] },
+          { "name": "Simulasi Pitching (Time-based) & QnA Juri", "values": ["-", "V", "V", "V"] },
+          { "name": "Teknik Menjawab Pertanyaan Juri (Defense Strategy)", "values": ["-", "V", "V", "V"] },
+          { "name": "Review Pitch Deck & Coaching Final Pitch", "values": ["-", "-", "-", "V"] }
+        ]
+      },
+      {
+        "category_name": "D. Fasilitas & Biaya Program",
+        "features": [
+          { "name": "Akses LMS (Materi + Rekaman)", "values": ["V", "V", "V", "V"] },
+          { "name": "Akses Mobile App", "values": ["V", "-", "-", "V"] },
+          { "name": "Metode Pengajaran Live / Offline", "values": ["Video Modul", "Live Zoom", "Offline Direct", "Live Zoom / Offline"] },
+          { "name": "Mentor Praktisi Bisnis / Finalis FEB", "values": ["V", "V", "V", "V"] },
+          { "name": "Grup Diskusi (WA/Telegram)", "values": ["V", "V", "V", "V"] },
+          { "name": "Total Jam Belajar & Hari Pelaksanaan", "values": ["±30 Jam (Self-Paced)", "±30 Jam (Terjadwal)", "±30 Jam (Senin-Kamis)", "Request (Kesepakatan)"] },
+          { "name": "Harga Per Orang", "values": ["Rp 159.000", "Rp 249.000", "Rp 699.000", "PLATO Rp 999k / PLATIPUS Rp 1.299k"] },
+          { "name": "Harga Per Tim", "values": ["-", "Rp 359.000", "Rp 899.000", "PLATO Rp 1.199k / PLATIPUS Rp 1.499k"] }
+        ]
+      }
+    ]
+  }
+}
