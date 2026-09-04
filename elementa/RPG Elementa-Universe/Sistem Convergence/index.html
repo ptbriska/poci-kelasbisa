@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Convergence — ELEMENTA RPG</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- DARK RPG END-GAME HUD STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-cyan: #00B4D8;
+      --rpg-neon-blue: #38BDF8;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(245, 158, 11, 0.3);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-gold);
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.3) 0%, rgba(0, 180, 216, 0.3) 100%);
+      border: 1px solid var(--rpg-gold);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.2) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 3.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--rpg-gold);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--rpg-gold);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FCD34D 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* GRID MAKNA AKADEMIK */
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .academic-hud-card {
+      background: var(--rpg-card-bg);
+      border: 1.5px solid var(--rpg-border);
+      border-radius: 18px;
+      padding: 1.8rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .academic-hud-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--rpg-gold);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.2);
+    }
+
+    .academic-num {
+      font-family: monospace;
+      font-size: 0.8rem;
+      font-weight: 900;
+      color: var(--rpg-gold);
+      background: rgba(245, 158, 11, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .academic-point {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+
+    /* BALANCE 4 ELEMENTS GRID */
+    .balance-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin: 2.5rem 0;
+    }
+
+    .balance-card {
+      background: rgba(10, 25, 47, 0.9);
+      border: 1.5px solid rgba(125, 211, 252, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .balance-card:hover {
+      border-color: var(--rpg-cyan);
+      transform: translateY(-3px);
+    }
+
+    .balance-elem {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 0.3rem;
+    }
+
+    .balance-role {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--rpg-cyan);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    /* AVATAR GATEWAY BANNER */
+    .avatar-gateway-card {
+      background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+      border: 2px solid var(--rpg-gold);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+      box-shadow: 0 15px 40px rgba(245, 158, 11, 0.15);
+      position: relative;
+    }
+
+    .avatar-gateway-card h2 {
+      font-size: 1.8rem;
+      color: #FCD34D;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 992px) {
+      .academic-grid { grid-template-columns: repeat(2, 1fr); }
+      .balance-grid { grid-template-columns: repeat(2, 1fr); }
+      .elementa-menu { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .academic-grid { grid-template-columns: 1fr; }
+      .balance-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../../">Beranda</a></li>
+        <li><a href="../../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../" class="active">Cara Bermain</a></li>
+        <li><a href="../../Elementa World/">Dunia Elementa</a></li>
+        <li><a href="../../Sistem Akademik/">Sistem Akademik</a></li>
+        <li><a href="../../program/">Katalog & Harga</a></li>
+        <li><a href="../../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN SISTEM CONVERGENCE -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <a href="../" style="color: var(--rpg-neon-blue); font-weight: 800; font-size: 0.82rem; text-decoration: none;">← Kembali ke Katalog Cara Bermain</a>
+        <div style="margin-top: 0.8rem;">
+          <span class="hud-chip">// SYSTEM MECHANICS 04: THE SACRED EVENT</span>
+          <h1 class="rpg-title" id="page-title">Sistem Convergence</h1>
+          <p style="color: #94A3B8; font-size: 1rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+            Memuat penjelasan evaluasi puncak The Convergence...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- FILOSOFI DASAR BOX -->
+        <div style="background: rgba(10, 25, 47, 0.9); border: 1.5px solid var(--rpg-cyan); border-radius: 20px; padding: 2.2rem; margin: 2.5rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+          <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.6rem;" id="filosofi-title">Simbol Penyatuan Pengetahuan</h2>
+          <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.8; margin: 0;" id="filosofi-desc">
+            Memuat filosofi...
+          </p>
+        </div>
+
+        <!-- MAKNA AKADEMIK GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">EVALUATION METRICS</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Makna Akademik The Convergence</h2>
+        </div>
+        <div class="academic-grid" id="academic-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- GERBANG AVATAR BANNER -->
+        <div class="avatar-gateway-card">
+          <h2 id="gateway-title">Gerbang Resmi Avatar</h2>
+          <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.8; margin-bottom: 1.2rem;" id="gateway-desc">
+            Memuat aturan gerbang Avatar...
+          </p>
+          <div style="background: rgba(245, 158, 11, 0.12); border-left: 4px solid var(--rpg-gold); padding: 1rem 1.2rem; border-radius: 0 10px 10px 0; font-size: 0.88rem; color: #FCD34D;" id="gateway-prinsip">
+            Memuat prinsip standar...
+          </div>
+        </div>
+
+        <!-- KESEIMBANGAN 4 ELEMEN GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">FOUR ELEMENTS HARMONY</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Filosofi Keseimbangan Empat Elemen</h2>
+        </div>
+        <div class="balance-grid" id="balance-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- PENUTUPAN SEASON REFLEKSI -->
+        <div style="background: rgba(245, 158, 11, 0.08); border: 1.5px solid var(--rpg-gold); border-radius: 20px; padding: 2rem; margin: 3rem 0 4rem 0; text-align: center;">
+          <h2 style="font-size: 1.3rem; color: #FCD34D; font-weight: 900; margin-bottom: 0.5rem;" id="season-title">Siklus Pertumbuhan Berulang</h2>
+          <p style="font-size: 0.92rem; color: #CBD5E1; line-height: 1.7; max-width: 800px; margin: 0 auto;" id="season-desc">
+            Memuat makna refleksi...
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          if (data.filosofi_dasar) {
+            document.getElementById("filosofi-title").innerText = data.filosofi_dasar.title;
+            document.getElementById("filosofi-desc").innerText = data.filosofi_dasar.desc;
+          }
+
+          if (data.gerbang_avatar) {
+            document.getElementById("gateway-title").innerText = data.gerbang_avatar.title;
+            document.getElementById("gateway-desc").innerText = data.gerbang_avatar.desc;
+            document.getElementById("gateway-prinsip").innerHTML = `<strong>Prinsip Standar:</strong> ${data.gerbang_avatar.prinsip_standar}`;
+          }
+
+          if (data.penutupan_season) {
+            document.getElementById("season-title").innerText = data.penutupan_season.title;
+            document.getElementById("season-desc").innerText = data.penutupan_season.desc;
+          }
+
+          renderAcademicGrid(data.makna_akademik || []);
+          renderBalanceGrid(data.keseimbangan_elemen || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderAcademicGrid(list) {
+      const target = document.getElementById("academic-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `
+          <div class="academic-hud-card">
+            <span class="academic-num">${item.no}</span>
+            <div class="academic-point">${item.point}</div>
+            <p style="font-size: 0.85rem; color: #94A3B8; line-height: 1.5; margin: 0;">${item.desc}</p>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderBalanceGrid(list) {
+      const target = document.getElementById("balance-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `
+          <div class="balance-card">
+            <div class="balance-elem">${item.elemen}</div>
+            <span class="balance-role">${item.peran}</span>
+            <p style="font-size: 0.82rem; color: #94A3B8; line-height: 1.5; margin: 0;">${item.desc}</p>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
