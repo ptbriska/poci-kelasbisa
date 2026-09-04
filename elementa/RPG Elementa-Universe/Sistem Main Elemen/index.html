@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Main Elemen — ELEMENTA RPG</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- DARK RPG HUD STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-cyan: #00B4D8;
+      --rpg-neon-blue: #38BDF8;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(125, 211, 252, 0.25);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Container Pembatas Layar (Anti Penuh Sesak) */
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Subnav Topbar Dark RPG Kingdom */
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-cyan);
+      box-shadow: 0 4px 20px rgba(0, 180, 216, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.4) 0%, rgba(2, 132, 199, 0.4) 100%);
+      border: 1px solid var(--rpg-cyan);
+      box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
+    }
+
+    /* Hero Banner RPG */
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(0, 180, 216, 0.2) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 3.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--rpg-gold);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--rpg-gold);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--rpg-neon-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* 4 ELEMEN CARDS GRID */
+    .elements-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      margin: 3rem 0;
+    }
+
+    .elem-hud-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid var(--rpg-border);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .elem-hud-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 180, 216, 0.2);
+    }
+
+    .elem-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.8rem;
+    }
+
+    .elem-name {
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+
+    .elem-motto {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--rpg-gold);
+      font-weight: 700;
+    }
+
+    .elem-details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    .detail-item {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .detail-item span {
+      display: block;
+      color: #64748B;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    /* MATRIX COMPARISON TABLE */
+    .table-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid var(--rpg-cyan);
+      border-radius: 24px;
+      padding: 2rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    .matrix-table th {
+      background: rgba(0, 180, 216, 0.15);
+      color: var(--rpg-neon-blue);
+      padding: 1rem;
+      font-weight: 900;
+      border-bottom: 2px solid var(--rpg-cyan);
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .matrix-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+      color: #CBD5E1;
+    }
+
+    .matrix-table tr:hover td {
+      background: rgba(0, 180, 216, 0.05);
+    }
+
+    @media (max-width: 992px) {
+      .elements-grid { grid-template-columns: 1fr; }
+      .elem-details-grid { grid-template-columns: 1fr; }
+      .elementa-menu { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../../">Beranda</a></li>
+        <li><a href="../../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../" class="active">Cara Bermain</a></li>
+        <li><a href="../../Elementa World/">Dunia Elementa</a></li>
+        <li><a href="../../Sistem Akademik/">Sistem Akademik</a></li>
+        <li><a href="../../program/">Katalog & Harga</a></li>
+        <li><a href="../../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN SISTEM MAIN ELEMEN -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <a href="../" style="color: var(--rpg-neon-blue); font-weight: 800; font-size: 0.82rem; text-decoration: none;">← Kembali ke Katalog Cara Bermain</a>
+        <div style="margin-top: 0.8rem;">
+          <span class="hud-chip">// SYSTEM MECHANICS 01: CORE FRAMEWORK</span>
+          <h1 class="rpg-title" id="page-title">Sistem Main Elemen</h1>
+          <p style="color: #94A3B8; font-size: 1rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+            Memuat penjelasan empat elemen dasar...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- 4 ELEMEN CARDS GRID -->
+        <div class="elements-grid" id="elements-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- MATRIX COMPARISON TABLE 4 ELEMEN -->
+        <div class="table-card">
+          <h2 style="font-size: 1.5rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">📊 Matriks Komparasi 4 Elemen Utama</h2>
+          <p style="color: #94A3B8; font-size: 0.88rem; margin-bottom: 1.5rem;">Perbandingan mendalam setiap aspek filosofis, keilmuan, dan karakter pembinaan empat elemen utama[cite: 7].</p>
+          
+          <div style="overflow-x: auto;">
+            <table class="matrix-table" id="matrix-table-target">
+              <!-- Rendered via JS -->
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          renderElementCards(data.elemen_list || []);
+          renderComparisonMatrix(data.elemen_list || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderElementCards(list) {
+      const target = document.getElementById("elements-grid-target");
+      if (!list || list.length === 0) return;
+
+      let html = "";
+      list.forEach(elem => {
+        html += `
+          <div class="elem-hud-card" style="border-color: ${elem.color};">
+            <div class="elem-header">
+              <span class="elem-name" style="color: ${elem.color};">${elem.nama}</span>
+              <span class="elem-motto">"${elem.motto}"</span>
+            </div>
+
+            <div class="elem-details-grid">
+              <div class="detail-item"><span>Kata Kunci</span><strong>${elem.kata_kunci}</strong></div>
+              <div class="detail-item"><span>Fokus Keilmuan</span><strong>${elem.fokus}</strong></div>
+              <div class="detail-item"><span>Representasi Alam</span><strong>${elem.alam}</strong></div>
+              <div class="detail-item"><span>Nilai Karakter</span><strong>${elem.nilai}</strong></div>
+              <div class="detail-item"><span>Kekuatan Utama</span><strong>${elem.kekuatan}</strong></div>
+              <div class="detail-item"><span>Peran dalam Avatar</span><strong>${elem.peran_avatar}</strong></div>
+            </div>
+          </div>
+        `;
+      });
+
+      target.innerHTML = html;
+    }
+
+    function renderComparisonMatrix(list) {
+      const target = document.getElementById("matrix-table-target");
+      if (!list || list.length === 0) return;
+
+      const rows = [
+        { label: "Kata Kunci", key: "kata_kunci" },
+        { label: "Makna Filosofis", key: "makna" },
+        { label: "Representasi Alam", key: "alam" },
+        { label: "Fokus Keilmuan", key: "fokus" },
+        { label: "Pertanyaan Utama", key: "pertanyaan" },
+        { label: "Karakter Ideal", key: "karakter" },
+        { label: "Gaya Belajar Dominan", key: "gaya_belajar" },
+        { label: "Kekuatan Utama", key: "kekuatan" },
+        { label: "Risiko Terbesar", key: "risiko" },
+        { label: "Nilai Karakter", key: "nilai" },
+        { label: "Simbol Akademik", key: "simbol" },
+        { label: "Motto Element", key: "motto" },
+        { label: "Tujuan Pembelajaran", key: "tujuan" },
+        { label: "Peran dalam Avatar", key: "peran_avatar" }
+      ];
+
+      let tableHtml = `
+        <thead>
+          <tr>
+            <th>ASPEK COMPARING</th>
+            ${list.map(e => `<th style="color:${e.color};">${e.nama}</th>`).join('')}
+          </tr>
+        </thead>
+        <tbody>
+      `;
+
+      rows.forEach(r => {
+        tableHtml += `<tr><td><strong>${r.label}</strong></td>`;
+        list.forEach(e => {
+          tableHtml += `<td>${e[r.key]}</td>`;
+        });
+        tableHtml += `</tr>`;
+      });
+
+      tableHtml += `</tbody>`;
+      target.innerHTML = tableHtml;
+    }
+  </script>
+</body>
+</html>
