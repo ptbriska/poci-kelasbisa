@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "AERION NOMAD",
+    "subtitle": "THE READERS OF THE WIND // NATION OF AIR",
+    "description": "Aerion Nomad merupakan negeri gurun, oasis tersembunyi, dan jalur peradaban berangin yang berdiri di atas filosofi kebebasan, pengamatan, dan penafsiran atmosfer."
+  },
+  "overview": {
+    "filosofi": "Dunia selalu berubah dan tidak ada keadaan yang bertahan selamanya. Sebagaimana angin bergerak tanpa terlihat namun dirasakan dampaknya, pengetahuan sejati lahir dari pengamatan yang cermat. Kemampuan memprediksi perubahan lebih berharga daripada bereaksi setelah perubahan terjadi.",
+    "motto": "Read the Winds. Understand the World.",
+    "julukan": "The Readers of the Wind"
+  },
+  "budaya": {
+    "inspirasi": "ARABIC (Afrika Utara, Timur Tengah, dan Peradaban Gurun Klasik)",
+    "deskripsi": "Masyarakat pengembara gurun yang hidup berdampingan dengan alam dinamis. Terbiasa membaca arah angin, pola awan, dan tanda alam untuk bertahan hidup dengan kejernihan pikiran.",
+    "nilai_utama": [
+      "Kebebasan",
+      "Adaptasi",
+      "Observasi",
+      "Kesederhanaan",
+      "Kebijaksanaan",
+      "Ketahanan"
+    ]
+  },
+  "akademi": {
+    "nama": "Aero Academy",
+    "fokus": "Pusat kajian atmosfer, cuaca, iklim, dan fenomena udara bumi.",
+    "motto": "Read the Winds. Understand the World.",
+    "kurikulum": [
+      "Meteorologi Dasar",
+      "Meteorologi Dinamis",
+      "Meteorologi Sinoptik",
+      "Klimatologi",
+      "Fisika Atmosfer",
+      "Cuaca Tropis",
+      "Perubahan Iklim",
+      "Prediksi dan Analisis Cuaca"
+    ]
+  },
+  "identitas_visual": {
+    "simbol": "Kompas Angin Bersayap",
+    "makna_simbol": "Kompas melambangkan arah dan navigasi, sayap melambangkan kebebasan dan mobilitas, lingkaran luar melambangkan siklus atmosfer, dan titik pusat melambangkan keseimbangan.",
+    "warna_utama": [
+      { "nama": "Putih Pasir (Desert White)", "hex": "#F8FAFC", "makna": "Kejernihan pikiran, keterbukaan, dan objektivitas" },
+      { "nama": "Kuning Emas Gurun (Golden Sand)", "hex": "#D97706", "makna": "Cahaya pengetahuan, optimisme, dan energi kehidupan" }
+    ]
+  },
+  "kewarganegaraan": {
+    "gelar": "Aerian",
+    "hirarki_gelar": [
+      "Aerian Warrior (Status Awal)",
+      "Aerian Probender (Tingkat Dasar)",
+      "Aerian Master (Tingkat Lanjut)",
+      "Aerian Avatar (Penguasaan Harmoni)"
+    ],
+    "karakteristik": [
+      { "aspek": "Elemen Utama", "ket": "Air" },
+      { "aspek": "Gaya Belajar", "ket": "Analitis dan Prediktif" },
+      { "aspek": "Fokus Keilmuan", "ket": "Meteorologi & Cabang Ilmu Atmosfer" },
+      { "aspek": "Karakter Utama", "ket": "Observatif, Adaptif, dan Visioner" }
+    ]
+  }
+}
