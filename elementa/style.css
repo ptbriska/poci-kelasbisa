@@ -22,6 +22,16 @@ body {
   padding: 0;
 }
 
+/* ========================================================= */
+/* FIX UTAMA: CONTAINER PEMBATAS AGAR TIDAK MENTOK KIRI KANAN */
+/* ========================================================= */
+.pilar-container,
+.elementa-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* Memberikan nafas di pinggir layar */
+}
+
 /* Subnav Navigation Baris 2 (RPG Kingdom Topbar) */
 .elementa-subnav {
   background: linear-gradient(90deg, #0A192F 0%, #1E293B 50%, #0A192F 100%);
@@ -34,7 +44,7 @@ body {
 .elementa-subnav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,7 +91,7 @@ body {
   box-shadow: 0 0 12px rgba(0, 180, 216, 0.3);
 }
 
-/* Hero Section (Grand Kingdom Quest Banner) */
+/* Hero Section */
 .elementa-hero {
   position: relative;
   background: radial-gradient(circle at 50% 30%, rgba(0, 180, 216, 0.18) 0%, rgba(240, 249, 255, 1) 75%);
@@ -159,7 +169,7 @@ body {
   background: linear-gradient(135deg, #0284C7 0%, #0077B6 100%);
 }
 
-/* Element Icons Bar (Nations Badge Selector) */
+/* Element Icons Bar */
 .elements-preview-bar {
   display: flex;
   justify-content: center;
@@ -194,6 +204,10 @@ body {
 .elem-chip.arcane { color: var(--color-arcane); border-color: var(--color-arcane); background: #F5F3FF; }
 
 /* Section Frame Style */
+.pilar-section {
+  padding: 3.5rem 0;
+}
+
 .section-box {
   margin-bottom: 4rem;
 }
@@ -216,7 +230,7 @@ body {
   font-weight: 600;
 }
 
-/* USP Grid 2 Kolom (RPG Quest Cards) */
+/* USP Grid 2 Kolom */
 .usp-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -276,7 +290,7 @@ body {
   line-height: 1.7;
 }
 
-/* Nilai Utama Grid 5 Kolom (Guild Core Values) */
+/* Nilai Utama Grid 5 Kolom */
 .values-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -321,7 +335,7 @@ body {
   line-height: 1.5;
 }
 
-/* Target Peserta Grid 3 Kolom (Class & Specialization) */
+/* Target Peserta Grid 3 Kolom */
 .target-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -374,10 +388,22 @@ body {
   border: 1px solid #BEE3F8;
 }
 
+/* Responsif Mobile & Tablet */
+@media (max-width: 1200px) {
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 992px) {
   .hero-title { font-size: 2.5rem; }
   .usp-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: repeat(2, 1fr); }
   .target-grid { grid-template-columns: 1fr; }
   .elementa-menu { display: none; }
+}
+
+@media (max-width: 640px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .pilar-container, .elementa-container { padding: 0 1rem; }
 }
