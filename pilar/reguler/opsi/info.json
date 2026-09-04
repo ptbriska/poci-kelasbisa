@@ -1,0 +1,84 @@
+{
+  "program_meta": {
+    "title": "PILAR OPSI (Olimpiade Penelitian Siswa Indonesia)",
+    "tagline": "Scientific Research & Academic Innovation Program",
+    "description": "Program pembinaan riset ilmiah komprehensif mencakup bidang IPA, IPS, Kebumian, dan Riset Terapan. Pendampingan terstruktur dari tahap penentuan novelty proposal hingga visualisasi data Python & simulasi presentasi finalis.",
+    "stages": ["Tahap Proposal", "Tahap Laporan (Pra-Nasional)"]
+  },
+  "b2c_siswa": {
+    "tahap_proposal": {
+      "title": "PILAR OPSI B2C — Tahap Proposal",
+      "description": "Pembekalan metodologi riset IMRAD, penyusunan SLR gap research, penggunaan Mendeley/Zotero, serta review & feedback proposal OPSI.",
+      "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+      "features": [
+        { "name": "Materi Dasar Metodologi & Struktur IMRAD", "values": ["V", "V", "V", "V"] },
+        { "name": "Teknik Penentuan Topik, Judul, & Latar Belakang", "values": ["V", "V", "V", "V"] },
+        { "name": "Kajian Pustaka, Sitasi Mendeley/Zotero, & SLR Novelty", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+        { "name": "Critical Thinking & AI-Assisted Research Guideline", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+        { "name": "Bedah Karya Pemenang & Template Proposal OPSI Siap Edit", "values": ["V", "V", "V", "V"] },
+        { "name": "Pendampingan Ide, Concept & Review Proposal s.d Submit", "values": ["-", "-", "-", "V"] },
+        { "name": "Akses LMS, Mobile App, & Mentor Medalis LKTI/OPSI", "values": ["Web & App", "Web LMS", "Web LMS", "Web & App"] },
+        { "name": "Metode Pembelajaran & Periode Pelatihan", "values": ["Self-Paced (Jan-Des)", "Live Zoom (Okt-Jan)", "Offline (Okt-Jan)", "Request"] },
+        { "name": "Harga Per Orang", "values": ["Rp 149.000", "Rp 189.000", "Rp 450.000", "PLATO Rp 1.100k / PLATIPUS Rp 1.700k"] },
+        { "name": "Harga Per Tim (Termasuk Guru Pembimbing)", "values": ["Rp 350.000", "Rp 420.000", "Rp 800.000", "PLATO Rp 1.600k / PLATIPUS Rp 2.200k"] }
+      ]
+    },
+    "tahap_laporan": {
+      "title": "PILAR OPSI B2C — Tahap Laporan (Pra-Nasional)",
+      "description": "Visualisasi data Python-based, penyusunan poster ilmiah, presentasi PPT dengan AI LLM, dan simulasi tanya jawab juri.",
+      "packages": ["KETAL", "PLATO", "PLATIPUS", "EXTRA"],
+      "features": [
+        { "name": "Teknik Visualisasi Data Via Software & Python-Based", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+        { "name": "Script Visualisasi Data & Template Poster Ilmiah", "values": ["V", "V", "V", "V"] },
+        { "name": "Teknik Penyusunan PPT & Optimasi AI LLM Slide", "values": ["Teori+Praktik", "Teori+Praktik", "V", "V + Pendampingan"] },
+        { "name": "Teknik Komunikasi & Presentasi Ilmiah", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan"] },
+        { "name": "Simulasi Tanya Jawab Juri & Review Draft Laporan", "values": ["-", "-", "-", "V"] },
+        { "name": "Metode Pembelajaran & Periode Pelatihan", "values": ["Self-Paced (Jan-Des)", "Live Zoom (Apr-Agt)", "Offline (Apr-Agt)", "Request"] },
+        { "name": "Harga Per Orang", "values": ["Rp 149.000", "Rp 189.000", "Rp 450.000", "PLATO Rp 1.100k / PLATIPUS Rp 1.700k"] },
+        { "name": "Harga Per Tim (Termasuk Guru Pembimbing)", "values": ["Rp 350.000", "Rp 420.000", "Rp 800.000", "PLATO Rp 1.600k / PLATIPUS Rp 2.200k"] }
+      ]
+    }
+  },
+  "b2b_sekolah": {
+    "tahap_proposal": {
+      "title": "PILAR OPSI B2B Sekolah — Tahap Proposal",
+      "description": "Integrasi SOP Tim Riset Sekolah, pendampingan kelompok proposal siswa kolektif, dan review berkas hingga submit.",
+      "packages": ["GABUNG PLATO", "GABUNG PLATIPUS", "EXTRA PLATO", "EXTRA PLATIPUS"],
+      "features": [
+        { "name": "Materi Inti Metodologi & Operasional Riset", "values": ["V", "V", "V", "V"] },
+        { "name": "SOP Pembentukan Tim Riset & Sekolah Berbasis Riset", "values": ["V", "V", "V", "V"] },
+        { "name": "Pendampingan Ide, Konsep, Judul & Review Proposal", "values": ["-", "-", "V", "V"] },
+        { "name": "Pendampingan Revisi Proposal s.d Submit", "values": ["-", "-", "V", "V"] },
+        { "name": "Metode Pembelajaran", "values": ["Online Zoom", "Offline Direct", "Online Zoom", "Offline Direct"] },
+        { "name": "Harga Per Tim (Termasuk Guru Pembimbing)", "values": ["Rp 500.000", "Rp 1.000.000", "Rp 1.600.000", "Rp 2.200.000"] }
+      ]
+    },
+    "tahap_laporan": {
+      "title": "PILAR OPSI B2B Sekolah — Tahap Laporan (Pra-Nasional)",
+      "description": "Pendampingan pengolahan data, pembuatan poster, PPT presentasi, dan simulasi juri untuk kontingen sekolah.",
+      "packages": ["GABUNG PLATO", "GABUNG PLATIPUS", "EXTRA PLATO", "EXTRA PLATIPUS"],
+      "features": [
+        { "name": "Visualisasi Data Python & Script Visualisasi", "values": ["Teori+Praktik", "Teori+Praktik", "Teori+Praktik + Pendampingan", "Teori+Praktik + Pendampingan"] },
+        { "name": "Poster Ilmiah, PPT Presentasi, & Optimasi AI LLM", "values": ["Teori+Praktik", "Teori+Praktik", "V + Pendampingan", "V + Pendampingan"] },
+        { "name": "Simulasi Tanya Jawab Juri & Review Draft Laporan", "values": ["-", "-", "V", "V"] },
+        { "name": "Metode Pembelajaran", "values": ["Online Zoom", "Offline Direct", "Online Zoom", "Offline Direct"] },
+        { "name": "Harga Per Tim (Termasuk Guru Pembimbing)", "values": ["Rp 500.000", "Rp 1.000.000", "Rp 1.600.000", "Rp 2.200.000"] }
+      ]
+    }
+  },
+  "b2g_dinas": {
+    "title": "PILAR OPSI B2G Dinas Pendidikan — Tahap Laporan Pra-Nasional",
+    "description": "Program pembinaan intensif khusus delegasi daerah yang dinyatakan lolos proposal ke tahap pelaksanaan penelitian.",
+    "packages": ["PLATO", "PLATIPUS"],
+    "features": [
+      { "name": "Cakupan Kepesertaan", "values": ["Delegasi Lolos Proposal", "Delegasi Lolos Proposal"] },
+      { "name": "Review Metodologi, Analysis, Kesimpulan, & Abstrak", "values": ["V", "V"] },
+      { "name": "SOP Pembentukan Tim Riset & Sekolah Berbasis Riset", "values": ["V", "V"] },
+      { "name": "Visualisasi Data Python, Script, & Poster Ilmiah", "values": ["Teori+Praktik + Pendampingan", "Teori+Praktik + Pendampingan"] },
+      { "name": "Optimasi AI LLM PPT Slide & Simulasi QnA Juri", "values": ["V", "V"] },
+      { "name": "Review & Pendampingan Revisi Karya (Poster/PPT/Laporan)", "values": ["V", "V"] },
+      { "name": "Metode Pembelajaran & Durasi", "values": ["Online Zoom (±30 Jam)", "Offline Direct (±30 Jam)"] },
+      { "name": "Harga Per Tim (Termasuk Guru Pembimbing)", "values": ["Rp 2.000.000", "Rp 3.500.000"] }
+    ]
+  }
+}
