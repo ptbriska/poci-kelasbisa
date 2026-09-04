@@ -363,63 +363,75 @@
         .catch(err => console.error("Error loading info.json:", err));
     });
 
-    function renderNationsGrid(list) {
-      const target = document.getElementById("nations-grid-target");
-      if (!target || !list) return;
+function renderNationsGrid(list) {
+  const target = document.getElementById("nations-grid-target");
+  if (!target || !list) return;
 
-      let html = "";
-      list.forEach(n => {
-        // Link sub-folder lokal untuk masing-masing Nation
-        const folderLink = `./${n.nama}/index.html`;
+  let html = "";
+  list.forEach(n => {
+    // Menggunakan n.folder dan encodeURI agar spasi dan huruf kapital ter-handle dengan aman
+    const folderPath = encodeURI(`./${n.folder}/index.html`);
 
-        html += `
-          <div class="nation-hud-box" style="border-color: ${n.color};">
-            <div>
-              <div class="nation-title" style="color: ${n.color};">${n.nama}</div>
-              <div style="font-size: 0.85rem; color: var(--rpg-gold); font-weight: 800; margin-bottom: 0.8rem;">
-                ${n.elemen} • ${n.akademi}
-              </div>
-              <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 0.8rem;">
-                <strong>Peran Filosofis:</strong> ${n.fungsi}
-              </p>
-              <div style="font-size: 0.8rem; color: #94A3B8;">
-                <strong>Letak Geografis:</strong> ${n.posisi}
-              </div>
-            </div>
-
-            <a href="${folderLink}" class="btn-explore-nation" style="background: rgba(255,255,255,0.05); color: ${n.color}; border: 1px solid ${n.color};">
-              Jelajahi ${n.nama} →
-            </a>
+    html += `
+      <div class="nation-hud-box" style="border-color: ${n.color};">
+        <div>
+          <div class="nation-title" style="color: ${n.color};">${n.nama}</div>
+          <div style="font-size: 0.85rem; color: var(--rpg-gold); font-weight: 800; margin-bottom: 0.8rem;">
+            ${n.elemen} • ${n.akademi}
           </div>
-        `;
-      });
-      target.innerHTML = html;
+          <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 0.8rem;">
+            <strong>Peran Filosofis:</strong> ${n.fungsi}
+          </p>
+          <div style="font-size: 0.8rem; color: #94A3B8;">
+            <strong>Letak Geografis:</strong> ${n.posisi}
+          </div>
+        </div>
+
+        <a href="${folderPath}" class="btn-explore-nation" style="background: rgba(255,255,255,0.05); color: ${n.color}; border: 1px solid ${n.color};">
+          Jelajahi ${n.nama} →
+        </a>
+      </div>
+    `;
+  });
+  target.innerHTML = html;
+}
+
+function renderSpecialGrid(list) {
+  const target = document.getElementById("special-grid-target");
+  if (!target || !list) return;
+
+  let html = "";
+  list.forEach(s => {
+    let buttonHtml = "";
+
+    if (s.has_folder) {
+      const folderPath = encodeURI(`./${s.folder}/index.html`);
+      buttonHtml = `
+        <a href="${folderPath}" class="btn-explore-nation" style="background: rgba(255,255,255,0.05); color: ${s.color}; border: 1px solid ${s.color}; font-size: 0.78rem;">
+          Masuk Wilayah →
+        </a>
+      `;
+    } else {
+      buttonHtml = `
+        <div style="margin-top: 1.5rem; padding: 0.6rem; border-radius: 8px; font-size: 0.75rem; font-weight: 800; text-align: center; background: rgba(255,255,255,0.03); color: #64748B; border: 1px dashed rgba(255,255,255,0.15);">
+          🏛️ Wilayah Netral Pusat
+        </div>
+      `;
     }
 
-    function renderSpecialGrid(list) {
-      const target = document.getElementById("special-grid-target");
-      if (!target || !list) return;
-
-      let html = "";
-      list.forEach(s => {
-        const folderLink = `./${s.nama}/index.html`;
-
-        html += `
-          <div class="special-card" style="border-color: ${s.color};">
-            <div>
-              <div style="font-size: 1.2rem; font-weight: 900; color: ${s.color}; margin-bottom: 0.5rem;">${s.nama}</div>
-              <p style="font-size: 0.85rem; color: #CBD5E1; line-height: 1.5; margin-bottom: 0.8rem;">${s.fungsi}</p>
-              <div style="font-size: 0.78rem; color: var(--rpg-gold); font-weight: 800; margin-bottom: 1rem;">Akses: ${s.akses}</div>
-            </div>
-
-            <a href="${folderLink}" class="btn-explore-nation" style="background: rgba(255,255,255,0.05); color: ${s.color}; border: 1px solid ${s.color}; font-size: 0.78rem;">
-              Masuk Wilayah →
-            </a>
-          </div>
-        `;
-      });
-      target.innerHTML = html;
-    }
+    html += `
+      <div class="special-card" style="border-color: ${s.color};">
+        <div>
+          <div style="font-size: 1.2rem; font-weight: 900; color: ${s.color}; margin-bottom: 0.5rem;">${s.nama}</div>
+          <p style="font-size: 0.85rem; color: #CBD5E1; line-height: 1.5; margin-bottom: 0.8rem;">${s.fungsi}</p>
+          <div style="font-size: 0.78rem; color: var(--rpg-gold); font-weight: 800; margin-bottom: 1rem;">Akses: ${s.akses}</div>
+        </div>
+        ${buttonHtml}
+      </div>
+    `;
+  });
+  target.innerHTML = html;
+}
 
     function renderPrinsipTable(list) {
       const target = document.getElementById("prinsip-table-body");
