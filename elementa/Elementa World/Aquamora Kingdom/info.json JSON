@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "AQUAMORA KINGDOM",
+    "subtitle": "THE KEEPERS OF THE TIDE // NATION OF WATER",
+    "description": "Aquamora Kingdom merupakan negeri kepulauan, laguna biru, dan samudra membentang yang berdiri di atas filosofi adaptasi, harmoni, serta keterhubungan akademik hidrosfer."
+  },
+  "overview": {
+    "filosofi": "Dunia tidak dibangun oleh kekuatan yang paling keras, melainkan oleh kemampuan untuk beradaptasi dan terhubung dengan lingkungan sekitar. Sebagaimana air mampu mengalir melewati rintangan, warga Aquamora diajarkan menghadapi perubahan dengan fleksibilitas tanpa kehilangan keseimbangan.",
+    "motto": "Flow Beyond Boundaries.",
+    "julukan": "The Keepers of the Tide"
+  },
+  "budaya": {
+    "inspirasi": "PACIFIC (Polinesia & Peradaban Maritim Pasifik)",
+    "deskripsi": "Masyarakat kepulauan yang memiliki hubungan erat dengan laut sebagai pusat kehidupan, navigasi, dan eksplorasi. Terkenal sebagai pelaut ulung yang menjunjung tinggi semangat gotong royong dan kebersamaan.",
+    "nilai_utama": [
+      "Adaptasi",
+      "Harmoni",
+      "Kebersamaan",
+      "Fleksibilitas",
+      "Ketahanan",
+      "Eksplorasi"
+    ]
+  },
+  "akademi": {
+    "nama": "Tidecrest Academy",
+    "fokus": "Pusat kajian laut, arus, iklim samudra, dan fenomena hidrosfer.",
+    "motto": "Flow Beyond Boundaries.",
+    "kurikulum": [
+      "Oseanografi Fisik",
+      "Oseanografi Kimia",
+      "Oseanografi Biologi",
+      "Oseanografi Geologi",
+      "Hidrologi Dasar",
+      "Dinamika Arus Laut",
+      "Gelombang dan Pasang Surut",
+      "ENSO dan Interaksi Laut-Atmosfer"
+    ]
+  },
+  "identitas_visual": {
+    "simbol": "Gelombang Spiral Samudra",
+    "makna_simbol": "Gelombang melambangkan perubahan terus-menerus, spiral melambangkan siklus alam yang terhubung, samudra melambangkan keluasan ilmu, dan pusat spiral melambangkan keseimbangan.",
+    "warna_utama": [
+      { "nama": "Biru Samudra (Ocean Blue)", "hex": "#0284C7", "makna": "Kedalaman pengetahuan, ketenangan, dan kebijaksanaan" },
+      { "nama": "Biru Toska (Turquoise Blue)", "hex": "#00B4D8", "makna": "Kehidupan, energi, dan dinamika lautan" }
+    ]
+  },
+  "kewarganegaraan": {
+    "gelar": "Aquarian",
+    "hirarki_gelar": [
+      "Aquarian Warrior (Status Awal)",
+      "Aquarian Probender (Tingkat Dasar)",
+      "Aquarian Master (Tingkat Lanjut)",
+      "Aquarian Avatar (Penguasaan Harmoni)"
+    ],
+    "karakteristik": [
+      { "aspek": "Elemen Utama", "ket": "Water" },
+      { "aspek": "Gaya Belajar", "ket": "Dinamis dan Integratif" },
+      { "aspek": "Fokus Keilmuan", "ket": "Oseanografi & Cabang Ilmu Hidrosfer" },
+      { "aspek": "Karakter Utama", "ket": "Fleksibel, Kolaboratif, dan Adaptif" }
+    ]
+  }
+}
