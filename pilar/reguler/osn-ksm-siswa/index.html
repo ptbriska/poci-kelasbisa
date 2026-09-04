@@ -10,24 +10,28 @@
   <link rel="stylesheet" href="../../../assets/css/global.css">
   <link rel="stylesheet" href="../../style.css">
 
-  <!-- FUTURE EDTECH VIBES STYLESHEET LOKAL -->
+  <!-- LIGHT THEME: BIRU LANGIT & CYAN -->
   <style>
     :root {
-      --edtech-glow: rgba(0, 180, 216, 0.4);
-      --edtech-card-bg: rgba(10, 25, 47, 0.85);
-      --edtech-border: rgba(144, 224, 239, 0.25);
+      --edtech-glow: rgba(0, 180, 216, 0.2);
+      --edtech-card-bg: #FFFFFF;
+      --edtech-border: #BEE3F8;
+      --pilar-sky-bg: #F0F9FF;
+      --pilar-sky-card: #E0F2FE;
+      --pilar-text-main: #0F172A;
+      --pilar-text-muted: #475569;
     }
 
     body {
-      background-color: #060E1A;
-      color: #E2E8F0;
+      background-color: var(--pilar-sky-bg);
+      color: var(--pilar-text-main);
     }
 
-    /* Future Hero Section */
+    /* Hero Section Terang */
     .edtech-hero {
       position: relative;
       padding: 4rem 0 3rem 0;
-      background: radial-gradient(circle at 50% 20%, rgba(0, 180, 216, 0.15) 0%, transparent 70%);
+      background: linear-gradient(180deg, #E0F7FA 0%, #F0F9FF 100%);
       border-bottom: 1px solid var(--edtech-border);
       overflow: hidden;
     }
@@ -36,29 +40,29 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(0, 180, 216, 0.1);
-      border: 1px solid var(--pilar-primary);
-      color: var(--pilar-cyan);
+      background: #E0F2FE;
+      border: 1px solid #00B4D8;
+      color: #0077B6;
       padding: 0.4rem 1.2rem;
       border-radius: 30px;
       font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
-      box-shadow: 0 0 15px var(--edtech-glow);
+      box-shadow: 0 2px 10px rgba(0, 180, 216, 0.15);
     }
 
     .edtech-title {
       font-size: 2.8rem;
       font-weight: 900;
-      background: linear-gradient(135deg, #FFFFFF 0%, var(--pilar-cyan) 100%);
+      background: linear-gradient(135deg, #0284C7 0%, #0077B6 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin: 1rem 0 0.5rem 0;
     }
 
     .edtech-subtitle {
-      color: #94A3B8;
+      color: var(--pilar-text-muted);
       font-size: 1.05rem;
       max-width: 750px;
       line-height: 1.7;
@@ -74,9 +78,9 @@
     }
 
     .tab-btn {
-      background: rgba(15, 23, 42, 0.8);
+      background: #FFFFFF;
       border: 1px solid var(--edtech-border);
-      color: #94A3B8;
+      color: #334155;
       padding: 0.8rem 1.8rem;
       border-radius: 12px;
       font-weight: 700;
@@ -86,29 +90,29 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
     }
 
     .tab-btn:hover {
-      border-color: var(--pilar-primary);
-      color: #FFF;
-      box-shadow: 0 0 12px var(--edtech-glow);
+      border-color: #00B4D8;
+      color: #0077B6;
+      background: #F0F9FF;
     }
 
     .tab-btn.active {
-      background: linear-gradient(135deg, var(--pilar-primary) 0%, #0077B6 100%);
-      color: #FFF;
-      border-color: var(--pilar-cyan);
-      box-shadow: 0 0 20px var(--edtech-glow);
+      background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
+      color: #FFFFFF;
+      border-color: #00B4D8;
+      box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
     }
 
-    /* Glassmorphism Matrix Table */
+    /* Clean Card & Matrix Table */
     .matrix-card {
       background: var(--edtech-card-bg);
-      backdrop-filter: blur(12px);
       border: 1px solid var(--edtech-border);
       border-radius: 16px;
       padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 25px rgba(0, 119, 182, 0.06);
       margin-bottom: 3rem;
       overflow-x: auto;
     }
@@ -121,11 +125,11 @@
     }
 
     .matrix-table th {
-      background: rgba(0, 180, 216, 0.15);
-      color: var(--pilar-cyan);
+      background: #E0F2FE;
+      color: #0369A1;
       padding: 1rem;
       font-weight: 800;
-      border-bottom: 2px solid var(--pilar-primary);
+      border-bottom: 2px solid #00B4D8;
       white-space: nowrap;
     }
 
@@ -140,83 +144,84 @@
 
     .matrix-table td {
       padding: 0.85rem 1rem;
-      border-bottom: 1px solid rgba(226, 232, 240, 0.08);
-      color: #CBD5E1;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
     }
 
     .matrix-table td:first-child {
       text-align: left;
       font-weight: 600;
-      color: #FFF;
+      color: #0F172A;
     }
 
     .matrix-table tr:hover td {
-      background: rgba(255, 255, 255, 0.03);
+      background: #F8FAFC;
     }
 
     .check-yes {
-      color: #10B981;
+      color: #059669;
       font-weight: 900;
       font-size: 1.1rem;
     }
 
     .check-no {
-      color: #64748B;
+      color: #94A3B8;
     }
 
     .price-highlight {
-      color: var(--pilar-accent-gold);
+      color: #D97706;
       font-weight: 800;
     }
 
     .notes-box {
-      background: rgba(0, 180, 216, 0.05);
-      border-left: 4px solid var(--pilar-primary);
+      background: #F0F9FF;
+      border-left: 4px solid #00B4D8;
       padding: 1rem 1.5rem;
       border-radius: 0 8px 8px 0;
       margin-top: 1.5rem;
       font-size: 0.82rem;
-      color: #94A3B8;
+      color: #475569;
     }
 
-    /* Futuristic CTA Banner */
+    /* Light CTA Banner */
     .future-cta {
-      background: linear-gradient(135deg, rgba(10, 25, 47, 0.9) 0%, rgba(0, 180, 216, 0.3) 100%);
-      border: 1px solid var(--pilar-primary);
+      background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+      border: 1px solid #7DD3FC;
       border-radius: 20px;
       padding: 3rem 2rem;
       text-align: center;
       position: relative;
-      box-shadow: 0 0 30px rgba(0, 180, 216, 0.2);
+      box-shadow: 0 10px 20px rgba(0, 180, 216, 0.1);
     }
 
     .future-cta h2 {
       font-size: 2rem;
-      color: #FFF;
+      color: #0369A1;
       font-weight: 800;
       margin-bottom: 0.8rem;
     }
 
     .future-cta p {
-      color: #CBD5E1;
+      color: #334155;
       margin-bottom: 1.8rem;
     }
 
     .btn-neon-cta {
       display: inline-block;
-      background: var(--pilar-accent-gold);
-      color: var(--pilar-deep-blue);
-      font-weight: 900;
+      background: #0077B6;
+      color: #FFFFFF;
+      font-weight: 800;
       padding: 0.9rem 2.5rem;
       border-radius: 30px;
       text-decoration: none;
-      box-shadow: 0 0 20px rgba(255, 209, 102, 0.4);
+      box-shadow: 0 4px 15px rgba(0, 119, 182, 0.25);
       transition: all 0.3s ease;
     }
 
     .btn-neon-cta:hover {
-      transform: scale(1.05);
-      background: #FFF;
+      transform: translateY(-2px);
+      background: #0284C7;
+      box-shadow: 0 6px 20px rgba(0, 119, 182, 0.35);
     }
   </style>
 </head>
@@ -236,7 +241,7 @@
       <ul class="pilar-menu">
         <li><a href="../../">Beranda</a></li>
         <li><a href="../../freemium/">Program Freemium</a></li>
-        <li><a href="../" style="color: var(--pilar-cyan); background: rgba(255, 255, 255, 0.12);">Program Reguler</a></li>
+        <li><a href="../" style="color: var(--pilar-cyan); background: rgba(0, 180, 216, 0.1);">Program Reguler</a></li>
         <li><a href="../../prestasi/">Prestasi Alumni</a></li>
         <li><a href="../../testimoni/">Testimoni</a></li>
         <li><a href="../../tutor/">Tutor / Mentor</a></li>
@@ -248,7 +253,7 @@
   <main>
     <section class="edtech-hero">
       <div class="pilar-container">
-        <a href="../" style="color: var(--pilar-cyan); font-weight: 700; font-size: 0.88rem; text-decoration: none;">← Kembali ke Katalog Reguler</a>
+        <a href="../" style="color: #0077B6; font-weight: 700; font-size: 0.88rem; text-decoration: none;">← Kembali ke Katalog Reguler</a>
         <div style="margin-top: 1rem;">
           <span class="edtech-badge">⚡ EDTECH MATRIX SHOWCASE</span>
           <h1 class="edtech-title" id="prog-title">PILAR OSN / KSM Siswa</h1>
@@ -272,8 +277,8 @@
         <!-- WADAH MATRIKS TABEL DINAMIS -->
         <div class="matrix-card">
           <div id="matrix-header" style="margin-bottom: 1.5rem;">
-            <h2 style="font-size: 1.5rem; color: #FFF; font-weight: 800;">Tabel Komparasi Fitur & Fasilitas</h2>
-            <p style="font-size: 0.88rem; color: #94A3B8;" id="matrix-subdesc">Memuat data komparasi...</p>
+            <h2 style="font-size: 1.5rem; color: #0F172A; font-weight: 800;">Tabel Komparasi Fitur & Fasilitas</h2>
+            <p style="font-size: 0.88rem; color: #64748B;" id="matrix-subdesc">Memuat data komparasi...</p>
           </div>
 
           <div style="overflow-x: auto;">
