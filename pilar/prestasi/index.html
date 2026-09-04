@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hall of Fame & Prestasi Alumni — PILAR Juara</title>
+  
+  <!-- Favicon & CSS Master -->
+  <link rel="icon" href="../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- STYLESHEET LOKAL HALL OF FAME PRESTASI -->
+  <style>
+    .prestasi-hero {
+      background: linear-gradient(180deg, #E0F7FA 0%, #F0F9FF 100%);
+      padding: 3.5rem 0 2.5rem 0;
+      border-bottom: 1px solid #BEE3F8;
+      text-align: center;
+    }
+
+    .prestasi-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #FEF3C7;
+      border: 1px solid #F59E0B;
+      color: #B45309;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .prestasi-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #0F172A;
+      margin-bottom: 0.5rem;
+    }
+
+    .prestasi-subtitle {
+      color: #475569;
+      font-size: 1rem;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* DASHBOARD MEDAL COUNTER BERJEJER */
+    .medal-dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin: 2.5rem 0 1rem 0;
+    }
+
+    .medal-box {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 180, 216, 0.08);
+      border: 1px solid #BEE3F8;
+      transition: transform 0.3s ease;
+    }
+
+    .medal-box:hover {
+      transform: translateY(-4px);
+    }
+
+    .medal-box.gold { border-bottom: 4px solid #F59E0B; }
+    .medal-box.silver { border-bottom: 4px solid #94A3B8; }
+    .medal-box.bronze { border-bottom: 4px solid #D97706; }
+    .medal-box.total { border-bottom: 4px solid #00B4D8; background: #E0F2FE; }
+
+    .medal-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .medal-count {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #0F172A;
+      display: block;
+    }
+
+    .medal-label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Secondary Stats Sub-bar */
+    .secondary-stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #0369A1;
+      font-weight: 700;
+    }
+
+    /* Filter & Search Bar */
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .search-input {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #BEE3F8;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      width: 280px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: #00B4D8;
+    }
+
+    /* Grid Medalis Card */
+    .medalis-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .medalis-card {
+      background: #FFFFFF;
+      border: 1px solid #BEE3F8;
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 6px 18px rgba(0, 119, 182, 0.05);
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+
+    .medalis-card:hover {
+      border-color: #00B4D8;
+      box-shadow: 0 10px 25px rgba(0, 180, 216, 0.12);
+      transform: translateY(-3px);
+    }
+
+    .medalis-avatar {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background: #E0F2FE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border: 2px solid #00B4D8;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .medalis-info h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 0.2rem;
+    }
+
+    .medalis-school {
+      font-size: 0.85rem;
+      color: #0077B6;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .medalis-award-badge {
+      display: inline-block;
+      background: #FEF3C7;
+      color: #92400E;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      border: 1px solid #FCD34D;
+    }
+
+    .medalis-quote {
+      font-size: 0.85rem;
+      color: #475569;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* GRID LOGO MITRA SEKOLAH */
+    .partner-section {
+      background: #E0F2FE;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border: 1px solid #BEE3F8;
+    }
+
+    .partner-section h3 {
+      font-size: 1.4rem;
+      color: #0369A1;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .partner-section p {
+      font-size: 0.9rem;
+      color: #475569;
+      margin-bottom: 1.8rem;
+    }
+
+    .partner-logo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .partner-logo-card {
+      background: #FFFFFF;
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      border: 1px solid #BEE3F8;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+    }
+
+    .partner-logo-card:hover {
+      transform: translateY(-2px);
+      border-color: #00B4D8;
+    }
+
+    .partner-logo-img {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .partner-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    @media (max-width: 992px) {
+      .medal-dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+      .medalis-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL PILAR -->
+  <nav class="pilar-subnav">
+    <div class="pilar-subnav-container">
+      <a href="../" class="pilar-brand">
+        <img src="../images/logo-pilar.png" alt="Logo PILAR" class="pilar-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="pilar-icon" style="display:none;">🏆</span>
+        <span class="pilar-name">PILAR Juara</span>
+      </a>
+      <ul class="pilar-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../freemium/">Program Freemium</a></li>
+        <li><a href="../reguler/">Program Reguler</a></li>
+        <li><a href="./" style="color: var(--pilar-cyan); background: rgba(0, 180, 216, 0.1);">Prestasi Alumni</a></li>
+        <li><a href="../testimoni/">Testimoni</a></li>
+        <li><a href="../tutor/">Tutor / Mentor</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN HALL OF FAME PRESTASI -->
+  <main>
+    <section class="prestasi-hero">
+      <div class="pilar-container">
+        <span class="prestasi-badge">🏆 HALL OF CHAMPIONS</span>
+        <h1 class="prestasi-title">Rekam Jejak & Prestasi Alumni</h1>
+        <p class="prestasi-subtitle">
+          Bukti nyata dedikasi dan kualitas pembinaan PILAR Juara dalam mengantarkan siswa/i terbaik bangsa mengukir prestasi di ajang OSN, KSM, OPSI, FIKSI, dan LKTI.
+        </p>
+
+        <!-- MEDAL COUNTER DASHBOARD (4 BERJEJER) -->
+        <div class="medal-dashboard-grid">
+          <div class="medal-box gold">
+            <span class="medal-icon">🥇</span>
+            <span class="medal-count" id="cnt-gold">4</span>
+            <span class="medal-label">Medali Emas</span>
+          </div>
+
+          <div class="medal-box silver">
+            <span class="medal-icon">🥈</span>
+            <span class="medal-count" id="cnt-silver">11</span>
+            <span class="medal-label">Medali Perak</span>
+          </div>
+
+          <div class="medal-box bronze">
+            <span class="medal-icon">🥉</span>
+            <span class="medal-count" id="cnt-bronze">12</span>
+            <span class="medal-label">Medali Perunggu</span>
+          </div>
+
+          <div class="medal-box total">
+            <span class="medal-icon">🏆</span>
+            <span class="medal-count" id="cnt-total">27</span>
+            <span class="medal-label">Total Medali</span>
+          </div>
+        </div>
+
+        <!-- SECONDARY STATS BAR -->
+        <div class="secondary-stats-bar">
+          <span>🏫 <strong id="cnt-mitra">24</strong> Sekolah & Instansi Mitra</span>
+          <span>🎯 <strong id="cnt-pass">90%</strong> Tingkat Kelulusan Seleksi</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="pilar-container">
+        
+        <!-- FILTER SEARCH -->
+        <div class="filter-bar">
+          <h2 style="font-size: 1.4rem; color: #0F172A; font-weight: 800;">Daftar Siswa Medalis</h2>
+          <input type="text" id="search-input" class="search-input" placeholder="Cari nama, sekolah, atau bidang..." onkeyup="filterMedalis()">
+        </div>
+
+        <!-- GRID CARDS MEDALIS -->
+        <div class="medalis-grid" id="medalis-grid-target">
+          <p style="color: #64748B;">Memuat data prestasi alumni...</p>
+        </div>
+
+        <!-- MITRA SEKOLAH & LOGO -->
+        <div class="partner-section">
+          <h3>Mitra Sekolah & Instansi Pembinaan</h3>
+          <p>Telah dipercaya oleh berbagai sekolah unggulan dan madrasah dalam program pendampingan kompetisi akademik.</p>
+          <div class="partner-logo-grid" id="partner-logo-target">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <script src="../../assets/js/components.js"></script>
+
+  <!-- SCRIPT LOKAL ENGINE PRESTASI -->
+  <script>
+    let globalMedalisData = [];
+
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("data-prestasi.json")
+        .then(res => {
+          if(!res.ok) throw new Error("Gagal membaca data-prestasi.json");
+          return res.json();
+        })
+        .then(data => {
+          // Render Medals Stats
+          if(data.statistik_medali) {
+            document.getElementById("cnt-gold").innerText = data.statistik_medali.medali_emas || "0";
+            document.getElementById("cnt-silver").innerText = data.statistik_medali.medali_perak || "0";
+            document.getElementById("cnt-bronze").innerText = data.statistik_medali.medali_perunggu || "0";
+            document.getElementById("cnt-total").innerText = data.statistik_medali.total_medali || "0";
+            document.getElementById("cnt-mitra").innerText = data.statistik_medali.sekolah_mitra || "0";
+            document.getElementById("cnt-pass").innerText = data.statistik_medali.tingkat_kelulusan || "0%";
+          }
+
+          globalMedalisData = data.daftar_medalis || [];
+          renderMedalisGrid(globalMedalisData);
+          renderPartners(data.sekolah_mitra || []);
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("medalis-grid-target").innerHTML = `<p style="color:red;">Gagal memuat data prestasi.</p>`;
+        });
+    });
+
+    function renderMedalisGrid(list) {
+      const target = document.getElementById("medalis-grid-target");
+      if(list.length === 0) {
+        target.innerHTML = `<p style="color:#64748B; grid-column: 1/-1; text-align:center;">Data medalis tidak ditemukan.</p>`;
+        return;
+      }
+
+      let html = "";
+      list.forEach(item => {
+        const photoPath = `../images/alumni/${item.foto}`;
+        
+        html += `
+          <div class="medalis-card">
+            <div class="medalis-avatar">
+              <img src="${photoPath}" alt="${item.nama}" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <span style="display:none; font-size:2rem;">🎓</span>
+            </div>
+            <div class="medalis-info">
+              <h3>${item.nama}</h3>
+              <div class="medalis-school">${item.sekolah}</div>
+              <span class="medalis-award-badge">🏆 ${item.pencapaian} — ${item.bidang} (${item.tahun})</span>
+              <p class="medalis-quote">"${item.kesan}"</p>
+            </div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderPartners(partners) {
+      const target = document.getElementById("partner-logo-target");
+      let html = "";
+      partners.forEach(p => {
+        const name = (typeof p === 'object') ? p.nama : p;
+        const logo = (typeof p === 'object' && p.logo) ? p.logo : 'default.png';
+        const logoPath = `../images/sekolah/${logo}`;
+
+        html += `
+          <div class="partner-logo-card">
+            <img src="${logoPath}" alt="${name}" class="partner-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span style="display:none; font-size:1.1rem;">🏫</span>
+            <span class="partner-name">${name}</span>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function filterMedalis() {
+      const keyword = document.getElementById("search-input").value.toLowerCase();
+      const filtered = globalMedalisData.filter(item => 
+        item.nama.toLowerCase().includes(keyword) ||
+        item.sekolah.toLowerCase().includes(keyword) ||
+        item.bidang.toLowerCase().includes(keyword) ||
+        item.pencapaian.toLowerCase().includes(keyword)
+      );
+      renderMedalisGrid(filtered);
+    }
+  </script>
+</body>
+</html>
