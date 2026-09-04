@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PILAR Business Plan — FEB & Investor Competition Program</title>
+  
+  <!-- Favicon & CSS Master -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- LIGHT THEME: BIRU LANGIT & CYAN -->
+  <style>
+    :root {
+      --edtech-glow: rgba(0, 180, 216, 0.2);
+      --edtech-card-bg: #FFFFFF;
+      --edtech-border: #BEE3F8;
+      --pilar-sky-bg: #F0F9FF;
+      --pilar-sky-card: #E0F2FE;
+      --pilar-text-main: #0F172A;
+      --pilar-text-muted: #475569;
+    }
+
+    body {
+      background-color: var(--pilar-sky-bg);
+      color: var(--pilar-text-main);
+    }
+
+    .edtech-hero {
+      position: relative;
+      padding: 4rem 0 3rem 0;
+      background: linear-gradient(180deg, #E0F7FA 0%, #F0F9FF 100%);
+      border-bottom: 1px solid var(--edtech-border);
+      overflow: hidden;
+    }
+
+    .edtech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #E0F2FE;
+      border: 1px solid #00B4D8;
+      color: #0077B6;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 10px rgba(0, 180, 216, 0.15);
+    }
+
+    .edtech-title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #0284C7 0%, #0077B6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .edtech-subtitle {
+      color: var(--pilar-text-muted);
+      font-size: 1.05rem;
+      max-width: 750px;
+      line-height: 1.7;
+      margin: 0 auto;
+    }
+
+    /* Sub Category Filter Tabs */
+    .category-filter-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cat-filter-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--edtech-border);
+      color: #334155;
+      padding: 0.6rem 1.4rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    .cat-filter-btn:hover {
+      border-color: #00B4D8;
+      color: #0077B6;
+      background: #F0F9FF;
+    }
+
+    .cat-filter-btn.active {
+      background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
+      color: #FFFFFF;
+      border-color: #00B4D8;
+      box-shadow: 0 4px 12px rgba(0, 180, 216, 0.25);
+    }
+
+    /* Matrix Card & Table */
+    .matrix-card {
+      background: var(--edtech-card-bg);
+      border: 1px solid var(--edtech-border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0, 119, 182, 0.06);
+      margin-bottom: 3rem;
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: center;
+    }
+
+    .matrix-table th {
+      background: #E0F2FE;
+      color: #0369A1;
+      padding: 1rem;
+      font-weight: 800;
+      border-bottom: 2px solid #00B4D8;
+      white-space: nowrap;
+    }
+
+    .matrix-table th:first-child {
+      text-align: left;
+      border-top-left-radius: 8px;
+    }
+
+    .matrix-table th:last-child {
+      border-top-right-radius: 8px;
+    }
+
+    .matrix-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+
+    .matrix-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: #0F172A;
+    }
+
+    .matrix-table tr:hover td {
+      background: #F8FAFC;
+    }
+
+    .check-yes {
+      color: #059669;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .check-no {
+      color: #94A3B8;
+    }
+
+    .price-highlight {
+      color: #D97706;
+      font-weight: 800;
+    }
+
+    .future-cta {
+      background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+      border: 1px solid #7DD3FC;
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 180, 216, 0.1);
+    }
+
+    .future-cta h2 {
+      font-size: 2rem;
+      color: #0369A1;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+
+    .future-cta p {
+      color: #334155;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-neon-cta {
+      display: inline-block;
+      background: #0077B6;
+      color: #FFFFFF;
+      font-weight: 800;
+      padding: 0.9rem 2.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 119, 182, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .btn-neon-cta:hover {
+      transform: translateY(-2px);
+      background: #0284C7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER GLOBAL BARIS 1 -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL PILAR BARIS 2 -->
+  <nav class="pilar-subnav">
+    <div class="pilar-subnav-container">
+      <a href="../../" class="pilar-brand">
+        <img src="../../images/logo-pilar.png" alt="Logo PILAR" class="pilar-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+        <span class="pilar-icon" style="display:none;">🏆</span>
+        <span class="pilar-name">PILAR Juara</span>
+      </a>
+      <ul class="pilar-menu">
+        <li><a href="../../">Beranda</a></li>
+        <li><a href="../../freemium/">Program Freemium</a></li>
+        <li><a href="../" style="color: var(--pilar-cyan); background: rgba(0, 180, 216, 0.1);">Program Reguler</a></li>
+        <li><a href="../../prestasi/">Prestasi Alumni</a></li>
+        <li><a href="../../testimoni/">Testimoni</a></li>
+        <li><a href="../../tutor/">Tutor / Mentor</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN KONTEN BUSINESS PLAN -->
+  <main>
+    <section class="edtech-hero">
+      <div class="pilar-container text-center">
+        <a href="../" style="color: #0077B6; font-weight: 700; font-size: 0.88rem; text-decoration: none;">← Kembali ke Katalog Reguler</a>
+        <div style="margin-top: 1rem;">
+          <span class="edtech-badge">💼 BUSINESS COMPETITION PROGRAM</span>
+          <h1 class="edtech-title">PILAR Business Plan</h1>
+          <p class="edtech-subtitle">
+            Pembinaan intensif penyusunan proposal Business Plan standar FEB & Investor, perancangan model bisnis, proyeksi keuangan, hingga strategi presentasi pitching[cite: 5].
+          </p>
+        </div>
+
+        <!-- CATEGORY TAB FILTERS -->
+        <div class="category-filter-wrapper" id="cat-filters-target">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section" style="padding: 2rem 0 4rem 0;">
+      <div class="pilar-container">
+        
+        <!-- WADAH MATRIKS TABEL DINAMIS -->
+        <div class="matrix-card">
+          <div id="matrix-header" style="margin-bottom: 1.5rem;">
+            <h2 style="font-size: 1.5rem; color: #0F172A; font-weight: 800;" id="matrix-title">Komparasi Fasilitas Business Plan</h2>
+            <p style="font-size: 0.88rem; color: #64748B;" id="matrix-subdesc">Opsi bimbingan belajar komprehensif dari level pemula hingga pendampingan intensif 1-on-1 finalis[cite: 5].</p>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="matrix-table" id="matrix-table-target">
+              <!-- Content rendered via JSON -->
+            </table>
+          </div>
+        </div>
+
+        <!-- CTA REGISTRATION BANNER -->
+        <div class="future-cta">
+          <h2>Siap Menangkan Kompetisi Business Plan Tingkat Nasional?</h2>
+          <p>Daftarkan dirimu atau timmu untuk mendapatkan bimbingan intensif dari mentor praktisi bisnis & alumni medalis FEB[cite: 5].</p>
+          <a href="../../../events/?subbrand=pilar&program=business-plan" class="btn-neon-cta">Daftar Batch Business Plan Active →</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL BUSINESS PLAN -->
+  <script>
+    let globalJsonData = null;
+    let activeCatIndex = 0;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if(!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          globalJsonData = data;
+          renderCategoryFilters(data.b2c_comparison.categories);
+          renderMatrixTable(0);
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("matrix-table-target").innerHTML = `<tr><td style="color:red;">Gagal memuat data info.json</td></tr>`;
+        });
+    });
+
+    function renderCategoryFilters(categories) {
+      const target = document.getElementById("cat-filters-target");
+      let html = "";
+      categories.forEach((cat, index) => {
+        const activeClass = index === 0 ? "active" : "";
+        html += `<button class="cat-filter-btn ${activeClass}" onclick="switchCategory(${index})">${cat.category_name}</button>`;
+      });
+      target.innerHTML = html;
+    }
+
+    function switchCategory(catIndex) {
+      activeCatIndex = catIndex;
+      const btns = document.querySelectorAll(".cat-filter-btn");
+      btns.forEach((btn, idx) => {
+        if(idx === catIndex) btn.classList.add("active");
+        else btn.classList.remove("active");
+      });
+
+      renderMatrixTable(catIndex);
+    }
+
+    function renderMatrixTable(catIndex) {
+      if(!globalJsonData) return;
+
+      const packages = globalJsonData.b2c_comparison.packages;
+      const categoryObj = globalJsonData.b2c_comparison.categories[catIndex];
+
+      document.getElementById("matrix-title").innerText = categoryObj.category_name;
+
+      let tableHtml = `
+        <thead>
+          <tr>
+            <th>ASPEK / FITUR LAYANAN</th>
+            ${packages.map(pkg => `<th>${pkg}</th>`).join('')}
+          </tr>
+        </thead>
+        <tbody>
+      `;
+
+      categoryObj.features.forEach(feat => {
+        tableHtml += `<tr><td>${feat.name}</td>`;
+        feat.values.forEach(val => {
+          let formattedVal = val;
+          if(val === "V") formattedVal = `<span class="check-yes">✓</span>`;
+          else if(val === "-") formattedVal = `<span class="check-no">—</span>`;
+          else if(val.includes("Rp")) formattedVal = `<span class="price-highlight">${val}</span>`;
+          
+          tableHtml += `<td>${formattedVal}</td>`;
+        });
+        tableHtml += `</tr>`;
+      });
+
+      tableHtml += `</tbody>`;
+      document.getElementById("matrix-table-target").innerHTML = tableHtml;
+    }
+  </script>
+</body>
+</html>
