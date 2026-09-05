@@ -3,150 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Showroom Events</title>
+  <title>Jadwal Event & TO — Kelas Bisa</title>
+  
+  <!-- Favicon & Master CSS Global + Local Events CSS -->
+  <link rel="icon" href="../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/global.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <header class="hero-section">
-    <div class="hero-container">
-      <img src="banner-hero.png" alt="Banner Penawaran Program Aktif" class="hero-banner">
-    </div>
-  </header>
+  <!-- 1. HEADER GLOBAL KELAS BISA -->
+  <div id="app-header"></div>
 
-  <!-- MAIN CATALOG CONTAINER -->
-  <main class="catalog-container">
+  <main class="events-page">
+    
+    <!-- HERO HEADER (BANNER PROMO PENAWARAN PROGRAM AKTIF) -->
+    <section class="events-hero">
+      <div class="events-container">
+        <img src="banner-promo.png" alt="Banner Penawaran Program Aktif" class="hero-banner-img" onerror="this.style.display='none';">
+      </div>
+    </section>
 
-    <!-- BARIS PENCARIAN -->
+    <!-- BARIS PENCARIAN REAL-TIME -->
     <section class="search-section">
-      <div class="search-bar">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" placeholder="Cari nama kegiatan, kode, atau tag..." autocomplete="off">
-        <button type="button" id="clearSearchBtn" class="clear-btn" hidden>&times;</button>
+      <div class="events-container">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Cari nama kegiatan, kode, atau kata kunci..." oninput="applyFilters()">
+          <button class="btn-reset-all" onclick="resetFilters()">Reset Filter</button>
+        </div>
       </div>
     </section>
 
-    <!-- PANEL FILTER MULTI-KATEGORI (ALA MARKETPLACE) -->
-    <section class="filter-panel">
-      <div class="filter-header">
-        <h2>Filter Kegiatan</h2>
-        <button type="button" id="resetFilterBtn" class="reset-btn">Reset Filter</button>
-      </div>
+    <!-- PANEL FILTER MULTI-KATEGORI (STYLE MARKETPLACE) -->
+    <section class="filter-marketplace-section">
+      <div class="events-container">
+        <div class="marketplace-filter-card">
+          <h3 class="filter-title">Filter Kegiatan</h3>
 
-      <!-- Scrollable Filter Rows -->
-      <div class="filter-group-container">
-
-        <!-- Status -->
-        <div class="filter-group">
-          <label class="filter-label">Status:</label>
-          <div class="chips-wrapper" id="filterStatus">
-            <button class="chip active" data-value="ALL">Semua</button>
-            <button class="chip" data-value="Open">Open</button>
-            <button class="chip" data-value="Close">Close</button>
+          <!-- FILTER STATUS -->
+          <div class="filter-row">
+            <span class="filter-label">Status:</span>
+            <div class="filter-chips" id="filterStatus">
+              <button class="m-chip active" data-group="status" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="status" data-value="Open" onclick="clickFilterChip(this)">Open</button>
+              <button class="m-chip" data-group="status" data-value="Close" onclick="clickFilterChip(this)">Close</button>
+            </div>
           </div>
-        </div>
 
-        <!-- Bulan Kegiatan -->
-        <div class="filter-group">
-          <label class="filter-label">Bulan:</label>
-          <div class="chips-wrapper" id="filterBulan">
-            <button class="chip active" data-value="ALL">Semua</button>
-            <button class="chip" data-value="Januari">Januari</button>
-            <button class="chip" data-value="Februari">Februari</button>
-            <button class="chip" data-value="Maret">Maret</button>
-            <button class="chip" data-value="April">April</button>
-            <button class="chip" data-value="Mei">Mei</button>
-            <button class="chip" data-value="Juni">Juni</button>
-            <button class="chip" data-value="Juli">Juli</button>
-            <button class="chip" data-value="Agustus">Agustus</button>
-            <button class="chip" data-value="September">September</button>
-            <button class="chip" data-value="Oktober">Oktober</button>
-            <button class="chip" data-value="November">November</button>
-            <button class="chip" data-value="Desember">Desember</button>
+          <!-- FILTER BULAN KEGIATAN -->
+          <div class="filter-row">
+            <span class="filter-label">Bulan:</span>
+            <div class="filter-chips" id="filterBulan">
+              <button class="m-chip active" data-group="bulan" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="bulan" data-value="Januari" onclick="clickFilterChip(this)">Januari</button>
+              <button class="m-chip" data-group="bulan" data-value="Februari" onclick="clickFilterChip(this)">Februari</button>
+              <button class="m-chip" data-group="bulan" data-value="Maret" onclick="clickFilterChip(this)">Maret</button>
+              <button class="m-chip" data-group="bulan" data-value="April" onclick="clickFilterChip(this)">April</button>
+              <button class="m-chip" data-group="bulan" data-value="Mei" onclick="clickFilterChip(this)">Mei</button>
+              <button class="m-chip" data-group="bulan" data-value="Juni" onclick="clickFilterChip(this)">Juni</button>
+              <button class="m-chip" data-group="bulan" data-value="Juli" onclick="clickFilterChip(this)">Juli</button>
+              <button class="m-chip" data-group="bulan" data-value="Agustus" onclick="clickFilterChip(this)">Agustus</button>
+              <button class="m-chip" data-group="bulan" data-value="September" onclick="clickFilterChip(this)">September</button>
+              <button class="m-chip" data-group="bulan" data-value="Oktober" onclick="clickFilterChip(this)">Oktober</button>
+              <button class="m-chip" data-group="bulan" data-value="November" onclick="clickFilterChip(this)">November</button>
+              <button class="m-chip" data-group="bulan" data-value="Desember" onclick="clickFilterChip(this)">Desember</button>
+            </div>
           </div>
-        </div>
 
-        <!-- Afiliasi -->
-        <div class="filter-group">
-          <label class="filter-label">Afiliasi:</label>
-          <div class="chips-wrapper" id="filterAfiliasi">
-            <button class="chip active" data-value="ALL">Semua</button>
-            <button class="chip" data-value="Kelas Bisa Juara">Kelas Bisa Juara</button>
-            <button class="chip" data-value="Kelas Bisa Skill">Kelas Bisa Skill</button>
-            <button class="chip" data-value="Kelas Bisa Lulus">Kelas Bisa Lulus</button>
+          <!-- FILTER AFILIASI -->
+          <div class="filter-row">
+            <span class="filter-label">Afiliasi:</span>
+            <div class="filter-chips" id="filterAfiliasi">
+              <button class="m-chip active" data-group="afiliasi" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="afiliasi" data-value="Kelas Bisa Juara" onclick="clickFilterChip(this)">Kelas Bisa Juara</button>
+              <button class="m-chip" data-group="afiliasi" data-value="Kelas Bisa Skill" onclick="clickFilterChip(this)">Kelas Bisa Skill</button>
+              <button class="m-chip" data-group="afiliasi" data-value="Kelas Bisa Lulus" onclick="clickFilterChip(this)">Kelas Bisa Lulus</button>
+            </div>
           </div>
-        </div>
 
-        <!-- Sub-Brand -->
-        <div class="filter-group">
-          <label class="filter-label">Sub-Brand:</label>
-          <div class="chips-wrapper" id="filterSubBrand">
-            <button class="chip active" data-value="ALL">Semua</button>
-            <button class="chip" data-value="Pilar Juara">Pilar Juara</button>
-            <button class="chip" data-value="Gatra Adhika">Gatra Adhika</button>
-            <button class="chip" data-value="Nestu">Nestu</button>
-            <button class="chip" data-value="Lingua">Lingua</button>
-            <button class="chip" data-value="Geodatis">Geodatis</button>
-            <button class="chip" data-value="Arpa">Arpa</button>
-            <button class="chip" data-value="Workit">Workit</button>
+          <!-- FILTER SUB-BRAND -->
+          <div class="filter-row">
+            <span class="filter-label">Sub-Brand:</span>
+            <div class="filter-chips" id="filterSubbrand">
+              <button class="m-chip active" data-group="subbrand" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="subbrand" data-value="Pilar Juara" onclick="clickFilterChip(this)">Pilar Juara</button>
+              <button class="m-chip" data-group="subbrand" data-value="Gatra Adhika" onclick="clickFilterChip(this)">Gatra Adhika</button>
+              <button class="m-chip" data-group="subbrand" data-value="Nestu" onclick="clickFilterChip(this)">Nestu</button>
+              <button class="m-chip" data-group="subbrand" data-value="Lingua" onclick="clickFilterChip(this)">Lingua</button>
+              <button class="m-chip" data-group="subbrand" data-value="Geodatis" onclick="clickFilterChip(this)">Geodatis</button>
+              <button class="m-chip" data-group="subbrand" data-value="Arpa" onclick="clickFilterChip(this)">Arpa</button>
+              <button class="m-chip" data-group="subbrand" data-value="Workit" onclick="clickFilterChip(this)">Workit</button>
+            </div>
           </div>
-        </div>
 
-        <!-- Jenis Kegiatan -->
-        <div class="filter-group">
-          <label class="filter-label">Jenis:</label>
-          <div class="chips-wrapper" id="filterJenis">
-            <button class="chip active" data-value="ALL">Semua</button>
-            <button class="chip" data-value="Try Out">Try Out</button>
-            <button class="chip" data-value="Zoominar">Zoominar</button>
-            <button class="chip" data-value="Pelatihan">Pelatihan</button>
-            <button class="chip" data-value="Bimbel">Bimbel</button>
+          <!-- FILTER JENIS KEGIATAN -->
+          <div class="filter-row">
+            <span class="filter-label">Jenis:</span>
+            <div class="filter-chips" id="filterJenis">
+              <button class="m-chip active" data-group="jenis" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="jenis" data-value="Try Out" onclick="clickFilterChip(this)">Try Out</button>
+              <button class="m-chip" data-group="jenis" data-value="Zoominar" onclick="clickFilterChip(this)">Zoominar</button>
+              <button class="m-chip" data-group="jenis" data-value="Pelatihan" onclick="clickFilterChip(this)">Pelatihan</button>
+              <button class="m-chip" data-group="jenis" data-value="Bimbel" onclick="clickFilterChip(this)">Bimbel</button>
+            </div>
           </div>
-        </div>
 
-        <!-- Format Platform -->
-        <div class="filter-group">
-          <label class="filter-label">Platform:</label>
-          <div class="chips-wrapper" id="filterPlatform">
-            <button class="chip active" data-value="ALL">Semua</button>
-            <button class="chip" data-value="Plato">Plato</button>
-            <button class="chip" data-value="Platipus">Platipus</button>
-            <button class="chip" data-value="Extra Plato">Extra Plato</button>
-            <button class="chip" data-value="Extra Platipus">Extra Platipus</button>
+          <!-- FILTER FORMAT PLATFORM -->
+          <div class="filter-row">
+            <span class="filter-label">Platform:</span>
+            <div class="filter-chips" id="filterPlatform">
+              <button class="m-chip active" data-group="platform" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="platform" data-value="Plato" onclick="clickFilterChip(this)">Plato</button>
+              <button class="m-chip" data-group="platform" data-value="Platipus" onclick="clickFilterChip(this)">Platipus</button>
+              <button class="m-chip" data-group="platform" data-value="Extra Plato" onclick="clickFilterChip(this)">Extra Plato</button>
+              <button class="m-chip" data-group="platform" data-value="Extra Platipus" onclick="clickFilterChip(this)">Extra Platipus</button>
+            </div>
           </div>
-        </div>
 
-        <!-- Format Waktu -->
-        <div class="filter-group">
-          <label class="filter-label">Format Waktu:</label>
-          <div class="chips-wrapper" id="filterWaktu">
-            <button class="chip active" data-value="ALL">Semua</button>
-            <button class="chip" data-value="Zoominar">Zoominar</button>
-            <button class="chip" data-value="Short Course">Short Course</button>
-            <button class="chip" data-value="Long Course">Long Course</button>
-            <button class="chip" data-value="Bootcamp">Bootcamp</button>
-            <button class="chip" data-value="Bootcamp Premium">Bootcamp Premium</button>
+          <!-- FILTER FORMAT WAKTU -->
+          <div class="filter-row">
+            <span class="filter-label">Format Waktu:</span>
+            <div class="filter-chips" id="filterWaktu">
+              <button class="m-chip active" data-group="waktu" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="waktu" data-value="Zoominar" onclick="clickFilterChip(this)">Zoominar</button>
+              <button class="m-chip" data-group="waktu" data-value="Short Course" onclick="clickFilterChip(this)">Short Course</button>
+              <button class="m-chip" data-group="waktu" data-value="Long Course" onclick="clickFilterChip(this)">Long Course</button>
+              <button class="m-chip" data-group="waktu" data-value="Bootcamp" onclick="clickFilterChip(this)">Bootcamp</button>
+              <button class="m-chip" data-group="waktu" data-value="Bootcamp Premium" onclick="clickFilterChip(this)">Bootcamp Premium</button>
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
 
-    <!-- EVENT GRID CONTAINER -->
-    <section class="events-section">
-      <div id="eventsGrid" class="events-grid">
-        <!-- Kartu event hasil fetch JSON akan di-render otomatis di sini lewat JavaScript -->
-      </div>
+    <!-- EVENT GRID CONTAINER (HASIL RENDER AUTOMATIS DARI SCRIPT.JS) -->
+    <section class="events-grid-section">
+      <div class="events-container">
+        
+        <div id="eventsGrid" class="events-grid">
+          <!-- Rendered via script.js -->
+        </div>
 
-      <!-- State Kosong / Tidak Ditemukan -->
-      <div id="emptyState" class="empty-state" hidden>
-        <p>Tidak ada kegiatan yang sesuai dengan filter atau pencarian Anda.</p>
+        <div id="emptyState" class="empty-state" style="display: none;">
+          <h3>Kegiatan Tidak Ditemukan</h3>
+          <p>Coba sesuaikan pilihan filter atau kata kunci pencarian Anda.</p>
+          <button onclick="resetFilters()" class="btn-reset-all">Tampilkan Semua Kegiatan</button>
+        </div>
+
       </div>
     </section>
 
   </main>
 
-  <script src="app.js"></script>
+  <!-- 3. FOOTER GLOBAL KELAS BISA -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJECTOR COMPONENTS GLOBAL & LOCAL LOGIC -->
+  <script src="../assets/js/components.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
