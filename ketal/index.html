@@ -1,1 +1,189 @@
-h
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Program & Event — Kelas Bisa</title>
+  
+  <link rel="icon" href="../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- HERO PROMO BANNER -->
+  <section class="events-hero">
+    <div class="ecom-container">
+      <img src="banner-promo.png" alt="Promo Kelas Bisa" class="hero-banner-img" onerror="this.style.display='none';">
+    </div>
+  </section>
+
+  <!-- SAMBUTAN PELANGGAN (WELCOME BANNER) -->
+  <section class="welcome-section">
+    <div class="ecom-container">
+      <div class="welcome-card">
+        <span class="welcome-badge">✨ SELAMAT DATANG CALON JUARA</span>
+        <h1 class="welcome-title">Temukan Program Terbaik untuk Melompati Batas Kemampuanmu</h1>
+        <p class="welcome-desc">Setiap langkah besarmu dimulai dari persiapan yang tepat. Jelajahi pilihan Try Out, Zoominar, dan Bootcamp yang dirancang khusus untuk mengantarkanmu mencapai impian tertinggi bersama LKP Kelas Bisa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- E-COMMERCE LAYOUT (SIDEBAR KIRI, KONTEN KANAN) -->
+  <main class="ecom-layout">
+    <div class="ecom-container ecom-grid-system">
+      
+      <!-- ========================================== -->
+      <!-- SIDEBAR FILTER (KIRI) -->
+      <!-- ========================================== -->
+      <aside class="ecom-sidebar">
+        <div class="sidebar-header">
+          <h3>Filter Kegiatan</h3>
+          <button class="btn-reset-text" onclick="resetFilters()">Reset</button>
+        </div>
+
+        <div class="sidebar-content">
+          
+          <!-- FILTER STATUS -->
+          <div class="filter-section">
+            <h4 class="filter-heading">Status Pendaftaran</h4>
+            <div class="filter-chips" id="filterStatus">
+              <button class="m-chip active" data-group="status" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="status" data-value="Open" onclick="clickFilterChip(this)">Buka (Open)</button>
+              <button class="m-chip" data-group="status" data-value="Close" onclick="clickFilterChip(this)">Tutup (Close)</button>
+            </div>
+          </div>
+
+          <!-- FILTER AFILIASI -->
+          <div class="filter-section">
+            <h4 class="filter-heading">Afiliasi</h4>
+            <div class="filter-chips" id="filterAfiliasi">
+              <button class="m-chip active" data-group="afiliasi" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="afiliasi" data-value="Kelas Bisa Juara" onclick="clickFilterChip(this)">Kelas Bisa Juara</button>
+              <button class="m-chip" data-group="afiliasi" data-value="Kelas Bisa Skill" onclick="clickFilterChip(this)">Kelas Bisa Skill</button>
+              <button class="m-chip" data-group="afiliasi" data-value="Kelas Bisa Lulus" onclick="clickFilterChip(this)">Kelas Bisa Lulus</button>
+            </div>
+          </div>
+
+          <!-- FILTER SUB-BRAND -->
+          <div class="filter-section">
+            <h4 class="filter-heading">Sub-Brand</h4>
+            <div class="filter-chips" id="filterSubbrand">
+              <button class="m-chip active" data-group="subbrand" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="subbrand" data-value="Pilar Juara" onclick="clickFilterChip(this)">Pilar Juara</button>
+              <button class="m-chip" data-group="subbrand" data-value="Gatra Adhika" onclick="clickFilterChip(this)">Gatra Adhika</button>
+              <button class="m-chip" data-group="subbrand" data-value="Nestu" onclick="clickFilterChip(this)">Nestu</button>
+              <button class="m-chip" data-group="subbrand" data-value="Lingua" onclick="clickFilterChip(this)">Lingua</button>
+              <button class="m-chip" data-group="subbrand" data-value="Geodatis" onclick="clickFilterChip(this)">Geodatis</button>
+              <button class="m-chip" data-group="subbrand" data-value="Arpa" onclick="clickFilterChip(this)">Arpa</button>
+              <button class="m-chip" data-group="subbrand" data-value="Workit" onclick="clickFilterChip(this)">Workit</button>
+            </div>
+          </div>
+
+          <!-- FILTER JENIS -->
+          <div class="filter-section">
+            <h4 class="filter-heading">Jenis Kegiatan</h4>
+            <div class="filter-chips" id="filterJenis">
+              <button class="m-chip active" data-group="jenis" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="jenis" data-value="Try Out" onclick="clickFilterChip(this)">Try Out</button>
+              <button class="m-chip" data-group="jenis" data-value="Zoominar" onclick="clickFilterChip(this)">Zoominar</button>
+              <button class="m-chip" data-group="jenis" data-value="Pelatihan" onclick="clickFilterChip(this)">Pelatihan</button>
+              <button class="m-chip" data-group="jenis" data-value="Bimbel" onclick="clickFilterChip(this)">Bimbel</button>
+            </div>
+          </div>
+
+          <!-- FILTER PLATFORM -->
+          <div class="filter-section">
+            <h4 class="filter-heading">Platform</h4>
+            <div class="filter-chips" id="filterPlatform">
+              <button class="m-chip active" data-group="platform" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="platform" data-value="Plato" onclick="clickFilterChip(this)">Plato</button>
+              <button class="m-chip" data-group="platform" data-value="Platipus" onclick="clickFilterChip(this)">Platipus</button>
+              <button class="m-chip" data-group="platform" data-value="Extra Plato" onclick="clickFilterChip(this)">Extra Plato</button>
+              <button class="m-chip" data-group="platform" data-value="Extra Platipus" onclick="clickFilterChip(this)">Extra Platipus</button>
+            </div>
+          </div>
+
+          <!-- FILTER WAKTU -->
+          <div class="filter-section">
+            <h4 class="filter-heading">Format Waktu</h4>
+            <div class="filter-chips" id="filterWaktu">
+              <button class="m-chip active" data-group="waktu" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="waktu" data-value="Zoominar" onclick="clickFilterChip(this)">Zoominar</button>
+              <button class="m-chip" data-group="waktu" data-value="Short Course" onclick="clickFilterChip(this)">Short Course</button>
+              <button class="m-chip" data-group="waktu" data-value="Long Course" onclick="clickFilterChip(this)">Long Course</button>
+              <button class="m-chip" data-group="waktu" data-value="Bootcamp" onclick="clickFilterChip(this)">Bootcamp</button>
+              <button class="m-chip" data-group="waktu" data-value="Bootcamp Premium" onclick="clickFilterChip(this)">Premium</button>
+            </div>
+          </div>
+
+          <!-- FILTER BULAN -->
+          <div class="filter-section">
+            <h4 class="filter-heading">Bulan</h4>
+            <div class="filter-chips" id="filterBulan">
+              <button class="m-chip active" data-group="bulan" data-value="Semua" onclick="clickFilterChip(this)">Semua</button>
+              <button class="m-chip" data-group="bulan" data-value="Januari" onclick="clickFilterChip(this)">Januari</button>
+              <button class="m-chip" data-group="bulan" data-value="Februari" onclick="clickFilterChip(this)">Februari</button>
+              <button class="m-chip" data-group="bulan" data-value="Maret" onclick="clickFilterChip(this)">Maret</button>
+              <button class="m-chip" data-group="bulan" data-value="April" onclick="clickFilterChip(this)">April</button>
+              <button class="m-chip" data-group="bulan" data-value="Mei" onclick="clickFilterChip(this)">Mei</button>
+              <button class="m-chip" data-group="bulan" data-value="Juni" onclick="clickFilterChip(this)">Juni</button>
+              <button class="m-chip" data-group="bulan" data-value="Juli" onclick="clickFilterChip(this)">Juli</button>
+              <button class="m-chip" data-group="bulan" data-value="Agustus" onclick="clickFilterChip(this)">Agustus</button>
+              <button class="m-chip" data-group="bulan" data-value="September" onclick="clickFilterChip(this)">September</button>
+              <button class="m-chip" data-group="bulan" data-value="Oktober" onclick="clickFilterChip(this)">Oktober</button>
+              <button class="m-chip" data-group="bulan" data-value="November" onclick="clickFilterChip(this)">November</button>
+              <button class="m-chip" data-group="bulan" data-value="Desember" onclick="clickFilterChip(this)">Desember</button>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- ========================================== -->
+      <!-- MAIN KONTEN (KANAN) -->
+      <!-- ========================================== -->
+      <section class="ecom-main">
+        
+        <!-- SEARCH BAR ATAS -->
+        <div class="ecom-search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Cari nama kegiatan, kode, atau kata kunci..." oninput="applyFilters()">
+        </div>
+
+        <!-- GRID PRODUK / EVENT -->
+        <div id="eventsGrid" class="ecom-grid">
+          <!-- Rendered via script.js -->
+        </div>
+
+        <!-- STATE KOSONG -->
+        <div id="emptyState" class="ecom-empty-state" style="display: none;">
+          <!-- Di-render oleh script.js -->
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- POP-UP MODAL DETAIL PRODUK (HIDDEN BY DEFAULT) -->
+  <div id="detailModal" class="modal-overlay" style="display: none;" onclick="closeDetailModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeDetailModal()">&times;</button>
+      <div id="modalBody">
+        <!-- Rendered via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT -->
+  <script src="../assets/js/components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
