@@ -155,7 +155,7 @@ function renderEventsGrid(list) {
       ? `<span class="price-badge free">GRATIS</span>` 
       : `<span class="price-amount">Rp ${priceVal.toLocaleString('id-ID')}</span>`;
 
-    // Slider Gambar Poster
+    // Slider Gambar Poster Utama
     const rawImages = item.poster || item.gambar_poster || [];
     let sliderContent = '';
 
@@ -242,7 +242,7 @@ function changeSlide(cardIdx, direction, totalImgs) {
   if (nextImg) nextImg.classList.add('active');
 }
 
-// 8. POP-UP MODAL ENGINE FOR DETAIL VIEW
+// 8. POP-UP MODAL OVERLAY ENGINE ALA INSTAGRAM WEB
 function openDetailModal(kodeKegiatan) {
   const item = allEventsData.find(e => e.kode_kegiatan === kodeKegiatan);
   if (!item) return;
@@ -258,37 +258,124 @@ function openDetailModal(kodeKegiatan) {
     waUrl = 'https://' + waUrl;
   }
 
+  // A. Carousel Poster Gambar Besar untuk Modal
+  const rawImages = item.poster || item.gambar_poster || [];
+  let modalSliderContent = '';
+
+  if (rawImages.length > 0) {
+    rawImages.forEach((imgSrc, imgIdx) => {
+      let finalSrc = imgSrc;
+      if (!finalSrc.startsWith('http') && !finalSrc.startsWith('info-event/')) {
+        finalSrc = `info-event/${finalSrc}`;
+      }
+
+      const activeClass = imgIdx === 0 ? 'active' : '';
+      modalSliderContent += `
+        <img src="${finalSrc}" class="modal-slide-img ${activeClass}" id="modal-slide-${imgIdx}" alt="Poster ${item.nama_kegiatan}" onerror="this.src='https://via.placeholder.com/600x600?text=Poster+Pelatihan'">
+      `;
+    });
+
+    if (rawImages.length > 1) {
+      modalSliderContent += `
+        <button class="modal-slider-btn prev" onclick="changeModalSlide(-1, ${rawImages.length})">❮</button>
+        <button class="modal-slider-btn next" onclick="changeModalSlide(1, ${rawImages.length})">❯</button>
+      `;
+    }
+  } else {
+    modalSliderContent = `<img src="https://via.placeholder.com/600x600?text=Poster+Pelatihan" class="modal-slide-img active">`;
+  }
+
+  // B. Data LocalStorage (Like & Komentar Permanen)
+  const likesData = JSON.parse(localStorage.getItem(`likes_${kodeKegiatan}`) || '{"count": 12, "isLiked": false}');
+  const commentsData = JSON.parse(localStorage.getItem(`comments_${kodeKegiatan}`) || '[]');
+
+  let commentsHtml = '';
+  if (commentsData.length === 0) {
+    commentsHtml = `<p class="no-comment-text" id="noCommentText">Belum ada diskusi. Jadilah yang pertama bertanya!</p>`;
+  } else {
+    commentsData.forEach(c => {
+      commentsHtml += `
+        <div class="comment-item">
+          <strong>${c.nama}</strong>: ${c.teks}
+          <span class="comment-time">${c.waktu}</span>
+        </div>
+      `;
+    });
+  }
+
+  // C. Render Layout Instagram Web Style
   modalBody.innerHTML = `
-    <div class="modal-detail-grid">
-      <div class="modal-detail-info">
-        <span class="modal-brand-tag">${item.sub_brand || 'Kelas Bisa'} • ${item.jenis_kegiatan || 'Event'}</span>
-        <h2 class="modal-title">${item.nama_kegiatan}</h2>
-        <div class="modal-price">${priceDisplay}</div>
-
-        <div class="modal-info-table">
-          <div><strong>Kode Kegiatan:</strong> ${item.kode_kegiatan || '-'}</div>
-          <div><strong>Periode Pelaksanaan:</strong> ${item.periode_kegiatan || '-'}</div>
-          <div><strong>Bulan Kegiatan:</strong> ${item.bulan_kegiatan || '-'}</div>
-          <div><strong>Afiliasi:</strong> ${item.afiliasi || '-'}</div>
-          <div><strong>Format Platform:</strong> ${item.format_platform || '-'}</div>
-          <div><strong>Format Waktu:</strong> ${item.format_waktu || '-'}</div>
-          <div><strong>Status Pendaftaran:</strong> <span class="badge-${(item.status || '').toLowerCase()}">${item.status || '-'}</span></div>
-        </div>
-
-        <div class="modal-desc-box">
-          <h4>Deskripsi Lengkap Kegiatan:</h4>
-          <p>${item.deskripsi_singkat || 'Belum ada deskripsi khusus.'}</p>
-        </div>
-
-        <div class="modal-actions">
-          <a href="${item.link_checkout || '#'}" target="_blank" rel="noopener" class="btn-cta-checkout">
-            🛒 Langsung Daftar / Checkout
-          </a>
-          <a href="${waUrl}" target="_blank" rel="noopener" class="btn-cta-wa">
-            💬 Konsultasi CS via WhatsApp
-          </a>
-        </div>
+    <div class="ig-modal-grid">
+      
+      <!-- SISI KIRI: CAROUSEL POSTER GAMBAR BESAR -->
+      <div class="ig-modal-media">
+        ${modalSliderContent}
       </div>
+
+      <!-- SISI KANAN: PANEL DETAIL & DISKUSI INTERAKTIF -->
+      <div class="ig-modal-side">
+        
+        <!-- HEADER BRAND -->
+        <div class="ig-side-header">
+          <div class="ig-user-info">
+            <span class="ig-avatar">🎓</span>
+            <div>
+              <div class="ig-username">${item.sub_brand || 'Kelas Bisa'}</div>
+              <div class="ig-subtext">${item.jenis_kegiatan || 'Event'} • ${item.afiliasi || 'Kelas Bisa'}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BODY INFO & DISKUSI (SCROLLABLE) -->
+        <div class="ig-side-body">
+          <h2 class="ig-event-title">${item.nama_kegiatan}</h2>
+          <div class="ig-price-tag">${priceDisplay}</div>
+
+          <div class="ig-info-table">
+            <div><strong>Kode:</strong> ${item.kode_kegiatan || '-'}</div>
+            <div><strong>Periode:</strong> ${item.periode_kegiatan || '-'}</div>
+            <div><strong>Bulan:</strong> ${item.bulan_kegiatan || '-'}</div>
+            <div><strong>Platform:</strong> ${item.format_platform || '-'} (${item.format_waktu || '-'})</div>
+            <div><strong>Status:</strong> <span class="badge-${(item.status || '').toLowerCase()}">${item.status || '-'}</span></div>
+          </div>
+
+          <div class="ig-desc-box">
+            <p>${item.deskripsi_singkat || 'Belum ada deskripsi khusus.'}</p>
+          </div>
+
+          <hr class="ig-divider">
+
+          <!-- KONTEN DISKUSI / KOMENTAR -->
+          <div class="ig-comments-list" id="commentsContainer">
+            ${commentsHtml}
+          </div>
+        </div>
+
+        <!-- FOOTER ACTION: LIKE, FORM KOMENTAR, TOMBOL CHECKOUT -->
+        <div class="ig-side-footer">
+          
+          <div class="ig-action-bar">
+            <button class="btn-ig-like ${likesData.isLiked ? 'liked' : ''}" id="likeBtn" onclick="toggleLike('${kodeKegiatan}')">
+              <span id="likeIcon">${likesData.isLiked ? '❤️' : '🤍'}</span>
+              <span id="likeCount">${likesData.count}</span> Suka
+            </button>
+            <span class="ig-wa-cs-link"><a href="${waUrl}" target="_blank" rel="noopener">💬 Tanya CS via WA</a></span>
+          </div>
+
+          <!-- INPUT KOMENTAR REAL-TIME -->
+          <form class="ig-comment-form" onsubmit="addComment(event, '${kodeKegiatan}')">
+            <input type="text" id="commentNameInput" placeholder="Nama..." required class="ig-input-name">
+            <input type="text" id="commentTextInput" placeholder="Tulis pertanyaan..." required class="ig-input-text">
+            <button type="submit" class="btn-ig-send">Kirim</button>
+          </form>
+
+          <a href="${item.link_checkout || '#'}" target="_blank" rel="noopener" class="btn-cta-checkout ig-checkout-btn">
+            🛒 Beli / Daftar Sekarang
+          </a>
+        </div>
+
+      </div>
+
     </div>
   `;
 
@@ -300,7 +387,87 @@ function closeDetailModal(event) {
   if (modal) modal.style.display = 'none';
 }
 
-// 9. RESET SELURUH FILTER & PENCARIAN
+// 9. NAVIGASI SLIDER POSTER DI POP-UP MODAL
+function changeModalSlide(direction, totalImgs) {
+  let currentIdx = 0;
+  for (let i = 0; i < totalImgs; i++) {
+    const img = document.getElementById(`modal-slide-${i}`);
+    if (img && img.classList.contains('active')) {
+      currentIdx = i;
+      img.classList.remove('active');
+      break;
+    }
+  }
+  let nextIdx = currentIdx + direction;
+  if (nextIdx >= totalImgs) nextIdx = 0;
+  if (nextIdx < 0) nextIdx = totalImgs - 1;
+
+  const nextImg = document.getElementById(`modal-slide-${nextIdx}`);
+  if (nextImg) nextImg.classList.add('active');
+}
+
+// 10. LOGIKA TOGGLE LIKE (DISIMPAN PERMANEN DI LOCALSTORAGE)
+function toggleLike(kodeKegiatan) {
+  const likesData = JSON.parse(localStorage.getItem(`likes_${kodeKegiatan}`) || '{"count": 12, "isLiked": false}');
+  
+  if (likesData.isLiked) {
+    likesData.count -= 1;
+    likesData.isLiked = false;
+  } else {
+    likesData.count += 1;
+    likesData.isLiked = true;
+  }
+
+  localStorage.setItem(`likes_${kodeKegiatan}`, JSON.stringify(likesData));
+
+  const likeBtn = document.getElementById('likeBtn');
+  const likeIcon = document.getElementById('likeIcon');
+  const likeCount = document.getElementById('likeCount');
+
+  if (likeBtn && likeIcon && likeCount) {
+    likeCount.innerText = likesData.count;
+    if (likesData.isLiked) {
+      likeBtn.classList.add('liked');
+      likeIcon.innerText = '❤️';
+    } else {
+      likeBtn.classList.remove('liked');
+      likeIcon.innerText = '🤍';
+    }
+  }
+}
+
+// 11. LOGIKA TAMBAH KOMENTAR (DISIMPAN PERMANEN DI LOCALSTORAGE)
+function addComment(event, kodeKegiatan) {
+  event.preventDefault();
+  const nameInput = document.getElementById('commentNameInput');
+  const textInput = document.getElementById('commentTextInput');
+  const container = document.getElementById('commentsContainer');
+  const noCommentText = document.getElementById('noCommentText');
+
+  if (!nameInput || !textInput || !container) return;
+
+  const newComment = {
+    nama: nameInput.value.trim(),
+    teks: textInput.value.trim(),
+    waktu: 'Baru saja'
+  };
+
+  const commentsData = JSON.parse(localStorage.getItem(`comments_${kodeKegiatan}`) || '[]');
+  commentsData.push(newComment);
+  localStorage.setItem(`comments_${kodeKegiatan}`, JSON.stringify(commentsData));
+
+  if (noCommentText) noCommentText.remove();
+
+  const commentElement = document.createElement('div');
+  commentElement.className = 'comment-item';
+  commentElement.innerHTML = `<strong>${newComment.nama}</strong>: ${newComment.teks} <span class="comment-time">${newComment.waktu}</span>`;
+  container.appendChild(commentElement);
+
+  textInput.value = '';
+  container.scrollTop = container.scrollHeight;
+}
+
+// 12. RESET SELURUH FILTER & PENCARIAN
 function resetFilters() {
   const searchInput = document.getElementById('searchInput');
   if (searchInput) searchInput.value = '';
