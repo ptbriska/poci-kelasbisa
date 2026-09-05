@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "AIR MONTH — AERO ACADEMY",
+    "subtitle": "THE DYNAMICS OF CHANGE // METEOROLOGICAL & CLIMATOLOGICAL SCIENCES",
+    "description": "Air Month dirancang untuk mengajarkan peserta bagaimana memahami pola-pola perubahan di atmosfer serta memprediksi fenomena cuaca dan iklim global."
+  },
+  "overview": {
+    "periode": "Desember",
+    "nation_host": "Aerion Nomad",
+    "akademi": "Aero Academy",
+    "elemen": "Air",
+    "filosofi": "Air merupakan elemen perubahan. Atmosfer tidak pernah benar-benar diam; setiap saat terjadi perpindahan energi, massa udara, dan uap air. Kemampuan memahami perubahan jauh lebih berharga daripada sekadar bereaksi terhadap perubahan yang telah terjadi. Karena itu, Air menjadi elemen observasi, prediksi, dan kebijaksanaan."
+  },
+  "fokus_keilmuan": [
+    "Meteorologi Dasar",
+    "Meteorologi Dinamis",
+    "Meteorologi Sinoptik",
+    "Klimatologi",
+    "Fisika Atmosfer",
+    "Sirkulasi Atmosfer Global",
+    "Cuaca Tropis",
+    "Perubahan Iklim"
+  ],
+  "kompetensi_utama": [
+    "Memahami struktur atmosfer bumi secara mendalam.",
+    "Menjelaskan proses pembentukan cuaca dan fenomena atmosfer.",
+    "Menganalisis pola sirkulasi atmosfer global.",
+    "Memahami hubungan antara cuaca dan iklim.",
+    "Melakukan interpretasi data meteorologi dasar.",
+    "Menjelaskan fenomena perubahan iklim global secara ilmiah."
+  ],
+  "spesialisasi_bending": {
+    "deepening": [
+      {
+        "nama": "Sound Bending",
+        "fokus": "Gelombang Atmosfer, Akustik Atmosfer, dan Dinamika Gelombang"
+      },
+      {
+        "nama": "Levitation Bending",
+        "fokus": "Dinamika Fluida Atmosfer, Aerodinamika Dasar, dan Konveksi Atmosfer"
+      },
+      {
+        "nama": "Spirit Bending",
+        "fokus": "Interaksi Atmosfer dan Lingkungan, Sistem Atmosfer Kompleks, dan Pemodelan Atmosfer Lanjut"
+      }
+    ],
+    "mix_bending": [
+      "Ice Bending (Air + Water)",
+      "Storm Bending (Air + Water)",
+      "Mist Bending (Air + Water)",
+      "Sand Bending (Air + Earth)",
+      "Magnet Bending (Air + Earth)",
+      "Scorch Bending (Air + Fire)"
+    ]
+  },
+  "quest_sistem": {
+    "utama": [
+      {
+        "nama": "Sky Observer Quest",
+        "desc": "Interpretasi data cuaca dan analisis dinamika atmosfer."
+      },
+      {
+        "nama": "Climate Analyst Quest",
+        "desc": "Analisis pola iklim global dan variabilitas siklus iklim."
+      },
+      {
+        "nama": "Storm Tracker Quest",
+        "desc": "Pemantauan sistem badai dan fenomena cuaca ekstrem."
+      },
+      {
+        "nama": "Atmospheric Challenge",
+        "desc": "Penyelesaian studi kasus meteorologi dan klimatologi terapan."
+      }
+    ],
+    "expedition_event": {
+      "nama": "The Great Atmosphere Expedition",
+      "desc": "Peserta menghadapi berbagai studi kasus atmosfer, prediksi cuaca, dan analisis iklim untuk memperoleh Air Relic dan Air Mastery Points."
+    }
+  },
+  "achievement_badges": [
+    "Air Initiate",
+    "Air Scholar",
+    "Air Elementalist",
+    "Air Master"
+  ]
+}
