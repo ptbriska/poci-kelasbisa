@@ -1,0 +1,20 @@
+{
+  "nama_produk": "Mastering Data Analytics dengan Python & SQL",
+  "kode_produk": "KTL-DATA-02",
+  "kategori": "Data Science",
+  "sub_brand": "Geodatis",
+  "afiliasi": "Kelas Bisa Juara",
+  "level": "medium",
+  "format_waktu": "Lifetime Access",
+  "total_durasi": "16 Jam 15 Menit",
+  "total_modul": "12 Bab (84 Video)",
+  "trainer": "Dr. Eng. Farhan Pratama",
+  "harga": 199000,
+  "deskripsi": "Panduan komprehensif mengolah big data, pembersihan data, visualisasi data interaktif, dan statistik bisnis menggunakan Python Pandas dan MySQL.",
+  "link_video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  "link_checkout": "https://checkout.kelasbisa.com/ktl-data-02",
+  "link_wa": "wa.me/082268118842",
+  "poster": [
+    "info-ketal/KTL-DATA-02-1.png"
+  ]
+}
