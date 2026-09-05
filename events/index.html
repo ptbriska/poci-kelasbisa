@@ -14,10 +14,21 @@
   <!-- HEADER GLOBAL -->
   <div id="app-header"></div>
 
-  <!-- HERO PROMO (OPSIONAL) -->
+  <!-- HERO PROMO BANNER -->
   <section class="events-hero">
     <div class="ecom-container">
       <img src="banner-promo.png" alt="Promo Kelas Bisa" class="hero-banner-img" onerror="this.style.display='none';">
+    </div>
+  </section>
+
+  <!-- SAMBUTAN PELANGGAN (WELCOME BANNER) -->
+  <section class="welcome-section">
+    <div class="ecom-container">
+      <div class="welcome-card">
+        <span class="welcome-badge">✨ SELAMAT DATANG CALON JUARA</span>
+        <h1 class="welcome-title">Temukan Program Terbaik untuk Melompati Batas Kemampuanmu</h1>
+        <p class="welcome-desc">Setiap langkah besarmu dimulai dari persiapan yang tepat. Jelajahi pilihan Try Out, Zoominar, dan Bootcamp yang dirancang khusus untuk mengantarkanmu mencapai impian tertinggi bersama LKP Kelas Bisa.</p>
+      </div>
     </div>
   </section>
 
@@ -157,6 +168,16 @@
 
     </div>
   </main>
+
+  <!-- POP-UP MODAL DETAIL PRODUK (HIDDEN BY DEFAULT) -->
+  <div id="detailModal" class="modal-overlay" style="display: none;" onclick="closeDetailModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeDetailModal()">&times;</button>
+      <div id="modalBody">
+        <!-- Rendered via script.js -->
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER GLOBAL -->
   <div id="app-footer"></div>
