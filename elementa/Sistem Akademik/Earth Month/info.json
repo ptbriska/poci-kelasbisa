@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "EARTH MONTH — LITHOS ACADEMY",
+    "subtitle": "THE FOUNDATION OF ELEMENTA // GEOLOGICAL SCIENCES",
+    "description": "Earth Month dirancang untuk mengajarkan peserta tentang bagaimana bumi terbentuk, berubah, dan berkembang melalui proses geologi yang kompleks sebagai fondasi utama perjalanan akademik."
+  },
+  "overview": {
+    "periode": "Januari",
+    "nation_host": "Terralith Empire",
+    "akademi": "Lithos Academy",
+    "elemen": "Earth",
+    "filosofi": "Earth merupakan fondasi dunia Elementa. Sebagaimana seluruh kehidupan berdiri di atas bumi yang kokoh, pemahaman terhadap struktur dan proses kebumian menjadi dasar penting. Perubahan besar dalam sejarah bumi selalu diawali oleh proses-proses kecil yang berlangsung konsisten dalam jangka waktu panjang."
+  },
+  "fokus_keilmuan": [
+    "Geologi Dasar",
+    "Mineralogi",
+    "Petrologi",
+    "Geologi Struktur",
+    "Vulkanologi",
+    "Geomorfologi",
+    "Geologi Regional",
+    "Geologi Planet Dasar"
+  ],
+  "kompetensi_utama": [
+    "Memahami struktur bumi secara mendalam.",
+    "Mengidentifikasi batuan dan mineral secara terstruktur.",
+    "Menganalisis proses pembentukan bentang alam (geomorfologi).",
+    "Menjelaskan aktivitas tektonik lempeng dan vulkanisme.",
+    "Menghubungkan proses geologi dengan fenomena kebumian lainnya."
+  ],
+  "spesialisasi_bending": {
+    "deepening": [
+      {
+        "nama": "Metal Bending",
+        "fokus": "Mineralogi, Geokimia Dasar, dan Eksplorasi Mineral"
+      },
+      {
+        "nama": "Crystal Bending",
+        "fokus": "Kristalografi, Mineral Optik, dan Struktur Mineral"
+      },
+      {
+        "nama": "Seismic Bending",
+        "fokus": "Seismologi, Tektonik Lempeng, dan Analisis Gempa"
+      }
+    ],
+    "mix_bending": [
+      "Sand Bending (Earth + Air)",
+      "Magnet Bending (Earth + Air)",
+      "Wood Bending (Earth + Water)",
+      "Mud Bending (Earth + Water)",
+      "Lava Bending (Earth + Fire)"
+    ]
+  },
+  "quest_sistem": {
+    "utama": [
+      {
+        "nama": "Earth Observation Quest",
+        "desc": "Analisis fenomena geologi aktual dan pembentukan bentang alam."
+      },
+      {
+        "nama": "Mineral Hunter Quest",
+        "desc": "Ujian identifikasi dan klasifikasi mineral serta batuan."
+      },
+      {
+        "nama": "Tectonic Explorer Quest",
+        "desc": "Studi kasus aktivitas tektonik dunia dan dinamika lempeng."
+      },
+      {
+        "nama": "Volcano Expedition",
+        "desc": "Misi eksplorasi vulkanologi dan analisis risiko gunung api."
+      }
+    ],
+    "expedition_event": {
+      "nama": "The Great Lithosphere Expedition",
+      "desc": "Peserta menghadapi berbagai studi kasus geologi tingkat lanjut untuk memperoleh Earth Relic dan Earth Mastery Points."
+    }
+  },
+  "achievement_badges": [
+    "Earth Initiate",
+    "Earth Scholar",
+    "Earth Elementalist",
+    "Earth Master"
+  ]
+}
