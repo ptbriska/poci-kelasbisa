@@ -1,23 +1,30 @@
 /* =========================================================
-   STYLE E-COMMERCE MODERN (KIRI: FILTER, KANAN: GRID)
+   STYLE E-COMMERCE MODERN — TECHNO CYAN COMMERCIAL THEME
    ========================================================= */
 
 :root {
-  --eco-primary: #00AA5B; /* Warna hijau khas e-commerce */
-  --eco-primary-hover: #008f4c;
-  --eco-blue: #0284C7;
-  --eco-bg: #F3F4F5;
+  --eco-cyan: #0284C7;          /* Cyan / Pacific Blue */
+  --eco-cyan-hover: #0369A1;
+  --eco-cyan-light: #E0F2FE;    /* Highlight Cyan Soft */
+  --eco-green: #10B981;         /* Emerald Green untuk Pendaftaran / Open */
+  --eco-green-hover: #059669;
+  --eco-orange: #F59E0B;        /* Gold / Orange untuk Harga Dinamis */
+  --eco-wa: #25D366;            /* WhatsApp Green */
+  --eco-dark: #0A192F;          /* Midnight Dark Navy */
+  --eco-bg: #F8FAFC;            /* Background Clean Light Gray */
   --eco-card: #FFFFFF;
-  --eco-text-main: #31353B; /* Teks gelap solid */
-  --eco-text-muted: #6C727C;
-  --eco-border: #E5E7E9;
-  --eco-radius: 8px;
+  --eco-text-main: #0F172A;     /* Dark Slate Text */
+  --eco-text-muted: #64748B;
+  --eco-border: #E2E8F0;
+  --eco-radius: 12px;
+  --eco-shadow-sm: 0 2px 8px rgba(2, 132, 199, 0.05);
+  --eco-shadow-md: 0 10px 25px rgba(2, 132, 199, 0.12);
 }
 
 body {
   background-color: var(--eco-bg);
   color: var(--eco-text-main);
-  font-family: 'Inter', "Open Sans", sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -29,48 +36,90 @@ body {
   box-sizing: border-box;
 }
 
-/* 1. HERO BANNER */
+/* 1. HERO PROMO BANNER */
 .events-hero {
   background-color: var(--eco-card);
   padding: 16px 0;
   border-bottom: 1px solid var(--eco-border);
 }
+
 .hero-banner-img {
   width: 100%;
-  max-height: 250px;
+  max-height: 260px;
   object-fit: cover;
   border-radius: var(--eco-radius);
   display: block;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
 
-/* 2. LAYOUT GRID 2 KOLOM (KIRI & KANAN) */
+/* 2. SAMBUTAN PELANGGAN (WELCOME BANNER) */
+.welcome-section {
+  padding: 20px 0 0 0;
+}
+
+.welcome-card {
+  background: linear-gradient(135deg, var(--eco-dark) 0%, #0F2942 60%, var(--eco-cyan) 100%);
+  color: #FFFFFF;
+  padding: 24px 30px;
+  border-radius: var(--eco-radius);
+  border-left: 5px solid var(--eco-cyan);
+  box-shadow: var(--eco-shadow-md);
+}
+
+.welcome-badge {
+  display: inline-block;
+  background: rgba(2, 132, 199, 0.3);
+  border: 1px solid var(--eco-cyan);
+  color: #7DD3FC;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.welcome-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin: 0 0 8px 0;
+  color: #FFFFFF;
+}
+
+.welcome-desc {
+  font-size: 0.88rem;
+  color: #E0F2FE;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+/* 3. LAYOUT E-COMMERCE (GRID SYSTEM) */
 .ecom-layout {
   padding: 24px 0 60px 0;
 }
 
 .ecom-grid-system {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 250px 1fr;
   gap: 24px;
   align-items: start;
 }
 
-/* 3. SIDEBAR FILTER (KIRI) */
+/* 4. SIDEBAR FILTER (KIRI) */
 .ecom-sidebar {
   background: var(--eco-card);
   border-radius: var(--eco-radius);
   border: 1px solid var(--eco-border);
   position: sticky;
   top: 20px;
-  height: fit-content;
-  max-height: 90vh;
+  max-height: 88vh;
   overflow-y: auto;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  box-shadow: var(--eco-shadow-sm);
 }
 
-/* Kustomisasi Scrollbar Sidebar */
-.ecom-sidebar::-webkit-scrollbar { width: 6px; }
-.ecom-sidebar::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+.ecom-sidebar::-webkit-scrollbar { width: 5px; }
+.ecom-sidebar::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
 
 .sidebar-header {
   display: flex;
@@ -85,7 +134,7 @@ body {
 }
 
 .sidebar-header h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 800;
   margin: 0;
   color: var(--eco-text-main);
@@ -94,82 +143,85 @@ body {
 .btn-reset-text {
   background: none;
   border: none;
-  color: var(--eco-primary);
+  color: var(--eco-cyan);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   cursor: pointer;
+  transition: color 0.2s;
 }
 
-.sidebar-content {
-  padding: 16px;
-}
+.btn-reset-text:hover { color: var(--eco-cyan-hover); text-decoration: underline; }
+
+.sidebar-content { padding: 16px; }
 
 .filter-section {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   border-bottom: 1px dashed var(--eco-border);
-  padding-bottom: 16px;
+  padding-bottom: 14px;
 }
-.filter-section:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
+.filter-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
 .filter-heading {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--eco-text-main);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--eco-text-muted);
   margin: 0 0 10px 0;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Chips Filter (Bentuk Tag Kotak/Wrap) */
 .filter-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .m-chip {
-  background: #FFFFFF;
+  background: #F1F5F9;
   border: 1px solid var(--eco-border);
-  color: var(--eco-text-muted);
-  font-size: 0.78rem;
+  color: var(--eco-text-main);
+  font-size: 0.76rem;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .m-chip:hover {
-  border-color: var(--eco-primary);
-  color: var(--eco-primary);
+  border-color: var(--eco-cyan);
+  color: var(--eco-cyan);
 }
 
 .m-chip.active {
-  background: #E8F7F0; /* Hijau super tipis */
-  border-color: var(--eco-primary);
-  color: var(--eco-primary);
+  background: var(--eco-cyan);
+  border-color: var(--eco-cyan);
+  color: #FFFFFF;
   font-weight: 700;
+  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.3);
 }
 
-/* 4. MAIN KONTEN (KANAN) */
+/* 5. MAIN KONTEN (KANAN) */
 .ecom-main {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Search Bar (Menempel di atas grid) */
 .ecom-search-bar {
   display: flex;
   align-items: center;
   background: var(--eco-card);
-  border: 1px solid var(--eco-border);
+  border: 1.5px solid var(--eco-border);
   border-radius: var(--eco-radius);
   padding: 10px 16px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  box-shadow: var(--eco-shadow-sm);
+  transition: border-color 0.2s ease;
+}
+
+.ecom-search-bar:focus-within {
+  border-color: var(--eco-cyan);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
 }
 
 .ecom-search-bar input {
@@ -177,39 +229,39 @@ body {
   border: none;
   outline: none;
   margin-left: 10px;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  font-weight: 500;
   color: var(--eco-text-main);
 }
 
-/* Grid Produk */
 .ecom-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
 }
 
-/* 5. KARTU PRODUK (STYLE TOKOPEDIA) */
+/* 6. KARTU PRODUK MINIMALIS (STYLE TOKOPEDIA CYAN) */
 .event-card {
   background: var(--eco-card);
-  border: 1px solid var(--eco-border);
+  border: 1.5px solid var(--eco-border);
   border-radius: var(--eco-radius);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .event-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  border-color: var(--eco-cyan);
+  box-shadow: var(--eco-shadow-md);
 }
 
-/* Poster Ratio Persegi/Katalog */
 .card-slider {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1; /* Persegi ala e-commerce */
-  background: #f8f8f8;
+  aspect-ratio: 1 / 1;
+  background: #0A192F;
   overflow: hidden;
 }
 
@@ -231,30 +283,32 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   z-index: 5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
-.status-badge.open { background: var(--eco-primary); color: #fff; }
-.status-badge.close { background: #ef4444; color: #fff; }
+.status-badge.open { background: var(--eco-green); color: #FFF; }
+.status-badge.close { background: #EF4444; color: #FFF; }
 
 .slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.8);
-  border: 1px solid #ddd;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid #DDD;
   color: #333;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 .slider-btn.prev { left: 4px; }
 .slider-btn.next { right: 4px; }
 
-/* Info Produk (Bawah) */
 .card-body {
   padding: 12px;
   flex-grow: 1;
@@ -263,8 +317,8 @@ body {
 }
 
 .card-title {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.92rem;
+  font-weight: 800;
   line-height: 1.4;
   margin: 0 0 8px 0;
   color: var(--eco-text-main);
@@ -274,16 +328,27 @@ body {
   overflow: hidden;
 }
 
-.info-list {
-  font-size: 0.75rem;
-  color: var(--eco-text-muted);
+.card-price-box {
   margin-bottom: 12px;
 }
-.info-list div {
-  margin-bottom: 4px;
+
+.price-amount {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: var(--eco-cyan);
 }
 
-/* Tombol Aksi */
+.price-badge.free {
+  display: inline-block;
+  background: #DCFCE7;
+  color: #15803D;
+  border: 1px solid #86EFAC;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
 .card-actions {
   margin-top: auto;
   display: flex;
@@ -291,38 +356,165 @@ body {
   gap: 6px;
 }
 
+.btn-cta-detail {
+  background: #F1F5F9;
+  color: var(--eco-text-main);
+  border: 1px solid var(--eco-border);
+  padding: 7px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-cta-detail:hover {
+  background: var(--eco-cyan-light);
+  border-color: var(--eco-cyan);
+  color: var(--eco-cyan);
+}
+
 .btn-cta-checkout {
-  background: var(--eco-primary);
-  color: #fff;
+  background: linear-gradient(135deg, var(--eco-cyan) 0%, var(--eco-cyan-hover) 100%);
+  color: #FFFFFF;
   text-align: center;
   padding: 8px;
   border-radius: 6px;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.2);
 }
 
 .btn-cta-checkout:hover {
-  background: var(--eco-primary-hover);
+  box-shadow: 0 5px 15px rgba(2, 132, 199, 0.35);
+  transform: translateY(-1px);
 }
 
 .btn-cta-wa {
-  border: 1px solid var(--eco-primary);
-  color: var(--eco-primary);
-  background: transparent;
+  background: var(--eco-wa);
+  color: #FFFFFF;
   text-align: center;
-  padding: 8px;
+  padding: 7px;
   border-radius: 6px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-decoration: none;
+  transition: background 0.2s ease;
 }
 
 .btn-cta-wa:hover {
-  background: #E8F7F0;
+  background: #128C7E;
 }
 
-/* State Kosong */
+/* 7. POP-UP MODAL OVERLAY STYLING */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 25, 47, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.modal-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  animation: modalSlideUp 0.25s ease-out;
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--eco-text-muted);
+  cursor: pointer;
+}
+
+.modal-brand-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--eco-cyan);
+  text-transform: uppercase;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 6px 0 10px 0;
+  color: var(--eco-dark);
+}
+
+.modal-price {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--eco-cyan);
+  margin-bottom: 16px;
+}
+
+.modal-info-table {
+  background: #F8FAFC;
+  border: 1px solid var(--eco-border);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.modal-info-table div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-desc-box h4 {
+  margin: 0 0 6px 0;
+  font-size: 0.88rem;
+  color: var(--eco-dark);
+}
+
+.modal-desc-box p {
+  font-size: 0.85rem;
+  color: var(--eco-text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-actions .btn-cta-checkout,
+.modal-actions .btn-cta-wa {
+  flex: 1;
+}
+
+/* STATE KOSONG */
 .ecom-empty-state {
   text-align: center;
   padding: 60px 20px;
@@ -331,19 +523,10 @@ body {
   border: 1px solid var(--eco-border);
 }
 
-/* Responsif */
+/* RESPONSIF */
 @media (max-width: 992px) {
-  .ecom-grid-system {
-    grid-template-columns: 1fr; /* Sidebar pindah ke atas/hilang di mobile */
-  }
-  .ecom-sidebar {
-    position: static;
-    max-height: 300px; /* Scroll internal di mobile */
-  }
-  .ecom-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* 2 kolom di HP */
-  }
-  .card-slider {
-    aspect-ratio: 4 / 5; /* Sedikit lebih tinggi di HP */
-  }
+  .ecom-grid-system { grid-template-columns: 1fr; }
+  .ecom-sidebar { position: static; max-height: 250px; }
+  .ecom-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .modal-actions { flex-direction: column; }
 }
