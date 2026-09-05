@@ -138,15 +138,12 @@
     </div>
   </main>
 
-  <!-- POP-UP MODAL DETAIL PRODUK (HIDDEN BY DEFAULT) -->
-  <div id="detailModal" class="modal-overlay" style="display: none;" onclick="closeDetailModal(event)">
-    <div class="modal-card" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeDetailModal()">&times;</button>
-      <div id="modalBody">
-        <!-- Rendered via script.js -->
-      </div>
-    </div>
+<!-- POP-UP MODAL DETAIL PRODUK -->
+<div id="detailModal" class="modal-overlay" style="display: none;" onclick="closeDetailModal(event)">
+  <div class="modal-card" onclick="event.stopPropagation()" id="modalBody">
+    <!-- Rendered via script.js -->
   </div>
+</div>
 
   <!-- FOOTER GLOBAL -->
   <div id="app-footer"></div>
