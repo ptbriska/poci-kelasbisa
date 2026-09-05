@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Convergence Month — ELEMENTA ACADEMIC</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- LUXURY RPG CONVERGENCE STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.88);
+      --rpg-gold: #F59E0B;
+      --rpg-gold-bright: #FCD34D;
+      --rpg-cyan: #00B4D8;
+      --rpg-neon: #38BDF8;
+      --rpg-border-gold: rgba(245, 158, 11, 0.35);
+      --rpg-glow-gold: rgba(245, 158, 11, 0.15);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-gold);
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(245, 158, 11, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.4) 0%, rgba(0, 180, 216, 0.4) 100%);
+      border: 1px solid var(--rpg-gold);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+    }
+
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.22) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 4rem 0 2.5rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border-gold);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--rpg-gold-bright);
+      background: var(--rpg-glow-gold);
+      border: 1px solid var(--rpg-gold);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.75rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FCD34D 50%, var(--rpg-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* OVERVIEW & META GRID */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    .hud-card {
+      background: var(--rpg-card-bg);
+      border: 1.5px solid var(--rpg-border-gold);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    /* PHASE CARDS GRID */
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      margin: 1.5rem 0 3rem 0;
+    }
+
+    .phase-card {
+      background: rgba(10, 25, 47, 0.95);
+      border: 2px solid var(--rpg-gold);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 12px 35px rgba(245, 158, 11, 0.15);
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .phase-badge {
+      font-family: monospace;
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: var(--rpg-gold-bright);
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--rpg-gold);
+      padding: 0.2rem 0.8rem;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+
+    /* STANDAR AVATAR TABLE STYLING */
+    .table-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid var(--rpg-gold);
+      border-radius: 24px;
+      padding: 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .matrix-table th {
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--rpg-gold-bright);
+      padding: 1rem 1.2rem;
+      font-weight: 900;
+      border-bottom: 2px solid var(--rpg-gold);
+      text-transform: uppercase;
+    }
+
+    .matrix-table td {
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid rgba(245, 158, 11, 0.12);
+      color: #CBD5E1;
+    }
+
+    /* AVATAR DAY BANNER */
+    .avatar-day-card {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(0, 180, 216, 0.15) 50%, rgba(10, 25, 47, 0.98) 100%);
+      border: 2px solid var(--rpg-gold-bright);
+      border-radius: 24px;
+      padding: 2.2rem;
+      margin: 3rem 0;
+      box-shadow: 0 15px 45px rgba(245, 158, 11, 0.25);
+    }
+
+    /* TARGET CHIPS */
+    .target-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .target-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    @media (max-width: 992px) {
+      .overview-grid { grid-template-columns: 1fr; }
+      .phase-grid { grid-template-columns: 1fr; }
+      .elementa-menu { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../../RPG Elementa-Universe/">Cara Bermain</a></li>
+        <li><a href="../../Elementa World/">Dunia Elementa</a></li>
+        <li><a href="../" class="active">Sistem Akademik</a></li>
+        <li><a href="../../program/">Katalog & Harga</a></li>
+        <li><a href="../../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN CONVERGENCE MONTH -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <a href="../" style="color: var(--rpg-gold-bright); font-weight: 800; font-size: 0.82rem; text-decoration: none;">← Kembali ke Katalog Sistem Akademik</a>
+        <div style="margin-top: 0.8rem;">
+          <span class="hud-chip">// FINAL ARC // THE CONVERGENCE MONTH</span>
+          <h1 class="rpg-title" id="page-title">The Convergence Month</h1>
+          <p style="color: #94A3B8; font-size: 1rem; max-width: 820px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+            Memuat evaluasi puncak integrasi multidisiplin dan penobatan Avatar...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- OVERVIEW GRID -->
+        <div class="overview-grid">
+          <div class="hud-card">
+            <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.6rem;">⚔️ Puncak Penyatuan Elemen</h2>
+            <p style="font-size: 0.92rem; color: #CBD5E1; line-height: 1.8; margin: 0;" id="overview-filosofi">
+              Memuat filosofi The Convergence...
+            </p>
+          </div>
+
+          <div class="hud-card">
+            <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 1rem;">🏰 Meta Final Arc</h2>
+            <div style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.8;">
+              <div style="margin-bottom: 0.4rem;"><strong>Periode:</strong> <span id="meta-periode" style="color: var(--rpg-gold-bright);">-</span></div>
+              <div style="margin-bottom: 0.4rem;"><strong>Status Arc:</strong> <span id="meta-status" style="color: var(--rpg-cyan);">-</span></div>
+              <div style="margin-bottom: 0.4rem;"><strong>Lokasi Utama:</strong> <span id="meta-lokasi">-</span></div>
+              <div><strong>Fokus Evaluasi:</strong> <span style="color: var(--rpg-gold-bright);">Integrasi Multidisiplin Utuh</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TWO MAIN PHASES GRID -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">TWO FINAL PHASES</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Tahapan Puncak Season</h2>
+        </div>
+        <div class="phase-grid" id="phase-grid-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- STANDAR AVATAR TABLE -->
+        <div class="table-card">
+          <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">👑 Standar Kualifikasi Avatar of Elementa</h2>
+          <p style="color: #94A3B8; font-size: 0.88rem; margin-bottom: 1.5rem;" id="avatar-catatan">
+            Gelar Avatar diberikan mutlak berdasarkan pemenuhan standar tertinggi di seluruh elemen.
+          </p>
+          
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 50%;">KOMPONEN ELEMEN / KRITERIA</th>
+                <th style="width: 50%;">STANDAR MINIMAL KELULUSAN (EP)</th>
+              </tr>
+            </thead>
+            <tbody id="avatar-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- AVATAR DAY BANNER -->
+        <div class="avatar-day-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+              <span class="hud-chip" style="margin-bottom: 0.4rem;">THE MOST SACRED DAY</span>
+              <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin: 0;">Avatar Day (22 April)</h2>
+            </div>
+            <div style="font-size: 0.9rem; color: var(--rpg-gold-bright); font-weight: 800; font-style: italic;" id="avatar-day-momentum">
+              Bertepatan dengan Earth Day
+            </div>
+          </div>
+          <p style="font-size: 0.92rem; color: #CBD5E1; line-height: 1.7; margin-bottom: 1.5rem;" id="avatar-day-filosofi">
+            Memuat filosofi Avatar Day...
+          </p>
+
+          <div style="font-size: 0.88rem; font-weight: 900; color: var(--rpg-gold-bright); text-transform: uppercase; margin-bottom: 0.8rem;">Agenda Utama Upacara Sakral:</div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem;" id="avatar-day-agenda">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- TARGET AKHIR CONVERGENCE -->
+        <div class="hud-card" style="margin-bottom: 4rem;">
+          <h3 style="font-size: 1.2rem; color: var(--rpg-gold-bright); font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">🎓 Target Akhir The Convergence Month</h3>
+          <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 1rem;">Capaian holistik yang diraih oleh warga Elementa di akhir Season.</p>
+          <div class="target-wrapper" id="target-target">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          if (data.overview) {
+            document.getElementById("overview-filosofi").innerText = data.overview.filosofi;
+            document.getElementById("meta-periode").innerText = data.overview.periode;
+            document.getElementById("meta-status").innerText = data.overview.status;
+            document.getElementById("meta-lokasi").innerText = data.overview.lokasi_utama;
+          }
+
+          if (data.standar_avatar) {
+            document.getElementById("avatar-catatan").innerText = data.standar_avatar.catatan;
+            renderAvatarTable(data.standar_avatar.syarat || []);
+          }
+
+          if (data.avatar_day) {
+            document.getElementById("avatar-day-momentum").innerText = `Bertepatan dengan ${data.avatar_day.momentum} (${data.avatar_day.tanggal})`;
+            document.getElementById("avatar-day-filosofi").innerText = data.avatar_day.filosofi;
+            renderAvatarAgenda(data.avatar_day.agenda || []);
+          }
+
+          renderPhaseGrid(data.fase_konvergensi || []);
+          renderTargetList(data.target_akhir || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderPhaseGrid(list) {
+      const target = document.getElementById("phase-grid-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(p => {
+        let aktHtml = "";
+        (p.aktivitas || []).forEach(a => {
+          aktHtml += `<li style="margin-bottom:0.4rem; font-size:0.85rem; color:#CBD5E1;"><span style="color:var(--rpg-cyan);">•</span> ${a}</li>`;
+        });
+
+        let gelarHtml = "";
+        (p.gelar_diperebutkan || []).forEach(g => {
+          gelarHtml += `<span style="font-size:0.78rem; font-weight:800; color:var(--rpg-gold-bright); background:rgba(245,158,11,0.12); padding:0.2rem 0.6rem; border-radius:6px; border:1px solid rgba(245,158,11,0.3);">${g}</span> `;
+        });
+
+        html += `
+          <div class="phase-card">
+            <div>
+              <span class="phase-badge">${p.fase} • ${p.periode}</span>
+              <h3 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin: 0 0 0.5rem 0;">${p.nama}</h3>
+              <p style="font-size: 0.88rem; color: var(--rpg-cyan); font-weight: 800; margin-bottom: 1rem;">${p.tujuan}</p>
+              <p style="font-size: 0.85rem; color: #94A3B8; line-height: 1.6; margin-bottom: 1rem;">"${p.filosofi}"</p>
+              
+              <div style="font-size: 0.82rem; font-weight: 900; color: #FFFFFF; text-transform: uppercase; margin-bottom: 0.5rem;">Aktivitas Utama:</div>
+              <ul style="list-style:none; padding:0; margin:0 0 1.2rem 0;">
+                ${aktHtml}
+              </ul>
+            </div>
+
+            <div>
+              <div style="font-size: 0.8rem; font-weight: 900; color: var(--rpg-gold-bright); margin-bottom: 0.4rem; text-transform: uppercase;">Gelar yang Diperebutkan:</div>
+              <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                ${gelarHtml}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderAvatarTable(list) {
+      const target = document.getElementById("avatar-table-body");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(row => {
+        html += `
+          <tr>
+            <td><strong style="color: #FFFFFF;">${row.elemen}</strong></td>
+            <td><strong style="color: var(--rpg-gold-bright);">${row.standar}</strong></td>
+          </tr>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderAvatarAgenda(list) {
+      const target = document.getElementById("avatar-day-agenda");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(245,158,11,0.2); padding: 0.75rem 1rem; border-radius: 10px; font-size: 0.85rem; color: #E2E8F0;">
+            <span style="color: var(--rpg-gold-bright);">✦</span> ${item}
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderTargetList(list) {
+      const target = document.getElementById("target-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(t => {
+        html += `
+          <div class="target-item">
+            <span style="color: var(--rpg-gold-bright); font-weight: 900;">🏆</span>
+            <span>${t}</span>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
