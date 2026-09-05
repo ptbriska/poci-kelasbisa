@@ -1,0 +1,19 @@
+{
+  "nama_kegiatan": "Bootcamp Intensive Fullstack Web Development",
+  "kode_kegiatan": "EVENT_BEBAS_123",
+  "periode_kegiatan": "01/12/2026 – 31/12/2026",
+  "bulan_kegiatan": "Desember",
+  "afiliasi": "Kelas Bisa Skill",
+  "sub_brand": "Workit",
+  "jenis_kegiatan": "Bootcamp",
+  "format_platform": "Extra Plato",
+  "format_waktu": "Bootcamp Premium",
+  "status": "Open",
+  "deskripsi_singkat": "Pelatihan intensif 1 bulan membangun portofolio aplikasi web modern dari nol hingga siap dilirik recruiter perusahaan IT terkemuka.",
+  "link_checkout": "https://checkout.kelasbisaskill.com/event-bebas-123",
+  "link_wa_cs": "wa.me/082268118842",
+  "poster": [
+    "info-event/EVENT_BEBAS_123-1.png",
+    "info-event/EVENT_BEBAS_123-2.png"
+  ]
+}
