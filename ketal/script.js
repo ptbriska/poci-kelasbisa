@@ -234,7 +234,7 @@ function changeSlide(cardIdx, direction, totalImgs) {
   if (nextImg) nextImg.classList.add('active');
 }
 
-// 8. POP-UP MODAL OVERLAY ENGINE KETAL (FIXED CLOSE BTN & SCROLL)
+// 8. POP-UP MODAL OVERLAY ENGINE KETAL (FIXED CLOSE CLICK)
 function openDetailModal(kodeProduk) {
   const item = allEventsData.find(e => e.kode_produk === kodeProduk);
   if (!item) return;
@@ -269,8 +269,8 @@ function openDetailModal(kodeProduk) {
 
     if (rawImages.length > 1) {
       modalSliderContent += `
-        <button class="modal-slider-btn prev" onclick="changeModalSlide(-1, ${rawImages.length})">❮</button>
-        <button class="modal-slider-btn next" onclick="changeModalSlide(1, ${rawImages.length})">❯</button>
+        <button type="button" class="modal-slider-btn prev" onclick="changeModalSlide(-1, ${rawImages.length})">❮</button>
+        <button type="button" class="modal-slider-btn next" onclick="changeModalSlide(1, ${rawImages.length})">❯</button>
       `;
     }
   } else {
@@ -308,20 +308,17 @@ function openDetailModal(kodeProduk) {
     });
   }
 
-  // D. Render Modal Content (Tombol Close Di dalam Modal Header)
+  // D. Render Modal Content
   modalBody.innerHTML = `
-    <button class="modal-close-btn" onclick="closeDetailModal()">&times;</button>
+    <button type="button" class="modal-close-btn" id="btnCloseModal" aria-label="Tutup">&times;</button>
     <div class="ig-modal-grid">
 
-      <!-- SISI KIRI: POSTER MEDIA -->
       <div class="ig-modal-media">
         ${modalSliderContent}
       </div>
 
-      <!-- SISI KANAN: PANEL DETAIL, VIDEO TEASER & DISKUSI -->
       <div class="ig-modal-side">
 
-        <!-- HEADER BRAND -->
         <div class="ig-side-header">
           <div class="ig-user-info">
             <span class="ig-avatar">🎥</span>
@@ -332,7 +329,6 @@ function openDetailModal(kodeProduk) {
           </div>
         </div>
 
-        <!-- AREA SCROLLABLE INTERNAL -->
         <div class="ig-side-body">
           <h2 class="ig-event-title">${item.nama_produk}</h2>
           <div class="ig-price-tag">${priceDisplay}</div>
@@ -360,18 +356,16 @@ function openDetailModal(kodeProduk) {
           </div>
         </div>
 
-        <!-- FOOTER PINNED DI BAWAH -->
         <div class="ig-side-footer">
 
           <div class="ig-action-bar">
-            <button class="btn-ig-like ${likesData.isLiked ? 'liked' : ''}" id="likeBtn" onclick="toggleLike('${kodeProduk}')">
+            <button type="button" class="btn-ig-like ${likesData.isLiked ? 'liked' : ''}" id="likeBtn" onclick="toggleLike('${kodeProduk}')">
               <span id="likeIcon">${likesData.isLiked ? '❤️' : '🤍'}</span>
               <span id="likeCount">${likesData.count}</span> Suka
             </button>
             <span class="ig-wa-cs-link"><a href="${waUrl}" target="_blank" rel="noopener">💬 Tanya CS via WA</a></span>
           </div>
 
-          <!-- INPUT KOMENTAR -->
           <form class="ig-comment-form" onsubmit="addComment(event, '${kodeProduk}')">
             <input type="text" id="commentNameInput" placeholder="Nama..." required class="ig-input-name">
             <input type="text" id="commentTextInput" placeholder="Pertanyaan..." required class="ig-input-text">
@@ -387,6 +381,15 @@ function openDetailModal(kodeProduk) {
 
     </div>
   `;
+
+  // Explicit Event Listener untuk memastikan klik tombol close pasti tereksekusi
+  const btnClose = document.getElementById('btnCloseModal');
+  if (btnClose) {
+    btnClose.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeDetailModal();
+    });
+  }
 
   if (modal) modal.style.display = 'flex';
 }
