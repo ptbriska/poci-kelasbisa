@@ -1,0 +1,21 @@
+{
+  "nama_produk": "Fullstack Web Developer: Dari Zero Sampai Hero",
+  "kode_produk": "KTL-WEB-01",
+  "kategori": "Web Development",
+  "sub_brand": "Workit",
+  "afiliasi": "Kelas Bisa Skill",
+  "level": "newbie",
+  "format_waktu": "Self-Paced Learning",
+  "total_durasi": "24 Jam 30 Menit",
+  "total_modul": "18 Bab (112 Video)",
+  "trainer": "Rian Ardiansyah, S.Kom.",
+  "harga": 149000,
+  "deskripsi": "Pelajari fundamental HTML, CSS, JavaScript, hingga Node.js dan deployment database untuk membangun aplikasi web modern yang responsive dan scalable.",
+  "link_video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  "link_checkout": "https://checkout.kelasbisa.com/ktl-web-01",
+  "link_wa": "wa.me/082268118842",
+  "poster": [
+    "info-ketal/KTL-WEB-01-1.png",
+    "info-ketal/KTL-WEB-01-2.png"
+  ]
+}
