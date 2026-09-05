@@ -3,25 +3,25 @@
    ========================================================= */
 
 :root {
-  /* Palet Glamour Neon Cyan & Dark Theme */
-  --eco-cyan: #00f2fe;          /* Cyan Neon Electric */
-  --eco-cyan-glow: #4facfe;     /* Gradient Blue-Cyan */
+  /* Palet Clean Cyan & Light Theme */
+  --eco-cyan: #0284C7;          /* Cyan / Pacific Blue */
+  --eco-cyan-glow: #0369A1;
   --eco-cyan-dark: #0088a9;
-  --eco-cyan-light: rgba(0, 242, 254, 0.12);
+  --eco-cyan-light: #E0F2FE;
   --eco-green: #10B981;
   --eco-wa: #25D366;
-  --eco-dark: #090d16;          /* Deep Dark Background */
-  --eco-dark-card: #111827;     /* Dark Surface Card */
-  --eco-bg: #0b0f19;            /* Overall Dark Cyber Background */
-  --eco-card: #ffffff;          /* Light Contrast Surface */
-  --eco-text-main: #f8fafc;     /* Bright Main Text */
-  --eco-text-dark: #0f172a;
-  --eco-text-muted: #94a3b8;
-  --eco-border: #1e293b;        /* Subtle Cyber Border */
-  --eco-border-glow: rgba(0, 242, 254, 0.4);
+  --eco-dark: #0A192F;
+  --eco-dark-card: #FFFFFF;     /* Ubah ke Putih */
+  --eco-bg: #F8FAFC;            /* Ubah ke Light Gray Bersih */
+  --eco-card: #FFFFFF;
+  --eco-text-main: #0F172A;     /* Teks Gelap Solid */
+  --eco-text-dark: #0F172A;
+  --eco-text-muted: #64748B;
+  --eco-border: #E2E8F0;        /* Border Ringan */
+  --eco-border-glow: rgba(2, 132, 199, 0.4);
   --eco-radius: 12px;
-  --eco-shadow-neon: 0 0 20px rgba(0, 242, 254, 0.25);
-  --eco-shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --eco-shadow-neon: 0 4px 15px rgba(0, 0, 0, 0.06);
+  --eco-shadow-md: 0 10px 25px rgba(2, 132, 199, 0.12);
 }
 
 body {
