@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Month — ELEMENTA ACADEMIC</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- DARK RPG FIRE MONTH STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-crimson: #DC2626;
+      --rpg-solar-red: #EF4444;
+      --rpg-light-red: #F87171;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(220, 38, 38, 0.3);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-crimson);
+      box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(220, 38, 38, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.4) 0%, rgba(245, 158, 11, 0.4) 100%);
+      border: 1px solid var(--rpg-crimson);
+      box-shadow: 0 0 12px rgba(220, 38, 38, 0.4);
+    }
+
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(220, 38, 38, 0.25) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 3.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--rpg-light-red);
+      background: rgba(220, 38, 38, 0.15);
+      border: 1px solid var(--rpg-crimson);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 12px rgba(220, 38, 38, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--rpg-light-red) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* OVERVIEW & META GRID */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    .hud-card {
+      background: var(--rpg-card-bg);
+      border: 1.5px solid var(--rpg-border);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* FOKUS KEILMUAN GRID */
+    .keilmuan-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 1.2rem 0 2.5rem 0;
+    }
+
+    .keilmuan-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(220, 38, 38, 0.3);
+      padding: 0.85rem 1rem;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #E2E8F0;
+      text-align: center;
+    }
+
+    /* BENDING SPESIALISASI GRID */
+    .bending-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin: 1.5rem 0;
+    }
+
+    .bending-card {
+      background: rgba(10, 25, 47, 0.9);
+      border: 1.5px solid var(--rpg-crimson);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    /* QUEST GRID */
+    .quest-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin: 1.5rem 0;
+    }
+
+    .quest-card {
+      background: var(--rpg-card-bg);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+    }
+
+    /* EXPEDITION BANNER */
+    .expedition-card {
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.2) 0%, rgba(10, 25, 47, 0.95) 100%);
+      border: 2px solid var(--rpg-crimson);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 12px 35px rgba(220, 38, 38, 0.2);
+    }
+
+    /* BADGE CHIPS */
+    .badge-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .badge-chip {
+      background: rgba(220, 38, 38, 0.15);
+      border: 1px solid var(--rpg-crimson);
+      color: var(--rpg-light-red);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 992px) {
+      .overview-grid { grid-template-columns: 1fr; }
+      .keilmuan-grid { grid-template-columns: repeat(2, 1fr); }
+      .bending-grid { grid-template-columns: 1fr; }
+      .quest-grid { grid-template-columns: 1fr; }
+      .elementa-menu { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .keilmuan-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../../RPG Elementa-Universe/">Cara Bermain</a></li>
+        <li><a href="../../Elementa World/">Dunia Elementa</a></li>
+        <li><a href="../" class="active">Sistem Akademik</a></li>
+        <li><a href="../../program/">Katalog & Harga</a></li>
+        <li><a href="../../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN FIRE MONTH -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <a href="../" style="color: var(--rpg-light-red); font-weight: 800; font-size: 0.82rem; text-decoration: none;">← Kembali ke Katalog Sistem Akademik</a>
+        <div style="margin-top: 0.8rem;">
+          <span class="hud-chip">// ACADEMIC PHASE 04 // FIRE MONTH</span>
+          <h1 class="rpg-title" id="page-title">Fire Month</h1>
+          <p style="color: #94A3B8; font-size: 1rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+            Memuat kurikulum & eksplorasi astronomi antariksa...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- OVERVIEW GRID -->
+        <div class="overview-grid">
+          <div class="hud-card">
+            <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.6rem;">🔥 Filosofi Pembelajaran</h2>
+            <p style="font-size: 0.92rem; color: #CBD5E1; line-height: 1.8; margin: 0;" id="overview-filosofi">
+              Memuat filosofi Fire Month...
+            </p>
+          </div>
+
+          <div class="hud-card">
+            <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 1rem;">🏛️ Meta Fase</h2>
+            <div style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.8;">
+              <div style="margin-bottom: 0.4rem;"><strong>Periode:</strong> <span id="meta-periode" style="color: var(--rpg-gold);">-</span></div>
+              <div style="margin-bottom: 0.4rem;"><strong>Nation Host:</strong> <span id="meta-host">-</span></div>
+              <div style="margin-bottom: 0.4rem;"><strong>Akademi Utama:</strong> <span id="meta-akademi">-</span></div>
+              <div><strong>Elemen Domain:</strong> <span id="meta-elemen" style="color: var(--rpg-light-red);">-</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOKUS KEILMUAN -->
+        <div style="text-align: center; margin-top: 3rem;">
+          <span class="hud-chip">ASTRONOMICAL CURRICULUM</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Fokus Keilmuan Antariksa</h2>
+        </div>
+        <div class="keilmuan-grid" id="keilmuan-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- KOMPETENSI UTAMA -->
+        <div class="hud-card" style="margin-bottom: 3rem;">
+          <h3 style="font-size: 1.2rem; color: var(--rpg-light-red); font-weight: 900; margin-bottom: 0.8rem; text-transform: uppercase;">🎯 Target Kompetensi Utama:</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: #CBD5E1; line-height: 1.7;" id="kompetensi-target">
+            <!-- Rendered via JS -->
+          </ul>
+        </div>
+
+        <!-- BENDING SPESIALISASI -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">SPECIALIZATION MASTERY</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Deepening & Mix Bending</h2>
+        </div>
+        <div class="bending-grid" id="deepening-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(220, 38, 38, 0.2); border-radius: 16px; padding: 1.2rem 1.8rem; margin-bottom: 3.5rem;">
+          <div style="font-size: 0.9rem; font-weight: 900; color: var(--rpg-gold); margin-bottom: 0.5rem;">🔀 Mix Bending Terkait:</div>
+          <div style="font-size: 0.88rem; color: #CBD5E1;" id="mix-target">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- QUEST SISTEM -->
+        <div style="text-align: center;">
+          <span class="hud-chip">PHASE EVALUATION</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Quest & Misi Fire Month</h2>
+        </div>
+        <div class="quest-grid" id="quest-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- EXPEDITION EVENT BANNER -->
+        <div class="expedition-card">
+          <span class="hud-chip" style="margin-bottom: 0.4rem;">GRAND EXPEDITION</span>
+          <h3 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin: 0 0 0.5rem 0;" id="expedition-nama">The Great Cosmic Expedition</h3>
+          <p style="font-size: 0.92rem; color: #CBD5E1; line-height: 1.6; margin: 0;" id="expedition-desc">
+            Memuat deskripsi ekspedisi...
+          </p>
+        </div>
+
+        <!-- ACHIEVEMENT BADGES -->
+        <div class="hud-card" style="margin-bottom: 4rem;">
+          <h3 style="font-size: 1.2rem; color: var(--rpg-gold); font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">🏆 Achievement Badges</h3>
+          <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 1rem;">Gelar pencapaian resmi yang dapat diperoleh selama Fire Month.</p>
+          <div class="badge-wrapper" id="badge-target">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          if (data.overview) {
+            document.getElementById("overview-filosofi").innerText = data.overview.filosofi;
+            document.getElementById("meta-periode").innerText = data.overview.periode;
+            document.getElementById("meta-host").innerText = data.overview.nation_host;
+            document.getElementById("meta-akademi").innerText = data.overview.akademi;
+            document.getElementById("meta-elemen").innerText = data.overview.elemen;
+          }
+
+          if (data.quest_sistem?.expedition_event) {
+            document.getElementById("expedition-nama").innerText = data.quest_sistem.expedition_event.nama;
+            document.getElementById("expedition-desc").innerText = data.quest_sistem.expedition_event.desc;
+          }
+
+          renderKeilmuanGrid(data.fokus_keilmuan || []);
+          renderKompetensiList(data.kompetensi_utama || []);
+          renderDeepeningGrid(data.spesialisasi_bending?.deepening || []);
+          renderMixList(data.spesialisasi_bending?.mix_bending || []);
+          renderQuestGrid(data.quest_sistem?.utama || []);
+          renderBadgeChips(data.achievement_badges || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderKeilmuanGrid(list) {
+      const target = document.getElementById("keilmuan-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(k => {
+        html += `<div class="keilmuan-item">${k}</div>`;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderKompetensiList(list) {
+      const target = document.getElementById("kompetensi-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `<li style="margin-bottom:0.5rem;"><span style="color:var(--rpg-light-red);">✓</span> ${item}</li>`;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderDeepeningGrid(list) {
+      const target = document.getElementById("deepening-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(b => {
+        html += `
+          <div class="bending-card">
+            <div style="font-size: 1.1rem; font-weight: 900; color: var(--rpg-light-red); margin-bottom: 0.4rem;">${b.nama}</div>
+            <div style="font-size: 0.85rem; color: #CBD5E1; line-height: 1.5;">${b.fokus}</div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderMixList(list) {
+      const target = document.getElementById("mix-target");
+      if (!target || !list) return;
+
+      target.innerText = list.join(" • ");
+    }
+
+    function renderQuestGrid(list) {
+      const target = document.getElementById("quest-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(q => {
+        html += `
+          <div class="quest-card">
+            <div style="font-size: 1.1rem; font-weight: 900; color: var(--rpg-gold); margin-bottom: 0.3rem;">${q.nama}</div>
+            <div style="font-size: 0.85rem; color: #CBD5E1; line-height: 1.5;">${q.desc}</div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderBadgeChips(list) {
+      const target = document.getElementById("badge-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(b => {
+        html += `<span class="badge-chip">🏅 ${b}</span>`;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
