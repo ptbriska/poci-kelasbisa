@@ -1,0 +1,61 @@
+{
+  "nama_acara": "Pilar Olympiad Challenge Indonesia (EPS 001)",
+  "tanggal_waktu": "Senin, 14 September 2026 | 07.00 – 22.00 WITA",
+  "platform": "CBT (Computer Based Test) via regis.briska.co.id",
+  "kode_event": "PLR-POCI-001",
+  "deskripsi_singkat": "Uji kemampuan akademikmu di tingkat nasional dengan sistem CBT yang dilengkapi Rapor Analisa Statistik Peserta.",
+  "kategori_peserta": [
+    {
+      "tingkat": "SMA/MA/Sederajat",
+      "bidang": [
+        {"mapel": "Kimia", "slug": "kimia-sma"},
+        {"mapel": "Biologi", "slug": "biologi-sma"},
+        {"mapel": "Informatika", "slug": "informatika-sma"},
+        {"mapel": "Fisika", "slug": "fisika-sma"},
+        {"mapel": "Kebumian", "slug": "kebumian-sma"},
+        {"mapel": "Astronomi", "slug": "astronomi-sma"},
+        {"mapel": "Geografi", "slug": "geografi-sma"},
+        {"mapel": "Ekonomi", "slug": "ekonomi-sma"},
+        {"mapel": "AI", "slug": "ai-sma"},
+        {"mapel": "Matematika", "slug": "matematika-sma"},
+        {"mapel": "Nuklir", "slug": "nuklir-sma"},
+        {"mapel": "Linguistik", "slug": "linguistik-sma"},
+        {"mapel": "Sejarah", "slug": "sejarah-sma"}
+      ]
+    },
+    {
+      "tingkat": "SMP/Sederajat",
+      "bidang": [
+        {"mapel": "IPA", "slug": "ipa-smp"},
+        {"mapel": "IPS", "slug": "ips-smp"},
+        {"mapel": "Matematika", "slug": "matematika-smp"}
+      ]
+    },
+    {
+      "tingkat": "Mahasiswa S1",
+      "bidang": [
+        {"mapel": "Metodologi & Statistik Penelitian", "slug": "metodologi-s1"}
+      ]
+    }
+  ],
+  "syarat_pendaftaran": [
+    "Like postingan event di Instagram Kelas Bisa.",
+    "Share poster ke Story IG & 5 grup WhatsApp/Telegram.",
+    "Komen & tag 10 teman di kolom komentar.",
+    "Follow Instagram @kelasbisa & @pilar.juara."
+  ],
+  "jadwal": {
+    "pendaftaran": "1 – 13 September 2026",
+    "pengerjaan": "14 September 2026 (07.00 – 22.00 WITA)"
+  },
+  "fasilitas": [
+    "Rekap skor & jawaban benar/salah secara instan.",
+    "Akses kunci jawaban & pembahasan lengkap (S&K berlaku).",
+    "Rapor Analisa Statistik Peserta (Analisa kekuatan materi, kecepatan menjawab, dan akurasi)."
+  ],
+  "kontak": {
+    "website": "kelasbisa.com/poci",
+    "wa": "0857 11000 363",
+    "ig": "@kelasbisa | @pilar.juara"
+  }
+}
