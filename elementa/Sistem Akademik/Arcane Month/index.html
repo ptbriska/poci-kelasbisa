@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcane Month — ELEMENTA ACADEMIC</title>
+  
+  <!-- Favicon & CSS Master Global + Master Elementa -->
+  <link rel="icon" href="../../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- DARK RPG ARCANE MONTH STYLESHEET LOKAL -->
+  <style>
+    :root {
+      --rpg-dark-bg: #060E1A;
+      --rpg-card-bg: rgba(10, 25, 47, 0.85);
+      --rpg-purple: #7C3AED;
+      --rpg-light-purple: #A855F7;
+      --rpg-gold: #F59E0B;
+      --rpg-border: rgba(124, 58, 237, 0.35);
+    }
+
+    body {
+      background-color: var(--rpg-dark-bg);
+      color: #E2E8F0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .elementa-subnav {
+      background: rgba(6, 14, 26, 0.95);
+      border-bottom: 2px solid var(--rpg-purple);
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 90;
+    }
+
+    .elementa-subnav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 54px;
+    }
+
+    .elementa-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
+    }
+
+    .elementa-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .elementa-menu a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+
+    .elementa-menu a:hover, .elementa-menu a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.4) 0%, rgba(245, 158, 11, 0.4) 100%);
+      border: 1px solid var(--rpg-purple);
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+    }
+
+    .rpg-hero {
+      background: radial-gradient(circle at 50% 20%, rgba(124, 58, 237, 0.25) 0%, rgba(6, 14, 26, 1) 80%);
+      padding: 3.5rem 0 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--rpg-border);
+    }
+
+    .hud-chip {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: #C084FC;
+      background: rgba(124, 58, 237, 0.15);
+      border: 1px solid var(--rpg-purple);
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.3);
+    }
+
+    .rpg-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FFFFFF 0%, #C084FC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* OVERVIEW & META GRID */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    .hud-card {
+      background: var(--rpg-card-bg);
+      border: 1.5px solid var(--rpg-border);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* JALUR ARCANE GRID */
+    .jalur-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 1.5rem 0 2.5rem 0;
+    }
+
+    .jalur-card {
+      background: rgba(10, 25, 47, 0.9);
+      border: 1.5px solid var(--rpg-purple);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    /* TABLE STYLING */
+    .table-card {
+      background: var(--rpg-card-bg);
+      border: 2px solid var(--rpg-purple);
+      border-radius: 24px;
+      padding: 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      overflow-x: auto;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    .matrix-table th {
+      background: rgba(124, 58, 237, 0.2);
+      color: #C084FC;
+      padding: 1rem;
+      font-weight: 900;
+      border-bottom: 2px solid var(--rpg-purple);
+      text-transform: uppercase;
+    }
+
+    .matrix-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+      color: #CBD5E1;
+    }
+
+    /* QUEST GRID */
+    .quest-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin: 1.5rem 0;
+    }
+
+    .quest-card {
+      background: var(--rpg-card-bg);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+    }
+
+    /* EXPEDITION BANNER */
+    .expedition-card {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(10, 25, 47, 0.95) 100%);
+      border: 2px solid var(--rpg-purple);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 12px 35px rgba(124, 58, 237, 0.2);
+    }
+
+    /* BADGE CHIPS */
+    .badge-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .badge-chip {
+      background: rgba(124, 58, 237, 0.15);
+      border: 1px solid var(--rpg-purple);
+      color: #C084FC;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 992px) {
+      .overview-grid { grid-template-columns: 1fr; }
+      .jalur-grid { grid-template-columns: 1fr; }
+      .quest-grid { grid-template-columns: 1fr; }
+      .elementa-menu { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. WADAH INJEKSI HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- 2. SUB-HEADER INTERNAL ELEMENTA (BARIS 2) -->
+  <nav class="elementa-subnav">
+    <div class="elementa-subnav-container">
+      <a href="../" class="elementa-brand">
+        <span class="elementa-icon">🔮</span>
+        <span class="elementa-name">ELEMENTA</span>
+      </a>
+      <ul class="elementa-menu">
+        <li><a href="../">Beranda</a></li>
+        <li><a href="../../Elementa-Universe/">Pengantar</a></li>
+        <li><a href="../../RPG Elementa-Universe/">Cara Bermain</a></li>
+        <li><a href="../../Elementa World/">Dunia Elementa</a></li>
+        <li><a href="../" class="active">Sistem Akademik</a></li>
+        <li><a href="../../program/">Katalog & Harga</a></li>
+        <li><a href="../../Avatar-Elementa/">Hall of Avatar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN ARCANE MONTH -->
+  <main>
+    <section class="rpg-hero">
+      <div class="elementa-container">
+        <a href="../" style="color: #C084FC; font-weight: 800; font-size: 0.82rem; text-decoration: none;">← Kembali ke Katalog Sistem Akademik</a>
+        <div style="margin-top: 0.8rem;">
+          <span class="hud-chip">// ACADEMIC PHASE 05 // ARCANE MONTH</span>
+          <h1 class="rpg-title" id="page-title">Arcane Month</h1>
+          <p style="color: #94A3B8; font-size: 1rem; max-width: 780px; margin: 0 auto; line-height: 1.7;" id="page-desc">
+            Memuat kurikulum & fondasi analisis multidisiplin...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pilar-section">
+      <div class="elementa-container">
+        
+        <!-- OVERVIEW GRID -->
+        <div class="overview-grid">
+          <div class="hud-card">
+            <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.6rem;">🔮 Filosofi Pembelajaran</h2>
+            <p style="font-size: 0.92rem; color: #CBD5E1; line-height: 1.8; margin: 0;" id="overview-filosofi">
+              Memuat filosofi Arcane Month...
+            </p>
+          </div>
+
+          <div class="hud-card">
+            <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 1rem;">🏛️ Meta Fase</h2>
+            <div style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.8;">
+              <div style="margin-bottom: 0.4rem;"><strong>Periode:</strong> <span id="meta-periode" style="color: var(--rpg-gold);">-</span></div>
+              <div style="margin-bottom: 0.4rem;"><strong>Nation Host:</strong> <span id="meta-host">-</span></div>
+              <div style="margin-bottom: 0.4rem;"><strong>Wilayah Akademik:</strong> <span id="meta-wilayah">-</span></div>
+              <div><strong>Elemen Domain:</strong> <span id="meta-elemen" style="color: #C084FC;">-</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TUJUAN FASE -->
+        <div class="hud-card" style="margin-bottom: 3rem;">
+          <h3 style="font-size: 1.2rem; color: #C084FC; font-weight: 900; margin-bottom: 0.8rem; text-transform: uppercase;">🎯 Tujuan Utama Arcane Month:</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: #CBD5E1; line-height: 1.7;" id="tujuan-target">
+            <!-- Rendered via JS -->
+          </ul>
+        </div>
+
+        <!-- JALUR ARCANE ELEMENTS -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <span class="hud-chip">ARCANE DISCIPLINES</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Jalur Arcane Elements</h2>
+        </div>
+        <div class="jalur-grid" id="jalur-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- REKOMENDASI OSN TABLE -->
+        <div class="table-card">
+          <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">📐 Rekomendasi Jalur Berdasarkan Bidang OSN</h2>
+          <p style="color: #94A3B8; font-size: 0.88rem; margin-bottom: 1.5rem;">Panduan pemilihan Arcane Elements yang relevan dengan spesialisasi kompetisi.</p>
+          
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th style="width: 35%;">BIDANG KOMPETISI</th>
+                <th style="width: 40%;">REKOMENDASI ARCANE</th>
+                <th style="width: 25%;">KEWAJIBAN</th>
+              </tr>
+            </thead>
+            <tbody id="osn-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- QUEST SISTEM -->
+        <div style="text-align: center;">
+          <span class="hud-chip">PHASE EVALUATION</span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: #FFFFFF; margin-top: 0.3rem;">Quest & Misi Arcane Month</h2>
+        </div>
+        <div class="quest-grid" id="quest-target">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- EXPEDITION EVENT BANNER -->
+        <div class="expedition-card">
+          <span class="hud-chip" style="margin-bottom: 0.4rem;">GRAND EXPEDITION</span>
+          <h3 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin: 0 0 0.5rem 0;" id="expedition-nama">Republic Expedition</h3>
+          <p style="font-size: 0.92rem; color: #CBD5E1; line-height: 1.6; margin: 0;" id="expedition-desc">
+            Memuat deskripsi ekspedisi...
+          </p>
+        </div>
+
+        <!-- ACHIEVEMENT BADGES -->
+        <div class="hud-card" style="margin-bottom: 4rem;">
+          <h3 style="font-size: 1.2rem; color: var(--rpg-gold); font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">🏆 Achievement Badges</h3>
+          <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 1rem;">Gelar pencapaian resmi yang dapat diperoleh selama Arcane Month[cite: 14].</p>
+          <div class="badge-wrapper" id="badge-target">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
+  <script src="../../../assets/js/components.js"></script>
+
+  <!-- SCRIPT ENGINE LOKAL -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("info.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Gagal membaca info.json");
+          return res.json();
+        })
+        .then(data => {
+          if (data.meta) {
+            document.getElementById("page-title").innerText = data.meta.title;
+            document.getElementById("page-desc").innerText = data.meta.description;
+          }
+
+          if (data.overview) {
+            document.getElementById("overview-filosofi").innerText = data.overview.filosofi;
+            document.getElementById("meta-periode").innerText = data.overview.periode;
+            document.getElementById("meta-host").innerText = data.overview.nation_host;
+            document.getElementById("meta-wilayah").innerText = data.overview.wilayah_akademik;
+            document.getElementById("meta-elemen").innerText = data.overview.elemen;
+          }
+
+          if (data.quest_sistem?.expedition_event) {
+            document.getElementById("expedition-nama").innerText = data.quest_sistem.expedition_event.nama;
+            document.getElementById("expedition-desc").innerText = data.quest_sistem.expedition_event.desc;
+          }
+
+          renderTujuanList(data.tujuan || []);
+          renderJalurGrid(data.jalur_arcane || []);
+          renderOsnTable(data.rekomendasi_osn || []);
+          renderQuestGrid(data.quest_sistem?.utama || []);
+          renderBadgeChips(data.achievement_badges || []);
+        })
+        .catch(err => console.error("Error loading info.json:", err));
+    });
+
+    function renderTujuanList(list) {
+      const target = document.getElementById("tujuan-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(item => {
+        html += `<li style="margin-bottom:0.5rem;"><span style="color:#C084FC;">✓</span> ${item}</li>`;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderJalurGrid(list) {
+      const target = document.getElementById("jalur-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(j => {
+        html += `
+          <div class="jalur-card">
+            <div style="font-size: 1.1rem; font-weight: 900; color: #C084FC; margin-bottom: 0.2rem;">${j.nama}</div>
+            <div style="font-size: 0.78rem; color: var(--rpg-gold); font-weight: 800; margin-bottom: 0.6rem;">${j.province}</div>
+            <div style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5; margin-bottom: 0.6rem;"><strong>Fokus:</strong> ${j.fokus}</div>
+            <div style="font-size: 0.82rem; color: #94A3B8; font-style: italic;">"${j.filosofi}"</div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderOsnTable(list) {
+      const target = document.getElementById("osn-table-body");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(row => {
+        html += `
+          <tr>
+            <td><strong style="color: #FFFFFF;">${row.bidang}</strong></td>
+            <td><strong style="color: #C084FC;">${row.rekomendasi}</strong></td>
+            <td><span style="color: ${row.kewajiban === 'Wajib' ? '#10B981' : '#F59E0B'}; font-weight: 800;">${row.kewajiban}</span></td>
+          </tr>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderQuestGrid(list) {
+      const target = document.getElementById("quest-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(q => {
+        html += `
+          <div class="quest-card">
+            <div style="font-size: 1.1rem; font-weight: 900; color: var(--rpg-gold); margin-bottom: 0.3rem;">${q.nama}</div>
+            <div style="font-size: 0.85rem; color: #CBD5E1; line-height: 1.5;">${q.desc}</div>
+          </div>
+        `;
+      });
+      target.innerHTML = html;
+    }
+
+    function renderBadgeChips(list) {
+      const target = document.getElementById("badge-target");
+      if (!target || !list) return;
+
+      let html = "";
+      list.forEach(b => {
+        html += `<span class="badge-chip">🏅 ${b}</span>`;
+      });
+      target.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
