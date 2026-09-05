@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "ARCANE MONTH — ELEMENTA UNIVERSITY",
+    "subtitle": "THE FOUNDATION OF ANALYTICAL THINKING // MULTIDISCIPLINARY SCIENCES",
+    "description": "Arcane Month membekali peserta dengan kemampuan berpikir, menganalisis, memetakan, dan memecahkan masalah sebagai fondasi intelektual sebelum mempelajari empat elemen utama."
+  },
+  "overview": {
+    "periode": "Oktober",
+    "nation_host": "Republic of Arcane",
+    "wilayah_akademik": "Province of Cartographia, Civitas, Aetherion, & Nexus",
+    "elemen": "Arcane Elements",
+    "filosofi": "Jika empat elemen utama mengajarkan peserta untuk memahami dunia, maka Arcane Elements mengajarkan bagaimana cara membaca dunia tersebut. Arcane Month ditempatkan sebagai fondasi intelektual untuk membangun kemampuan berpikir ilmiah dan analisis multidisiplin."
+  },
+  "tujuan": [
+    "Membangun fondasi berpikir ilmiah.",
+    "Memperkuat kemampuan analisis dan problem solving.",
+    "Menyiapkan peserta menghadapi empat elemen utama.",
+    "Memberikan pengayaan bagi peserta OSN Astronomi dan Geografi.",
+    "Memperkenalkan sistem Arcane Elements dalam Elementa Universe."
+  ],
+  "jalur_arcane": [
+    {
+      "nama": "Spatial Bending",
+      "province": "Province of Cartographia",
+      "fokus": "SIG, Penginderaan Jauh, Kartografi, dan Analisis Spasial",
+      "filosofi": "Memahami dunia melalui ruang."
+    },
+    {
+      "nama": "Spirit Bending",
+      "province": "Province of Civitas",
+      "fokus": "Geografi Manusia, Geopolitik, Pariwisata, dan Pembangunan Wilayah",
+      "filosofi": "Memahami dunia melalui manusia."
+    },
+    {
+      "nama": "Energy Bending",
+      "province": "Province of Aetherion",
+      "fokus": "Mekanika, Gelombang, Optika, serta Listrik dan Magnet",
+      "filosofi": "Memahami dunia melalui energi."
+    },
+    {
+      "nama": "Logic Bending",
+      "province": "Province of Nexus",
+      "fokus": "Aljabar, Geometri, Trigonometri, dan Logika Matematika",
+      "filosofi": "Memahami dunia melalui pola."
+    }
+  ],
+  "rekomendasi_osn": [
+    {
+      "bidang": "OSN Kebumian",
+      "rekomendasi": "Energy & Logic Bending",
+      "kewajiban": "Tidak Wajib"
+    },
+    {
+      "bidang": "OSN Astronomi",
+      "rekomendasi": "Energy & Logic Bending",
+      "kewajiban": "Wajib"
+    },
+    {
+      "bidang": "OSN Geografi",
+      "rekomendasi": "Spatial & Spirit Bending",
+      "kewajiban": "Wajib"
+    }
+  ],
+  "quest_sistem": {
+    "utama": [
+      {
+        "nama": "Arcane Awakening",
+        "desc": "Pengenalan dan aktivasi potensi kemampuan Arcane Elements."
+      },
+      {
+        "nama": "Arcane Trial",
+        "desc": "Ujian kemampuan dasar logika, spasial, dan analitis."
+      },
+      {
+        "nama": "Arcane Research Quest",
+        "desc": "Mini project terapan sesuai dengan jalur Arcane yang dipilih."
+      },
+      {
+        "nama": "Arcane Symposium",
+        "desc": "Forum ilmiah dan presentasi hasil penelitian studi kasus."
+      }
+    ],
+    "expedition_event": {
+      "nama": "Republic Expedition",
+      "desc": "Misi akademik lintas Province yang mengharuskan peserta menyelesaikan studi kasus menggunakan pendekatan Spatial, Spirit, Energy, atau Logic."
+    }
+  },
+  "achievement_badges": [
+    "Arcane Initiate",
+    "Arcane Scholar",
+    "Arcane Researcher",
+    "Arcane Adept"
+  ]
+}
