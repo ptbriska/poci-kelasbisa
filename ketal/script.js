@@ -1,15 +1,13 @@
-// MASTER DATA EVENTS SINKRON VIA MANIFEST
+// MASTER DATA KETAL SINKRON VIA MANIFEST
 let allEventsData = [];
 
-// OBJEK STATE FILTER
+// OBJEK STATE FILTER KETAL
 let activeFilters = {
-  status: 'Semua',
-  bulan: 'Semua',
+  level: 'Semua',
+  kategori: 'Semua',
+  waktu: 'Semua',
   afiliasi: 'Semua',
-  subbrand: 'Semua',
-  jenis: 'Semua',
-  platform: 'Semua',
-  waktu: 'Semua'
+  subbrand: 'Semua'
 };
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -18,24 +16,23 @@ document.addEventListener("DOMContentLoaded", async function () {
   applyFilters();
 });
 
-// 1. MEMBACA MANIFEST.JSON & FETCH SEMUA FILE EVENT TERDAFTAR SECARA REAL
+// 1. MEMBACA MANIFEST.JSON & FETCH SEMUA FILE KURSUS TERDAFTAR
 async function loadEventsFromManifest() {
   allEventsData = [];
   try {
-    const resManifest = await fetch('info-event/manifest.json');
-    if (!resManifest.ok) throw new Error("File manifest.json tidak ditemukan atau kosong.");
-    
-    const eventFiles = await resManifest.json(); // Membaca: ["TO01", "ZM-SKD-2026", ...]
+    const resManifest = await fetch('info-ketal/manifest.json');
+    if (!resManifest.ok) throw new Error("File info-ketal/manifest.json tidak ditemukan.");
+
+    const eventFiles = await resManifest.json(); // Membaca: ["KTL-WEB-01", ...]
 
     if (Array.isArray(eventFiles) && eventFiles.length > 0) {
       const fetchPromises = eventFiles.map(fileName => {
-        // Auto-fix: Tambahkan .json jika belum ada
         const safeFileName = fileName.endsWith('.json') ? fileName : `${fileName}.json`;
-        
-        return fetch(`info-event/${safeFileName}`)
+
+        return fetch(`info-ketal/${safeFileName}`)
           .then(res => res.ok ? res.json() : null)
           .catch(err => {
-            console.error(`Gagal memuat file kegiatan info-event/${safeFileName}:`, err);
+            console.error(`Gagal memuat kursus info-ketal/${safeFileName}:`, err);
             return null;
           });
       });
@@ -49,20 +46,20 @@ async function loadEventsFromManifest() {
   }
 }
 
-// 2. OTO-FILTER JIKA ADA QUERY PARAMETER DARI URL
+// 2. OTO-FILTER DARI QUERY PARAMETER URL
 function checkUrlParams() {
   const urlParams = new URLSearchParams(window.location.search);
   const subbrandParam = urlParams.get('subbrand');
-  const jenisParam = urlParams.get('jenis');
+  const kategoriParam = urlParams.get('kategori');
 
   if (subbrandParam) {
     activeFilters.subbrand = subbrandParam;
     highlightActiveChip('subbrand', subbrandParam);
   }
 
-  if (jenisParam) {
-    activeFilters.jenis = jenisParam;
-    highlightActiveChip('jenis', jenisParam);
+  if (kategoriParam) {
+    activeFilters.kategori = kategoriParam;
+    highlightActiveChip('kategori', kategoriParam);
   }
 }
 
@@ -81,7 +78,7 @@ function clickFilterChip(buttonElem) {
   applyFilters();
 }
 
-// 4. HIGHLIGHT CHIP SECARA PROGRAMATIS (DARI URL)
+// 4. HIGHLIGHT CHIP PROGRAMATIS
 function highlightActiveChip(groupName, value) {
   const container = document.querySelector(`.m-chip[data-group="${groupName}"]`)?.parentElement;
   if (!container) return;
@@ -96,31 +93,30 @@ function highlightActiveChip(groupName, value) {
   });
 }
 
-// 5. LOGIKA FILTER CERDAS & PENCARIAN TEKS REAL-TIME
+// 5. LOGIKA FILTER CERDAS & PENCARIAN REAL-TIME
 function applyFilters() {
   const searchInput = document.getElementById('searchInput');
   const searchKey = searchInput ? searchInput.value.toLowerCase().trim() : '';
 
   const filtered = allEventsData.filter(item => {
-    const matchSearch = (item.nama_kegiatan || '').toLowerCase().includes(searchKey) ||
-                        (item.kode_kegiatan || '').toLowerCase().includes(searchKey) ||
-                        (item.deskripsi_singkat || '').toLowerCase().includes(searchKey);
+    const matchSearch = (item.nama_produk || '').toLowerCase().includes(searchKey) ||
+                        (item.kode_produk || '').toLowerCase().includes(searchKey) ||
+                        (item.trainer || '').toLowerCase().includes(searchKey) ||
+                        (item.deskripsi || '').toLowerCase().includes(searchKey);
 
-    const matchStatus   = activeFilters.status   === 'Semua' || (item.status || '').toLowerCase() === activeFilters.status.toLowerCase();
-    const matchBulan    = activeFilters.bulan    === 'Semua' || item.bulan_kegiatan === activeFilters.bulan;
+    const matchLevel    = activeFilters.level    === 'Semua' || (item.level || '').toLowerCase() === activeFilters.level.toLowerCase();
+    const matchKategori = activeFilters.kategori === 'Semua' || item.kategori === activeFilters.kategori;
+    const matchWaktu    = activeFilters.waktu    === 'Semua' || item.format_waktu === activeFilters.waktu;
     const matchAfiliasi = activeFilters.afiliasi === 'Semua' || item.afiliasi === activeFilters.afiliasi;
     const matchSubbrand = activeFilters.subbrand === 'Semua' || item.sub_brand === activeFilters.subbrand;
-    const matchJenis    = activeFilters.jenis    === 'Semua' || item.jenis_kegiatan === activeFilters.jenis;
-    const matchPlatform = activeFilters.platform === 'Semua' || item.format_platform === activeFilters.platform;
-    const matchWaktu    = activeFilters.waktu    === 'Semua' || item.format_waktu === activeFilters.waktu;
 
-    return matchSearch && matchStatus && matchBulan && matchAfiliasi && matchSubbrand && matchJenis && matchPlatform && matchWaktu;
+    return matchSearch && matchLevel && matchKategori && matchWaktu && matchAfiliasi && matchSubbrand;
   });
 
   renderEventsGrid(filtered);
 }
 
-// 6. RENDER KARTU MINIMALIS KE DALAM EVENT GRID CONTAINER (ALA TOKOPEDIA)
+// 6. RENDER KARTU KURSUS KETAL
 function renderEventsGrid(list) {
   const grid = document.getElementById('eventsGrid');
   const empty = document.getElementById('emptyState');
@@ -131,9 +127,9 @@ function renderEventsGrid(list) {
     grid.innerHTML = '';
     if (empty) {
       empty.innerHTML = `
-        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📅</div>
-        <h3 style="font-weight: 800; color: var(--eco-text-main, #31353B); margin-bottom: 0.5rem;">Belum Ada Kegiatan Aktif</h3>
-        <p style="color: #6C727C; font-size: 0.9rem;">Saat ini belum ada jadwal kegiatan atau pendaftaran yang dibuka. Silakan cek kembali secara berkala.</p>
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎥</div>
+        <h3 style="font-weight: 800; color: var(--eco-text-main, #31353B); margin-bottom: 0.5rem;">Belum Ada Modul Kursus</h3>
+        <p style="color: #6C727C; font-size: 0.9rem;">Saat ini belum ada materi video yang cocok dengan filter kamu. Silakan coba filter lain.</p>
         <button onclick="resetFilters()" class="btn-reset-text" style="margin-top: 1rem; text-decoration: underline;">Reset Filter</button>
       `;
       empty.style.display = 'block';
@@ -145,30 +141,26 @@ function renderEventsGrid(list) {
 
   let html = '';
   list.forEach((item, cardIdx) => {
-    const isOpen = (item.status || '').toLowerCase() === 'open';
-    const statusClass = isOpen ? 'open' : 'close';
-    const statusLabel = isOpen ? 'Open' : 'Close';
-
-    // Formatting Harga (0 = GRATIS, >0 = Rp Nominal)
+    // Format Harga
     const priceVal = Number(item.harga) || 0;
-    const priceDisplay = priceVal === 0 
-      ? `<span class="price-badge free">GRATIS</span>` 
+    const priceDisplay = priceVal === 0
+      ? `<span class="price-badge free">GRATIS</span>`
       : `<span class="price-amount">Rp ${priceVal.toLocaleString('id-ID')}</span>`;
 
-    // Slider Gambar Poster Utama
-    const rawImages = item.poster || item.gambar_poster || [];
+    // Slider Poster Gambar
+    const rawImages = item.poster || [];
     let sliderContent = '';
 
     if (rawImages.length > 0) {
       rawImages.forEach((imgSrc, imgIdx) => {
         let finalSrc = imgSrc;
-        if (!finalSrc.startsWith('http') && !finalSrc.startsWith('info-event/')) {
-          finalSrc = `info-event/${finalSrc}`;
+        if (!finalSrc.startsWith('http') && !finalSrc.startsWith('info-ketal/')) {
+          finalSrc = `info-ketal/${finalSrc}`;
         }
 
         const activeClass = imgIdx === 0 ? 'active' : '';
         sliderContent += `
-          <img src="${finalSrc}" class="slide-img ${activeClass}" id="slide-${cardIdx}-${imgIdx}" alt="Poster ${item.nama_kegiatan}" onerror="this.src='https://via.placeholder.com/400x400?text=Poster+Pelatihan'">
+          <img src="${finalSrc}" class="slide-img ${activeClass}" id="slide-${cardIdx}-${imgIdx}" alt="Poster ${item.nama_produk}" onerror="this.src='https://via.placeholder.com/400x400?text=Katalog+Video+LMS'">
         `;
       });
 
@@ -179,11 +171,11 @@ function renderEventsGrid(list) {
         `;
       }
     } else {
-      sliderContent = `<img src="https://via.placeholder.com/400x400?text=Poster+Pelatihan" class="slide-img active">`;
+      sliderContent = `<img src="https://via.placeholder.com/400x400?text=Katalog+Video+LMS" class="slide-img active">`;
     }
 
     // Format Link WA CS
-    let waUrl = item.link_wa_cs || 'wa.me/082268118842';
+    let waUrl = item.link_wa || 'wa.me/082268118842';
     if (!waUrl.startsWith('http://') && !waUrl.startsWith('https://')) {
       waUrl = 'https://' + waUrl;
     }
@@ -191,23 +183,23 @@ function renderEventsGrid(list) {
     html += `
       <div class="event-card">
         <div class="card-slider">
-          <span class="status-badge ${statusClass}">${statusLabel} • ${item.sub_brand || 'Kelas Bisa'}</span>
+          <span class="status-badge open">${item.level || 'All Level'} • ${item.sub_brand || 'Kelas Bisa'}</span>
           ${sliderContent}
         </div>
 
         <div class="card-body">
-          <h3 class="card-title" title="${item.nama_kegiatan}">${item.nama_kegiatan}</h3>
-          
+          <h3 class="card-title" title="${item.nama_produk}">${item.nama_produk}</h3>
+
           <div class="card-price-box">
             ${priceDisplay}
           </div>
 
           <div class="card-actions">
-            <button onclick="openDetailModal('${item.kode_kegiatan}')" class="btn-cta-detail">
-              👁️ Lihat Detail Produk
+            <button onclick="openDetailModal('${item.kode_produk}')" class="btn-cta-detail">
+              👁️ Lihat Detail & Preview
             </button>
             <a href="${item.link_checkout || '#'}" target="_blank" rel="noopener" class="btn-cta-checkout">
-              🛒 Daftar / Checkout
+              🛒 Beli / Akses Sekarang
             </a>
             <a href="${waUrl}" target="_blank" rel="noopener" class="btn-cta-wa">
               💬 Hubungi CS via WA
@@ -242,9 +234,9 @@ function changeSlide(cardIdx, direction, totalImgs) {
   if (nextImg) nextImg.classList.add('active');
 }
 
-// 8. POP-UP MODAL OVERLAY ENGINE ALA INSTAGRAM WEB
-function openDetailModal(kodeKegiatan) {
-  const item = allEventsData.find(e => e.kode_kegiatan === kodeKegiatan);
+// 8. POP-UP MODAL OVERLAY ENGINE KETAL (INSTAGRAM WEB STYLE + VIDEO TEASER)
+function openDetailModal(kodeProduk) {
+  const item = allEventsData.find(e => e.kode_produk === kodeProduk);
   if (!item) return;
 
   const modal = document.getElementById('detailModal');
@@ -253,25 +245,25 @@ function openDetailModal(kodeKegiatan) {
   const priceVal = Number(item.harga) || 0;
   const priceDisplay = priceVal === 0 ? 'GRATIS' : `Rp ${priceVal.toLocaleString('id-ID')}`;
 
-  let waUrl = item.link_wa_cs || 'wa.me/082268118842';
+  let waUrl = item.link_wa || 'wa.me/082268118842';
   if (!waUrl.startsWith('http://') && !waUrl.startsWith('https://')) {
     waUrl = 'https://' + waUrl;
   }
 
-  // A. Carousel Poster Gambar Besar untuk Modal
-  const rawImages = item.poster || item.gambar_poster || [];
+  // A. Slider Poster
+  const rawImages = item.poster || [];
   let modalSliderContent = '';
 
   if (rawImages.length > 0) {
     rawImages.forEach((imgSrc, imgIdx) => {
       let finalSrc = imgSrc;
-      if (!finalSrc.startsWith('http') && !finalSrc.startsWith('info-event/')) {
-        finalSrc = `info-event/${finalSrc}`;
+      if (!finalSrc.startsWith('http') && !finalSrc.startsWith('info-ketal/')) {
+        finalSrc = `info-ketal/${finalSrc}`;
       }
 
       const activeClass = imgIdx === 0 ? 'active' : '';
       modalSliderContent += `
-        <img src="${finalSrc}" class="modal-slide-img ${activeClass}" id="modal-slide-${imgIdx}" alt="Poster ${item.nama_kegiatan}" onerror="this.src='https://via.placeholder.com/600x600?text=Poster+Pelatihan'">
+        <img src="${finalSrc}" class="modal-slide-img ${activeClass}" id="modal-slide-${imgIdx}" alt="Poster ${item.nama_produk}" onerror="this.src='https://via.placeholder.com/600x600?text=Katalog+Video+LMS'">
       `;
     });
 
@@ -282,16 +274,29 @@ function openDetailModal(kodeKegiatan) {
       `;
     }
   } else {
-    modalSliderContent = `<img src="https://via.placeholder.com/600x600?text=Poster+Pelatihan" class="modal-slide-img active">`;
+    modalSliderContent = `<img src="https://via.placeholder.com/600x600?text=Katalog+Video+LMS" class="modal-slide-img active">`;
   }
 
-  // B. Data LocalStorage (Like & Komentar Permanen)
-  const likesData = JSON.parse(localStorage.getItem(`likes_${kodeKegiatan}`) || '{"count": 12, "isLiked": false}');
-  const commentsData = JSON.parse(localStorage.getItem(`comments_${kodeKegiatan}`) || '[]');
+  // B. Video Teaser (Kondisional: jika link_video diisi)
+  let videoPreviewHtml = '';
+  if (item.link_video && item.link_video.trim() !== '') {
+    videoPreviewHtml = `
+      <div class="ig-video-section">
+        <h4 style="font-size: 0.88rem; margin: 0 0 8px 0; color: var(--eco-dark);">📺 Preview / Video Teaser Materi:</h4>
+        <div class="video-embed-container">
+          <iframe src="${item.link_video}" title="Preview Video ${item.nama_produk}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    `;
+  }
+
+  // C. Data LocalStorage (Like & Komentar)
+  const likesData = JSON.parse(localStorage.getItem(`likes_${kodeProduk}`) || '{"count": 25, "isLiked": false}');
+  const commentsData = JSON.parse(localStorage.getItem(`comments_${kodeProduk}`) || '[]');
 
   let commentsHtml = '';
   if (commentsData.length === 0) {
-    commentsHtml = `<p class="no-comment-text" id="noCommentText">Belum ada diskusi. Jadilah yang pertama bertanya!</p>`;
+    commentsHtml = `<p class="no-comment-text" id="noCommentText">Belum ada diskusi. Silakan tanyakan hal terkait materi ini!</p>`;
   } else {
     commentsData.forEach(c => {
       commentsHtml += `
@@ -303,45 +308,48 @@ function openDetailModal(kodeKegiatan) {
     });
   }
 
-  // C. Render Layout Instagram Web Style
+  // D. Render Modal Content
   modalBody.innerHTML = `
     <div class="ig-modal-grid">
-      
-      <!-- SISI KIRI: CAROUSEL POSTER GAMBAR BESAR -->
+
+      <!-- SISI KIRI: POSTER CAROUSEL -->
       <div class="ig-modal-media">
         ${modalSliderContent}
       </div>
 
-      <!-- SISI KANAN: PANEL DETAIL & DISKUSI INTERAKTIF -->
+      <!-- SISI KANAN: PANEL DETAIL, VIDEO TEASER & DISKUSI -->
       <div class="ig-modal-side">
-        
+
         <!-- HEADER BRAND -->
         <div class="ig-side-header">
           <div class="ig-user-info">
-            <span class="ig-avatar">🎓</span>
+            <span class="ig-avatar">🎥</span>
             <div>
               <div class="ig-username">${item.sub_brand || 'Kelas Bisa'}</div>
-              <div class="ig-subtext">${item.jenis_kegiatan || 'Event'} • ${item.afiliasi || 'Kelas Bisa'}</div>
+              <div class="ig-subtext">${item.kategori || 'Video LMS'} • ${item.afiliasi || 'Kelas Bisa'}</div>
             </div>
           </div>
         </div>
 
-        <!-- BODY INFO & DISKUSI (SCROLLABLE) -->
+        <!-- BODY INFO, VIDEO TEASER, & DISKUSI (SCROLLABLE) -->
         <div class="ig-side-body">
-          <h2 class="ig-event-title">${item.nama_kegiatan}</h2>
+          <h2 class="ig-event-title">${item.nama_produk}</h2>
           <div class="ig-price-tag">${priceDisplay}</div>
 
           <div class="ig-info-table">
-            <div><strong>Kode:</strong> ${item.kode_kegiatan || '-'}</div>
-            <div><strong>Periode:</strong> ${item.periode_kegiatan || '-'}</div>
-            <div><strong>Bulan:</strong> ${item.bulan_kegiatan || '-'}</div>
-            <div><strong>Platform:</strong> ${item.format_platform || '-'} (${item.format_waktu || '-'})</div>
-            <div><strong>Status:</strong> <span class="badge-${(item.status || '').toLowerCase()}">${item.status || '-'}</span></div>
+            <div><strong>Kode Kursus:</strong> ${item.kode_produk || '-'}</div>
+            <div><strong>Level:</strong> <span style="text-transform: capitalize;">${item.level || '-'}</span></div>
+            <div><strong>Format Waktu:</strong> ${item.format_waktu || '-'}</div>
+            <div><strong>Total Durasi:</strong> ${item.total_durasi || '-'}</div>
+            <div><strong>Total Modul:</strong> ${item.total_modul || '-'}</div>
+            <div><strong>Trainer/Instruktur:</strong> ${item.trainer || '-'}</div>
           </div>
 
           <div class="ig-desc-box">
-            <p>${item.deskripsi_singkat || 'Belum ada deskripsi khusus.'}</p>
+            <p>${item.deskripsi || 'Belum ada deskripsi khusus.'}</p>
           </div>
+
+          ${videoPreviewHtml}
 
           <hr class="ig-divider">
 
@@ -351,26 +359,26 @@ function openDetailModal(kodeKegiatan) {
           </div>
         </div>
 
-        <!-- FOOTER ACTION: LIKE, FORM KOMENTAR, TOMBOL CHECKOUT -->
+        <!-- FOOTER ACTION -->
         <div class="ig-side-footer">
-          
+
           <div class="ig-action-bar">
-            <button class="btn-ig-like ${likesData.isLiked ? 'liked' : ''}" id="likeBtn" onclick="toggleLike('${kodeKegiatan}')">
+            <button class="btn-ig-like ${likesData.isLiked ? 'liked' : ''}" id="likeBtn" onclick="toggleLike('${kodeProduk}')">
               <span id="likeIcon">${likesData.isLiked ? '❤️' : '🤍'}</span>
               <span id="likeCount">${likesData.count}</span> Suka
             </button>
             <span class="ig-wa-cs-link"><a href="${waUrl}" target="_blank" rel="noopener">💬 Tanya CS via WA</a></span>
           </div>
 
-          <!-- INPUT KOMENTAR REAL-TIME -->
-          <form class="ig-comment-form" onsubmit="addComment(event, '${kodeKegiatan}')">
+          <!-- INPUT KOMENTAR -->
+          <form class="ig-comment-form" onsubmit="addComment(event, '${kodeProduk}')">
             <input type="text" id="commentNameInput" placeholder="Nama..." required class="ig-input-name">
             <input type="text" id="commentTextInput" placeholder="Tulis pertanyaan..." required class="ig-input-text">
             <button type="submit" class="btn-ig-send">Kirim</button>
           </form>
 
           <a href="${item.link_checkout || '#'}" target="_blank" rel="noopener" class="btn-cta-checkout ig-checkout-btn">
-            🛒 Beli / Daftar Sekarang
+            🛒 Beli / Akses Kursus Sekarang
           </a>
         </div>
 
@@ -387,7 +395,7 @@ function closeDetailModal(event) {
   if (modal) modal.style.display = 'none';
 }
 
-// 9. NAVIGASI SLIDER POSTER DI POP-UP MODAL
+// 9. NAVIGASI SLIDER POSTER MODAL
 function changeModalSlide(direction, totalImgs) {
   let currentIdx = 0;
   for (let i = 0; i < totalImgs; i++) {
@@ -406,10 +414,10 @@ function changeModalSlide(direction, totalImgs) {
   if (nextImg) nextImg.classList.add('active');
 }
 
-// 10. LOGIKA TOGGLE LIKE (DISIMPAN PERMANEN DI LOCALSTORAGE)
-function toggleLike(kodeKegiatan) {
-  const likesData = JSON.parse(localStorage.getItem(`likes_${kodeKegiatan}`) || '{"count": 12, "isLiked": false}');
-  
+// 10. TOGGLE LIKE LOCALSTORAGE
+function toggleLike(kodeProduk) {
+  const likesData = JSON.parse(localStorage.getItem(`likes_${kodeProduk}`) || '{"count": 25, "isLiked": false}');
+
   if (likesData.isLiked) {
     likesData.count -= 1;
     likesData.isLiked = false;
@@ -418,7 +426,7 @@ function toggleLike(kodeKegiatan) {
     likesData.isLiked = true;
   }
 
-  localStorage.setItem(`likes_${kodeKegiatan}`, JSON.stringify(likesData));
+  localStorage.setItem(`likes_${kodeProduk}`, JSON.stringify(likesData));
 
   const likeBtn = document.getElementById('likeBtn');
   const likeIcon = document.getElementById('likeIcon');
@@ -436,8 +444,8 @@ function toggleLike(kodeKegiatan) {
   }
 }
 
-// 11. LOGIKA TAMBAH KOMENTAR (DISIMPAN PERMANEN DI LOCALSTORAGE)
-function addComment(event, kodeKegiatan) {
+// 11. TAMBAH KOMENTAR LOCALSTORAGE
+function addComment(event, kodeProduk) {
   event.preventDefault();
   const nameInput = document.getElementById('commentNameInput');
   const textInput = document.getElementById('commentTextInput');
@@ -452,9 +460,9 @@ function addComment(event, kodeKegiatan) {
     waktu: 'Baru saja'
   };
 
-  const commentsData = JSON.parse(localStorage.getItem(`comments_${kodeKegiatan}`) || '[]');
+  const commentsData = JSON.parse(localStorage.getItem(`comments_${kodeProduk}`) || '[]');
   commentsData.push(newComment);
-  localStorage.setItem(`comments_${kodeKegiatan}`, JSON.stringify(commentsData));
+  localStorage.setItem(`comments_${kodeProduk}`, JSON.stringify(commentsData));
 
   if (noCommentText) noCommentText.remove();
 
@@ -467,19 +475,17 @@ function addComment(event, kodeKegiatan) {
   container.scrollTop = container.scrollHeight;
 }
 
-// 12. RESET SELURUH FILTER & PENCARIAN
+// 12. RESET FILTER
 function resetFilters() {
   const searchInput = document.getElementById('searchInput');
   if (searchInput) searchInput.value = '';
 
   activeFilters = {
-    status: 'Semua',
-    bulan: 'Semua',
+    level: 'Semua',
+    kategori: 'Semua',
+    waktu: 'Semua',
     afiliasi: 'Semua',
-    subbrand: 'Semua',
-    jenis: 'Semua',
-    platform: 'Semua',
-    waktu: 'Semua'
+    subbrand: 'Semua'
   };
 
   const chips = document.querySelectorAll('.m-chip');
