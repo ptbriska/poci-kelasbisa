@@ -23,16 +23,19 @@ body {
 }
 
 /* ========================================================= */
-/* FIX UTAMA: CONTAINER PEMBATAS AGAR TIDAK MENTOK KIRI KANAN */
+/* CONTAINER PEMBATAS UTAMA (ANTI-SESAK)                     */
 /* ========================================================= */
 .pilar-container,
 .elementa-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem; /* Memberikan nafas di pinggir layar */
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
-/* Subnav Navigation Baris 2 (RPG Kingdom Topbar) */
+/* ========================================================= */
+/* SUBNAV NAVIGATION BARIS 2 (RPG TOPBAR FIX)                */
+/* ========================================================= */
 .elementa-subnav {
   background: linear-gradient(90deg, #0A192F 0%, #1E293B 50%, #0A192F 100%);
   border-bottom: 3px solid var(--elm-cyan);
@@ -45,10 +48,11 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
   height: 54px;
+  box-sizing: border-box;
 }
 
 .elementa-brand {
@@ -61,14 +65,21 @@ body {
   text-decoration: none;
   letter-spacing: 2px;
   text-shadow: 0 0 10px rgba(0, 180, 216, 0.6);
+  flex-shrink: 0; /* Mencegah logo menekan menu navigasi */
 }
 
+/* MENAMPILKAN UL KEMBALI SECARA PRESISI */
 .elementa-menu {
-  display: flex;
-  list-style: none;
-  gap: 0.4rem;
-  margin: 0;
-  padding: 0;
+  display: flex !important;
+  list-style: none !important;
+  gap: 0.4rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center;
+}
+
+.elementa-menu li {
+  display: inline-block;
 }
 
 .elementa-menu a {
@@ -81,6 +92,7 @@ body {
   transition: all 0.25s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap; /* Mencegah teks menu patah baris */
 }
 
 .elementa-menu a:hover, 
@@ -91,7 +103,9 @@ body {
   box-shadow: 0 0 12px rgba(0, 180, 216, 0.3);
 }
 
-/* Hero Section */
+/* ========================================================= */
+/* HERO SECTION                                              */
+/* ========================================================= */
 .elementa-hero {
   position: relative;
   background: radial-gradient(circle at 50% 30%, rgba(0, 180, 216, 0.18) 0%, rgba(240, 249, 255, 1) 75%);
@@ -203,7 +217,9 @@ body {
 .elem-chip.fire { color: var(--color-fire); border-color: var(--color-fire); background: #FEF2F2; }
 .elem-chip.arcane { color: var(--color-arcane); border-color: var(--color-arcane); background: #F5F3FF; }
 
-/* Section Frame Style */
+/* ========================================================= */
+/* SECTION CONTENT STYLES                                    */
+/* ========================================================= */
 .pilar-section {
   padding: 3.5rem 0;
 }
@@ -388,7 +404,9 @@ body {
   border: 1px solid #BEE3F8;
 }
 
-/* Responsif Mobile & Tablet */
+/* ========================================================= */
+/* RESPONSIF MOBILE & TABLET (PERBAIKAN MEDIA QUERY)        */
+/* ========================================================= */
 @media (max-width: 1200px) {
   .values-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -400,7 +418,14 @@ body {
   .usp-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: repeat(2, 1fr); }
   .target-grid { grid-template-columns: 1fr; }
-  .elementa-menu { display: none; }
+  /* MENU TETAP TAMPIL DI 992PX */
+}
+
+/* HANYA SEMBUNYIKAN MENU DI MONITOR INTERAKTIF/HP KECIL (< 768PX) */
+@media (max-width: 768px) {
+  .elementa-menu { 
+    display: none !important; 
+  }
 }
 
 @media (max-width: 640px) {
