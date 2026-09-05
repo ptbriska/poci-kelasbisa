@@ -1,27 +1,22 @@
 /* =========================================================
-   STYLE LMS KETAL — GLAMOUR NEON CYAN & DARK-LIGHT HYBRID
+   STYLE LMS KETAL — CLEAN LIGHT THEME WITH CYAN ACCENTS
    ========================================================= */
 
 :root {
-  /* Palet Clean Cyan & Light Theme */
   --eco-cyan: #0284C7;          /* Cyan / Pacific Blue */
-  --eco-cyan-glow: #0369A1;
-  --eco-cyan-dark: #0088a9;
-  --eco-cyan-light: #E0F2FE;
+  --eco-cyan-hover: #0369A1;
+  --eco-cyan-light: #E0F2FE;    /* Soft Cyan Highlight */
   --eco-green: #10B981;
   --eco-wa: #25D366;
-  --eco-dark: #0A192F;
-  --eco-dark-card: #FFFFFF;     /* Ubah ke Putih */
-  --eco-bg: #F8FAFC;            /* Ubah ke Light Gray Bersih */
+  --eco-dark: #0A192F;          /* Midnight Navy */
+  --eco-bg: #F8FAFC;            /* Clean Light Gray */
   --eco-card: #FFFFFF;
-  --eco-text-main: #0F172A;     /* Teks Gelap Solid */
-  --eco-text-dark: #0F172A;
+  --eco-text-main: #0F172A;     /* Dark Slate Text */
   --eco-text-muted: #64748B;
-  --eco-border: #E2E8F0;        /* Border Ringan */
-  --eco-border-glow: rgba(2, 132, 199, 0.4);
+  --eco-border: #E2E8F0;
   --eco-radius: 12px;
-  --eco-shadow-neon: 0 4px 15px rgba(0, 0, 0, 0.06);
-  --eco-shadow-md: 0 10px 25px rgba(2, 132, 199, 0.12);
+  --eco-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --eco-shadow-md: 0 10px 25px rgba(2, 132, 199, 0.08);
 }
 
 body {
@@ -41,9 +36,9 @@ body {
 
 /* 1. HERO PROMO BANNER */
 .events-hero {
-  background-color: var(--eco-dark-card);
+  background-color: var(--eco-card);
   padding: 16px 0;
-  border-bottom: 2px solid var(--eco-cyan-dark);
+  border-bottom: 1px solid var(--eco-border);
 }
 
 .hero-banner-img {
@@ -52,36 +47,34 @@ body {
   object-fit: cover;
   border-radius: var(--eco-radius);
   display: block;
-  box-shadow: var(--eco-shadow-neon);
+  box-shadow: var(--eco-shadow-sm);
 }
 
-/* 2. SAMBUTAN PELANGGAN (WELCOME BANNER NEON) */
+/* 2. SAMBUTAN PELANGGAN (WELCOME BANNER) */
 .welcome-section {
   padding: 24px 0 0 0;
 }
 
 .welcome-card {
-  background: linear-gradient(135deg, #060911 0%, #0d1527 50%, #003a4d 100%);
+  background: linear-gradient(135deg, var(--eco-dark) 0%, #0F2942 60%, var(--eco-cyan) 100%);
   color: #FFFFFF;
   padding: 28px 32px;
   border-radius: var(--eco-radius);
-  border: 1px solid var(--eco-border);
   border-left: 6px solid var(--eco-cyan);
-  box-shadow: var(--eco-shadow-neon);
+  box-shadow: var(--eco-shadow-md);
 }
 
 .welcome-badge {
   display: inline-block;
-  background: rgba(0, 242, 254, 0.15);
+  background: rgba(2, 132, 199, 0.25);
   border: 1px solid var(--eco-cyan);
-  color: var(--eco-cyan);
+  color: #7DD3FC;
   font-size: 0.72rem;
   font-weight: 800;
   padding: 4px 12px;
   border-radius: 20px;
   margin-bottom: 10px;
   letter-spacing: 0.8px;
-  box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
 .welcome-title {
@@ -89,18 +82,17 @@ body {
   font-weight: 900;
   margin: 0 0 8px 0;
   color: #FFFFFF;
-  text-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
 }
 
 .welcome-desc {
   font-size: 0.9rem;
-  color: #CBD5E1;
+  color: #E0F2FE;
   margin: 0;
   line-height: 1.6;
   max-width: 920px;
 }
 
-/* 3. LAYOUT E-COMMERCE (GRID SYSTEM) */
+/* 3. LAYOUT E-COMMERCE */
 .ecom-layout {
   padding: 28px 0 60px 0;
 }
@@ -112,20 +104,20 @@ body {
   align-items: start;
 }
 
-/* 4. SIDEBAR FILTER (KIRI DARK MODE) */
+/* 4. SIDEBAR FILTER */
 .ecom-sidebar {
-  background: var(--eco-dark-card);
+  background: var(--eco-card);
   border-radius: var(--eco-radius);
   border: 1px solid var(--eco-border);
   position: sticky;
   top: 20px;
   max-height: 88vh;
   overflow-y: auto;
-  box-shadow: var(--eco-shadow-md);
+  box-shadow: var(--eco-shadow-sm);
 }
 
 .ecom-sidebar::-webkit-scrollbar { width: 5px; }
-.ecom-sidebar::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+.ecom-sidebar::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
 
 .sidebar-header {
   display: flex;
@@ -135,7 +127,7 @@ body {
   border-bottom: 1px solid var(--eco-border);
   position: sticky;
   top: 0;
-  background: var(--eco-dark-card);
+  background: var(--eco-card);
   z-index: 10;
 }
 
@@ -143,7 +135,7 @@ body {
   font-size: 0.95rem;
   font-weight: 800;
   margin: 0;
-  color: #FFFFFF;
+  color: var(--eco-text-main);
 }
 
 .btn-reset-text {
@@ -156,7 +148,7 @@ body {
   transition: all 0.2s;
 }
 
-.btn-reset-text:hover { color: #FFFFFF; text-shadow: 0 0 8px var(--eco-cyan); }
+.btn-reset-text:hover { color: var(--eco-cyan-hover); text-decoration: underline; }
 
 .sidebar-content { padding: 16px; }
 
@@ -183,9 +175,9 @@ body {
 }
 
 .m-chip {
-  background: #1e293b;
+  background: #F1F5F9;
   border: 1px solid var(--eco-border);
-  color: #e2e8f0;
+  color: var(--eco-text-main);
   font-size: 0.76rem;
   font-weight: 600;
   padding: 5px 10px;
@@ -200,14 +192,14 @@ body {
 }
 
 .m-chip.active {
-  background: linear-gradient(135deg, var(--eco-cyan-glow) 0%, var(--eco-cyan-dark) 100%);
+  background: var(--eco-cyan);
   border-color: var(--eco-cyan);
-  color: #000000;
-  font-weight: 800;
-  box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.3);
 }
 
-/* 5. MAIN KONTEN (KANAN) */
+/* 5. MAIN KONTEN */
 .ecom-main {
   display: flex;
   flex-direction: column;
@@ -217,17 +209,17 @@ body {
 .ecom-search-bar {
   display: flex;
   align-items: center;
-  background: var(--eco-dark-card);
+  background: var(--eco-card);
   border: 1.5px solid var(--eco-border);
   border-radius: var(--eco-radius);
   padding: 10px 16px;
-  box-shadow: var(--eco-shadow-md);
+  box-shadow: var(--eco-shadow-sm);
   transition: all 0.25s ease;
 }
 
 .ecom-search-bar:focus-within {
   border-color: var(--eco-cyan);
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
 }
 
 .ecom-search-bar input {
@@ -237,7 +229,7 @@ body {
   margin-left: 10px;
   font-size: 0.92rem;
   font-weight: 500;
-  color: #FFFFFF;
+  color: var(--eco-text-main);
   background: transparent;
 }
 
@@ -247,9 +239,9 @@ body {
   gap: 18px;
 }
 
-/* 6. KARTU PRODUK MINIMALIS (GLAMOUR LIGHT/DARK HYBRID CARD) */
+/* 6. KARTU PRODUK KATALOG */
 .event-card {
-  background: #ffffff; /* Kontras terang untuk card isi produk */
+  background: var(--eco-card);
   border: 1.5px solid var(--eco-border);
   border-radius: var(--eco-radius);
   overflow: hidden;
@@ -259,17 +251,16 @@ body {
 }
 
 .event-card:hover {
-  transform: translateY(-50px scale(1.02));
   transform: translateY(-4px);
   border-color: var(--eco-cyan);
-  box-shadow: var(--eco-shadow-neon);
+  box-shadow: var(--eco-shadow-md);
 }
 
 .card-slider {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #090d16;
+  background: #090D16;
   overflow: hidden;
 }
 
@@ -291,7 +282,7 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   z-index: 5;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 .status-badge.open { background: var(--eco-green); color: #FFF; }
 
@@ -299,9 +290,9 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid var(--eco-cyan);
-  color: var(--eco-cyan);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -321,7 +312,6 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
 }
 
 .card-title {
@@ -329,7 +319,7 @@ body {
   font-weight: 800;
   line-height: 1.4;
   margin: 0 0 8px 0;
-  color: var(--eco-text-dark);
+  color: var(--eco-text-main);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -343,7 +333,7 @@ body {
 .price-amount {
   font-size: 1.05rem;
   font-weight: 900;
-  color: #0284c7;
+  color: var(--eco-cyan);
 }
 
 .price-badge.free {
@@ -365,9 +355,9 @@ body {
 }
 
 .btn-cta-detail {
-  background: #f1f5f9;
-  color: var(--eco-text-dark);
-  border: 1px solid #cbd5e1;
+  background: #F1F5F9;
+  color: var(--eco-text-main);
+  border: 1px solid var(--eco-border);
   padding: 7px;
   border-radius: 6px;
   font-size: 0.78rem;
@@ -378,13 +368,13 @@ body {
 }
 
 .btn-cta-detail:hover {
-  background: #e0f2fe;
-  border-color: #0284c7;
-  color: #0284c7;
+  background: var(--eco-cyan-light);
+  border-color: var(--eco-cyan);
+  color: var(--eco-cyan);
 }
 
 .btn-cta-checkout {
-  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+  background: linear-gradient(135deg, var(--eco-cyan) 0%, var(--eco-cyan-hover) 100%);
   color: #FFFFFF;
   text-align: center;
   padding: 8px;
@@ -393,11 +383,11 @@ body {
   font-weight: 800;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.2);
 }
 
 .btn-cta-checkout:hover {
-  box-shadow: 0 6px 18px rgba(0, 114, 255, 0.5);
+  box-shadow: 0 5px 15px rgba(2, 132, 199, 0.35);
   transform: translateY(-1px);
 }
 
@@ -418,7 +408,7 @@ body {
 }
 
 /* =========================================================
-   7. POP-UP MODAL OVERLAY STYLING (FIXED CLOSE BUTTON Z-INDEX)
+   7. POP-UP MODAL OVERLAY STYLING (FIXED LAYOUT & SCROLL)
    ========================================================= */
 .modal-overlay {
   position: fixed;
@@ -426,7 +416,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(9, 13, 22, 0.85);
+  background: rgba(10, 25, 47, 0.8);
   backdrop-filter: blur(8px);
   z-index: 9999;
   display: flex;
@@ -437,7 +427,7 @@ body {
 }
 
 .modal-card {
-  background: #ffffff;
+  background: #FFFFFF;
   border-radius: 16px;
   max-width: 980px;
   width: 100%;
@@ -445,40 +435,15 @@ body {
   max-height: 680px;
   padding: 0;
   position: relative;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-  border: 1px solid #e2e8f0;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--eco-border);
   overflow: hidden;
   animation: modalSlideUp 0.25s ease-out;
 }
 
-/* TOMBOL CLOSE (X) DENGAN HIGH Z-INDEX & POINTER EVENTS */
-.modal-close-btn {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  line-height: 1;
-  color: #0f172a;
-  cursor: pointer !important;
-  z-index: 999999 !important; /* Dipastikan paling atas */
-  pointer-events: auto !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  transition: all 0.2s ease;
-}
-
-.modal-close-btn:hover {
-  background: #ef4444;
-  color: #ffffff;
-  border-color: #ef4444;
-  transform: scale(1.05);
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .ig-modal-grid {
@@ -491,7 +456,7 @@ body {
 /* SISI KIRI: POSTER MEDIA */
 .ig-modal-media {
   position: relative;
-  background: #090d16;
+  background: #090D16;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -513,8 +478,8 @@ body {
   top: 50%;
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #cbd5e1;
-  color: #0f172a;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -528,22 +493,52 @@ body {
 .modal-slider-btn.prev { left: 10px; }
 .modal-slider-btn.next { right: 10px; }
 
-/* SISI KANAN: FLEX COLUMN */
+/* SISI KANAN: PANEL DETAILS & DISKUSI */
 .ig-modal-side {
+  position: relative; /* Kunci penataan tombol close */
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  border-left: 1px solid #e2e8f0;
+  background: #FFFFFF;
+  border-left: 1px solid var(--eco-border);
   height: 100%;
   max-height: 100%;
   overflow: hidden;
 }
 
+/* TOMBOL CLOSE INTERAKTIF & PASTI BISA DIKLIK */
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #0F172A;
+  cursor: pointer !important;
+  z-index: 999 !important;
+  pointer-events: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #EF4444;
+  color: #FFFFFF;
+  border-color: #EF4444;
+}
+
 .ig-side-header {
   padding: 14px 16px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--eco-border);
   flex-shrink: 0;
-  padding-right: 60px; /* Mencegah judul tertutup tombol X */
+  padding-right: 50px;
 }
 
 .ig-user-info {
@@ -554,7 +549,7 @@ body {
 
 .ig-avatar {
   font-size: 1.2rem;
-  background: #e0f2fe;
+  background: var(--eco-cyan-light);
   padding: 5px;
   border-radius: 50%;
 }
@@ -562,15 +557,15 @@ body {
 .ig-username {
   font-size: 0.88rem;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--eco-text-main);
 }
 
 .ig-subtext {
   font-size: 0.72rem;
-  color: #64748b;
+  color: var(--eco-text-muted);
 }
 
-/* BODY TENGAH SCROLLABLE */
+/* BODY TENGAH SCROLLABLE INTERNAL */
 .ig-side-body {
   padding: 16px;
   flex: 1 1 auto;
@@ -581,53 +576,53 @@ body {
 }
 
 .ig-side-body::-webkit-scrollbar { width: 6px; }
-.ig-side-body::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+.ig-side-body::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
 
 .ig-event-title {
   font-size: 1.05rem;
   font-weight: 900;
   margin: 0;
-  color: #0f172a;
+  color: var(--eco-text-main);
 }
 
 .ig-price-tag {
   font-size: 1.15rem;
   font-weight: 900;
-  color: #0284c7;
+  color: var(--eco-cyan);
 }
 
 .ig-info-table {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: #F8FAFC;
+  border: 1px solid var(--eco-border);
   padding: 10px;
   border-radius: 8px;
   font-size: 0.78rem;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  color: #0f172a;
+  color: var(--eco-text-main);
 }
 
 .ig-info-table div { display: flex; justify-content: space-between; }
 
 .ig-desc-box p {
   font-size: 0.82rem;
-  color: #475569;
+  color: var(--eco-text-muted);
   line-height: 1.5;
   margin: 0;
 }
 
-/* VIDEO EMBED */
+/* VIDEO EMBED PREVIEW */
 .ig-video-section {
   margin-top: 4px;
-  border-top: 1px dashed #cbd5e1;
+  border-top: 1px dashed var(--eco-border);
   padding-top: 10px;
 }
 
 .video-embed-container {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
+  padding-top: 56.25%; /* Rasio Widescreen 16:9 */
   border-radius: 8px;
   overflow: hidden;
   background: #000000;
@@ -644,7 +639,7 @@ body {
 
 .ig-divider {
   border: none;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--eco-border);
   margin: 6px 0;
 }
 
@@ -656,8 +651,8 @@ body {
 }
 
 .comment-item {
-  background: #f1f5f9;
-  color: #0f172a;
+  background: #F1F5F9;
+  color: var(--eco-text-main);
   padding: 8px 10px;
   border-radius: 6px;
   line-height: 1.4;
@@ -666,13 +661,13 @@ body {
 .comment-time {
   display: block;
   font-size: 0.65rem;
-  color: #64748b;
+  color: var(--eco-text-muted);
   margin-top: 2px;
 }
 
 .no-comment-text {
   font-size: 0.78rem;
-  color: #64748b;
+  color: var(--eco-text-muted);
   font-style: italic;
   text-align: center;
 }
@@ -680,8 +675,8 @@ body {
 /* FOOTER PINNED DI BAWAH */
 .ig-side-footer {
   padding: 12px 16px;
-  border-top: 1px solid #e2e8f0;
-  background: #ffffff;
+  border-top: 1px solid var(--eco-border);
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -700,18 +695,18 @@ body {
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
-  color: #0f172a;
+  color: var(--eco-text-main);
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-.btn-ig-like.liked { color: #ef4444; }
+.btn-ig-like.liked { color: #EF4444; }
 
 .ig-wa-cs-link a {
   font-size: 0.78rem;
   font-weight: 700;
-  color: #25d366;
+  color: var(--eco-wa);
   text-decoration: none;
 }
 
@@ -722,7 +717,7 @@ body {
 
 .ig-input-name {
   width: 30%;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--eco-border);
   border-radius: 6px;
   padding: 6px 8px;
   font-size: 0.78rem;
@@ -731,7 +726,7 @@ body {
 
 .ig-input-text {
   width: 55%;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--eco-border);
   border-radius: 6px;
   padding: 6px 8px;
   font-size: 0.78rem;
@@ -740,8 +735,8 @@ body {
 
 .btn-ig-send {
   width: 15%;
-  background: #0284c7;
-  color: #ffffff;
+  background: var(--eco-cyan);
+  color: #FFFFFF;
   border: none;
   border-radius: 6px;
   font-weight: 800;
