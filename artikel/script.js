@@ -9,8 +9,23 @@ let activeFilters = {
 
 document.addEventListener("DOMContentLoaded", async function () {
   await loadArticlesFromManifest();
-  checkUrlParams();
-  applyFilters();
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const articleId = urlParams.get('id');
+
+  // JIKA BERADA DI HALAMAN BACA (baca.html)
+  if (document.getElementById('articleContainer')) {
+    if (articleId) {
+      renderSingleArticlePage(articleId);
+    } else {
+      window.location.href = 'index.html';
+    }
+  } 
+  // JIKA BERADA DI HALAMAN PORTAL/KATALOG (index.html)
+  else {
+    checkUrlParams();
+    applyFilters();
+  }
 });
 
 // 1. MEMBACA MANIFEST.JSON & FETCH SEMUA FILE ARTIKEL TERDAFTAR
@@ -43,7 +58,7 @@ async function loadArticlesFromManifest() {
   }
 }
 
-// 2. OTO-FILTER DARI QUERY PARAMETER URL
+// 2. OTO-FILTER DARI QUERY PARAMETER URL (INDEX.HTML)
 function checkUrlParams() {
   const urlParams = new URLSearchParams(window.location.search);
   const tagParam = urlParams.get('tag');
@@ -110,7 +125,12 @@ function applyFilters() {
   renderTrendingWidget();
 }
 
-// 6. RENDER KARTU ARTIKEL & FEATURED POST (LAYOUT WINDOWS NEWS)
+// 6. REDIRECT KE HALAMAN BACA KHUSUS (BACA.HTML)
+function openArticlePage(articleId) {
+  window.location.href = `baca.html?id=${articleId}`;
+}
+
+// 7. RENDER KARTU ARTIKEL & FEATURED POST (INDEX.HTML)
 function renderArticlesPortal(list) {
   const featuredContainer = document.getElementById('featuredArticleContainer');
   const grid = document.getElementById('articlesGrid');
@@ -135,7 +155,7 @@ function renderArticlesPortal(list) {
 
   if (empty) empty.style.display = 'none';
 
-  // Pisahkan Featured Post (jika ada flag is_featured atau ambil artikel pertama)
+  // Pisahkan Featured Post
   const featuredItem = list.find(a => a.is_featured) || list[0];
   const regularItems = list.filter(a => a.id !== featuredItem.id);
 
@@ -147,7 +167,7 @@ function renderArticlesPortal(list) {
     }
 
     featuredContainer.innerHTML = `
-      <div class="featured-card" onclick="openReadingModal('${featuredItem.id}')">
+      <div class="featured-card" onclick="openArticlePage('${featuredItem.id}')">
         <div class="featured-media">
           <span class="tag-badge ${getBadgeClass(featuredItem.tag)}">${featuredItem.tag || 'Berita'}</span>
           <img src="${featImg}" alt="${featuredItem.judul}" onerror="this.src='https://via.placeholder.com/800x400?text=Header+Berita'">
@@ -174,7 +194,7 @@ function renderArticlesPortal(list) {
     }
 
     gridHtml += `
-      <article class="article-card" onclick="openReadingModal('${item.id}')">
+      <article class="article-card" onclick="openArticlePage('${item.id}')">
         <div class="article-media">
           <span class="tag-badge ${getBadgeClass(item.tag)}">${item.tag || 'Berita'}</span>
           <img src="${imgSrc}" alt="${item.judul}" onerror="this.src='https://via.placeholder.com/400x250?text=Berita'">
@@ -194,7 +214,7 @@ function renderArticlesPortal(list) {
   grid.innerHTML = gridHtml;
 }
 
-// 7. RENDER WIDGET TRENDING / POPULER DI SIDEBAR
+// 8. RENDER WIDGET TRENDING / POPULER DI SIDEBAR
 function renderTrendingWidget() {
   const container = document.getElementById('trendingList');
   if (!container) return;
@@ -204,7 +224,7 @@ function renderTrendingWidget() {
   let html = '';
   sortedByViews.forEach((item, index) => {
     html += `
-      <div class="trending-item" onclick="openReadingModal('${item.id}')">
+      <div class="trending-item" onclick="openArticlePage('${item.id}')">
         <span class="trending-num">0${index + 1}</span>
         <div class="trending-info">
           <h4 class="trending-title">${item.judul}</h4>
@@ -217,18 +237,18 @@ function renderTrendingWidget() {
   container.innerHTML = html;
 }
 
-// 8. POP-UP READING VIEW MODAL (FETCH & PARSE .MD FILE VIA MARKED.JS)
-async function openReadingModal(articleId) {
+// 9. RENDER HALAMAN BACA SINGLE ARTICLE (BACA.HTML)
+async function renderSingleArticlePage(articleId) {
   const item = allArticlesData.find(a => a.id === articleId);
-  if (!item) return;
+  const container = document.getElementById('articleContainer');
+  if (!item || !container) return;
 
-  const modal = document.getElementById('detailModal');
-  const modalBody = document.getElementById('modalBody');
+  document.title = `${item.judul} — Kelas Bisa`;
 
   // Increment Local Views Count
   item.views = (item.views || 0) + 1;
 
-  // A. Fetch Konten File Markdown (.md)
+  // A. Fetch File Markdown (.md)
   let markdownText = "Gagal memuat isi artikel.";
   if (item.file_markdown) {
     let mdPath = item.file_markdown;
@@ -269,7 +289,7 @@ async function openReadingModal(articleId) {
     });
   }
 
-  // D. Rekomendasi Program / Promo Widget (Soft-Selling)
+  // D. Rekomendasi Program / Promo Widget
   let promoWidgetHtml = '';
   if (item.rekomendasi_program) {
     const promo = item.rekomendasi_program;
@@ -291,85 +311,56 @@ async function openReadingModal(articleId) {
     headerImg = `info-artikel/${headerImg}`;
   }
 
-  // E. Render Modal Reader Layout
-  modalBody.innerHTML = `
-    <div class="ig-modal-side" style="height: 100%;">
-      <button type="button" class="modal-close-btn" onclick="closeDetailModal(event)" aria-label="Tutup">&times;</button>
+  // E. Render Layout Halaman Utuh
+  container.innerHTML = `
+    <div class="reader-header-info">
+      <span class="tag-badge ${getBadgeClass(item.tag)}">${item.tag || 'Berita'}</span>
+      <h1 class="reader-article-title" style="margin-top: 10px;">${item.judul}</h1>
+      <div class="reader-meta-bar">
+        <span>✍️ ${item.penulis || 'Redaksi'}</span> • 
+        <span>📅 ${item.tanggal_rilis || '-'}</span> • 
+        <span>⏱️ ${item.estimasi_baca || '3 Min'}</span> • 
+        <span>👁️ ${item.views} Dilihat</span>
+      </div>
+    </div>
 
-      <!-- HEADER BACA -->
-      <div class="ig-side-header">
-        <div class="ig-user-info">
-          <span class="tag-badge ${getBadgeClass(item.tag)}">${item.tag || 'Berita'}</span>
-          <div>
-            <div class="ig-username">${item.sub_brand || 'Kelas Bisa'}</div>
-            <div class="ig-subtext">${item.penulis || 'Redaksi'} • ${item.tanggal_rilis || '-'}</div>
-          </div>
-        </div>
+    <div class="reader-header-media">
+      <img src="${headerImg}" alt="${item.judul}" onerror="this.src='https://via.placeholder.com/800x400?text=Header+Berita'">
+    </div>
+
+    <!-- ISI MARKDOWN TERPARSED -->
+    <div class="markdown-rendered-content">
+      ${parsedHtmlContent}
+    </div>
+
+    ${promoWidgetHtml}
+
+    <!-- ACTION BAR -->
+    <div class="reader-action-bar">
+      <button type="button" class="btn-ig-like ${likesData.isLiked ? 'liked' : ''}" id="likeBtn" onclick="toggleLikeArticle('${articleId}')">
+        <span id="likeIcon">${likesData.isLiked ? '❤️' : '🤍'}</span>
+        <span id="likeCount">${likesData.count}</span> Suka
+      </button>
+      <button type="button" class="btn-share-text" onclick="shareArticle('${item.judul}')">🔗 Bagikan Artikel</button>
+    </div>
+
+    <!-- KOMENTAR SECTION -->
+    <div class="reader-comments-section">
+      <h4 style="font-size: 0.95rem; margin: 0 0 12px 0; color: #0F172A; font-weight: 800;">💬 Kolom Komentar & Diskusi:</h4>
+      <div class="ig-comments-list" id="commentsContainer">
+        ${commentsHtml}
       </div>
 
-      <!-- BODY BACA ARTIKEL (SCROLLABLE) -->
-      <div class="ig-side-body reading-view-body">
-        <h1 class="reader-article-title">${item.judul}</h1>
-        
-        <div class="reader-meta-bar">
-          <span>✍️ ${item.penulis || 'Redaksi'}</span>
-          <span>📅 ${item.tanggal_rilis || '-'}</span>
-          <span>⏱️ ${item.estimasi_baca || '3 Min'}</span>
-          <span>👁️ ${item.views} Dilihat</span>
-        </div>
-
-        <div class="reader-header-media">
-          <img src="${headerImg}" alt="${item.judul}" onerror="this.src='https://via.placeholder.com/800x400?text=Header+Berita'">
-        </div>
-
-        <!-- ISI MARKDOWN TERPARSED -->
-        <div class="markdown-rendered-content">
-          ${parsedHtmlContent}
-        </div>
-
-        ${promoWidgetHtml}
-
-        <hr class="ig-divider">
-
-        <h4 style="font-size: 0.9rem; margin: 0 0 10px 0; color: #0F172A; font-weight: 800;">💬 Kolom Komentar & Diskusi:</h4>
-        <div class="ig-comments-list" id="commentsContainer">
-          ${commentsHtml}
-        </div>
-      </div>
-
-      <!-- FOOTER ACTION -->
-      <div class="ig-side-footer">
-        <div class="ig-action-bar">
-          <button type="button" class="btn-ig-like ${likesData.isLiked ? 'liked' : ''}" id="likeBtn" onclick="toggleLikeArticle('${articleId}')">
-            <span id="likeIcon">${likesData.isLiked ? '❤️' : '🤍'}</span>
-            <span id="likeCount">${likesData.count}</span> Suka
-          </button>
-          <button type="button" class="btn-share-text" onclick="shareArticle('${item.judul}')">🔗 Bagikan Artikel</button>
-        </div>
-
-        <!-- FORM KOMENTAR -->
-        <form class="ig-comment-form" onsubmit="addCommentArticle(event, '${articleId}')">
-          <input type="text" id="commentNameInput" placeholder="Nama..." required class="ig-input-name">
-          <input type="text" id="commentTextInput" placeholder="Tulis komentar/tanggapan..." required class="ig-input-text">
-          <button type="submit" class="btn-ig-send">Kirim</button>
-        </form>
-      </div>
-
+      <form class="ig-comment-form" style="margin-top: 16px;" onsubmit="addCommentArticle(event, '${articleId}')">
+        <input type="text" id="commentNameInput" placeholder="Nama..." required class="ig-input-name">
+        <input type="text" id="commentTextInput" placeholder="Tulis komentar/tanggapan..." required class="ig-input-text">
+        <button type="submit" class="btn-ig-send">Kirim</button>
+      </form>
     </div>
   `;
 
-  if (modal) modal.style.display = 'flex';
+  renderTrendingWidget();
 }
-
-// 9. FUNGSI CLOSE MODAL
-window.closeDetailModal = function (event) {
-  if (event) {
-    event.preventDefault();
-    event.stopPropagation();
-  }
-  const modal = document.getElementById('detailModal');
-  if (modal) modal.style.display = 'none';
-};
 
 // 10. TOGGLE LIKE LOCALSTORAGE
 function toggleLikeArticle(articleId) {
