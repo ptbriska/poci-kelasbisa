@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "title": "FIRE MONTH — STARFIRE ACADEMY",
+    "subtitle": "THE LIGHT OF ENLIGHTENMENT // ASTRONOMICAL SCIENCES",
+    "description": "Fire Month merupakan Arc pembuka sekaligus gerbang eksplorasi antariksa yang melatih penalaran, analisis matematis, dan pemahaman mekanisme alam semesta."
+  },
+  "overview": {
+    "periode": "November",
+    "nation_host": "Solaris Nation",
+    "akademi": "Starfire Academy",
+    "elemen": "Fire",
+    "filosofi": "Fire merupakan elemen pencerahan dan eksplorasi. Melambangkan cahaya pengetahuan yang mendorong seseorang mencari jawaban atas pertanyaan terbesar alam semesta. Perjalanan dimulai dengan memandang langit, karena setiap penemuan besar diawali oleh rasa ingin tahu yang tidak pernah padam."
+  },
+  "fokus_keilmuan": [
+    "Astronomi Dasar",
+    "Tata Surya",
+    "Evolusi Bintang",
+    "Mekanika Langit",
+    "Astrofisika Dasar",
+    "Galaksi dan Kosmologi Dasar",
+    "Astronomi Observasional",
+    "Analisis Data Astronomi"
+  ],
+  "kompetensi_utama": [
+    "Memahami struktur alam semesta secara mendalam.",
+    "Menjelaskan fenomena benda langit dan dinamika antariksa.",
+    "Menganalisis pergerakan benda langit dengan mekanika presisi.",
+    "Memahami evolusi bintang, struktur galaksi, dan kosmologi.",
+    "Menyelesaikan permasalahan astronomi dasar secara analitis.",
+    "Menginterpretasikan data observasi astronomi tingkat tinggi."
+  ],
+  "spesialisasi_bending": {
+    "deepening": [
+      {
+        "nama": "Lightning Bending",
+        "fokus": "Elektromagnetisme Dasar, Astrofisika Energi Tinggi, dan Fenomena Kelistrikan Alam"
+      },
+      {
+        "nama": "Flame Bending",
+        "fokus": "Evolusi Bintang, Fisika Bintang, serta Struktur dan Energi Bintang"
+      },
+      {
+        "nama": "Combustion Bending",
+        "fokus": "Astrofisika Lanjut, Fenomena Energi Ekstrem, dan Kosmologi Dasar"
+      }
+    ],
+    "mix_bending": [
+      "Scorch Bending (Fire + Air)",
+      "Lava Bending (Fire + Earth)",
+      "Boil Bending (Fire + Water)"
+    ]
+  },
+  "quest_sistem": {
+    "utama": [
+      {
+        "nama": "Star Mapping Quest",
+        "desc": "Pemetaan objek langit, konstelasi, dan identifikasi koordinat astronomis."
+      },
+      {
+        "nama": "Celestial Mechanics Quest",
+        "desc": "Penyelesaian masalah mekanika langit dan orbit benda tegar."
+      },
+      {
+        "nama": "Cosmic Explorer Quest",
+        "desc": "Analisis fenomena astronomi aktual dan variabilitas radiasi."
+      },
+      {
+        "nama": "Observatory Challenge",
+        "desc": "Interpretasi dan kalkulasi data hasil observasi fotometri/spektroskopi."
+      }
+    ],
+    "expedition_event": {
+      "nama": "The Great Cosmic Expedition",
+      "desc": "Peserta menghadapi berbagai studi kasus astronomi dan astrofisika untuk memperoleh Fire Relic dan Fire Mastery Points."
+    }
+  },
+  "achievement_badges": [
+    "Fire Initiate",
+    "Fire Scholar",
+    "Fire Elementalist",
+    "Fire Master"
+  ]
+}
