@@ -39,7 +39,10 @@
     <section class="filter-marketplace-section">
       <div class="events-container">
         <div class="marketplace-filter-card">
-          <h3 class="filter-title">Filter Kegiatan</h3>
+          <div class="filter-header">
+            <h3 class="filter-title">Filter Kegiatan</h3>
+            <button class="reset-btn" onclick="resetFilters()">Reset Filter</button>
+          </div>
 
           <!-- FILTER STATUS -->
           <div class="filter-row">
@@ -147,9 +150,7 @@
         </div>
 
         <div id="emptyState" class="empty-state" style="display: none;">
-          <h3>Kegiatan Tidak Ditemukan</h3>
-          <p>Coba sesuaikan pilihan filter atau kata kunci pencarian Anda.</p>
-          <button onclick="resetFilters()" class="btn-reset-all">Tampilkan Semua Kegiatan</button>
+          <!-- Custom empty state rendered via script.js -->
         </div>
 
       </div>
