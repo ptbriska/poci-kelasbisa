@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Membaca Artikel — Kelas Bisa</title>
+
+  <link rel="icon" href="../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Marked.js CDN untuk merender Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- CONTAINER BACA UTAMA -->
+  <main class="ecom-layout">
+    <div class="ecom-container">
+      
+      <!-- NAVIGASI KEMBALI -->
+      <div class="reader-back-bar">
+        <a href="index.html" class="btn-back">⬅️ Kembali ke Portal Berita</a>
+      </div>
+
+      <!-- LAYOUT BACA (KONTEN UTAMA + SIDEBAR REKOMENDASI) -->
+      <div class="reader-page-grid">
+        
+        <!-- SISI KIRI: ISI ARTIKEL UTUH -->
+        <article class="reader-main-card" id="articleContainer">
+          <!-- Rendered via script.js -->
+        </article>
+
+        <!-- SISI KANAN: SIDEBAR WIDGET & TRENDING -->
+        <aside class="reader-sidebar">
+          <div class="reader-sidebar-box">
+            <h4 class="filter-heading">🔥 Populer Minggu Ini</h4>
+            <div class="trending-list" id="trendingList">
+              <!-- Rendered via script.js -->
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT -->
+  <script src="../assets/js/components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
