@@ -6,9 +6,9 @@
   <title>Sistem Akademik & Kurikulum — ELEMENTA</title>
   
   <!-- Favicon & CSS Master Global + Master Elementa -->
-  <link rel="icon" href="../assets/images/logo-kelasbisa.png" type="image/png">
-  <link rel="stylesheet" href="../assets/css/global.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="../../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="../style.css">
 
   <!-- DARK RPG ACADEMIC HUD STYLESHEET LOKAL -->
   <style>
@@ -217,6 +217,9 @@
 
     @media (max-width: 992px) {
       .months-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
       .elementa-menu { display: none; }
     }
 
@@ -283,7 +286,7 @@
 
         <!-- METODE PEMBELAJARAN TABLE -->
         <div class="table-card">
-          <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">🎓 Metode Evalusasi & Pembelajaran</h2>
+          <h2 style="font-size: 1.4rem; color: #FFFFFF; font-weight: 900; margin-bottom: 0.4rem; text-transform: uppercase;">🎓 Metode Evaluasi & Pembelajaran</h2>
           <p style="color: #94A3B8; font-size: 0.88rem; margin-bottom: 1.5rem;">Pendekatan pengujian komprehensif untuk membentuk penguasaan konsep yang utuh.</p>
           
           <table class="matrix-table">
@@ -306,8 +309,8 @@
   <!-- 3. WADAH INJEKSI FOOTER GLOBAL -->
   <div id="app-footer"></div>
 
-  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL -->
-  <script src="../assets/js/components.js"></script>
+  <!-- SCRIPT INJEKTOR COMPONENTS GLOBAL (NAIK 2 TINGKAT FOLDER SEUAI STRUKTUR) -->
+  <script src="../../assets/js/components.js"></script>
 
   <!-- SCRIPT ENGINE LOKAL -->
   <script>
@@ -340,7 +343,6 @@
 
       let html = "";
       list.forEach(m => {
-        // Safe URL encoding untuk spasi nama folder
         const folderPath = encodeURI(`./${m.folder}/index.html`);
 
         html += `
