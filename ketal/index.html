@@ -138,16 +138,12 @@
     </div>
   </main>
 
-  <!-- POP-UP MODAL DETAIL PRODUK -->
-  <div id="detailModal" class="modal-overlay" style="display: none;" onclick="closeDetailModal(event)">
-    <div class="modal-card" onclick="event.stopPropagation()">
-      <!-- Tombol close ditaruh independen di luar area isi dinamis -->
-      <button type="button" class="modal-close-btn" onclick="closeDetailModal(event)" aria-label="Tutup">&times;</button>
-      <div id="modalBody">
-        <!-- Rendered via script.js -->
-      </div>
-    </div>
+<!-- POP-UP MODAL DETAIL PRODUK -->
+<div id="detailModal" class="modal-overlay" style="display: none;" onclick="closeDetailModal(event)">
+  <div class="modal-card" onclick="event.stopPropagation()" id="modalBody">
+    <!-- Rendered via script.js -->
   </div>
+</div>
 
   <!-- FOOTER GLOBAL -->
   <div id="app-footer"></div>
