@@ -9,4 +9,6 @@ Poin penting dari program ini meliputi:
 * **Mentoring Interaktif**: Bimbingan langsung dari praktisi senior.
 * **Sertifikat Kelulusan**: Diakui oleh jaringan mitra perusahaan Kelas Bisa.
 
+* ![Suasana Acara Certification](info-artikel/foto-dokumentasi-1.jpg)
+
 > *Note: Pendaftaran gelombang pertama dibuka terbatas hingga akhir bulan ini.*
