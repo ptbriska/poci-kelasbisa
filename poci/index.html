@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POCI - Pilar Olympiad Challenge Indonesia</title>
+
+  <link rel="icon" href="../assets/images/logo-kelasbisa.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <div id="app-header"></div>
+
+  <!-- HERO SECTION POCI -->
+  <section class="poci-hero">
+    <div class="poci-container hero-grid">
+      <div class="hero-content">
+        <span class="poci-badge" id="heroCode">PLR-POCI-001</span>
+        <h1 class="hero-title" id="heroTitle">Pilar Olympiad Challenge Indonesia</h1>
+        <p class="hero-desc" id="heroDesc">Loading deskripsi event...</p>
+        
+        <div class="hero-meta">
+          <div class="meta-item">🗓️ <span id="heroDate">14 September 2026</span></div>
+          <div class="meta-item">💻 <span id="heroPlatform">CBT via regis.briska.co.id</span></div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://regis.briska.co.id" target="_blank" class="btn-primary">Daftar Sekarang</a>
+          <a href="#kategoriSilabus" class="btn-secondary">Lihat Silabus</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/poci-hero-banner.png" alt="POCI Banner" onerror="this.src='https://via.placeholder.com/600x400?text=POCI+Banner'">
+      </div>
+    </div>
+  </section>
+
+  <!-- KATEGORI LOMBA & SILABUS -->
+  <section id="kategoriSilabus" class="poci-section bg-light">
+    <div class="poci-container">
+      <div class="section-header">
+        <h2>Kategori Lomba & Silabus Ujian</h2>
+        <p>Pilih tingkat pendidikan dan klik mata pelajaran untuk melihat rincian silabus yang akan diujikan.</p>
+      </div>
+
+      <!-- Container untuk merender data Kategori dari info.json -->
+      <div id="syllabusGridContainer" class="kategori-grid">
+        <!-- Rendered via script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMASI EVENT GRID (SYARAT, JADWAL, FASILITAS) -->
+  <section class="poci-section">
+    <div class="poci-container info-grid-system">
+      
+      <!-- Card Syarat -->
+      <div class="info-card">
+        <h3>✅ Syarat Freemium</h3>
+        <ul id="listSyarat" class="poci-list">
+          <!-- Rendered via script.js -->
+        </ul>
+      </div>
+
+      <!-- Card Fasilitas -->
+      <div class="info-card">
+        <h3>🏆 Fasilitas & Benefit</h3>
+        <ul id="listFasilitas" class="poci-list">
+          <!-- Rendered via script.js -->
+        </ul>
+      </div>
+
+      <!-- Card Jadwal & Kontak -->
+      <div class="info-card highlight-card">
+        <h3>📅 Jadwal & Layanan</h3>
+        <div class="highlight-item">
+          <strong>Pendaftaran:</strong> <span id="jadwalDaftar">-</span>
+        </div>
+        <div class="highlight-item">
+          <strong>Pengerjaan:</strong> <span id="jadwalKerja">-</span>
+        </div>
+        <hr class="poci-divider">
+        <div class="highlight-item">
+          <strong>Bantuan WA:</strong> <span id="kontakWA">-</span>
+        </div>
+        <div class="highlight-item">
+          <strong>Instagram:</strong> <span id="kontakIG">-</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER GLOBAL -->
+  <div id="app-footer"></div>
+
+  <!-- SCRIPT -->
+  <script src="../assets/js/components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
