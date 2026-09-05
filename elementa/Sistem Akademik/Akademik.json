@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "SISTEM AKADEMIK & STRUKTUR KURIKULUM TAHUNAN",
+    "subtitle": "ANNUAL ACADEMIC PROGRESSION // ELEMENTAL LEARNING CYCLE",
+    "description": "Perjalanan akademik Elementa dirancang secara sistematis dalam siklus tahunan yang terbagi menjadi 6 fase bulan pembelajaran terstruktur."
+  },
+  "filosofi_akademik": {
+    "title": "Siklus Pembelajaran Berkelanjutan",
+    "desc": "Sistem Akademik Elementa mengintegrasikan sains kebumian, oseanografi, meteorologi, astronomi, dan keahlian khusus ke dalam fase bulanan terdedikasi untuk memastikan pemahaman konsep mendalam sebelum memasuki tahap kompetisi puncak."
+  },
+  "fase_bulanan": [
+    {
+      "fase": "Fase 1",
+      "nama": "Earth Month",
+      "folder": "Earth Month",
+      "elemen": "🌍 Elemen Earth (Litosfer)",
+      "fokus": "Geologi Dasar, Mineralogi, Petrologi, Geologi Struktur, dan Vulkanologi",
+      "bulan": "Mei – Juni",
+      "akademi": "Lithos Academy (Terralith Empire)",
+      "color": "#059669"
+    },
+    {
+      "fase": "Fase 2",
+      "nama": "Water Month",
+      "folder": "Water Month",
+      "elemen": "🌊 Elemen Water (Hidrosfer)",
+      "fokus": "Oseanografi Fisik, Kimia, Biologi, Geologi, dan Dinamika Gelombang",
+      "bulan": "Juli – Agustus",
+      "akademi": "Tidecrest Academy (Aquamora Kingdom)",
+      "color": "#0284C7"
+    },
+    {
+      "fase": "Fase 3",
+      "nama": "Air Month",
+      "folder": "Air Month",
+      "elemen": "🌪️ Elemen Air (Atmosfer)",
+      "fokus": "Meteorologi Dasar, Dinamis, Klimatologi, dan Analisis Cuaca",
+      "bulan": "September – Oktober",
+      "akademi": "Aero Academy (Aerion Nomad)",
+      "color": "#D97706"
+    },
+    {
+      "fase": "Fase 4",
+      "nama": "Fire Month",
+      "folder": "Fire Month",
+      "elemen": "🔥 Elemen Fire (Antariksa)",
+      "fokus": "Astronomi Dasar, Astrofisika, Mekanika Langit, dan Kosmologi",
+      "bulan": "November – Desember",
+      "akademi": "Starfire Academy (Solaris Nation)",
+      "color": "#DC2626"
+    },
+    {
+      "fase": "Fase 5",
+      "nama": "Arcane Month",
+      "folder": "Arcane Month",
+      "elemen": "🔮 Arcane Elements (Spesialisasi)",
+      "fokus": "SIG, Geografi Manusia, Fisika Modern, dan Logika Matematika",
+      "bulan": "Januari – Februari",
+      "akademi": "Republic of Arcane",
+      "color": "#7C3AED"
+    },
+    {
+      "fase": "Fase 6",
+      "nama": "Convergence Month",
+      "folder": "Convergence Month",
+      "elemen": "⚔️ The Convergence (Puncak Evaluasi)",
+      "fokus": "Try Out Kombinasi, 8 Lapis Dungeon, dan Preparation Avatar Coronation",
+      "bulan": "Maret – April",
+      "akademi": "Convergence Citadel",
+      "color": "#F59E0B"
+    }
+  ],
+  "metode_pembelajaran": [
+    { "metode": "Weekly Quest", "keterangan": "Evaluasi mingguan untuk menguji pemahaman konsep dasar (Setara OSK)." },
+    { "metode": "Nation Quest", "keterangan": "Evaluasi bulanan untuk menguji kemampuan analisis dan integrasi (Setara OSP)." },
+    { "metode": "Expedition Quest", "keterangan": "Ujian sertifikasi spesialisasi untuk perebutan Badge bidang khusus." },
+    { "metode": "Cross Study Program", "keterangan": "Program pengayaan materi lintas Nation dan eksplorasi Arcane." }
+  ]
+}
