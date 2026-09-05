@@ -234,7 +234,7 @@ function changeSlide(cardIdx, direction, totalImgs) {
   if (nextImg) nextImg.classList.add('active');
 }
 
-// 8. POP-UP MODAL OVERLAY ENGINE KETAL (INSTAGRAM WEB STYLE + VIDEO TEASER)
+// 8. POP-UP MODAL OVERLAY ENGINE KETAL (FIXED STRUCTURE & SCROLL)
 function openDetailModal(kodeProduk) {
   const item = allEventsData.find(e => e.kode_produk === kodeProduk);
   if (!item) return;
@@ -250,7 +250,7 @@ function openDetailModal(kodeProduk) {
     waUrl = 'https://' + waUrl;
   }
 
-  // A. Slider Poster
+  // A. Carousel Poster Gambar
   const rawImages = item.poster || [];
   let modalSliderContent = '';
 
@@ -277,12 +277,12 @@ function openDetailModal(kodeProduk) {
     modalSliderContent = `<img src="https://via.placeholder.com/600x600?text=Katalog+Video+LMS" class="modal-slide-img active">`;
   }
 
-  // B. Video Teaser (Kondisional: jika link_video diisi)
+  // B. Video Teaser
   let videoPreviewHtml = '';
   if (item.link_video && item.link_video.trim() !== '') {
     videoPreviewHtml = `
       <div class="ig-video-section">
-        <h4 style="font-size: 0.88rem; margin: 0 0 8px 0; color: var(--eco-dark);">📺 Preview / Video Teaser Materi:</h4>
+        <h4 style="font-size: 0.85rem; margin: 0 0 8px 0; color: #0f172a; font-weight: 800;">📺 Preview / Video Teaser Materi:</h4>
         <div class="video-embed-container">
           <iframe src="${item.link_video}" title="Preview Video ${item.nama_produk}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -308,11 +308,11 @@ function openDetailModal(kodeProduk) {
     });
   }
 
-  // D. Render Modal Content
+  // D. Render Modal Content (Struktur Dipisah Rapi)
   modalBody.innerHTML = `
     <div class="ig-modal-grid">
 
-      <!-- SISI KIRI: POSTER CAROUSEL -->
+      <!-- SISI KIRI: POSTER MEDIA -->
       <div class="ig-modal-media">
         ${modalSliderContent}
       </div>
@@ -320,7 +320,7 @@ function openDetailModal(kodeProduk) {
       <!-- SISI KANAN: PANEL DETAIL, VIDEO TEASER & DISKUSI -->
       <div class="ig-modal-side">
 
-        <!-- HEADER BRAND -->
+        <!-- 1. HEADER BRAND (PINNED ATAS) -->
         <div class="ig-side-header">
           <div class="ig-user-info">
             <span class="ig-avatar">🎥</span>
@@ -331,7 +331,7 @@ function openDetailModal(kodeProduk) {
           </div>
         </div>
 
-        <!-- BODY INFO, VIDEO TEASER, & DISKUSI (SCROLLABLE) -->
+        <!-- 2. BODY SCROLLABLE (KONTEN UTAMA + VIDEO + KOMENTAR) -->
         <div class="ig-side-body">
           <h2 class="ig-event-title">${item.nama_produk}</h2>
           <div class="ig-price-tag">${priceDisplay}</div>
@@ -353,13 +353,13 @@ function openDetailModal(kodeProduk) {
 
           <hr class="ig-divider">
 
-          <!-- KONTEN DISKUSI / KOMENTAR -->
+          <h4 style="font-size: 0.85rem; margin: 0 0 8px 0; color: #0f172a; font-weight: 800;">💬 Diskusi & Tanya Jawab:</h4>
           <div class="ig-comments-list" id="commentsContainer">
             ${commentsHtml}
           </div>
         </div>
 
-        <!-- FOOTER ACTION -->
+        <!-- 3. FOOTER ACTION (PINNED BAWAH: LIKE, FORM, TOMBOL CO) -->
         <div class="ig-side-footer">
 
           <div class="ig-action-bar">
@@ -373,7 +373,7 @@ function openDetailModal(kodeProduk) {
           <!-- INPUT KOMENTAR -->
           <form class="ig-comment-form" onsubmit="addComment(event, '${kodeProduk}')">
             <input type="text" id="commentNameInput" placeholder="Nama..." required class="ig-input-name">
-            <input type="text" id="commentTextInput" placeholder="Tulis pertanyaan..." required class="ig-input-text">
+            <input type="text" id="commentTextInput" placeholder="Pertanyaan..." required class="ig-input-text">
             <button type="submit" class="btn-ig-send">Kirim</button>
           </form>
 
@@ -388,11 +388,6 @@ function openDetailModal(kodeProduk) {
   `;
 
   if (modal) modal.style.display = 'flex';
-}
-
-function closeDetailModal(event) {
-  const modal = document.getElementById('detailModal');
-  if (modal) modal.style.display = 'none';
 }
 
 // 9. NAVIGASI SLIDER POSTER MODAL
