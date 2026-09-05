@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "title": "KATALOG PROGRAM & PRICING",
+    "subtitle": "CHOOSE YOUR OLYMPIAD PATH // ELEMENTA EXPEDITION",
+    "description": "Program pembinaan olimpiade berbasis Arc Story Learning System yang mendobrak batas pembelajaran konvensional. Pilih bidangmu dan mulai perjalanan akademik menuju Avatar of Elementa."
+  },
+  "target_peserta": [
+    {
+      "bidang": "OSN Kebumian",
+      "deskripsi": "Peserta Kebumian adalah kelompok yang paling erat dengan konsep Avatar karena mempelajari keempat elemen utama secara alami.",
+      "materi": ["Geologi", "Oseanografi", "Meteorologi", "Astronomi Kebumian"],
+      "elemen_dominan": "Earth, Water, Air, Fire (All Elements)"
+    },
+    {
+      "bidang": "OSN Astronomi",
+      "deskripsi": "Memiliki kedekatan kuat dengan Elemen Fire dan pengembangan tambahan melalui Arcane Elements (Energy & Logic Bending).",
+      "materi": ["Astronomi", "Astrofisika Dasar", "Mekanika Langit", "Fisika Dasar", "Matematika Dasar"],
+      "elemen_dominan": "Fire (Solaris) + Arcane (Energy, Logic)"
+    },
+    {
+      "bidang": "OSN Geografi",
+      "deskripsi": "Memiliki kedekatan dengan Elemen Earth, Water, dan Air, dengan pengembangan khusus via Arcane Elements (Spatial & Spirit Bending).",
+      "materi": ["Geografi Fisik", "Geografi Manusia", "SIG & Penginderaan Jauh", "Pembangunan Wilayah", "Geopolitik", "Lingkungan"],
+      "elemen_dominan": "Earth, Water, Air + Arcane (Spatial, Spirit)"
+    }
+  ],
+  "paket_program": {
+    "filosofi": "ELEMENTA tidak menggunakan sistem paket bertingkat berdasarkan perbedaan fasilitas. Seluruh peserta memperoleh fasilitas premium yang sama. Perbedaan murni pada kurikulum spesialisasi bidang olimpiade.",
+    "list_paket": [
+      {
+        "nama": "Elementa Geoscience",
+        "target": "Peserta OSN Kebumian tingkat SMA",
+        "nation_dominan": "Terralith, Aquamora, Aerion, Solaris",
+        "cakupan": ["Geologi", "Oseanografi", "Meteorologi", "Astronomi"]
+      },
+      {
+        "nama": "Elementa Astronomy",
+        "target": "Peserta OSN Astronomi tingkat SMA",
+        "nation_dominan": "Solaris Nation",
+        "arcane_dominan": "Energy Bending, Logic Bending",
+        "cakupan": ["Astronomi", "Astrofisika Dasar", "Fisika Dasar", "Matematika Dasar"]
+      },
+      {
+        "nama": "Elementa Geography",
+        "target": "Peserta OSN Geografi tingkat SMA",
+        "nation_dominan": "Terralith, Aquamora, Aerion",
+        "arcane_dominan": "Spatial Bending, Spirit Bending",
+        "cakupan": ["Geografi Fisik", "Geografi Manusia", "SIG", "Penginderaan Jauh", "Geopolitik", "Kependudukan"]
+      }
+    ]
+  },
+  "fasilitas": [
+    "Akses Premium LMS Kelas Bisa",
+    "Video Pembelajaran Interaktif",
+    "Modul PDF Lengkap",
+    "Discord Community & Nation Hub",
+    "Weekly, Nation, Arcane & Expedition Quest",
+    "The Convergence End Game",
+    "Sistem EP & Ember Economy",
+    "Sistem Badge, Honour Title & Avatar Coronation",
+    "Sertifikat Program"
+  ],
+  "periode_belajar": {
+    "durasi": "Satu Season (Oktober – April)",
+    "keterangan": "Menggunakan sistem berbasis Arc (Story Arc Learning System). Dirancang agar pembinaan selesai tuntas sebelum pelaksanaan OSN tahun berjalan.",
+    "kalender": [
+      { "bulan": "Oktober", "kebumian": "Arcane Aether-Nexus A", "geografi": "Arcane Cartographia", "astronomi": "Arcane Aether-Nexus A" },
+      { "bulan": "November", "kebumian": "Fire Arc A", "geografi": "Arcane Civitas", "astronomi": "Fire Arc A" },
+      { "bulan": "Desember", "kebumian": "Air Arc", "geografi": "Air Arc", "astronomi": "Fire Arc B" },
+      { "bulan": "Januari", "kebumian": "Earth Arc", "geografi": "Earth Arc", "astronomi": "Fire Arc C" },
+      { "bulan": "Februari", "kebumian": "Water Arc", "geografi": "Water Arc", "astronomi": "Arcane Aether-Nexus B" },
+      { "bulan": "Maret", "kebumian": "The Convergence I", "geografi": "Arcane Grand I", "astronomi": "Arcane Grand I" },
+      { "bulan": "April", "kebumian": "The Convergence II", "geografi": "Arcane Grand II", "astronomi": "Arcane Grand II" }
+    ]
+  },
+  "mekanisme_daftar": [
+    {
+      "fase": "Fase 1: Pemilihan Jalur Ekspedisi",
+      "desc": "Akses portal resmi Kelas Bisa, pilih paket bidang (Geoscience/Astronomy/Geography), dan tentukan skema pembayaran (Full Season atau Monthly)."
+    },
+    {
+      "fase": "Fase 2: Registrasi & Akses Sistem",
+      "desc": "Lengkapi data identitas. Setelah verifikasi, dapatkan akses penuh ke LMS untuk video, modul, dan dashboard."
+    },
+    {
+      "fase": "Fase 3: Elemental Awakening (Placement Test)",
+      "desc": "Dilakukan awal season (Agustus-September). Wajib mengisi Assessment di LMS untuk memetakan minat, gaya belajar, dan elemen dominan."
+    },
+    {
+      "fase": "Fase 4: Penentuan Nation & Afiliasi",
+      "desc": "Bergabung dengan salah satu dari 4 Nation secara sukarela, masuk via tautan Discord eksklusif, dan resmi menerima status 'Warrior'."
+    }
+  ],
+  "sistem_hadiah": [
+    {
+      "kategori": "Hadiah Reguler (Ember Economy)",
+      "desc": "1 Soal Benar = 1 Ember = Rp10. Ditukar dengan Pelatihan Kelas Bisa, Buku, E-Book, Webinar, Bootcamp, atau Merchandise BRISKA."
+    },
+    {
+      "kategori": "Hadiah Spesialisasi (Badge Fisik)",
+      "desc": "Bagi Master Bender penakluk Expedition/Arcane Quest. Reward: Certificate of Specialization, Plakat RPG Style, Totebag, dan Sertifikat."
+    },
+    {
+      "kategori": "Hadiah Kehormatan (Honour Title Rewards)",
+      "desc": "Diumumkan Avatar Day (2 Mei). Best Element & Nation dapat Certificate, Medali/Plakat, dan bonus 50.000 Ember. Grand Badge Master dapat Statue & Trofi eksklusif + 50.000 Ember."
+    },
+    {
+      "kategori": "Hadiah Clash of Champions",
+      "desc": "Nation Juara menyimpan Elementa Trophy. Anggota tim dapat gelar Champion Team, Hall of Fame, medali, dan bonus 50.000 Ember/anggota."
+    },
+    {
+      "kategori": "GRAND PRIZE: Avatar of Elementa",
+      "desc": "Syarat mutlak: EP 9,0 merata di 4 elemen & Lulus 8 Lapis Dungeon. Hadiah: Hall of Fame, Certificate of Avatar, Bonus 250.000 Ember, Premium Merch (Jacket, Plaque, Statue), dan Golden Ticket (Voucher Bootcamp OSN Nasional, Full Transport Pesawat, dan Biaya Hotel bagi Avatar Pemuncak)."
+    }
+  ]
+}
