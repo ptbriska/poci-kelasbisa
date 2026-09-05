@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "THE CONVERGENCE MONTH — WAR INTEGRITY",
+    "subtitle": "FINAL ARC OF THE SEASON // THE PATH TO AVATAR ASCENSION",
+    "description": "The Convergence Month merupakan puncak sakral perjalanan akademik Elementa tempat seluruh elemen disatukan kembali dalam pengujian multidisiplin tingkat tertinggi."
+  },
+  "overview": {
+    "periode": "Maret – April",
+    "status": "Final Arc Season",
+    "lokasi_utama": "Convergence Citadel",
+    "filosofi": "Earth, Water, Air, dan Fire tidak lagi dipandang sebagai disiplin ilmu terpisah, melainkan bagian dari satu sistem pengetahuan yang utuh. The Convergence menjadi simbol penyatuan ilmu, pengalaman, dan karakter."
+  },
+  "fase_konvergensi": [
+    {
+      "fase": "Phase I",
+      "nama": "The Convergence War",
+      "periode": "Maret",
+      "tujuan": "Menguji kemampuan integrasi lintas elemen secara masif.",
+      "filosofi": "Seluruh Nation mengirimkan warga terbaiknya untuk menyelesaikan persoalan kompleks lintas elemen secara kolaboratif maupun kompetitif.",
+      "aktivitas": [
+        "Nation Clash (Kompetisi antar Nation)",
+        "Elemental Duel (Pertandingan individu antar warga)",
+        "Expedition Battle (Studi kasus lintas disiplin)",
+        "Cross Element Challenge (Integrasi Earth, Water, Air, & Fire)",
+        "Sovereign Trial (Seleksi kandidat Sovereign setiap elemen)"
+      ],
+      "gelar_diperebutkan": [
+        "Earth Sovereign",
+        "Water Sovereign",
+        "Air Sovereign",
+        "Fire Sovereign"
+      ]
+    },
+    {
+      "fase": "Phase II",
+      "nama": "The Convergence End Game",
+      "periode": "April",
+      "tujuan": "Menentukan kelayakan peserta memperoleh gelar sakral Avatar of Elementa.",
+      "filosofi": "Peserta tidak lagi berkompetisi melawan warga lain, melainkan menghadapi standar mutlak tertinggi yang ditetapkan oleh dunia Elementa.",
+      "aktivitas": [
+        "Avatar Qualification Exam (Evaluasi penguasaan seluruh elemen)",
+        "Grand Expedition (Misi integrasi multidisiplin tingkat lanjut)",
+        "Council Assessment (Penilaian komprehensif oleh Council of Elementa)",
+        "Hall of Fame Evaluation (Seleksi rekam jejak pencapaian season)",
+        "Avatar Trial (Tahap akhir penentuan kelulusan Avatar)"
+      ],
+      "gelar_diperebutkan": [
+        "Avatar of Elementa"
+      ]
+    }
+  ],
+  "standar_avatar": {
+    "syarat": [
+      { "elemen": "Earth EP", "standar": "Minimal 9,0 / 10" },
+      { "elemen": "Water EP", "standar": "Minimal 9,0 / 10" },
+      { "elemen": "Air EP", "standar": "Minimal 9,0 / 10" },
+      { "elemen": "Fire EP", "standar": "Minimal 9,0 / 10" },
+      { "elemen": "Rata-rata Total", "standar": "Minimal 9,0 / 10" }
+    ],
+    "catatan": "Peserta yang gagal memenuhi standar salah satu elemen tidak dapat memperoleh gelar Avatar meskipun memiliki nilai sempurna di elemen lainnya."
+  },
+  "avatar_day": {
+    "tanggal": "22 April",
+    "momentum": "Earth Day",
+    "filosofi": "Hari paling sakral dalam kalender Elementa. Simbol bahwa perjalanan penguasaan ilmu berakhir pada pemahaman utuh terhadap alam semesta.",
+    "agenda": [
+      "Pengumuman Resmi Avatar of Elementa",
+      "Pengumuman Sovereign Titles",
+      "Pengumuman Hall of Fame Inductees",
+      "Avatar Ascension Ceremony",
+      "Penutupan Season Resmi"
+    ]
+  },
+  "target_akhir": [
+    "Memahami keterhubungan antar-elemen dalam satu ekosistem.",
+    "Memiliki kemampuan berpikir multidisiplin presisi tinggi.",
+    "Menunjukkan perkembangan akademik dan keteguhan karakter.",
+    "Siap menghadapi kompetisi akademik sains sesungguhnya.",
+    "Layak menyandang gelar Avatar of Elementa."
+  ]
+}
