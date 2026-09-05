@@ -299,7 +299,7 @@ async function renderSingleArticlePage(articleId) {
 
     promoWidgetHtml = `
       <div class="article-promo-box">
-        <div class="promo-badge">💡 REKOMENDASI PROGRAM</div>
+        <div class="promo-badge">💡 CEK UPDATE PROGRAM KELAS BISA SAAT INI</div>
         <p class="promo-text">${promo.teks}</p>
         <a href="${targetUrl}" class="btn-promo-cta">Lihat Program Terkait ➔</a>
       </div>
