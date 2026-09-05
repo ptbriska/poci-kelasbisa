@@ -25,18 +25,22 @@ async function loadEventsFromManifest() {
     const resManifest = await fetch('info-event/manifest.json');
     if (!resManifest.ok) throw new Error("File manifest.json tidak ditemukan atau kosong.");
     
-    const eventFiles = await resManifest.json(); // Array nama file, misal: ["TO01.json", ...]
+    const eventFiles = await resManifest.json(); // Membaca: ["TO01", "ZM-SKD-2026", ...]
 
     if (Array.isArray(eventFiles) && eventFiles.length > 0) {
-      // Fetch secara paralel seluruh file event yang terdaftar di manifest
-      const fetchPromises = eventFiles.map(file => 
-        fetch(`info-event/${file}`)
+      // Fetch secara paralel seluruh file event
+      const fetchPromises = eventFiles.map(fileName => {
+        
+        // Auto-fix: Tambahkan .json jika belum ada
+        const safeFileName = fileName.endsWith('.json') ? fileName : `${fileName}.json`;
+        
+        return fetch(`info-event/${safeFileName}`)
           .then(res => res.ok ? res.json() : null)
           .catch(err => {
-            console.error(`Gagal memuat file kegiatan info-event/${file}:`, err);
+            console.error(`Gagal memuat file kegiatan info-event/${safeFileName}:`, err);
             return null;
-          })
-      );
+          });
+      });
 
       const results = await Promise.all(fetchPromises);
       // Hanya masukkan data event yang valid & berhasil di-load
