@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "HALL OF FAME ELEMENTA 2027",
+    "subtitle": "THE ROYAL ARCHIVES OF GLORY & HONOR",
+    "description": "Arsip kehormatan tertinggi Elementa Universe. Mencatat sejarah para pahlawan akademik yang berhasil menembus batas elemen dan mencapai pencerahan sejati."
+  },
+  "avatar_of_elementa": [
+    {
+      "nama": "👑 Christopher Kevin",
+      "nation": "Solaris Nation",
+      "sekolah": "SMAK Penabur Gading Serpong",
+      "provinsi": "Banten"
+    }
+  ],
+  "elementa_team_champions": {
+    "nama_tim": "🛡️ VANGUARD OF THE SUN",
+    "nation_perwakilan": "Solaris Nation",
+    "anggota": [
+      { "nama": "Muhammad Naufal", "nation": "Solaris Nation", "sekolah": "SMAN 8 Jakarta", "provinsi": "DKI Jakarta" },
+      { "nama": "Nadhira Aulia", "nation": "Solaris Nation", "sekolah": "MAN Insan Cendekia Serpong", "provinsi": "Banten" },
+      { "nama": "Rafael Christian", "nation": "Solaris Nation", "sekolah": "SMA Darma Yudha", "provinsi": "Riau" },
+      { "nama": "Aditya Pratama", "nation": "Solaris Nation", "sekolah": "SMA Katolik St. Louis 1", "provinsi": "Jawa Timur" },
+      { "nama": "Nabila Azzahra", "nation": "Solaris Nation", "sekolah": "MAN 2 Kota Malang", "provinsi": "Jawa Timur" }
+    ]
+  },
+  "grand_badge_master": [
+    {
+      "nama": "🎖️ Albertus Magnus",
+      "nation": "Terralith Empire",
+      "sekolah": "SMA Ignatius Global School",
+      "provinsi": "Sumatera Selatan"
+    }
+  ],
+  "best_element": [
+    { "kategori": "🌍 Earth", "nama": "Farhan Maulana", "nation": "Terralith Empire", "sekolah": "SMAN 1 Yogyakarta", "provinsi": "DI Yogyakarta" },
+    { "kategori": "🌊 Water", "nama": "Tiara Anindya", "nation": "Aquamora Kingdom", "sekolah": "SMAN 3 Bandung", "provinsi": "Jawa Barat" },
+    { "kategori": "🌪️ Air", "nama": "Daffa Al-Fatih", "nation": "Aerion Nomad", "sekolah": "SMAN 1 Padang", "provinsi": "Sumatera Barat" },
+    { "kategori": "🔥 Fire", "nama": "Jason Nathaniel", "nation": "Solaris Nation", "sekolah": "SMAK 1 BPK Penabur", "provinsi": "DKI Jakarta" },
+    { "kategori": "🔮 Logic", "nama": "Edward Vincent", "nation": "Republic of Arcane", "sekolah": "SMA Sutomo 1", "provinsi": "Sumatera Utara" },
+    { "kategori": "👻 Spirit", "nama": "Alya Kirana", "nation": "Republic of Arcane", "sekolah": "SMAN 5 Surabaya", "provinsi": "Jawa Timur" },
+    { "kategori": "🗺️ Spatial", "nama": "Rizky Firmansyah", "nation": "Republic of Arcane", "sekolah": "SMA Taruna Nusantara", "provinsi": "Jawa Tengah" },
+    { "kategori": "⚡ Energy", "nama": "Nicholas Saputra", "nation": "Republic of Arcane", "sekolah": "SMA Xaverius 1", "provinsi": "Sumatera Selatan" }
+  ],
+  "best_nation": [
+    { "kategori": "Terran", "nama": "Arya Bima", "nation": "Terralith Empire", "sekolah": "SMAN 4 Denpasar", "provinsi": "Bali" },
+    { "kategori": "Aquarian", "nama": "Salsabila Ramadhani", "nation": "Aquamora Kingdom", "sekolah": "MAN Insan Cendekia Gorontalo", "provinsi": "Gorontalo" },
+    { "kategori": "Aerian", "nama": "Bagus Satrio", "nation": "Aerion Nomad", "sekolah": "SMAN 1 Depok", "provinsi": "Jawa Barat" },
+    { "kategori": "Solaris", "nama": "Evelyn Aurelia", "nation": "Solaris Nation", "sekolah": "SMA Kristen Petra 2", "provinsi": "Jawa Timur" },
+    { "kategori": "Arcane", "nama": "Steven Alexander", "nation": "Republic of Arcane", "sekolah": "SMAK Penabur Cirebon", "provinsi": "Jawa Barat" }
+  ],
+  "badge_unique_bending": [
+    { "bending": "Lightning Bending (Fire)", "nation": "Solaris Nation", "nama": "Raditya Rahman", "sekolah": "SMAN 8 Jakarta", "provinsi": "DKI Jakarta" },
+    { "bending": "Flame Bending (Fire)", "nation": "Solaris Nation", "nama": "Kevin Chandra", "sekolah": "SMAK 1 BPK Penabur", "provinsi": "DKI Jakarta" },
+    { "bending": "Combustion Bending (Fire)", "nation": "Solaris Nation", "nama": "Muhammad Rizky", "sekolah": "MAN 2 Kota Malang", "provinsi": "Jawa Timur" },
+    { "bending": "Blood Bending (Water)", "nation": "Aquamora Kingdom", "nama": "Annisa Fitri", "sekolah": "MAN Insan Cendekia Serpong", "provinsi": "Banten" },
+    { "bending": "Healing Bending (Water)", "nation": "Aquamora Kingdom", "nama": "Clarissa Wijaya", "sekolah": "SMA Darma Yudha", "provinsi": "Riau" },
+    { "bending": "Plant Bending (Water)", "nation": "Aquamora Kingdom", "nama": "Zahra Salsabila", "sekolah": "SMAN 3 Bandung", "provinsi": "Jawa Barat" },
+    { "bending": "Sound Bending (Air)", "nation": "Aerion Nomad", "nama": "Irfan Hakim", "sekolah": "SMAN 1 Padang", "provinsi": "Sumatera Barat" },
+    { "bending": "Levitation Bending (Air)", "nation": "Aerion Nomad", "nama": "Aditya Mahendra", "sekolah": "SMAN 1 Yogyakarta", "provinsi": "DI Yogyakarta" },
+    { "bending": "Spirit Bending (Air)", "nation": "Aerion Nomad", "nama": "Farras Fauzan", "sekolah": "SMA Taruna Nusantara", "provinsi": "Jawa Tengah" },
+    { "bending": "Metal Bending (Earth)", "nation": "Terralith Empire", "nama": "Reza Gunawan", "sekolah": "SMA Katolik St. Louis 1", "provinsi": "Jawa Timur" },
+    { "bending": "Crystal Bending (Earth)", "nation": "Terralith Empire", "nama": "Agnes Monica", "sekolah": "SMA Ignatius Global School", "provinsi": "Sumatera Selatan" },
+    { "bending": "Seismic Bending (Earth)", "nation": "Terralith Empire", "nama": "Daniel Pratama", "sekolah": "SMA Sutomo 1", "provinsi": "Sumatera Utara" },
+    { "bending": "Ice Bending (Air + Water)", "nation": "Aquamora Kingdom", "nama": "Nabila Azzahra", "sekolah": "MAN Insan Cendekia Pasuruan", "provinsi": "Gorontalo" },
+    { "bending": "Storm Bending (Air + Water)", "nation": "Aerion Nomad", "nama": "Bintang Pramudya", "sekolah": "SMAN 5 Surabaya", "provinsi": "Jawa Timur" },
+    { "bending": "Mist Bending (Air + Water)", "nation": "Aquamora Kingdom", "nama": "Chelsea Olivia", "sekolah": "SMA Kristen Petra 2", "provinsi": "Jawa Timur" },
+    { "bending": "Sand Bending (Air + Earth)", "nation": "Terralith Empire", "nama": "Alifian Dwi", "sekolah": "SMAN 1 Depok", "provinsi": "Jawa Barat" },
+    { "bending": "Magnet Bending (Air + Earth)", "nation": "Terralith Empire", "nama": "Jason Wibowo", "sekolah": "SMAK Penabur Gading Serpong", "provinsi": "Banten" },
+    { "bending": "Scorch Bending (Air + Fire)", "nation": "Solaris Nation", "nama": "Galang Perkasa", "sekolah": "SMAN 2 Jakarta", "provinsi": "DKI Jakarta" },
+    { "bending": "Wood Bending (Water + Earth)", "nation": "Terralith Empire", "nama": "Putri Amalia", "sekolah": "SMAN 1 Bogor", "provinsi": "Jawa Barat" },
+    { "bending": "Mud Bending (Water + Earth)", "nation": "Aquamora Kingdom", "nama": "Dian Sastro", "sekolah": "SMA Xaverius 1", "provinsi": "Sumatera Selatan" },
+    { "bending": "Boil Bending (Water + Fire)", "nation": "Solaris Nation", "nama": "Fajri Ramadhan", "sekolah": "MAN 2 Pekanbaru", "provinsi": "Riau" },
+    { "bending": "Lava Bending (Earth + Fire)", "nation": "Solaris Nation", "nama": "Joshua Setiawan", "sekolah": "SMAK Penabur Cirebon", "provinsi": "Jawa Barat" }
+  ]
+}
