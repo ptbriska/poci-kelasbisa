@@ -234,7 +234,7 @@ function changeSlide(cardIdx, direction, totalImgs) {
   if (nextImg) nextImg.classList.add('active');
 }
 
-// 8. POP-UP MODAL OVERLAY ENGINE KETAL (FIXED STRUCTURE & SCROLL)
+// 8. POP-UP MODAL OVERLAY ENGINE KETAL (FIXED CLOSE BTN & SCROLL)
 function openDetailModal(kodeProduk) {
   const item = allEventsData.find(e => e.kode_produk === kodeProduk);
   if (!item) return;
@@ -308,8 +308,9 @@ function openDetailModal(kodeProduk) {
     });
   }
 
-  // D. Render Modal Content (Struktur Dipisah Rapi)
+  // D. Render Modal Content (Tombol Close Di dalam Modal Header)
   modalBody.innerHTML = `
+    <button class="modal-close-btn" onclick="closeDetailModal()">&times;</button>
     <div class="ig-modal-grid">
 
       <!-- SISI KIRI: POSTER MEDIA -->
@@ -320,7 +321,7 @@ function openDetailModal(kodeProduk) {
       <!-- SISI KANAN: PANEL DETAIL, VIDEO TEASER & DISKUSI -->
       <div class="ig-modal-side">
 
-        <!-- 1. HEADER BRAND (PINNED ATAS) -->
+        <!-- HEADER BRAND -->
         <div class="ig-side-header">
           <div class="ig-user-info">
             <span class="ig-avatar">🎥</span>
@@ -331,7 +332,7 @@ function openDetailModal(kodeProduk) {
           </div>
         </div>
 
-        <!-- 2. BODY SCROLLABLE (KONTEN UTAMA + VIDEO + KOMENTAR) -->
+        <!-- AREA SCROLLABLE INTERNAL -->
         <div class="ig-side-body">
           <h2 class="ig-event-title">${item.nama_produk}</h2>
           <div class="ig-price-tag">${priceDisplay}</div>
@@ -359,7 +360,7 @@ function openDetailModal(kodeProduk) {
           </div>
         </div>
 
-        <!-- 3. FOOTER ACTION (PINNED BAWAH: LIKE, FORM, TOMBOL CO) -->
+        <!-- FOOTER PINNED DI BAWAH -->
         <div class="ig-side-footer">
 
           <div class="ig-action-bar">
