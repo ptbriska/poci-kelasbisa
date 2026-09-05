@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "WATER MONTH — TIDECREST ACADEMY",
+    "subtitle": "THE CONNECTIVITY OF ELEMENTA // OCEANOGRAPHIC SCIENCES",
+    "description": "Water Month dirancang untuk mengajarkan peserta bagaimana sistem perairan bekerja serta bagaimana lautan berperan sebagai pengatur utama berbagai proses lingkungan global."
+  },
+  "overview": {
+    "periode": "Februari",
+    "nation_host": "Aquamora Kingdom",
+    "akademi": "Tidecrest Academy",
+    "elemen": "Water",
+    "filosofi": "Water merupakan elemen yang menghubungkan seluruh sistem bumi. Air bergerak melintasi atmosfer, daratan, dan lautan, membentuk siklus yang menjaga keseimbangan kehidupan di planet ini. Kekuatan terbesar berasal dari kemampuan beradaptasi dan membangun keterhubungan."
+  },
+  "fokus_keilmuan": [
+    "Oseanografi Fisik",
+    "Oseanografi Kimia",
+    "Oseanografi Biologi",
+    "Oseanografi Geologi",
+    "Hidrologi Dasar",
+    "Arus Laut",
+    "Gelombang",
+    "Pasang Surut",
+    "ENSO",
+    "Interaksi Laut-Atmosfer"
+  ],
+  "kompetensi_utama": [
+    "Memahami dinamika lautan.",
+    "Menjelaskan sistem arus laut global.",
+    "Menganalisis fenomena ENSO.",
+    "Memahami interaksi laut dan atmosfer.",
+    "Menjelaskan peran lautan dalam sistem bumi."
+  ],
+  "spesialisasi_bending": {
+    "deepening": [
+      {
+        "nama": "Blood Bending",
+        "fokus": "Dinamika Fluida, Sistem Transport dalam Fluida, dan Oseanografi Fisik Lanjut"
+      },
+      {
+        "nama": "Healing Bending",
+        "fokus": "Sistem Pendukung Kehidupan, Siklus Air, dan Keseimbangan Ekosistem Perairan"
+      },
+      {
+        "nama": "Plant Bending",
+        "fokus": "Produktivitas Laut, Nutrien Perairan, dan Interaksi Hidrosfer-Biosfer"
+      }
+    ],
+    "mix_bending": [
+      "Ice Bending (Water + Air)",
+      "Storm Bending (Water + Air)",
+      "Mist Bending (Water + Air)",
+      "Wood Bending (Water + Earth)",
+      "Mud Bending (Water + Earth)",
+      "Boil Bending (Water + Fire)"
+    ]
+  },
+  "quest_sistem": {
+    "utama": [
+      {
+        "nama": "Ocean Current Quest",
+        "desc": "Analisis pola arus laut dunia."
+      },
+      {
+        "nama": "ENSO Monitoring Quest",
+        "desc": "Pemantauan fenomena El Niño dan La Niña."
+      },
+      {
+        "nama": "Marine Explorer Quest",
+        "desc": "Studi kasus oseanografi terapan."
+      },
+      {
+        "nama": "Hydrosphere Challenge",
+        "desc": "Analisis sistem perairan global."
+      }
+    ],
+    "expedition_event": {
+      "nama": "The Great Ocean Expedition",
+      "desc": "Peserta menghadapi berbagai studi kasus oseanografi dan dinamika laut tingkat lanjut untuk memperoleh Water Relic dan Water Mastery Points."
+    }
+  },
+  "achievement_badges": [
+    "Water Initiate",
+    "Water Scholar",
+    "Water Elementalist",
+    "Water Master"
+  ]
+}
