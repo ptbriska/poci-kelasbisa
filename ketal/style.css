@@ -1,24 +1,27 @@
 /* =========================================================
-   STYLE E-COMMERCE MODERN — TECHNO CYAN COMMERCIAL THEME
+   STYLE LMS KETAL — GLAMOUR NEON CYAN & DARK-LIGHT HYBRID
    ========================================================= */
 
 :root {
-  --eco-cyan: #0284C7;          /* Cyan / Pacific Blue */
-  --eco-cyan-hover: #0369A1;
-  --eco-cyan-light: #E0F2FE;    /* Highlight Cyan Soft */
-  --eco-green: #10B981;         /* Emerald Green untuk Pendaftaran / Open */
-  --eco-green-hover: #059669;
-  --eco-orange: #F59E0B;        /* Gold / Orange untuk Harga Dinamis */
-  --eco-wa: #25D366;            /* WhatsApp Green */
-  --eco-dark: #0A192F;          /* Midnight Dark Navy */
-  --eco-bg: #F8FAFC;            /* Background Clean Light Gray */
-  --eco-card: #FFFFFF;
-  --eco-text-main: #0F172A;     /* Dark Slate Text */
-  --eco-text-muted: #64748B;
-  --eco-border: #E2E8F0;
+  /* Palet Glamour Neon Cyan & Dark Theme */
+  --eco-cyan: #00f2fe;          /* Cyan Neon Electric */
+  --eco-cyan-glow: #4facfe;     /* Gradient Blue-Cyan */
+  --eco-cyan-dark: #0088a9;
+  --eco-cyan-light: rgba(0, 242, 254, 0.12);
+  --eco-green: #10B981;
+  --eco-wa: #25D366;
+  --eco-dark: #090d16;          /* Deep Dark Background */
+  --eco-dark-card: #111827;     /* Dark Surface Card */
+  --eco-bg: #0b0f19;            /* Overall Dark Cyber Background */
+  --eco-card: #ffffff;          /* Light Contrast Surface */
+  --eco-text-main: #f8fafc;     /* Bright Main Text */
+  --eco-text-dark: #0f172a;
+  --eco-text-muted: #94a3b8;
+  --eco-border: #1e293b;        /* Subtle Cyber Border */
+  --eco-border-glow: rgba(0, 242, 254, 0.4);
   --eco-radius: 12px;
-  --eco-shadow-sm: 0 2px 8px rgba(2, 132, 199, 0.05);
-  --eco-shadow-md: 0 10px 25px rgba(2, 132, 199, 0.12);
+  --eco-shadow-neon: 0 0 20px rgba(0, 242, 254, 0.25);
+  --eco-shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -38,9 +41,9 @@ body {
 
 /* 1. HERO PROMO BANNER */
 .events-hero {
-  background-color: var(--eco-card);
+  background-color: var(--eco-dark-card);
   padding: 16px 0;
-  border-bottom: 1px solid var(--eco-border);
+  border-bottom: 2px solid var(--eco-cyan-dark);
 }
 
 .hero-banner-img {
@@ -49,77 +52,80 @@ body {
   object-fit: cover;
   border-radius: var(--eco-radius);
   display: block;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  box-shadow: var(--eco-shadow-neon);
 }
 
-/* 2. SAMBUTAN PELANGGAN (WELCOME BANNER) */
+/* 2. SAMBUTAN PELANGGAN (WELCOME BANNER NEON) */
 .welcome-section {
-  padding: 20px 0 0 0;
+  padding: 24px 0 0 0;
 }
 
 .welcome-card {
-  background: linear-gradient(135deg, var(--eco-dark) 0%, #0F2942 60%, var(--eco-cyan) 100%);
+  background: linear-gradient(135deg, #060911 0%, #0d1527 50%, #003a4d 100%);
   color: #FFFFFF;
-  padding: 24px 30px;
+  padding: 28px 32px;
   border-radius: var(--eco-radius);
-  border-left: 5px solid var(--eco-cyan);
-  box-shadow: var(--eco-shadow-md);
+  border: 1px solid var(--eco-border);
+  border-left: 6px solid var(--eco-cyan);
+  box-shadow: var(--eco-shadow-neon);
 }
 
 .welcome-badge {
   display: inline-block;
-  background: rgba(2, 132, 199, 0.3);
+  background: rgba(0, 242, 254, 0.15);
   border: 1px solid var(--eco-cyan);
-  color: #7DD3FC;
+  color: var(--eco-cyan);
   font-size: 0.72rem;
   font-weight: 800;
   padding: 4px 12px;
   border-radius: 20px;
-  margin-bottom: 8px;
-  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  letter-spacing: 0.8px;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
 .welcome-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 900;
   margin: 0 0 8px 0;
   color: #FFFFFF;
+  text-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
 }
 
 .welcome-desc {
-  font-size: 0.88rem;
-  color: #E0F2FE;
+  font-size: 0.9rem;
+  color: #CBD5E1;
   margin: 0;
   line-height: 1.6;
-  max-width: 900px;
+  max-width: 920px;
 }
 
 /* 3. LAYOUT E-COMMERCE (GRID SYSTEM) */
 .ecom-layout {
-  padding: 24px 0 60px 0;
+  padding: 28px 0 60px 0;
 }
 
 .ecom-grid-system {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 24px;
   align-items: start;
 }
 
-/* 4. SIDEBAR FILTER (KIRI) */
+/* 4. SIDEBAR FILTER (KIRI DARK MODE) */
 .ecom-sidebar {
-  background: var(--eco-card);
+  background: var(--eco-dark-card);
   border-radius: var(--eco-radius);
   border: 1px solid var(--eco-border);
   position: sticky;
   top: 20px;
   max-height: 88vh;
   overflow-y: auto;
-  box-shadow: var(--eco-shadow-sm);
+  box-shadow: var(--eco-shadow-md);
 }
 
 .ecom-sidebar::-webkit-scrollbar { width: 5px; }
-.ecom-sidebar::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+.ecom-sidebar::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
 
 .sidebar-header {
   display: flex;
@@ -129,7 +135,7 @@ body {
   border-bottom: 1px solid var(--eco-border);
   position: sticky;
   top: 0;
-  background: var(--eco-card);
+  background: var(--eco-dark-card);
   z-index: 10;
 }
 
@@ -137,7 +143,7 @@ body {
   font-size: 0.95rem;
   font-weight: 800;
   margin: 0;
-  color: var(--eco-text-main);
+  color: #FFFFFF;
 }
 
 .btn-reset-text {
@@ -147,10 +153,10 @@ body {
   font-weight: 700;
   font-size: 0.82rem;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: all 0.2s;
 }
 
-.btn-reset-text:hover { color: var(--eco-cyan-hover); text-decoration: underline; }
+.btn-reset-text:hover { color: #FFFFFF; text-shadow: 0 0 8px var(--eco-cyan); }
 
 .sidebar-content { padding: 16px; }
 
@@ -177,9 +183,9 @@ body {
 }
 
 .m-chip {
-  background: #F1F5F9;
+  background: #1e293b;
   border: 1px solid var(--eco-border);
-  color: var(--eco-text-main);
+  color: #e2e8f0;
   font-size: 0.76rem;
   font-weight: 600;
   padding: 5px 10px;
@@ -194,11 +200,11 @@ body {
 }
 
 .m-chip.active {
-  background: var(--eco-cyan);
+  background: linear-gradient(135deg, var(--eco-cyan-glow) 0%, var(--eco-cyan-dark) 100%);
   border-color: var(--eco-cyan);
-  color: #FFFFFF;
-  font-weight: 700;
-  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.3);
+  color: #000000;
+  font-weight: 800;
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
 }
 
 /* 5. MAIN KONTEN (KANAN) */
@@ -211,17 +217,17 @@ body {
 .ecom-search-bar {
   display: flex;
   align-items: center;
-  background: var(--eco-card);
+  background: var(--eco-dark-card);
   border: 1.5px solid var(--eco-border);
   border-radius: var(--eco-radius);
   padding: 10px 16px;
-  box-shadow: var(--eco-shadow-sm);
-  transition: border-color 0.2s ease;
+  box-shadow: var(--eco-shadow-md);
+  transition: all 0.25s ease;
 }
 
 .ecom-search-bar:focus-within {
   border-color: var(--eco-cyan);
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
 }
 
 .ecom-search-bar input {
@@ -231,7 +237,8 @@ body {
   margin-left: 10px;
   font-size: 0.92rem;
   font-weight: 500;
-  color: var(--eco-text-main);
+  color: #FFFFFF;
+  background: transparent;
 }
 
 .ecom-grid {
@@ -240,9 +247,9 @@ body {
   gap: 18px;
 }
 
-/* 6. KARTU PRODUK MINIMALIS (STYLE TOKOPEDIA CYAN) */
+/* 6. KARTU PRODUK MINIMALIS (GLAMOUR LIGHT/DARK HYBRID CARD) */
 .event-card {
-  background: var(--eco-card);
+  background: #ffffff; /* Kontras terang untuk card isi produk */
   border: 1.5px solid var(--eco-border);
   border-radius: var(--eco-radius);
   overflow: hidden;
@@ -252,16 +259,17 @@ body {
 }
 
 .event-card:hover {
+  transform: translateY(-50px scale(1.02));
   transform: translateY(-4px);
   border-color: var(--eco-cyan);
-  box-shadow: var(--eco-shadow-md);
+  box-shadow: var(--eco-shadow-neon);
 }
 
 .card-slider {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #0A192F;
+  background: #090d16;
   overflow: hidden;
 }
 
@@ -283,20 +291,19 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   z-index: 5;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 .status-badge.open { background: var(--eco-green); color: #FFF; }
-.status-badge.close { background: #EF4444; color: #FFF; }
 
 .slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.85);
-  border: 1px solid #DDD;
-  color: #333;
-  width: 26px;
-  height: 26px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--eco-cyan);
+  color: var(--eco-cyan);
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 5;
@@ -314,6 +321,7 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  background: #ffffff;
 }
 
 .card-title {
@@ -321,7 +329,7 @@ body {
   font-weight: 800;
   line-height: 1.4;
   margin: 0 0 8px 0;
-  color: var(--eco-text-main);
+  color: var(--eco-text-dark);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -335,7 +343,7 @@ body {
 .price-amount {
   font-size: 1.05rem;
   font-weight: 900;
-  color: var(--eco-cyan);
+  color: #0284c7;
 }
 
 .price-badge.free {
@@ -357,9 +365,9 @@ body {
 }
 
 .btn-cta-detail {
-  background: #F1F5F9;
-  color: var(--eco-text-main);
-  border: 1px solid var(--eco-border);
+  background: #f1f5f9;
+  color: var(--eco-text-dark);
+  border: 1px solid #cbd5e1;
   padding: 7px;
   border-radius: 6px;
   font-size: 0.78rem;
@@ -370,13 +378,13 @@ body {
 }
 
 .btn-cta-detail:hover {
-  background: var(--eco-cyan-light);
-  border-color: var(--eco-cyan);
-  color: var(--eco-cyan);
+  background: #e0f2fe;
+  border-color: #0284c7;
+  color: #0284c7;
 }
 
 .btn-cta-checkout {
-  background: linear-gradient(135deg, var(--eco-cyan) 0%, var(--eco-cyan-hover) 100%);
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
   color: #FFFFFF;
   text-align: center;
   padding: 8px;
@@ -385,11 +393,11 @@ body {
   font-weight: 800;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
 }
 
 .btn-cta-checkout:hover {
-  box-shadow: 0 5px 15px rgba(2, 132, 199, 0.35);
+  box-shadow: 0 6px 18px rgba(0, 114, 255, 0.5);
   transform: translateY(-1px);
 }
 
@@ -409,15 +417,15 @@ body {
   background: #128C7E;
 }
 
-/* 7. POP-UP MODAL OVERLAY STYLING (INSTAGRAM WEB LAYOUT) */
+/* 7. POP-UP MODAL OVERLAY STYLING (INSTAGRAM WEB NEON LAYOUT) */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 25, 47, 0.8);
-  backdrop-filter: blur(6px);
+  background: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(8px);
   z-index: 999;
   display: flex;
   align-items: center;
@@ -427,7 +435,7 @@ body {
 }
 
 .modal-card {
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 16px;
   max-width: 960px;
   width: 100%;
@@ -435,7 +443,8 @@ body {
   padding: 0;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--eco-shadow-neon);
+  border: 1px solid var(--eco-cyan-dark);
   animation: modalSlideUp 0.25s ease-out;
 }
 
@@ -448,25 +457,25 @@ body {
   position: absolute;
   top: 10px;
   right: 14px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid var(--eco-border);
+  background: #090d16;
+  border: 1px solid var(--eco-cyan);
   width: 32px;
   height: 32px;
   border-radius: 50%;
   font-size: 1.5rem;
   line-height: 1;
-  color: var(--eco-dark);
+  color: var(--eco-cyan);
   cursor: pointer;
   z-index: 30;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
 .modal-close-btn:hover {
-  background: #FFFFFF;
-  color: #EF4444;
+  background: var(--eco-cyan);
+  color: #000000;
 }
 
 .ig-modal-grid {
@@ -479,7 +488,7 @@ body {
 /* SISI KIRI: POSTER CAROUSEL */
 .ig-modal-media {
   position: relative;
-  background: #0A192F;
+  background: #090d16;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -499,11 +508,11 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid #DDD;
-  color: #0F172A;
-  width: 32px;
-  height: 32px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--eco-cyan);
+  color: var(--eco-cyan);
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
@@ -511,7 +520,6 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 .modal-slider-btn.prev { left: 10px; }
 .modal-slider-btn.next { right: 10px; }
@@ -520,13 +528,13 @@ body {
 .ig-modal-side {
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
-  border-left: 1px solid var(--eco-border);
+  background: #ffffff;
+  border-left: 1px solid #e2e8f0;
 }
 
 .ig-side-header {
   padding: 16px;
-  border-bottom: 1px solid var(--eco-border);
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .ig-user-info {
@@ -537,7 +545,7 @@ body {
 
 .ig-avatar {
   font-size: 1.5rem;
-  background: var(--eco-cyan-light);
+  background: #e0f2fe;
   padding: 6px;
   border-radius: 50%;
 }
@@ -545,12 +553,12 @@ body {
 .ig-username {
   font-size: 0.95rem;
   font-weight: 800;
-  color: var(--eco-dark);
+  color: var(--eco-text-dark);
 }
 
 .ig-subtext {
   font-size: 0.75rem;
-  color: var(--eco-text-muted);
+  color: #64748b;
 }
 
 /* SCROLLABLE BODY INFO & KOMENTAR */
@@ -564,25 +572,26 @@ body {
   font-size: 1.15rem;
   font-weight: 900;
   margin: 0 0 6px 0;
-  color: var(--eco-dark);
+  color: var(--eco-text-dark);
 }
 
 .ig-price-tag {
   font-size: 1.2rem;
   font-weight: 900;
-  color: var(--eco-cyan);
+  color: #0284c7;
   margin-bottom: 12px;
 }
 
 .ig-info-table {
-  background: #F8FAFC;
-  border: 1px solid var(--eco-border);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   padding: 10px;
   border-radius: 8px;
   font-size: 0.78rem;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  color: var(--eco-text-dark);
   margin-bottom: 12px;
 }
 
@@ -590,14 +599,39 @@ body {
 
 .ig-desc-box p {
   font-size: 0.82rem;
-  color: var(--eco-text-muted);
+  color: #475569;
   line-height: 1.5;
   margin: 0;
 }
 
+/* VIDEO EMBED PREVIEW STYLING */
+.ig-video-section {
+  margin-top: 14px;
+  border-top: 1px dashed #cbd5e1;
+  padding-top: 10px;
+}
+
+.video-embed-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Ratio 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #000;
+}
+
+.video-embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .ig-divider {
   border: none;
-  border-top: 1px solid var(--eco-border);
+  border-top: 1px solid #e2e8f0;
   margin: 16px 0;
 }
 
@@ -610,7 +644,8 @@ body {
 }
 
 .comment-item {
-  background: #F1F5F9;
+  background: #f1f5f9;
+  color: var(--eco-text-dark);
   padding: 8px 12px;
   border-radius: 8px;
   line-height: 1.4;
@@ -619,13 +654,13 @@ body {
 .comment-time {
   display: block;
   font-size: 0.68rem;
-  color: var(--eco-text-muted);
+  color: #64748b;
   margin-top: 2px;
 }
 
 .no-comment-text {
   font-size: 0.8rem;
-  color: var(--eco-text-muted);
+  color: #64748b;
   font-style: italic;
   text-align: center;
 }
@@ -633,8 +668,8 @@ body {
 /* FOOTER INTERAKSI (LIKE & INPUT) */
 .ig-side-footer {
   padding: 12px 16px;
-  border-top: 1px solid var(--eco-border);
-  background: #FFFFFF;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -652,7 +687,7 @@ body {
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
-  color: var(--eco-text-main);
+  color: var(--eco-text-dark);
   display: flex;
   align-items: center;
   gap: 4px;
@@ -674,7 +709,7 @@ body {
 
 .ig-input-name {
   width: 30%;
-  border: 1px solid var(--eco-border);
+  border: 1px solid #cbd5e1;
   border-radius: 6px;
   padding: 6px 8px;
   font-size: 0.78rem;
@@ -683,7 +718,7 @@ body {
 
 .ig-input-text {
   width: 55%;
-  border: 1px solid var(--eco-border);
+  border: 1px solid #cbd5e1;
   border-radius: 6px;
   padding: 6px 8px;
   font-size: 0.78rem;
@@ -692,7 +727,7 @@ body {
 
 .btn-ig-send {
   width: 15%;
-  background: var(--eco-cyan);
+  background: #0284c7;
   color: #FFF;
   border: none;
   border-radius: 6px;
@@ -709,9 +744,10 @@ body {
 .ecom-empty-state {
   text-align: center;
   padding: 60px 20px;
-  background: var(--eco-card);
+  background: var(--eco-dark-card);
   border-radius: var(--eco-radius);
   border: 1px solid var(--eco-border);
+  color: var(--eco-text-main);
 }
 
 /* RESPONSIF MOBILE */
