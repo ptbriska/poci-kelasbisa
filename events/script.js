@@ -18,30 +18,33 @@ document.addEventListener("DOMContentLoaded", async function () {
   applyFilters();
 });
 
-// 1. MEMBACA MANIFEST.JSON & FETCH SEMUA FILE EVENT TERDAFTAR
+// 1. MEMBACA MANIFEST.JSON & FETCH SEMUA FILE EVENT TERDAFTAR SECARA REAL
 async function loadEventsFromManifest() {
   allEventsData = [];
   try {
     const resManifest = await fetch('info-event/manifest.json');
-    if (!resManifest.ok) throw new Error("Gagal membaca manifest.json");
+    if (!resManifest.ok) throw new Error("File manifest.json tidak ditemukan atau kosong.");
     
     const eventFiles = await resManifest.json(); // Array nama file, misal: ["TO01.json", ...]
 
-    // Fetch secara paralel seluruh file event
-    const fetchPromises = eventFiles.map(file => 
-      fetch(`info-event/${file}`)
-        .then(res => res.ok ? res.json() : null)
-        .catch(err => {
-          console.error(`Gagal memuat info-event/${file}:`, err);
-          return null;
-        })
-    );
+    if (Array.isArray(eventFiles) && eventFiles.length > 0) {
+      // Fetch secara paralel seluruh file event yang terdaftar di manifest
+      const fetchPromises = eventFiles.map(file => 
+        fetch(`info-event/${file}`)
+          .then(res => res.ok ? res.json() : null)
+          .catch(err => {
+            console.error(`Gagal memuat file kegiatan info-event/${file}:`, err);
+            return null;
+          })
+      );
 
-    const results = await Promise.all(fetchPromises);
-    allEventsData = results.filter(item => item !== null);
-
+      const results = await Promise.all(fetchPromises);
+      // Hanya masukkan data event yang valid & berhasil di-load
+      allEventsData = results.filter(item => item !== null);
+    }
   } catch (err) {
-    console.error("Error pada Manifest Engine:", err);
+    console.log("Informasi:", err.message);
+    allEventsData = []; // Tetap kosong jika memang belum ada manifest / data
   }
 }
 
@@ -126,9 +129,18 @@ function renderEventsGrid(list) {
 
   if (!grid) return;
 
+  // Jika tidak ada kegiatan sama sekali
   if (list.length === 0) {
     grid.innerHTML = '';
-    if (empty) empty.style.display = 'block';
+    if (empty) {
+      empty.innerHTML = `
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📅</div>
+        <h3 style="font-weight: 800; color: var(--primary-color, #0f172a); margin-bottom: 0.5rem;">Belum Ada Kegiatan Aktif</h3>
+        <p style="color: #64748b; font-size: 0.9rem;">Saat ini belum ada jadwal kegiatan atau pendaftaran yang dibuka. Silakan cek kembali secara berkala.</p>
+        <button onclick="resetFilters()" class="btn-reset-all" style="margin-top: 1rem;">Reset Filter</button>
+      `;
+      empty.style.display = 'block';
+    }
     return;
   }
 
@@ -140,27 +152,33 @@ function renderEventsGrid(list) {
     const statusClass = isOpen ? 'open' : 'close';
     const statusLabel = isOpen ? 'Open' : 'Close';
 
-    // Slider Gambar Poster (Multi-Image)
-    const images = item.poster || [];
+    // Slider Gambar Poster (Multi-Image & Auto Fix Path)
+    const rawImages = item.poster || item.gambar_poster || [];
     let sliderContent = '';
 
-    if (images.length > 0) {
-      images.forEach((imgSrc, imgIdx) => {
+    if (rawImages.length > 0) {
+      rawImages.forEach((imgSrc, imgIdx) => {
+        // Penyelarasan path jika gambar berada di dalam folder info-event/
+        let finalSrc = imgSrc;
+        if (!finalSrc.startsWith('http') && !finalSrc.startsWith('info-event/')) {
+          finalSrc = `info-event/${finalSrc}`;
+        }
+
         const activeClass = imgIdx === 0 ? 'active' : '';
         sliderContent += `
-          <img src="${imgSrc}" class="slide-img ${activeClass}" id="slide-${cardIdx}-${imgIdx}" alt="Poster ${item.nama_kegiatan}" onerror="this.src='https://via.placeholder.com/400x250?text=Poster+Pelatihan'">
+          <img src="${finalSrc}" class="slide-img ${activeClass}" id="slide-${cardIdx}-${imgIdx}" alt="Poster ${item.nama_kegiatan}" onerror="this.src='https://via.placeholder.com/400x500?text=Poster+Tidak+Tersedia'">
         `;
       });
 
       // Jika gambar lebih dari 1, tampilkan tombol navigasi slide
-      if (images.length > 1) {
+      if (rawImages.length > 1) {
         sliderContent += `
-          <button class="slider-btn prev" onclick="changeSlide(${cardIdx}, -1, ${images.length})">❮</button>
-          <button class="slider-btn next" onclick="changeSlide(${cardIdx}, 1, ${images.length})">❯</button>
+          <button class="slider-btn prev" onclick="changeSlide(${cardIdx}, -1, ${rawImages.length})">❮</button>
+          <button class="slider-btn next" onclick="changeSlide(${cardIdx}, 1, ${rawImages.length})">❯</button>
         `;
       }
     } else {
-      sliderContent = `<img src="https://via.placeholder.com/400x250?text=Poster+Pelatihan" class="slide-img active">`;
+      sliderContent = `<img src="https://via.placeholder.com/400x500?text=Poster+Tidak+Tersedia" class="slide-img active">`;
     }
 
     // Format Link WA CS (Mencegah error tanpa http/https)
